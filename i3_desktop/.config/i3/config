@@ -203,7 +203,9 @@ bindsym $mod+Shift+i exec rofi-network
 bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+Return exec konsole
 
-#bindsym $mod+b exec alacritty -e ranger
+# Launch The Mail App
+bindsym $mod+m exec thundbird
+
 
 # bindsym Mod4 + space exec rofi -show run
 

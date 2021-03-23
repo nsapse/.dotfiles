@@ -105,12 +105,12 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+#Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+    export EDITOR='nvim'
+else
+    export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -122,19 +122,20 @@ source $ZSH/oh-my-zsh.sh
 #
 
 # access config files
-alias zc="nvim ~/.zshrc"
+alias .z="nvim ~/.zshrc"
 alias zso="source ~/.zshrc"
-alias nc="nvim ~/.config/nvim/init.vim"
-alias xc="nvim ~/.xinitrc"
-alias bc="nvim ~/.config/bspwm/bspwmrc"
-alias sxc="nvim ~/.config/sxhkd/sxhkdrc"
-alias pbc="nvim ~/.config/polybar/config"
-alias tc="nvim ~/.tmux.conf"
-alias lgc="nvim ~/.config/jesseduffield/lazygit/config.yml"
-alias plc="nvim ~/.p10k.zsh"
-alias ic="nvim ~/.config/i3/config"
-alias pic="nvim ~/.config/picom.conf"
-alias alac="nvim ~/.config/alacritty/alacritty.yml"
+alias .n="nvim ~/.config/nvim/init.vim"
+alias .x="nvim ~/.xinitrc"
+alias .b="nvim ~/.config/bspwm/bspwmrc"
+alias .sx="nvim ~/.config/sxhkd/sxhkdrc"
+alias .pb="nvim ~/.config/polybar/config"
+alias .t="nvim ~/.tmux.conf"
+alias .lg="nvim ~/.config/jesseduffield/lazygit/config.yml"
+alias .pl="nvim ~/.p10k.zsh"
+alias .i="nvim ~/.config/i3/config"
+alias .pi="nvim ~/.config/picom.conf"
+alias .alac="nvim ~/.config/alacritty/alacritty.yml"
+alias .nm="nvim ~/.config/neomutt/.neomuttrc"
 
 
 
@@ -223,6 +224,9 @@ alias NF='nvim $(fzf)'
 alias qmj="qmk json2c"
 
 # various command aliases
+
+# various app aliases
+alias nm="neomutt"
 
 ### ARCHIVE EXTRACTION
 # usage: ex <file>
