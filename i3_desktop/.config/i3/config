@@ -6,7 +6,7 @@ exec_always xrandr --output DisplayPort-0 --off --output DisplayPort-1 --primary
 #exec_always --no-startup-id feh --bg-center /home/noah/Pictures/Wallpapers/swiss_mountains.webp
 exec_always --no-startup-id wal -i ~/Pictures/Wallpapers/ghost_in_the_shell_1 -e
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id redshift -l 41.603222:-73.087746
+exec --no-startup-id redshift -l 41.603222:-73.087746
 
 #Remap Caps to Esc (for vimming)
 #exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = Escape"

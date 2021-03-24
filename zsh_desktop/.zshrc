@@ -122,20 +122,20 @@ fi
 #
 
 # access config files
-alias .z="nvim ~/.zshrc"
+alias zc="nvim ~/.zshrc"
 alias zso="source ~/.zshrc"
-alias .n="nvim ~/.config/nvim/init.vim"
-alias .x="nvim ~/.xinitrc"
-alias .b="nvim ~/.config/bspwm/bspwmrc"
-alias .sx="nvim ~/.config/sxhkd/sxhkdrc"
-alias .pb="nvim ~/.config/polybar/config"
-alias .t="nvim ~/.tmux.conf"
-alias .lg="nvim ~/.config/jesseduffield/lazygit/config.yml"
-alias .pl="nvim ~/.p10k.zsh"
-alias .i="nvim ~/.config/i3/config"
-alias .pi="nvim ~/.config/picom.conf"
-alias .alac="nvim ~/.config/alacritty/alacritty.yml"
-alias .nm="nvim ~/.config/neomutt/.neomuttrc"
+alias nc="nvim ~/.config/nvim/init.vim"
+alias xc="nvim ~/.xinitrc"
+alias bc="nvim ~/.config/bspwm/bspwmrc"
+alias sxc="nvim ~/.config/sxhkd/sxhkdrc"
+alias pbc="nvim ~/.config/polybar/config"
+alias tc="nvim ~/.tmux.conf"
+alias lgc="nvim ~/.config/jesseduffield/lazygit/config.yml"
+alias plc="nvim ~/.p10k.zsh"
+alias ic="nvim ~/.config/i3/config"
+alias pic="nvim ~/.config/picom.conf"
+alias alac="nvim ~/.config/alacritty/alacritty.yml"
+alias rc="nvim ~/.config/ranger/rc.conf"
 
 
 
@@ -151,6 +151,7 @@ alias _290="cd ~/Developer/OSU/CS-290"
 alias _261="cd ~/Developer/OSU/CS-261"
 alias scions="cd ~/Developer/scion_site/scion-exchange"
 alias _bash="cd ~/Developer/bash"
+alias dactyl="cd ~/.dotfiles/qmk/qmk_firmware/keyboards/handwired/dactyl_manuform/5x7/keymaps/loafers_map"
 
 # navigation and history
 alias lsa="ls -a -l --color=auto"
@@ -224,9 +225,6 @@ alias NF='nvim $(fzf)'
 alias qmj="qmk json2c"
 
 # various command aliases
-
-# various app aliases
-alias nm="neomutt"
 
 ### ARCHIVE EXTRACTION
 # usage: ex <file>
