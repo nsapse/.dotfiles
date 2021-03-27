@@ -89,7 +89,8 @@ plugins=(
     lein
     npm
     python
-    vi-mode
+    #vi-mode
+    zsh-vi-mode
     zsh-autosuggestions
     zsh-completions
     zsh-interactive-cd
@@ -97,6 +98,12 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# Define an init function and append to zvm_after_init_commands
+function my_init() {
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+}
+zvm_after_init_commands+=(my_init)
 
 # User configuration
 
@@ -202,7 +209,7 @@ alias smdb="systemctl enable mariadb.service"
 alias pacS="sudo pacman -S"
 alias pacSyu="sudo pacman -Syu"
 alias vp="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
-alias vy="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro sudo yay -S"
+alias vy="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
 
 #tmux aliases
 alias ta="tmux attach -t"
@@ -213,6 +220,7 @@ alias tm="tmux"
 
 #python aliases
 alias py="python"
+alias ipy="ipython"
 
 #node aliases
 alias nd="node"
