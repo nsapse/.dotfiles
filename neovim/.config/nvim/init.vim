@@ -1,4 +1,3 @@
-"Just Setting Defaults"
 syntax on
 
 " vim paramaters
@@ -18,6 +17,7 @@ set undofile
 set showmatch
 set hlsearch
 set incsearch
+set cocu="n"
 
 "This is apparently necessary for Coc definition
 set cmdheight=2
@@ -129,8 +129,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'yggdroot/indentline'
+Plug 'nsapse/f_string'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 "colorschemes
 Plug 'sainnhe/forest-night'
@@ -141,7 +142,7 @@ Plug 'ulwlu/elly.vim'
 call plug#end()
 
 "colorscheme mappings
-colorscheme hybrid_material
+colorscheme gruvbox-material
 let g:airline_theme='hybrid'
 
 "set background=dark
@@ -265,9 +266,6 @@ map <leader>FF :Autoformat<cr>
 nmap ga <Plug>(EasyAlign)
 noremap <leader><leader>A :EasyAlign
 
-"Vim-LaTex Settings
-let g:tex_flavor = 'latex'
-nnoremap <leader>L :LLPStartPreview<CR>
 
 " Add MASM highlighting
 let g:asmsytax = 'masm'
@@ -376,17 +374,6 @@ autocmd! User GoyoLeave Limelight!
 
 " command to double a variable: {variable} for printing in a python formatted string
 
-function! MakeFPrintable()
-    normal! yawea: { }h[pxx
-endfunction
-
-nnoremap <leader>ffs call MakeFPrintable()<cr>
-
-function! MakeFString()
-    normal! mmF"if`m
-endfunction
-
-nnoremap <leader>pfs :call MakeFString()<cr>
 
 "" autocommands
 
@@ -394,9 +381,31 @@ nnoremap <leader>pfs :call MakeFString()<cr>
 au BufWrite * :Autoformat
 
 "Vimtex Options
-"let g:vimtex_view_method = 'mupdf'
-nnoremap <leader>tc :VimtexCompile<cr>
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:tex_conceal='adbmg'
+let g:vimtex_quickfix_mode=1
+"let g:vimtex_syntax_conceal=[]
+set conceallevel=1
+nnoremap <leader><leader>vc :VimtexCompile<cr>
 
 
 "Vim Maximizer Mappings
-nnoremap <silent><leader>m :MaximizerToggle<cr>
+noremap <silent><leader>m :MaximizerToggle<cr>
+
+""Toggle Practice
+nnoremap <leader>q :call <SID>QuickfixToggle()<cr>
+
+let g:quickfix_is_open = 0
+
+function! s:QuickfixToggle()
+    if g:quickfix_is_open
+        cclose
+        let g:quickfix_is_open = 0
+    else
+        copen
+        let g:quickfix_is_open = 1
+    endif
+endfunction
+
+

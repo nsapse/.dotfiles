@@ -89,8 +89,8 @@ plugins=(
     lein
     npm
     python
-    #vi-mode
-    zsh-vi-mode
+    vi-mode
+    #zsh-vi-mode
     zsh-autosuggestions
     zsh-completions
     zsh-interactive-cd
