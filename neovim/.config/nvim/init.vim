@@ -1,6 +1,5 @@
 syntax on
-
-" vim paramaters
+"
 "
 set nu
 set rnu
@@ -13,11 +12,11 @@ set smartcase
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
-set undofile
+"set undofile
 set showmatch
-set hlsearch
+"set hlsearch
 set incsearch
-set cocu="n"
+set cocu="vni"
 
 "This is apparently necessary for Coc definition
 set cmdheight=2
@@ -87,18 +86,21 @@ cnoreabbrev PC PlugClean
 
 call plug#begin()
 
+Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-rooter'
 Plug 'chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'
 Plug 'heavenshell/vim-pydocstring'
 Plug 'honza/vim-snippets'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-peekaboo'
 Plug 'lervag/vimtex'
 Plug 'machakann/vim-sandwich'
 Plug 'majutsushi/tagbar'
@@ -109,6 +111,7 @@ Plug 'metakirby5/codi.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nsapse/f_string'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'puremourning/vimspector'
@@ -117,9 +120,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/gruvbox-material'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'simeji/winresizer'
-Plug 'SirVer/ultisnips'
 Plug 'simnalamburt/vim-mundo'
 Plug 'szw/vim-maximizer'
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
@@ -130,8 +133,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
 Plug 'yggdroot/indentline'
-Plug 'nsapse/f_string'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 "colorschemes
 Plug 'sainnhe/forest-night'
@@ -142,7 +143,7 @@ Plug 'ulwlu/elly.vim'
 call plug#end()
 
 "colorscheme mappings
-colorscheme gruvbox-material
+colorscheme  serenade
 let g:airline_theme='hybrid'
 
 "set background=dark
@@ -220,10 +221,10 @@ map <silent><C-n> :NERDTreeToggle<CR>
 " Remappings for vim-easymotion
 "<Leader>f{char} to move to {char}
 "
-map  s <Plug>(easymotion-bd-f)
-nmap s <Plug>(easymotion-overwin-f)
-map  S <Plug>(easymotion-bd-w)
-nmap S <Plug>(easymotion-overwin-w)
+map  <leader>S <plug>(easymotion-bd-f)
+nmap <leader>s <plug>(easymotion-overwin-f)
+map  <leader>w <Plug>(easymotion-bd-w)
+nmap <leader>W <Plug>(easymotion-overwin-w)
 nnoremap <leader>w <Plug>(easymotion-overwin-w)
 
 "Remapping for Undotree" - Switched to Mundo
@@ -385,7 +386,7 @@ let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:tex_conceal='adbmg'
 let g:vimtex_quickfix_mode=1
-"let g:vimtex_syntax_conceal=[]
+"let g:vimtex_syntax_conceal={'greek':1,'styles':1,'math_delimiters':1,'math_bounds':1,'math_super_sub':1,'math_symbols':1,'math_fracs':1,'fancy':1,'accents':0}
 set conceallevel=1
 nnoremap <leader><leader>vc :VimtexCompile<cr>
 
@@ -409,3 +410,11 @@ function! s:QuickfixToggle()
 endfunction
 
 
+" Treesitter setup
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+highlight = {
+    enable = true,
+    },
+    }

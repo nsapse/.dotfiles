@@ -105,7 +105,8 @@ function my_init() {
 }
 zvm_after_init_commands+=(my_init)
 
-# User configuration
+export FZF_DEFAULT_OPTS="--height=95% --layout=reverse  --border --margin=1 --padding=1 --preview 'bat --style numbers,changes color=always  {}'"
+#' User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -156,6 +157,7 @@ alias wallpaper="cd ~/Pictures/wallpapers"
 alias osu="cd ~/Developer/OSU"
 alias _290="cd ~/Developer/OSU/CS-290"
 alias _261="cd ~/Developer/OSU/CS-261"
+alias _325="cd ~/Developer/OSU/CS-325"
 alias scions="cd ~/Developer/scion_site/scion-exchange"
 alias _bash="cd ~/Developer/bash"
 alias dactyl="cd ~/.dotfiles/qmk/qmk_firmware/keyboards/handwired/dactyl_manuform/5x7/keymaps/loafers_map"
@@ -170,6 +172,7 @@ alias grep="grep --color=auto"
 alias gh="history|grep"
 alias ..="cd .."
 alias ...="cd ../.."
+alias ....="cd ../../.."
 alias chx="chmod +x"
 
 mcd(){
@@ -232,6 +235,8 @@ alias NF='nvim $(fzf)'
 #QMK aliases
 alias qmj="qmk json2c"
 
+# for Tex
+alias tlmgr='TEXMFDIST/scripts/texlive/tlmgr.pl --usermode'
 # various command aliases
 
 ### ARCHIVE EXTRACTION
