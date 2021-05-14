@@ -1,5 +1,5 @@
 syntax on
-"
+
 "
 set nu
 set rnu
@@ -199,6 +199,7 @@ nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gi <Plug>(coc-implementation)
 nmap <leader>gy <Plug>(coc-type-definition)
 nmap <leader>rr <Plug>(coc-rename)
+nmap <leader>ld :CocDiagnostics<cr>
 cnoreabbrev CM CocList marketplace
 
 
@@ -221,11 +222,11 @@ map <silent><C-n> :NERDTreeToggle<CR>
 " Remappings for vim-easymotion
 "<Leader>f{char} to move to {char}
 "
-map  <leader>S <plug>(easymotion-bd-f)
-nmap <leader>s <plug>(easymotion-overwin-f)
-map  <leader>w <Plug>(easymotion-bd-w)
-nmap <leader>W <Plug>(easymotion-overwin-w)
-nnoremap <leader>w <Plug>(easymotion-overwin-w)
+map  S <plug>(easymotion-bd-f)
+nmap s <plug>(easymotion-overwin-f)
+"map  <leader>w <Plug>(easymotion-bd-w)
+"nmap <leader>W <Plug>(easymotion-overwin-w)
+"nnoremap <leader>w <Plug>(easymotion-overwin-w)
 
 "Remapping for Undotree" - Switched to Mundo
 "nmap <leader>U :UndotreeToggle<cr>
@@ -378,8 +379,6 @@ autocmd! User GoyoLeave Limelight!
 
 "" autocommands
 
-" auto format on save
-au BufWrite * :Autoformat
 
 "Vimtex Options
 let g:tex_flavor='latex'

@@ -105,7 +105,8 @@ function my_init() {
 }
 zvm_after_init_commands+=(my_init)
 
-export FZF_DEFAULT_OPTS="--height=95% --layout=reverse  --border --margin=1 --padding=1 --preview 'bat --style numbers,changes color=always  {}'"
+export FZF_DEFAULT_OPTS="--height=95% --layout=reverse  --border --margin=1 --padding=1 --preview 'bat --style numbers,changes --color=always  {}' "
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow  --glob"
 #' User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -145,8 +146,6 @@ alias pic="nvim ~/.config/picom.conf"
 alias alac="nvim ~/.config/alacritty/alacritty.yml"
 alias rc="nvim ~/.config/ranger/rc.conf"
 
-
-
 # aliasing directories
 alias cdf='cd ~/.dotfiles'
 alias dev="cd ~/Developer"
@@ -175,6 +174,9 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias chx="chmod +x"
 
+zath(){
+    zathura $1 &
+}
 mcd(){
     mkdir $1 && cd $1
 }
