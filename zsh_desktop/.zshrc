@@ -157,6 +157,8 @@ alias osu="cd ~/Developer/OSU"
 alias _290="cd ~/Developer/OSU/CS-290"
 alias _261="cd ~/Developer/OSU/CS-261"
 alias _325="cd ~/Developer/OSU/CS-325"
+alias _340="cd ~/Developer/OSU/CS-340"
+alias _361="cd ~/Developer/OSU/CS-361"
 alias scions="cd ~/Developer/scion_site/scion-exchange"
 alias _bash="cd ~/Developer/bash"
 alias dactyl="cd ~/.dotfiles/qmk/qmk_firmware/keyboards/handwired/dactyl_manuform/5x7/keymaps/loafers_map"
@@ -175,8 +177,9 @@ alias ....="cd ../../.."
 alias chx="chmod +x"
 
 zath(){
-    zathura $1 &
+     zathura $1 & disown
 }
+
 mcd(){
     mkdir $1 && cd $1
 }

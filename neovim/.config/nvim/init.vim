@@ -140,6 +140,14 @@ Plug 'b4skyx/serenade'
 Plug 'morhetz/gruvbox'
 Plug 'flazz/vim-colorschemes'
 Plug 'ulwlu/elly.vim'
+
+
+"UML Stuff
+"Plug 'scrooloose/vim-slumlord'
+Plug 'tyru/open-browser.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'aklt/plantuml-syntax'
+
 call plug#end()
 
 "colorscheme mappings
