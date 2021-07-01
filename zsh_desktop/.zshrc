@@ -160,7 +160,9 @@ alias _325="cd ~/Developer/OSU/CS-325"
 alias _340="cd ~/Developer/OSU/CS-340"
 alias _361="cd ~/Developer/OSU/CS-361"
 alias scions="cd ~/Developer/scion_site/scion-exchange"
+alias resume="cd ~/Developer/resume/moderncv"
 alias _bash="cd ~/Developer/bash"
+alias lReact="cd ~/Developer/learn_react"
 alias dactyl="cd ~/.dotfiles/qmk/qmk_firmware/keyboards/handwired/dactyl_manuform/5x7/keymaps/loafers_map"
 
 # navigation and history
@@ -176,7 +178,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias chx="chmod +x"
 
-zath(){
+zo(){
      zathura $1 & disown
 }
 
@@ -197,7 +199,7 @@ alias nv="nvim"
 
 # git aliases
 alias ga="git add "
-alias gaa="git add ."
+alias gaA="git add ."
 alias gc="git commit -m"
 alias gC="git clone"
 alias gs="git status"
@@ -212,6 +214,7 @@ alias sct="systemctl"
 alias scts="systemctl start"
 alias scte="systemctl enable"
 alias smdb="systemctl enable mariadb.service"
+alias serve="python -m http.server"
 
 #pacman aliases
 alias pacS="sudo pacman -S"
@@ -232,6 +235,8 @@ alias ipy="ipython"
 
 #node aliases
 alias nd="node"
+alias cra="create-react-app"
+alias ffx="firefox"
 
 #fzf stuff
 alias FF="fzf"

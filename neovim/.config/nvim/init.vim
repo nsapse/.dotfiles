@@ -86,13 +86,11 @@ cnoreabbrev PC PlugClean
 
 call plug#begin()
 
-Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-rooter'
 Plug 'chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'
 Plug 'heavenshell/vim-pydocstring'
-Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -117,10 +115,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'puremourning/vimspector'
 Plug 'raimondi/delimitmate'
 Plug 'ryanoasis/vim-devicons'
-Plug 'sainnhe/gruvbox-material'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-"Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'simeji/winresizer'
 Plug 'simnalamburt/vim-mundo'
@@ -133,6 +129,14 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
 Plug 'yggdroot/indentline'
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+
+"snippets
+Plug 'justinj/vim-react-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 "colorschemes
 Plug 'sainnhe/forest-night'
@@ -140,7 +144,7 @@ Plug 'b4skyx/serenade'
 Plug 'morhetz/gruvbox'
 Plug 'flazz/vim-colorschemes'
 Plug 'ulwlu/elly.vim'
-
+Plug 'sainnhe/gruvbox-material'
 
 "UML Stuff
 "Plug 'scrooloose/vim-slumlord'
@@ -207,6 +211,7 @@ nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gi <Plug>(coc-implementation)
 nmap <leader>gy <Plug>(coc-type-definition)
 nmap <leader>rr <Plug>(coc-rename)
+nnoremap <silent> K :call CocAction('doHover')<CR>
 nmap <leader>ld :CocDiagnostics<cr>
 cnoreabbrev CM CocList marketplace
 
@@ -416,6 +421,9 @@ function! s:QuickfixToggle()
     endif
 endfunction
 
+"React Stuff
+
+let g:jsx_ext_required = 0
 
 " Treesitter setup
 

@@ -15,10 +15,10 @@ exec --no-startup-id redshift -l 41.603222:-73.087746
 #Remap Caps to Esc (for vimming)
 #exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = Escape"
 # swap caps lock and escape
-#exec_always xmodmap -e "clear lock"
-#exec_always xmodmap -e "keysym Caps_Lock = Escape"
-#exec_always xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
-#exec_always xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+exec_always xmodmap -e "clear lock"
+exec_always xmodmap -e "keysym Caps_Lock = Escape"
+exec_always xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
+exec_always xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
 #--no-startup-id
 #--no-startup-id
@@ -307,12 +307,12 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 
 #binding workspaces to monitors
-workspace $ws1  output DisplayPort-1
-workspace $ws2  output DisplayPort-1
-workspace $ws3  output DisplayPort-1
-workspace $ws4  output DisplayPort-1
-workspace $ws5  output DisplayPort-1
-workspace $ws6  output DisplayPort-1
+workspace $ws1  output HDMI-A-0
+workspace $ws2  output HDMI-A-0
+workspace $ws3  output HDMI-A-0
+workspace $ws4  output HDMI-A-0
+workspace $ws5  output HDMI-A-0
+workspace $ws6  output HDMI-A-0
 workspace $ws7  output HDMI-A-1
 workspace $ws8  output HDMI-A-1
 workspace $ws9  output HDMI-A-1
