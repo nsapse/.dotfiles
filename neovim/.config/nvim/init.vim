@@ -117,7 +117,7 @@ Plug 'raimondi/delimitmate'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'simeji/winresizer'
 Plug 'simnalamburt/vim-mundo'
 Plug 'szw/vim-maximizer'
@@ -134,9 +134,10 @@ Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 
 "snippets
-Plug 'justinj/vim-react-snippets'
+"Plug 'justinj/vim-react-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'mlaursen/vim-react-snippets'
 
 "colorschemes
 Plug 'sainnhe/forest-night'
@@ -155,7 +156,7 @@ Plug 'aklt/plantuml-syntax'
 call plug#end()
 
 "colorscheme mappings
-colorscheme  serenade
+colorscheme gruvbox-material
 let g:airline_theme='hybrid'
 
 "set background=dark
@@ -274,7 +275,7 @@ let      g:floaterm_gitcommit='vsplit'
 "Vim autoformat binding
 
 map <leader>FF :Autoformat<cr>
-
+au BufWrite *.js :Autoformat
 
 "EasyAlign Bindings
 
@@ -427,9 +428,9 @@ let g:jsx_ext_required = 0
 
 " Treesitter setup
 
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-highlight = {
-    enable = true,
-    },
-    }
+"lua <<EOF
+"require'nvim-treesitter.configs'.setup {
+"highlight = {
+    "enable = true,
+    "},
+    "}

@@ -162,7 +162,7 @@ alias _361="cd ~/Developer/OSU/CS-361"
 alias scions="cd ~/Developer/scion_site/scion-exchange"
 alias resume="cd ~/Developer/resume/moderncv"
 alias _bash="cd ~/Developer/bash"
-alias lReact="cd ~/Developer/learn_react"
+alias _react="cd ~/Developer/learn_react"
 alias dactyl="cd ~/.dotfiles/qmk/qmk_firmware/keyboards/handwired/dactyl_manuform/5x7/keymaps/loafers_map"
 
 # navigation and history
@@ -180,6 +180,10 @@ alias chx="chmod +x"
 
 zo(){
      zathura $1 & disown
+}
+
+cdls(){
+    cd $1 && lsa
 }
 
 mcd(){
