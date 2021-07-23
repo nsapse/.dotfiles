@@ -16,7 +16,7 @@ set undodir=~/.vim/undodir
 set showmatch
 "set hlsearch
 set incsearch
-set cocu="vni"
+set cocu="vnic"
 
 "This is apparently necessary for Coc definition
 set cmdheight=2
@@ -146,6 +146,7 @@ Plug 'morhetz/gruvbox'
 Plug 'flazz/vim-colorschemes'
 Plug 'ulwlu/elly.vim'
 Plug 'sainnhe/gruvbox-material'
+Plug 'folke/tokyonight.nvim'
 
 "UML Stuff
 "Plug 'scrooloose/vim-slumlord'
@@ -426,6 +427,10 @@ endfunction
 
 let g:jsx_ext_required = 0
 
+
+"Markdown Things
+let g:vim_markdown_conceal = 1
+let g:vim_markdown_conceal_code_blocks = 0
 " Treesitter setup
 
 "lua <<EOF
@@ -434,3 +439,4 @@ let g:jsx_ext_required = 0
     "enable = true,
     "},
     "}
+

@@ -81,20 +81,21 @@ POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv vi_mode )
 plugins=(
     autopep8
     cargo
-    github
     colorize
     docker
     docker-compose
     git
+    github
     lein
     npm
     python
+    tmux
     vi-mode
-    #zsh-vi-mode
     zsh-autosuggestions
     zsh-completions
     zsh-interactive-cd
     zsh-syntax-highlighting
+    zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -286,6 +287,10 @@ ex ()
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# TMUX Integration Settings
+
+#${ZSH_TMUX_AUTOSTART:=true}   # Autolaunch into TMUX 
 
 # sourcing FZF bindings
 source /usr/share/fzf/key-bindings.zsh
