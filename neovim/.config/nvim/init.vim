@@ -159,14 +159,9 @@ Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mlaursen/vim-react-snippets'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
 
 " Autocomplete and Language Servers
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
-Plug 'glepnir/lspsaga.nvim'
 
 "colorschemes
 Plug 'b4skyx/serenade'
@@ -199,22 +194,22 @@ endif
 "Remappings for CoC
 " <TAB> - trigger completion, pum navigate, snippet expand and jump
 " like VSCode inoremap <silent><expr> <TAB>"
-"inoremap <silent><expr> <TAB>
-            "\ pumvisible() ? "\<C-n>" :
-            "\ <SID>check_back_space() ? "\<TAB>" :
-            "\ coc#refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <silent><expr> <TAB>
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-"function! s:check_back_space() abort
-    "let col = col('.') - 1
-    "return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
-"let g:UltiSnipsExpandTrigger='~'
-"let g:UltiSnipsJumpForwardTrigger = '<c-j>'
-"let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
-"let g:coc_snippet_next = '<c-j>'
-"let g:coc_snippet_prev = '<c-k>'
+let g:UltiSnipsExpandTrigger='~'
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_prev = '<c-k>'
 
 " Allow formatting using coc-prettier
 vmap <leader><c-f>  <Plug>(coc-format-selected)
@@ -454,155 +449,12 @@ let g:jsx_ext_required = 0
 "Markdown Things
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 0
-"
-" SAGA code action
-nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
-vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
+" Treesitter setup
 
-"lsp provider to find the cursor word definition and reference
-nnoremap <silent> gh :Lspsaga lsp_finder<CR>
-
-" NVIM LSP NATIVE
-nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> <C-h> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> <C-j> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> <C-k> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-
-" LUA LUA LUA LUA
-
-lua << EOF
-
--- Setup Language Servers
-require'lspconfig'.pylsp.setup{}
-require'lspconfig'.tsserver.setup{}
-require'lspconfig'.vimls.setup{}
-require'lspconfig'.gopls.setup{}
-require'lspconfig'.texlab.setup{}
-require'lspconfig'.jsonls.setup{}
-
---Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-require'lspconfig'.html.setup {
-  capabilities = capabilities,
-}
-
--- COMPE
-
-vim.o.completeopt = "menuone,noselect"
-
-require'compe'.setup {
-  enabled = true;
-  autocomplete = true;
-  debug = false;
-  min_length = 1;
-  preselect = 'enable';
-  throttle_time = 80;
-  source_timeout = 200;
-  incomplete_delay = 400;
-  max_abbr_width = 100;
-  max_kind_width = 100;
-  max_menu_width = 100;
-  documentation = false;
-
-  source = {
-    path = true;
-    buffer = true;
-    calc = true;
-    nvim_lsp = true;
-    nvim_lua = true;
-    spell = true;
-    tags = true;
-    snippets_nvim = true;
-    treesitter = true;
-  };
-}
-local t = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
-local check_back_space = function()
-    local col = vim.fn.col('.') - 1
-    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-        return true
-    else
-        return false
-    end
-end
-
--- Use (s-)tab to:
---- move to prev/next item in completion menuone
---- jump to prev/next snippet's placeholder
-_G.tab_complete = function()
-  if vim.fn.pumvisible() == 1 then
-    return t "<C-n>"
-  elseif vim.fn.call("vsnip#available", {1}) == 1 then
-    return t "<Plug>(vsnip-expand-or-jump)"
-  elseif check_back_space() then
-    return t "<Tab>"
-  else
-    return vim.fn['compe#complete']()
-  end
-end
-_G.s_tab_complete = function()
-  if vim.fn.pumvisible() == 1 then
-    return t "<C-p>"
-  elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
-    return t "<Plug>(vsnip-jump-prev)"
-  else
-    -- If <S-Tab> is not working in your terminal, change it to <C-h>
-    return t "<S-Tab>"
-  end
-end
-
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-
--- SAGA
-
-local saga = require 'lspsaga'
-
--- add your config value here
--- default value
---use_saga_diagnostic_sign = true
---error_sign = '',
---warn_sign = '',
---hint_sign = '',
---code_action_icon = ' ',
---code_action_prompt = {
---  enable = true,
---  sign = true,
---  sign_priority = 20,
---  virtual_text = true,
---},
---finder_definition_icon = '  ',
---finder_reference_icon = '  ',
---max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
---finder_action_keys = {
---  open = 'o', vsplit = 's',split = 'i',quit = 'q',scroll_down = '<C-f>', scroll_up = '<C-b>' -- quit can be a table
---},
---code_action_keys = {
---  quit = 'q',exec = '<CR>'
---},
---rename_action_keys = {
---  quit = '<C-c>',exec = '<CR>'  -- quit can be a table
---},
---definition_preview_icon = '  '
---"single" "double" "round" "plus"
---border_style = "single"
---rename_prompt_prefix = '➤',
---if you don't use nvim-lspconfig you must pass your server name and
---the related filetypes into this table
---like server_filetype_map = {metals = {'sbt', 'scala'}}
---server_filetype_map = {}
-
-saga.init_lsp_saga()
-
-EOF
+"lua <<EOF
+"require'nvim-treesitter.configs'.setup {
+"highlight = {
+    "enable = true,
+    "},
+    "}
 

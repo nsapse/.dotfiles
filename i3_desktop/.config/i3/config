@@ -203,7 +203,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+Return exec konsole
 
 # Launch The Mail App
-bindsym $mod+m exec thunderbird
+bindsym $mod+m exec thundbird
 
 
 # bindsym Mod4 + space exec rofi -show run
@@ -323,7 +323,7 @@ workspace $ws10 output HDMI-A-1
 assign [class="strawberry"] $ws10
 assign [class="calibre"] $ws9
 #assign [class="okular"] $ws9
-assign [class="thunderbird"] $ws2
+#assign [class="Mailspring"] $ws8
 assign [class="Slack"] $ws8
 assign [class="VirtualBox Manager"] $ws4
 #assign [class="TeXstudio"] $ws2
