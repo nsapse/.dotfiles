@@ -88,71 +88,89 @@ call plug#begin()
 
 Plug 'airblade/vim-rooter'
 Plug 'chiel92/vim-autoformat'
-Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'
 Plug 'heavenshell/vim-pydocstring'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+"UX and General Features
+Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
-Plug 'lervag/vimtex'
-Plug 'machakann/vim-sandwich'
 Plug 'majutsushi/tagbar'
-Plug 'markonm/traces.vim'
-Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
-Plug 'metakirby5/codi.vim'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'nsapse/f_string'
-Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'puremourning/vimspector'
-Plug 'raimondi/delimitmate'
-Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'simeji/winresizer'
 Plug 'simnalamburt/vim-mundo'
 Plug 'szw/vim-maximizer'
-Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
 Plug 'yggdroot/indentline'
-Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-Plug 'yuezk/vim-js'
+
+"Debugging
+Plug 'puremourning/vimspector'
+
+"Focus and UI
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'markonm/traces.vim' "highlighting for Ex mode commands
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+"Geneal Text Manipulations
+Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-surround'
+
+"LANGUAGE SPECIFIC
+
+"Markdown and TeX
+Plug 'lervag/vimtex'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+
+"UML Stuff
+Plug 'aklt/plantuml-syntax'
+Plug 'tyru/open-browser.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
+
+"HTML and CSS
+Plug 'mattn/emmet-vim'
+Plug 'othree/html5.vim'
+
+"Javascript and Libraries/Frameworks
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} "liveload servers
+Plug 'yuezk/vim-js'
+
+"Python
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'nsapse/f_string'
+
+Plug 'raimondi/delimitmate'
+Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 
 "snippets
-"Plug 'justinj/vim-react-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mlaursen/vim-react-snippets'
 
-"colorschemes
-Plug 'sainnhe/forest-night'
-Plug 'b4skyx/serenade'
-Plug 'morhetz/gruvbox'
-Plug 'flazz/vim-colorschemes'
-Plug 'ulwlu/elly.vim'
-Plug 'sainnhe/gruvbox-material'
-Plug 'folke/tokyonight.nvim'
+" Autocomplete and Language Servers
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-"UML Stuff
-"Plug 'scrooloose/vim-slumlord'
-Plug 'tyru/open-browser.vim'
-Plug 'weirongxu/plantuml-previewer.vim'
-Plug 'aklt/plantuml-syntax'
+"colorschemes
+Plug 'b4skyx/serenade'
+Plug 'flazz/vim-colorschemes'
+Plug 'folke/tokyonight.nvim'
+Plug 'morhetz/gruvbox'
+Plug 'sainnhe/forest-night'
+Plug 'sainnhe/gruvbox-material'
+Plug 'ulwlu/elly.vim'
 
 call plug#end()
 
