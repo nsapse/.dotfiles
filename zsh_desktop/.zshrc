@@ -89,6 +89,7 @@ plugins=(
     lein
     npm
     python
+    pipenv
     tmux
     vi-mode
     zsh-autosuggestions

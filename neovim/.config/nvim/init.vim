@@ -37,7 +37,8 @@ cnoreabbrev vc ~/.config/nvim/init.vim
 "Remapping Default Commands to Leader
 nnoremap<silent><leader>s :wincmd v<cr>
 nnoremap<silent><leader>S :wincmd s<cr>
-nnoremap<silent><leader>d :wincmd c<cr>
+nnoremap<silent><leader>c :wincmd c<cr>
+nnoremap<silent><C-c> :wincmd c<cr>
 nnoremap<silent><leader>h :wincmd h<cr>
 nnoremap<silent><leader>j :wincmd j<cr>
 nnoremap<silent><leader>k :wincmd k<cr>
@@ -243,6 +244,10 @@ nmap <leader>ca  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)

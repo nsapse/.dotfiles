@@ -203,7 +203,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+Return exec konsole
 
 # Launch The Mail App
-bindsym $mod+m exec thundbird
+bindsym $mod+m exec thunderbird
 
 
 # bindsym Mod4 + space exec rofi -show run
