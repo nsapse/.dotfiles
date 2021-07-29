@@ -109,7 +109,6 @@ Plug 'mbbill/undotree'
 Plug 'metakirby5/codi.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nsapse/f_string'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
@@ -118,7 +117,6 @@ Plug 'raimondi/delimitmate'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'simeji/winresizer'
 Plug 'simnalamburt/vim-mundo'
 Plug 'szw/vim-maximizer'
@@ -132,10 +130,9 @@ Plug 'voldikss/vim-floaterm'
 Plug 'yggdroot/indentline'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
+Plug 'maxmellon/vim-lsx-pretty'
 
 "snippets
-"Plug 'justinj/vim-react-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mlaursen/vim-react-snippets'
@@ -155,48 +152,83 @@ Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'aklt/plantuml-syntax'
 
+"Native LSP
+
+Plug 'nvim-lua/completion-nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 call plug#end()
 
+" ---- NVIM LSP **EXPERIMENTAL** ------
+
+" Use completion-nvim in every buffer
+autocmd BufEnter * lua require'completion'.on_attach()
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" possible value: 'UltiSnips', 'Neosnippet', 'vim-vsnip', 'snippets.nvim'
+let g:completion_enable_snippet = 'UltiSnips'
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
+" Autoformatting
+
+autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1000)
+
 "colorscheme mappings
-colorscheme gruvbox-material
+colorscheme hybrid_material
 let g:airline_theme='hybrid'
 
 "set background=dark
 "hi normal guibg=none ctermbg=none
 
 if (has("nvim"))
-    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
 " Or if you have Neovim >= 0.1.5
 if (has("termguicolors"))
-    set termguicolors
+set termguicolors
 endif
 
 "Remappings for CoC
-" <TAB> - trigger completion, pum navigate, snippet expand and jump
+" <TAB> - trigger completion, pum navigate, snippet expand and lump
 " like VSCode inoremap <silent><expr> <TAB>"
-inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"inoremap <silent><expr> <TAB>
+        "\ pumvisible() ? "\<C-n>" :
+        "\ <SID>check_back_space() ? "\<TAB>" :
+        "\ coc#refresh()
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+"function! s:check_back_space() abort
+"let col = col('.') - 1
+"return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
 
 let g:UltiSnipsExpandTrigger='~'
 let g:UltiSnipsJumpForwardTrigger = '<c-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
-let g:coc_snippet_next = '<c-j>'
-let g:coc_snippet_prev = '<c-k>'
+"let g:coc_snippet_next = '<c-j>'
+"let g:coc_snippet_prev = '<c-k>'
 
 " Allow formatting using coc-prettier
-vmap <leader><c-f>  <Plug>(coc-format-selected)
-nmap <leader><c-f>  <Plug>(coc-format-selected)
+"vmap <leader><c-f>  <Plug>(coc-format-selected)
+"nmap <leader><c-f>  <Plug>(coc-format-selected)
 
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
@@ -204,63 +236,63 @@ nmap <leader><c-f>  <Plug>(coc-format-selected)
 " could be remapped by other vim plugin, try `:verbose imap <CR>`."
 
 if exists('*complete_info')
-    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
-    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
 "additional Coc remappings for plugsin
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> rr <Plug>(coc-rename)
+"nmap <silent> gd <Plug>(coc-definition)
+"nmap <silent> gy <Plug>(coc-type-definition)
+"nmap <silent> gi <Plug>(coc-implementation)
+"nmap <silent> gr <Plug>(coc-references)
+"nmap <silent> rr <Plug>(coc-rename)
 
-nnoremap <silent> K :call CocAction('doHover')<CR>
-nmap <leader>ld :CocDiagnostics<cr>
+"nnoremap <silent> K :call CocAction('doHover')<CR>
+"nmap <leader>ld :CocDiagnostics<cr>
 cnoreabbrev CM CocList marketplace
 
 
-imap <C-l> <Plug>(coc-snippets-expand)
-inoremap <C-l> <Plug>(coc-snippets-expand)<cr>
+"imap <C-l> <Plug>(coc-snippets-expand)
+"inoremap <C-l> <Plug>(coc-snippets-expand)<cr>
 
 "mappings for Coc-actions
 "
 " emap for do codeAction of selected region
-function! s:cocActionsOpenFromSelected(type) abort
-    execute 'CocCommand actions.open ' . a:type
-endfunction
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
-nnoremap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
- 
+"function! s:cocActionsOpenFromSelected(type) abort
+"execute 'CocCommand actions.open ' . a:type
+"endfunction
+"nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+"nnoremap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+"xmap <leader>a  <Plug>(coc-codeaction-selected)
+"nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
-nmap <leader>ca  <Plug>(coc-codeaction)
+"nmap <leader>ca  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+"nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+"set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
+"function! s:show_documentation()
+"if (index(['vim','help'], &filetype) >= 0)
+"execute 'h '.expand('<cword>')
+"elseif (coc#rpc#ready())
+"call CocActionAsync('doHover')
+"else
+"execute '!' . &keywordprg . " " . expand('<cword>')
+"endif
+"endfunction
 
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+"" Highlight the symbol and its references when holding the cursor.
+"autocmd CursorHold * silent call CocActionAsync('highlight')
 
 "remapping for NERDTree
 map <silent><C-n> :NERDTreeToggle<CR>
@@ -297,38 +329,40 @@ let g:airline#extensions#tabline#enabled = 1
 nnoremap<silent><leader>? <Plug>(pydocstring)
 
 "FloatTerm Bindings and Settings
-nnoremap <silent> <leader>FL :FloatermToggle<CR>
-tnoremap <silent> <leader>FL <C-\><C-n>:FloatermToggle<CR>
+nnoremap <silent><leader>FL :FloatermToggle<CR>
+tnoremap <silent><leader>FL <C-\><C-n>:FloatermToggle<CR>
 "nnoremap <silent> <c-p>      :FloatermNew fzf<cr>
-nnoremap <silent> <c-b>      :FloatermNew ranger<cr>
-nnoremap <silent> <c-g>      :FloatermNew lazygit<cr>
+nnoremap <silent><c-b>      :FloatermNew ranger<cr>
+nnoremap <silent><c-g>      :FloatermNew lazygit<cr>
 let      g:floaterm_autoclose=1
 let      g:floaterm_gitcommit='vsplit'
 
 "Vim autoformat binding
 
-map <leader>FF :Autoformat<cr>
+"map <leader>FF :Autoformat<cr>
 au BufWrite *.js :Autoformat
 
 "EasyAlign Bindings
 
-nmap ga <Plug>(EasyAlign)
-noremap <leader><leader>A :EasyAlign
+nmap <leader>ga <Plug>(EasyAlign)
+xmap <leader>ga <Plug>(EasyAlign)
+vmap <leader>ga <Plug>(EasyAlign)
+"noremap <leader><leader>A :EasyAlign
 
 
 " Add MASM highlighting
 let g:asmsytax = 'masm'
 
 " VSCode Mappings for Vimspector  etc
-let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
-nnoremap <silent><leader>dr :VimspectorReset<CR>
-nmap <leader>b <Plug>VimspectorToggleBreakpoint
-vmap <leader>b <plug>VmspectorToggleBreakpoint
-nmap <leader>bb <Plug>VimspectorToggleConditionalBreakpoint
-nmap <leader>B :call vimspector#ClearBreakpoints()<CR>
-nmap <leader>drc  <Plug>VimspectorRunToCursor
-nmap <leader>DD <Plug>VimspectorContinue
-nnoremap <leader>DD <Plug>VimspectorContinue
+let      g:vimspector_enable_mappings =     'VISUAL_STUDIO'
+nnoremap <silent><leader>dr           :VimspectorReset<CR>
+nmap     <leader>b                    <Plug>VimspectorToggleBreakpoint
+vmap     <leader>b                    <plug>VmspectorToggleBreakpoint
+nmap     <leader>bb                   <Plug>VimspectorToggleConditionalBreakpoint
+nmap     <leader>B                    :call vimspector#ClearBreakpoints()<CR>
+nmap     <leader>drc                  <Plug>VimspectorRunToCursor
+nmap     <leader>DD                   <Plug>VimspectorContinue
+nnoremap <leader>DD                   <Plug>VimspectorContinue
 
 " remap watch command to be shorter
 cnoreabbrev vsw VimspectorWatch
@@ -463,12 +497,87 @@ let g:jsx_ext_required = 0
 "Markdown Things
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 0
-" Treesitter setup
 
-"lua <<EOF
-"require'nvim-treesitter.configs'.setup {
-"highlight = {
-    "enable = true,
-    "},
-    "}
 
+
+
+" LSP config (the mappings used in the default file don't quite work right)
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+"nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <leader>D <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+
+"Trouble Mappings
+nnoremap <leader>tt <cmd>TroubleToggle<cr>
+nnoremap <leader>tw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
+nnoremap <leader>td <cmd>TroubleToggle lsp_document_diagnostics<cr>
+nnoremap <leader>tq <cmd>TroubleToggle quickfix<cr>
+nnoremap <leader>tl <cmd>TroubleToggle loclist<cr>
+nnoremap gR <cmd>TroubleToggle lsp_references<cr>
+
+"SAGA Code Actions
+nnoremap <silent><C-a> :Lspsaga code_action<CR>
+vnoremap <silent><C-a> :<C-U>Lspsaga range_code_action<CR>
+
+" or use command
+nnoremap <silent>K :Lspsaga hover_doc<CR>
+
+" scroll down hover doc or scroll in definition preview
+nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+" scroll up hover doc
+nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+
+"or command
+nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
+
+"rename
+nnoremap <silent>RR <cmd>lua require('lspsaga.rename').rename()<CR>
+
+"preview definition
+nnoremap <silent> pd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
+
+"" Macro - Paste From Current System Buffer
+nnoremap <leader><leader>V "+p 
+
+" or use command
+"nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
+"nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
+
+""" ___________  LANGUAGE SERVERS ____________
+
+"TO INSTALL
+"require'lspconfig'.java_language_server.setup{}
+"require'lspconfig'.diagnosticls.setup{}
+"require'lspconfig'.sqlls.setup{}
+
+lua <<EOF
+
+require'lspconfig'.bashls.setup{}
+require'lspconfig'.pylsp.setup{}
+require'lspconfig'.tsserver.setup{}
+require'lspconfig'.vimls.setup{}
+require'lspconfig'.clangd.setup{}
+require'lspconfig'.cssls.setup{}
+require'lspconfig'.gopls.setup{}
+require'lspconfig'.html.setup{}
+require'lspconfig'.jsonls.setup{}
+require'lspconfig'.sqls.setup{}
+
+local saga = require 'lspsaga'
+saga.init_lsp_saga()
+
+-- Trouble
+
+  require("trouble").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+
+
+EOF
