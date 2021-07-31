@@ -147,6 +147,7 @@ alias bc="nvim ~/.config/bspwm/bspwmrc"
 alias sxc="nvim ~/.config/sxhkd/sxhkdrc"
 alias pbc="nvim ~/.config/polybar/config"
 alias tc="nvim ~/.tmux.conf"
+alias tso="source ~/.tmux.conf"
 alias lgc="nvim ~/.config/jesseduffield/lazygit/config.yml"
 alias plc="nvim ~/.p10k.zsh"
 alias ic="nvim ~/.config/i3/config"
@@ -217,6 +218,9 @@ alias gC="git clone"
 alias gs="git status"
 alias gp="git push"
 alias lg="lazygit"
+
+#Random Aliases
+alias HL="heroku local"
 
 #system aliases
 alias nct="netctl"

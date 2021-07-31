@@ -12,7 +12,7 @@ set smartcase
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
-"set undofile
+set undofile
 set showmatch
 "set hlsearch
 set incsearch
@@ -27,6 +27,10 @@ set shortmess=aFc
 
 let mapleader = " "
 let maplocalleader = "\\"
+
+" Standard Action Remaps
+nnoremap  Y y$
+nnoremap  J mzJ`z
 
 " commands to edit the vim rc quickly
 nnoremap <leader>ec :vsplit $MYVIMRC<cr>
@@ -55,7 +59,7 @@ nnoremap<silent><leader>ig :IndentGuidesToggle<cr>
 map <silent><leader><leader>n :nohlsearch<cr>
 
 " quick maps into a bunch of vim areas
-nnoremap<leader>C :Colors<cr>
+nnoremap <leader>C :Colors<cr>
 nnoremap <leader>R :reg<cr>
 nnoremap <leader>M :messages<cr>
 
@@ -88,9 +92,10 @@ cnoreabbrev PC PlugClean
 call plug#begin()
 
 Plug 'airblade/vim-rooter'
-Plug 'chiel92/vim-autoformat'
-Plug 'easymotion/vim-easymotion'
-Plug 'elzr/vim-json'
+"Plug 'chiel92/vim-autoformat'
+"Plug 'easymotion/vim-easymotion'
+Plug 'phaazon/hop.nvim'
+"Plug 'elzr/vim-json'
 Plug 'heavenshell/vim-pydocstring'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -162,10 +167,40 @@ Plug 'folke/trouble.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/playground'
 
 call plug#end()
 
-" ---- NVIM LSP **EXPERIMENTAL** ------
+" ****************Colorscheme and U/I*************************"
+"                                                             "
+"           Settings for Colorscheme and U/I                  "
+"                                                             "
+" ****************Colorscheme and U/I*************************"
+
+"colorscheme and UI settings
+
+colorscheme hybrid_material
+let g:airline_theme='hybrid'
+
+"set background=dark
+"hi normal guibg=none ctermbg=none
+
+if (has("nvim"))
+"For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+" Or if you have Neovim >= 0.1.5
+if (has("termguicolors"))
+set termguicolors
+endif
+
+" ****************LSP*************************"
+"                                             "
+"           Settings for LSP                  "
+"                                             "
+" ****************LSP*************************"
 
 " Use completion-nvim in every buffer
 autocmd BufEnter * lua require'completion'.on_attach()
@@ -189,51 +224,10 @@ autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1000)
 
-"colorscheme mappings
-colorscheme hybrid_material
-let g:airline_theme='hybrid'
-
-"set background=dark
-"hi normal guibg=none ctermbg=none
-
-if (has("nvim"))
-"For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-
-" Or if you have Neovim >= 0.1.5
-if (has("termguicolors"))
-set termguicolors
-endif
-
-"Remappings for CoC
-" <TAB> - trigger completion, pum navigate, snippet expand and lump
-" like VSCode inoremap <silent><expr> <TAB>"
-"inoremap <silent><expr> <TAB>
-        "\ pumvisible() ? "\<C-n>" :
-        "\ <SID>check_back_space() ? "\<TAB>" :
-        "\ coc#refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-"function! s:check_back_space() abort
-"let col = col('.') - 1
-"return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
 
 let g:UltiSnipsExpandTrigger='~'
 let g:UltiSnipsJumpForwardTrigger = '<c-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
-"let g:coc_snippet_next = '<c-j>'
-"let g:coc_snippet_prev = '<c-k>'
-
-" Allow formatting using coc-prettier
-"vmap <leader><c-f>  <Plug>(coc-format-selected)
-"nmap <leader><c-f>  <Plug>(coc-format-selected)
-
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm. " <cr>
-" could be remapped by other vim plugin, try `:verbose imap <CR>`."
 
 if exists('*complete_info')
 inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -241,83 +235,23 @@ else
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-"additional Coc remappings for plugsin
-
-"nmap <silent> gd <Plug>(coc-definition)
-"nmap <silent> gy <Plug>(coc-type-definition)
-"nmap <silent> gi <Plug>(coc-implementation)
-"nmap <silent> gr <Plug>(coc-references)
-"nmap <silent> rr <Plug>(coc-rename)
-
-"nnoremap <silent> K :call CocAction('doHover')<CR>
-"nmap <leader>ld :CocDiagnostics<cr>
-cnoreabbrev CM CocList marketplace
-
-
-"imap <C-l> <Plug>(coc-snippets-expand)
-"inoremap <C-l> <Plug>(coc-snippets-expand)<cr>
-
-"mappings for Coc-actions
-"
-" emap for do codeAction of selected region
-"function! s:cocActionsOpenFromSelected(type) abort
-"execute 'CocCommand actions.open ' . a:type
-"endfunction
-"nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
-"nnoremap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
-
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-"xmap <leader>a  <Plug>(coc-codeaction-selected)
-"nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap keys for applying codeAction to the current buffer.
-"nmap <leader>ca  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
-"nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-"set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-"function! s:show_documentation()
-"if (index(['vim','help'], &filetype) >= 0)
-"execute 'h '.expand('<cword>')
-"elseif (coc#rpc#ready())
-"call CocActionAsync('doHover')
-"else
-"execute '!' . &keywordprg . " " . expand('<cword>')
-"endif
-"endfunction
-
-"" Highlight the symbol and its references when holding the cursor.
-"autocmd CursorHold * silent call CocActionAsync('highlight')
-
-"remapping for NERDTree
 map <silent><C-n> :NERDTreeToggle<CR>
 
 
-" Remappings for vim-easymotion
-"<Leader>f{char} to move to {char}
-"
-map  S <plug>(easymotion-bd-f)
-nmap s <plug>(easymotion-overwin-f)
-"map  <leader>w <Plug>(easymotion-bd-w)
-"nmap <leader>W <Plug>(easymotion-overwin-w)
-"nnoremap <leader>w <Plug>(easymotion-overwin-w)
+" ****************Hop*************************"
+"                                             "
+"           Settings for Hop                  "
+"                                             "
+" ****************Hop*************************"
+                                              
+nnoremap f :HopWord<CR>
+vnoremap f :HopWord<CR>
+nnoremap F :HopChar1<CR>
+vnoremap F :HopChar1<CR>
+nnoremap L :HopLine<CR>
 
-"Remapping for Undotree" - Switched to Mundo
-"nmap <leader>U :UndotreeToggle<cr>
 
-nmap <C-_> <Leader>c<Space>
-vnoremap <C-_> <Leader>c<Space>
 map <C-_> <Leader>c<Space>
-
-"ctrl-p launches FZF
-"nnoremap <c-p> :FZF<cr>
-
-"Tagbar Settings
 nnoremap<c-t> :TagbarToggle<cr>
 
 "vim-airline settings
@@ -402,19 +336,25 @@ let g:fzf_action = {
 " CTRL-A CTRL-Q to select all and build quickfix list
 
 
+" ****************FZF*************************
+"
+"           Settings for FZF
+"
+" ****************FZF*************************
+
+
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
 " previous-history instead of down and up. If you don't like the change,
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
-let g:fzf_history_dir = '~/.local/share/fzf-history'
-nmap <leader><leader>f :Files<CR>
-nmap <leader><leader>b :Buffers<CR>
-noremap <leader><leader>b :Buffers<CR>
-nnoremap <leader><leader>g :Rg<CR>
-nnoremap <leader><leader>t :Tags<CR>
-nnoremap <leader><leader>l :Lines<CR>
-
+"let      g:fzf_history_dir = '~/.local/share/fzf-history'
+"nmap     <leader><leader>f :Files<CR>
+"nmap     <leader><leader>b :Buffers<CR>
+"noremap  <leader><leader>b :Buffers<CR>
+"nnoremap <leader><leader>g :Rg<CR>
+"nnoremap <leader><leader>t :Tags<CR>
+"nnoremap <leader><leader>l :Lines<CR>
 
 let g:fzf_tags_command = 'ctags -R'
 " Border jj
@@ -424,6 +364,32 @@ let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 
 set rtp+=~/.vim/bundle/fzf
+
+
+" ****************Telescope*************************
+"                
+"           Settings for Telescope 
+"
+" ****************Telescope*************************
+
+" Find files using Telescope command-line sugar.
+"nnoremap <leader>ff <cmd>Telescope find_files<cr>
+"nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+"nnoremap <leader>fb <cmd>Telescope buffers<cr>
+"nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Using Lua functions
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+
+" ****************Focus*************************
+"                
+"   Focus Plugins (Zen, Limelight, etc) 
+"
+" ****************Focus*************************
 
 "Goyo and Limelight Mapings
 map <silent><leader>z :Goyo<cr>
@@ -573,11 +539,13 @@ saga.init_lsp_saga()
 
 -- Trouble
 
-  require("trouble").setup {
+require("trouble").setup {
     -- your configuration comes here
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
   }
 
+-- Hop
+require'hop'.setup()
 
 EOF
