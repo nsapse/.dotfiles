@@ -1,3 +1,9 @@
+" ****************Vim Settings*************************"
+"                                                      "
+"           Settings for Vim Settings                  "
+"                                                      "
+" ****************Vim Settings*************************"
+
 syntax on
 
 "
@@ -23,6 +29,12 @@ set cmdheight=2
 set hidden
 set shortmess=aFc
 
+" ****************Vim Mappings*************************"
+"                                                      "
+"           Settings for Vim Mappings                  "
+"                                                      "
+" ****************Vim Mappings*************************"
+
 " Leader set to <Space>"
 
 let mapleader = " "
@@ -42,7 +54,7 @@ cnoreabbrev vc ~/.config/nvim/init.vim
 nnoremap<silent><leader>s :wincmd v<cr>
 nnoremap<silent><leader>S :wincmd s<cr>
 nnoremap<silent><leader>c :wincmd c<cr>
-nnoremap<silent><C-c> :wincmd c<cr>
+nnoremap<silent><C-c>     :wincmd c<cr>
 nnoremap<silent><leader>h :wincmd h<cr>
 nnoremap<silent><leader>j :wincmd j<cr>
 nnoremap<silent><leader>k :wincmd k<cr>
@@ -81,22 +93,53 @@ nnoremap <c-s> :w<cr>
 nnoremap <c-s[j>s :wa<cr>
 map <c-q> :qa<cr>
 
+" ****************Colorscheme and U/I*************************"
+"                                                             "
+"           Settings for Colorscheme and U/I                  "
+"                                                             "
+" ****************Colorscheme and U/I*************************"
+
+"colorscheme and UI settings
+
+" Example config in Vim-Script
+let g:nord_contrast = v:true
+let g:nord_borders = v:false
+let g:nord_disable_background = v:false
+
+colorscheme hybrid_material
+let g:airline_theme='hybrid'
+
+"set background=dark
+"hi normal guibg=none ctermbg=none
+
+if (has("nvim"))
+"For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+" Or if you have Neovim >= 0.1.5
+if (has("termguicolors"))
+set termguicolors
+endif
+
+map <C-_> <Leader>c<Space>
+nnoremap<c-t> :TagbarToggle<cr>
+
+"vim-airline settings
+
+"enable smarter tab line
+let g:airline#extensions#tabline#enabled = 1
+
 "Plugged Additions"
 
 " mappings
 cnoreabbrev PI PlugInstall
 cnoreabbrev PC PlugClean
 
-" actual plugins
-
 call plug#begin()
 
 Plug 'airblade/vim-rooter'
-"Plug 'chiel92/vim-autoformat'
-"Plug 'easymotion/vim-easymotion'
 Plug 'phaazon/hop.nvim'
-"Plug 'elzr/vim-json'
-Plug 'heavenshell/vim-pydocstring'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -110,13 +153,11 @@ Plug 'machakann/vim-sandwich'
 Plug 'majutsushi/tagbar'
 Plug 'markonm/traces.vim'
 Plug 'mattn/emmet-vim'
-Plug 'mbbill/undotree'
-Plug 'metakirby5/codi.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nsapse/f_string'
 Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
+"Plug 'pangloss/vim-javascript'
 Plug 'puremourning/vimspector'
 Plug 'raimondi/delimitmate'
 Plug 'ryanoasis/vim-devicons'
@@ -124,7 +165,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'simeji/winresizer'
 Plug 'simnalamburt/vim-mundo'
-Plug 'szw/vim-maximizer'
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -134,8 +174,7 @@ Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
 Plug 'yggdroot/indentline'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-lsx-pretty'
+"Plug 'yuezk/vim-js'
 
 "snippets
 Plug 'SirVer/ultisnips'
@@ -150,6 +189,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'ulwlu/elly.vim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'folke/tokyonight.nvim'
+Plug 'shaunsingh/nord.nvim'
 
 "UML Stuff
 "Plug 'scrooloose/vim-slumlord'
@@ -169,33 +209,91 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/playground'
+"Plug 'windwp/nvim-ts-autotag'
 
 call plug#end()
 
-" ****************Colorscheme and U/I*************************"
-"                                                             "
-"           Settings for Colorscheme and U/I                  "
-"                                                             "
-" ****************Colorscheme and U/I*************************"
 
-"colorscheme and UI settings
+" **********************LSP ACTIONS************************* "
+"                                                            "
+"                  Settings for LSP ACTIONS                  "
+"                                                            "
+" **********************LSP ACTIONS************************* "
 
-colorscheme hybrid_material
-let g:airline_theme='hybrid'
+" LSP config (the mappings used in the default file don't quite work right)
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+"nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <leader>D <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
 
-"set background=dark
-"hi normal guibg=none ctermbg=none
+"Trouble Mappings
+nnoremap <leader>tt <cmd>TroubleToggle<cr>
+nnoremap <leader>tw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
+nnoremap <leader>td <cmd>TroubleToggle lsp_document_diagnostics<cr>
+nnoremap <leader>tq <cmd>TroubleToggle quickfix<cr>
+nnoremap <leader>tl <cmd>TroubleToggle loclist<cr>
+nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
-if (has("nvim"))
-"For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
+"SAGA Code Actions
+nnoremap <silent><C-a> :Lspsaga code_action<CR>
+vnoremap <silent><C-a> :<C-U>Lspsaga range_code_action<CR>
 
-" Or if you have Neovim >= 0.1.5
-if (has("termguicolors"))
-set termguicolors
-endif
+" or use command
+nnoremap <silent>K :Lspsaga hover_doc<CR>
 
+" scroll down hover doc or scroll in definition preview
+nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+" scroll up hover doc
+nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+
+"or command
+nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
+
+"rename
+nnoremap <silent>RR <cmd>lua require('lspsaga.rename').rename()<CR>
+
+"preview definition
+nnoremap <silent> pd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
+
+"" Macro - Paste From Current System Buffer
+nnoremap <leader><leader>V "+p 
+
+" or use command
+"nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
+"nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
+
+
+
+" ****************NerdTree*************************"
+"                                                  "
+"           Settings for NerdTree                  "
+"                                                  "
+" ****************NerdTree*************************"
+
+map <silent><C-n> :NERDTreeToggle<CR>
+
+
+" ****************FloatTerm*************************"
+"                                                   "
+"           Settings for FloatTerm                  "
+"                                                   "
+" ****************FloatTerm*************************"
+
+"FloatTerm Bindings and Settings
+nnoremap <silent><leader>FL :FloatermToggle<CR>
+tnoremap <silent><leader>FL <C-\><C-n>:FloatermToggle<CR>
+"nnoremap <silent> <c-p>      :FloatermNew fzf<cr>
+nnoremap <silent><c-b>      :FloatermNew ranger<cr>
+nnoremap <silent><c-g>      :FloatermNew lazygit<cr>
+let      g:floaterm_autoclose=1
+let      g:floaterm_gitcommit='vsplit'
+
+            
 " ****************LSP*************************"
 "                                             "
 "           Settings for LSP                  "
@@ -218,13 +316,12 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
 " Autoformatting
-
 autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1000)
 
-
+"ultisnips
 let g:UltiSnipsExpandTrigger='~'
 let g:UltiSnipsJumpForwardTrigger = '<c-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
@@ -235,7 +332,6 @@ else
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-map <silent><C-n> :NERDTreeToggle<CR>
 
 
 " ****************Hop*************************"
@@ -250,32 +346,6 @@ nnoremap F :HopChar1<CR>
 vnoremap F :HopChar1<CR>
 nnoremap L :HopLine<CR>
 
-
-map <C-_> <Leader>c<Space>
-nnoremap<c-t> :TagbarToggle<cr>
-
-"vim-airline settings
-
-"enable smarter tab line
-let g:airline#extensions#tabline#enabled = 1
-
-"Automated Docstrings for Python
-nnoremap<silent><leader>? <Plug>(pydocstring)
-
-"FloatTerm Bindings and Settings
-nnoremap <silent><leader>FL :FloatermToggle<CR>
-tnoremap <silent><leader>FL <C-\><C-n>:FloatermToggle<CR>
-"nnoremap <silent> <c-p>      :FloatermNew fzf<cr>
-nnoremap <silent><c-b>      :FloatermNew ranger<cr>
-nnoremap <silent><c-g>      :FloatermNew lazygit<cr>
-let      g:floaterm_autoclose=1
-let      g:floaterm_gitcommit='vsplit'
-
-"Vim autoformat binding
-
-"map <leader>FF :Autoformat<cr>
-au BufWrite *.js :Autoformat
-
 "EasyAlign Bindings
 
 nmap <leader>ga <Plug>(EasyAlign)
@@ -283,11 +353,16 @@ xmap <leader>ga <Plug>(EasyAlign)
 vmap <leader>ga <Plug>(EasyAlign)
 "noremap <leader><leader>A :EasyAlign
 
-
 " Add MASM highlighting
 let g:asmsytax = 'masm'
 
+" ****************Vimspector*************************"
+"                                                    "
+"           Settings for Vimspector                  "
+"                                                    "
+" ****************Vimspector*************************"
 " VSCode Mappings for Vimspector  etc
+
 let      g:vimspector_enable_mappings =     'VISUAL_STUDIO'
 nnoremap <silent><leader>dr           :VimspectorReset<CR>
 nmap     <leader>b                    <Plug>VimspectorToggleBreakpoint
@@ -352,7 +427,6 @@ let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 "nmap     <leader><leader>f :Files<CR>
 "nmap     <leader><leader>b :Buffers<CR>
 "noremap  <leader><leader>b :Buffers<CR>
-"nnoremap <leader><leader>g :Rg<CR>
 "nnoremap <leader><leader>t :Tags<CR>
 "nnoremap <leader><leader>l :Lines<CR>
 
@@ -380,9 +454,13 @@ set rtp+=~/.vim/bundle/fzf
 
 " Using Lua functions
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+"nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+"
+" Telescope grep keeps crashing - remapped to ripgrem in Floatterm
+nnoremap <leader>fg :Rg<CR>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
 
 
 " ****************Focus*************************
@@ -421,10 +499,11 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 
-" command to double a variable: {variable} for printing in a python formatted string
-
-
-"" autocommands
+" ****************Vimtex************************* "
+"                                                 "
+"                 Vimtex                          "
+"                                                 "
+" ****************Vimtex************************* "
 
 
 "Vimtex Options
@@ -437,8 +516,12 @@ set conceallevel=1
 nnoremap <leader><leader>vc :VimtexCompile<cr>
 
 
-"Vim Maximizer Mappings
-noremap <silent><leader>m :MaximizerToggle<cr>
+" ****************Quickfix************************* "
+"                                                   " 
+"                 Quickfix                          "
+"                                                   "
+" ****************Quickfix************************* "
+
 
 ""Toggle Practice
 nnoremap <leader>q :call <SID>QuickfixToggle()<cr>
@@ -466,60 +549,7 @@ let g:vim_markdown_conceal_code_blocks = 0
 
 
 
-
-" LSP config (the mappings used in the default file don't quite work right)
-nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-"nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <leader>D <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
-
-"Trouble Mappings
-nnoremap <leader>tt <cmd>TroubleToggle<cr>
-nnoremap <leader>tw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
-nnoremap <leader>td <cmd>TroubleToggle lsp_document_diagnostics<cr>
-nnoremap <leader>tq <cmd>TroubleToggle quickfix<cr>
-nnoremap <leader>tl <cmd>TroubleToggle loclist<cr>
-nnoremap gR <cmd>TroubleToggle lsp_references<cr>
-
-"SAGA Code Actions
-nnoremap <silent><C-a> :Lspsaga code_action<CR>
-vnoremap <silent><C-a> :<C-U>Lspsaga range_code_action<CR>
-
-" or use command
-nnoremap <silent>K :Lspsaga hover_doc<CR>
-
-" scroll down hover doc or scroll in definition preview
-nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-" scroll up hover doc
-nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
-
-"or command
-nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
-
-"rename
-nnoremap <silent>RR <cmd>lua require('lspsaga.rename').rename()<CR>
-
-"preview definition
-nnoremap <silent> pd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
-
-"" Macro - Paste From Current System Buffer
-nnoremap <leader><leader>V "+p 
-
-" or use command
-"nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
-"nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
-
 """ ___________  LANGUAGE SERVERS ____________
-
-"TO INSTALL
-"require'lspconfig'.java_language_server.setup{}
-"require'lspconfig'.diagnosticls.setup{}
-"require'lspconfig'.sqlls.setup{}
 
 lua <<EOF
 
