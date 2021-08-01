@@ -6,7 +6,6 @@
 
 syntax on
 
-"
 set nu
 set rnu
 set termguicolors
@@ -20,6 +19,7 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set showmatch
+set encoding=UTF-8
 "set hlsearch
 set incsearch
 set cocu="vnic"
@@ -93,6 +93,106 @@ nnoremap <c-s> :w<cr>
 nnoremap <c-s[j>s :wa<cr>
 map <c-q> :qa<cr>
 
+" *******************Plugins*************************"
+"                                                 "
+"                    Plugins                           "
+"                                                             "
+" *******************Plugins*************************"
+
+
+" mappings
+cnoreabbrev PI PlugInstall
+cnoreabbrev PC PlugClean
+
+call plug#begin()
+
+Plug 'airblade/vim-rooter'
+Plug 'phaazon/hop.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-peekaboo'
+Plug 'machakann/vim-sandwich'
+Plug 'majutsushi/tagbar'
+Plug 'markonm/traces.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'nsapse/f_string'
+Plug 'puremourning/vimspector'
+Plug 'raimondi/delimitmate'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'simeji/winresizer'
+Plug 'simnalamburt/vim-mundo'
+Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-utils/vim-man'
+Plug 'voldikss/vim-floaterm'
+Plug 'yggdroot/indentline'
+
+"Latex and Markdown
+Plug 'lervag/vimtex'
+
+"Web Development
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+Plug 'othree/html5.vim'
+Plug 'mattn/emmet-vim'
+Plug 'mustache/vim-mustache-handlebars'
+
+"UI/UX
+Plug 'gelguy/wilder.nvim'
+ 
+"Plug 'yuezk/vim-js'
+
+"snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'mlaursen/vim-react-snippets'
+Plug 'rafamadriz/friendly-snippets'
+
+"colorschemes
+Plug 'sainnhe/forest-night'
+Plug 'b4skyx/serenade'
+Plug 'morhetz/gruvbox'
+Plug 'flazz/vim-colorschemes'
+Plug 'ulwlu/elly.vim'
+Plug 'sainnhe/gruvbox-material'
+Plug 'folke/tokyonight.nvim'
+Plug 'shaunsingh/nord.nvim'
+Plug 'mhartington/oceanic-next'
+
+
+"UML Stuff
+"Plug 'scrooloose/vim-slumlord'
+Plug 'tyru/open-browser.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'aklt/plantuml-syntax'
+
+"Native LSP
+Plug  'hrsh7th/nvim-compe' 
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+"Plug 'nvim-lua/completion-nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/playground'
+"Plug 'windwp/nvim-ts-autotag'
+
+call plug#end()
+
 " ****************Colorscheme and U/I*************************"
 "                                                             "
 "           Settings for Colorscheme and U/I                  "
@@ -101,12 +201,26 @@ map <c-q> :qa<cr>
 
 "colorscheme and UI settings
 
-" Example config in Vim-Script
-let g:nord_contrast = v:true
-let g:nord_borders = v:false
-let g:nord_disable_background = v:false
+" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-colorscheme hybrid_material
+" Or if you have Neovim >= 0.1.5
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" set theme
+syntax on
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
+
+"hi Normal guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi SignColumn guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
+
+"colorscheme hybrid_material
 let g:airline_theme='hybrid'
 
 "set background=dark
@@ -130,95 +244,27 @@ nnoremap<c-t> :TagbarToggle<cr>
 "enable smarter tab line
 let g:airline#extensions#tabline#enabled = 1
 
+"Wilder Menu
+call wilder#enable_cmdline_enter()
+set wildcharm=<Tab>
+cmap <expr> <Tab> wilder#in_context() ? wilder#next() : "\<Tab>"
+cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
+
+" only / and ? are enabled by default
+call wilder#set_option('modes', ['/', '?', ':'])
+
+
+
 "Plugged Additions"
-
-" mappings
-cnoreabbrev PI PlugInstall
-cnoreabbrev PC PlugClean
-
-call plug#begin()
-
-Plug 'airblade/vim-rooter'
-Plug 'phaazon/hop.nvim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-peekaboo'
-Plug 'lervag/vimtex'
-Plug 'machakann/vim-sandwich'
-Plug 'majutsushi/tagbar'
-Plug 'markonm/traces.vim'
-Plug 'mattn/emmet-vim'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'nsapse/f_string'
-Plug 'othree/html5.vim'
-"Plug 'pangloss/vim-javascript'
-Plug 'puremourning/vimspector'
-Plug 'raimondi/delimitmate'
-Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'simeji/winresizer'
-Plug 'simnalamburt/vim-mundo'
-Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-utils/vim-man'
-Plug 'voldikss/vim-floaterm'
-Plug 'yggdroot/indentline'
-Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-"Plug 'yuezk/vim-js'
-
-"snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'mlaursen/vim-react-snippets'
-
-"colorschemes
-Plug 'sainnhe/forest-night'
-Plug 'b4skyx/serenade'
-Plug 'morhetz/gruvbox'
-Plug 'flazz/vim-colorschemes'
-Plug 'ulwlu/elly.vim'
-Plug 'sainnhe/gruvbox-material'
-Plug 'folke/tokyonight.nvim'
-Plug 'shaunsingh/nord.nvim'
-
-"UML Stuff
-"Plug 'scrooloose/vim-slumlord'
-Plug 'tyru/open-browser.vim'
-Plug 'weirongxu/plantuml-previewer.vim'
-Plug 'aklt/plantuml-syntax'
-
-"Native LSP
-
-Plug 'nvim-lua/completion-nvim'
-Plug 'neovim/nvim-lspconfig'
-Plug 'glepnir/lspsaga.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'folke/trouble.nvim'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/playground'
-"Plug 'windwp/nvim-ts-autotag'
-
-call plug#end()
-
 
 " **********************LSP ACTIONS************************* "
 "                                                            "
 "                  Settings for LSP ACTIONS                  "
 "                                                            "
 " **********************LSP ACTIONS************************* "
+
+" start completion
+"autocmd BufEnter * lua require'completion'.on_attach()
 
 " LSP config (the mappings used in the default file don't quite work right)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
@@ -247,25 +293,25 @@ vnoremap <silent><C-a> :<C-U>Lspsaga range_code_action<CR>
 nnoremap <silent>K :Lspsaga hover_doc<CR>
 
 " scroll down hover doc or scroll in definition preview
-nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+nnoremap <silent><C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
 " scroll up hover doc
-nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+nnoremap <silent><C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
 
 "or command
-nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
+nnoremap <silent>gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
 
 "rename
 nnoremap <silent>RR <cmd>lua require('lspsaga.rename').rename()<CR>
 
 "preview definition
-nnoremap <silent> pd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
+nnoremap <silent>pd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
 
 "" Macro - Paste From Current System Buffer
 nnoremap <leader><leader>V "+p 
 
 " or use command
-"nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
-"nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
+nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
 
 
 
@@ -301,16 +347,18 @@ let      g:floaterm_gitcommit='vsplit'
 " ****************LSP*************************"
 
 " Use completion-nvim in every buffer
-autocmd BufEnter * lua require'completion'.on_attach()
-" Use <Tab> and <S-Tab> to navigate through popup menu
+"autocmd BufEnter * lua require'completion'.on_attach()
+ "Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
+
 " possible value: 'UltiSnips', 'Neosnippet', 'vim-vsnip', 'snippets.nvim'
 let g:completion_enable_snippet = 'UltiSnips'
+"let g:vsnip_snippet_dirs = ['~/.config/nvim/plugged/friendly-snippets']
 
 " Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
+set completeopt=menuone,noinsert,noselect,preview
 
 " Avoid showing message extra message when using completion
 set shortmess+=c
@@ -326,11 +374,41 @@ let g:UltiSnipsExpandTrigger='~'
 let g:UltiSnipsJumpForwardTrigger = '<c-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 
-if exists('*complete_info')
-inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
+
+"
+" NOTE: You can use other key to expand snippet.
+" Expand
+"imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+"smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+
+" Expand or jump
+"imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+"smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+
+" Jump forward or backward
+"imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+"smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+"imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+"smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+
+" Select or cut text to use as $TM_SELECTED_TEXT in the next snippet.
+" See https://github.com/hrsh7th/vim-vsnip/pull/50
+
+"nmap        s   <Plug>(vsnip-select-text)
+"xmap        s   <Plug>(vsnip-select-text)
+"nmap        S   <Plug>(vsnip-cut-text)
+"xmap        S   <Plug>(vsnip-cut-text)
+
+" If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
+"let g:vsnip_filetypes = {}
+"let g:vsnip_filetypes.javascriptreact = ['javascript']
+"let g:vsnip_filetypes.typescriptreact = ['typescript']
+
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
 
 
@@ -423,12 +501,11 @@ let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 " CTRL-N and CTRL-P will be automatically bound to next-history and
 " previous-history instead of down and up. If you don't like the change,
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
-"let      g:fzf_history_dir = '~/.local/share/fzf-history'
-"nmap     <leader><leader>f :Files<CR>
-"nmap     <leader><leader>b :Buffers<CR>
-"noremap  <leader><leader>b :Buffers<CR>
-"nnoremap <leader><leader>t :Tags<CR>
-"nnoremap <leader><leader>l :Lines<CR>
+let      g:fzf_history_dir = '~/.local/share/fzf-history'
+nmap     <leader><leader>f :Files<CR>
+nmap     <leader><leader>b :Buffers<CR>
+nnoremap <leader><leader>t :Tags<CR>
+nnoremap <leader><leader>l :Lines<CR>
 
 let g:fzf_tags_command = 'ctags -R'
 " Border jj
@@ -450,7 +527,7 @@ set rtp+=~/.vim/bundle/fzf
 "nnoremap <leader>ff <cmd>Telescope find_files<cr>
 "nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 "nnoremap <leader>fb <cmd>Telescope buffers<cr>
-"nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <C-h> <cmd>Telescope help_tags<cr>
 
 " Using Lua functions
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
@@ -577,5 +654,91 @@ require("trouble").setup {
 
 -- Hop
 require'hop'.setup()
+
+-- Compe
+require'compe'.setup {
+  enabled = true;
+  autocomplete = true;
+  debug = false;
+  min_length = 1;
+  preselect = 'enable';
+  throttle_time = 80;
+  source_timeout = 200;
+  resolve_timeout = 800;
+  incomplete_delay = 400;
+  max_abbr_width = 100;
+  max_kind_width = 100;
+  max_menu_width = 100;
+  documentation = {
+    border = { '', '' ,'', ' ', '', '', '', ' ' }, -- the border option is the same as `|help nvim_open_win|`
+    winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
+    max_width = 120,
+    min_width = 60,
+    max_height = math.floor(vim.o.lines * 0.3),
+    min_height = 1,
+  };
+
+  source = {
+    path = true;
+    buffer = true;
+    calc = true;
+    nvim_lsp = true;
+    nvim_lua = true;
+    vsnip = true;
+    ultisnips = true;
+    luasnip = true;
+  };
+}
+---
+---local capabilities = vim.lsp.protocol.make_client_capabilities()
+---capabilities.textDocument.completion.completionItem.snippetSupport = true
+---capabilities.textDocument.completion.completionItem.resolveSupport = {
+---  properties = {
+---    'documentation',
+---    'detail',
+---    'additionalTextEdits',
+---  }
+---}
+---local t = function(str)
+---  return vim.api.nvim_replace_termcodes(str, true, true, true)
+---end
+---
+---local check_back_space = function()
+---    local col = vim.fn.col('.') - 1
+---    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+---end
+---
+----- Use (s-)tab to:
+------ move to prev/next item in completion menuone
+------ jump to prev/next snippet's placeholder
+---
+---  if vim.fn.pumvisible() == 1 then
+---    return t "<C-n>"
+---  elseif vim.fn['vsnip#available'](1) == 1 then
+---    return t "<Plug>(vsnip-expand-or-jump)"
+---  elseif check_back_space() then
+---    return t "<Tab>"
+---  else
+---    return vim.fn['compe#complete']()
+---  end
+---end
+---_G.s_tab_complete = function()
+---  if vim.fn.pumvisible() == 1 then
+---    return t "<C-p>"
+---  elseif vim.fn['vsnip#jumpable'](-1) == 1 then
+---    return t "<Plug>(vsnip-jump-prev)"
+---  else
+---    -- If <S-Tab> is not working in your terminal, change it to <C-h>
+---    return t "<S-Tab>"
+---  end
+---end
+---
+---vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+---vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+---vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+---vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+
+
+require'lspconfig'.rust_analyzer.setup { capabilities = capabilities, }
 
 EOF

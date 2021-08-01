@@ -218,6 +218,8 @@ alias gC="git clone"
 alias gs="git status"
 alias gp="git push"
 alias lg="lazygit"
+ 
+alias glp="git log --all --decorate --oneline --graph"
 
 #Random Aliases
 alias HL="heroku local"
