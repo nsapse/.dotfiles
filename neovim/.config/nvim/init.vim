@@ -24,6 +24,7 @@ set encoding=UTF-8
 set incsearch
 set cocu="vnic"
 
+
 "This is apparently necessary for Coc definition
 set cmdheight=2
 set hidden
@@ -99,7 +100,6 @@ map <c-q> :qa<cr>
 "                                                             "
 " *******************Plugins*************************"
 
-
 " mappings
 cnoreabbrev PI PlugInstall
 cnoreabbrev PC PlugClean
@@ -111,9 +111,9 @@ Plug 'phaazon/hop.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/rainbow_parentheses.vim'
+"Plug 'junegunn/goyo.vim'
+"Plug 'junegunn/limelight.vim'
+"Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
 Plug 'machakann/vim-sandwich'
@@ -148,7 +148,8 @@ Plug 'mustache/vim-mustache-handlebars'
 
 "UI/UX
 Plug 'gelguy/wilder.nvim'
- 
+Plug 'p00f/nvim-ts-rainbow'
+
 "Plug 'yuezk/vim-js'
 
 "snippets
@@ -161,12 +162,17 @@ Plug 'rafamadriz/friendly-snippets'
 Plug 'sainnhe/forest-night'
 Plug 'b4skyx/serenade'
 Plug 'morhetz/gruvbox'
-Plug 'flazz/vim-colorschemes'
+"Plug 'flazz/vim-colorschemes'
 Plug 'ulwlu/elly.vim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'folke/tokyonight.nvim'
 Plug 'shaunsingh/nord.nvim'
 Plug 'mhartington/oceanic-next'
+Plug 'rktjmp/lush.nvim'
+Plug 'npxbr/gruvbox.nvim'
+Plug 'RRethy/nvim-base16'
+Plug 'fenetikm/falcon'
+
 
 
 "UML Stuff
@@ -178,6 +184,7 @@ Plug 'aklt/plantuml-syntax'
 "Native LSP
 Plug  'hrsh7th/nvim-compe' 
 Plug 'hrsh7th/vim-vsnip'
+Plug 'kosayoda/nvim-lightbulb'
 Plug 'hrsh7th/vim-vsnip-integ'
 "Plug 'nvim-lua/completion-nvim'
 Plug 'neovim/nvim-lspconfig'
@@ -187,7 +194,8 @@ Plug 'folke/trouble.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'windwp/nvim-ts-autotag'
 Plug 'nvim-treesitter/playground'
 "Plug 'windwp/nvim-ts-autotag'
 
@@ -213,7 +221,7 @@ endif
 syntax on
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+colorscheme everforest
 
 "hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
@@ -243,6 +251,9 @@ nnoremap<c-t> :TagbarToggle<cr>
 
 "enable smarter tab line
 let g:airline#extensions#tabline#enabled = 1
+
+" Setup  lightbulb for code actions
+autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
 
 "Wilder Menu
 call wilder#enable_cmdline_enter()
@@ -288,6 +299,9 @@ nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 "SAGA Code Actions
 nnoremap <silent><C-a> :Lspsaga code_action<CR>
 vnoremap <silent><C-a> :<C-U>Lspsaga range_code_action<CR>
+
+"lsp provider to find the cursor word definition and reference
+nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
 
 " or use command
 nnoremap <silent>K :Lspsaga hover_doc<CR>
@@ -690,23 +704,24 @@ require'compe'.setup {
   };
 }
 ---
----local capabilities = vim.lsp.protocol.make_client_capabilities()
----capabilities.textDocument.completion.completionItem.snippetSupport = true
----capabilities.textDocument.completion.completionItem.resolveSupport = {
----  properties = {
----    'documentation',
----    'detail',
----    'additionalTextEdits',
----  }
----}
----local t = function(str)
----  return vim.api.nvim_replace_termcodes(str, true, true, true)
----end
----
----local check_back_space = function()
----    local col = vim.fn.col('.') - 1
----    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
----end
+--local capabilities = vim.lsp.protocol.make_client_capabilities()
+--capabilities.textDocument.completion.completionItem.snippetSupport = true
+--capabilities.textDocument.completion.completionItem.resolveSupport = {
+--  properties = {
+--    'documentation',
+--    'detail',
+--    'additionalTextEdits',
+--  }
+--}
+--
+--local t = function(str)
+--  return vim.api.nvim_replace_termcodes(str, true, true, true)
+--end
+--
+--local check_back_space = function()
+--    local col = vim.fn.col('.') - 1
+--    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+--end
 ---
 ----- Use (s-)tab to:
 ------ move to prev/next item in completion menuone
@@ -738,7 +753,29 @@ require'compe'.setup {
 ---vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 ---vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ignore_install = {}, -- List of parsers to ignore installing
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { "c", "rust" },  -- list of language that will be disabled
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+   rainbow = {
+    enable = true,
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+  },
+  autotag = {
+    enable = true,
+  }
+}
+
 
 require'lspconfig'.rust_analyzer.setup { capabilities = capabilities, }
 
 EOF
+
