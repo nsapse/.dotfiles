@@ -87,7 +87,7 @@ nnoremap <silent> t] :tabnext<cr>
 nnoremap <silent> t[ :tabprevious<cr>
 nnoremap <silent> T[ :tabfirst<cr>
 nnoremap <silent> T] :tablast<cr>
-nnoremap <leader>tn :tabnew<cr>
+nnoremap <leader>T :tabnew<cr>
 
 "Traditional (Non-Vim) Save and Quit Bindings
 nnoremap <c-s> :w<cr>
@@ -111,9 +111,6 @@ Plug 'phaazon/hop.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-"Plug 'junegunn/goyo.vim'
-"Plug 'junegunn/limelight.vim'
-"Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
 Plug 'machakann/vim-sandwich'
@@ -147,8 +144,12 @@ Plug 'mattn/emmet-vim'
 Plug 'mustache/vim-mustache-handlebars'
 
 "UI/UX
-Plug 'gelguy/wilder.nvim'
+Plug 'gelguy/wilder.nvim'  "run UpdateRemotePlugins after install
 Plug 'p00f/nvim-ts-rainbow'
+Plug 'Pocco81/TrueZen.nvim'
+Plug 'folke/twilight.nvim' 
+
+
 
 "Plug 'yuezk/vim-js'
 
@@ -159,10 +160,10 @@ Plug 'mlaursen/vim-react-snippets'
 Plug 'rafamadriz/friendly-snippets'
 
 "colorschemes
+Plug 'maaslalani/nordbuddy'
 Plug 'sainnhe/forest-night'
 Plug 'b4skyx/serenade'
 Plug 'morhetz/gruvbox'
-"Plug 'flazz/vim-colorschemes'
 Plug 'ulwlu/elly.vim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'folke/tokyonight.nvim'
@@ -172,6 +173,10 @@ Plug 'rktjmp/lush.nvim'
 Plug 'npxbr/gruvbox.nvim'
 Plug 'RRethy/nvim-base16'
 Plug 'fenetikm/falcon'
+Plug 'Murtaza-Udaipurwala/gruvqueen'
+
+" Git Stuff
+"Plug 'sindrets/diffview.nvim'
 
 
 
@@ -192,12 +197,16 @@ Plug 'glepnir/lspsaga.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
 Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'windwp/nvim-ts-autotag'
 Plug 'nvim-treesitter/playground'
+Plug 'nvim-lua/plenary.nvim'
 "Plug 'windwp/nvim-ts-autotag'
+
+" Telescope et Al
+
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'sudormrfbin/cheatsheet.nvim'
 
 call plug#end()
 
@@ -221,7 +230,7 @@ endif
 syntax on
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-colorscheme everforest
+colorscheme gruvqueen
 
 "hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
@@ -560,34 +569,12 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 "
 " ****************Focus*************************
 
-"Goyo and Limelight Mapings
-map <silent><leader>z :Goyo<cr>
-" Color name (:help cterm-colors) or ANSI code
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
+map <silent><leader>z :TZAtaraxis<CR><bar>:Twilight<CR>
+map <silent><leader>Z :TZMinimalist<CR><bar>:Twilight<CR>
 
-" Color name (:help gui-colors) or RGB color
-let g:limelight_conceal_guifg = 'DarkGray'
-let g:limelight_conceal_guifg = '#777777'
 
-" Default: 0.5
-let g:limelight_default_coefficient = 0.5
-
-" Number of preceding/following paragraphs to include (default: 0)
-let g:limelight_paragraph_span = 2
-
-" Beginning/end of paragraph
-"   When there's no empty line between the paragraphs
-"   and each paragraph starts with indentation
-let g:limelight_bop = '^\s'
-let g:limelight_eop = '\ze\n^\s'
-
-" Highlighting priority (default: 10)
-"   Set it to -1 not to overrule hlsearch
-let g:limelight_priority = -1
-
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+"autocmd! User TZAtaraxis Twilight
+"autocmd! User GoyoLeave Limelight!
 
 
 " ****************Vimtex************************* "
@@ -776,6 +763,72 @@ require'nvim-treesitter.configs'.setup {
 
 
 require'lspconfig'.rust_analyzer.setup { capabilities = capabilities, }
+
+-- 
+
+local true_zen = require("true-zen")
+
+true_zen.setup({
+	ui = {
+		bottom = {
+			laststatus = 0,
+			ruler = false,
+			showmode = false,
+			showcmd = false,
+			cmdheight = 1,
+		},
+		top = {
+			showtabline = 0,
+		},
+		left = {
+			number = false,
+			relativenumber = false,
+			signcolumn = "no",
+		},
+	},
+	modes = {
+		ataraxis = {
+			left_padding = 32,
+			right_padding = 32,
+			top_padding = 1,
+			bottom_padding = 1,
+			ideal_writing_area_width = {0},
+			just_do_it_for_me = true,
+			keep_default_fold_fillchars = true,
+			custom_bg = {"none", ""},
+			bg_configuration = true,
+			quit = "untoggle",
+			affected_higroups = {NonText = {}, FoldColumn = {}, ColorColumn = {}, VertSplit = {}, StatusLine = {}, StatusLineNC = {}, SignColumn = {}}
+		},
+		focus = {
+			margin_of_error = 5,
+			focus_method = "experimental"
+		},
+	},
+	integrations = {
+		vim_gitgutter = false,
+		galaxyline = false,
+		tmux = false,
+		gitsigns = false,
+		nvim_bufferline = false,
+		limelight = false,
+		twilight = false,
+		vim_airline = false,
+		vim_powerline = false,
+		vim_signify = false,
+		express_line = false,
+		lualine = false,
+	},
+	misc = {
+		on_off_commands = false,
+		ui_elements_commands = false,
+		cursor_by_mode = false,
+	}
+})
+
+
+require("twilight").setup {}
+
 
 EOF
 
