@@ -23,7 +23,7 @@ set encoding=UTF-8
 "set hlsearch
 set incsearch
 set cocu="vnic"
-
+filetype plugin indent on
 
 "This is apparently necessary for Coc definition
 set cmdheight=2
@@ -43,6 +43,7 @@ let maplocalleader = "\\"
 
 " Standard Action Remaps
 nnoremap  Y y$
+nnoremap  V v$
 nnoremap  J mzJ`z
 
 " commands to edit the vim rc quickly
@@ -186,28 +187,36 @@ Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'aklt/plantuml-syntax'
 
+" Rust Stuff
+"Plug 'simrat39/rust-tools.nvim'
+
+" Optional dependenciec:
+Plug 'nvim-lua/popup.nvim'
+
 "Native LSP
 Plug  'hrsh7th/nvim-compe' 
-Plug 'hrsh7th/vim-vsnip'
-Plug 'kosayoda/nvim-lightbulb'
-Plug 'hrsh7th/vim-vsnip-integ'
-"Plug 'nvim-lua/completion-nvim'
-Plug 'neovim/nvim-lspconfig'
-Plug 'glepnir/lspsaga.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'kosayoda/nvim-lightbulb'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/lsp_extensions.nvim'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'windwp/nvim-ts-autotag'
 Plug 'nvim-treesitter/playground'
-Plug 'nvim-lua/plenary.nvim'
+Plug 'windwp/nvim-ts-autotag'
 "Plug 'windwp/nvim-ts-autotag'
+
+"Debugging
+Plug 'mfussenegger/nvim-dap'
 
 " Telescope et Al
 
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'sudormrfbin/cheatsheet.nvim'
-
 call plug#end()
 
 " ****************Colorscheme and U/I*************************"
@@ -262,7 +271,7 @@ nnoremap<c-t> :TagbarToggle<cr>
 let g:airline#extensions#tabline#enabled = 1
 
 " Setup  lightbulb for code actions
-autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
+"autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
 
 "Wilder Menu
 call wilder#enable_cmdline_enter()
@@ -392,40 +401,11 @@ autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1000)
 
+
 "ultisnips
 let g:UltiSnipsExpandTrigger='~'
 let g:UltiSnipsJumpForwardTrigger = '<c-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
-
-
-"
-" NOTE: You can use other key to expand snippet.
-" Expand
-"imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
-"smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
-
-" Expand or jump
-"imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-"smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-
-" Jump forward or backward
-"imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-"smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-"imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-"smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-
-" Select or cut text to use as $TM_SELECTED_TEXT in the next snippet.
-" See https://github.com/hrsh7th/vim-vsnip/pull/50
-
-"nmap        s   <Plug>(vsnip-select-text)
-"xmap        s   <Plug>(vsnip-select-text)
-"nmap        S   <Plug>(vsnip-cut-text)
-"xmap        S   <Plug>(vsnip-cut-text)
-
-" If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
-"let g:vsnip_filetypes = {}
-"let g:vsnip_filetypes.javascriptreact = ['javascript']
-"let g:vsnip_filetypes.typescriptreact = ['typescript']
 
 inoremap <silent><expr> <C-Space> compe#complete()
 inoremap <silent><expr> <CR>      compe#confirm('<CR>')
@@ -441,10 +421,10 @@ inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 "                                             "
 " ****************Hop*************************"
                                               
-nnoremap f :HopWord<CR>
-vnoremap f :HopWord<CR>
-nnoremap F :HopChar1<CR>
-vnoremap F :HopChar1<CR>
+nnoremap w :HopWord<CR>
+vnoremap w :HopWord<CR>
+nnoremap W :HopChar1<CR>
+vnoremap W :HopChar1<CR>
 nnoremap L :HopLine<CR>
 
 "EasyAlign Bindings
@@ -631,6 +611,29 @@ let g:vim_markdown_conceal_code_blocks = 0
 
 lua <<EOF
 
+
+---require('rust-tools').setup({})
+
+-- nvim_lsp object
+local nvim_lsp = require'lspconfig'
+
+-- function to attach completion when setting up lsp
+local on_attach = function(client)
+    require'completion'.on_attach(client)
+end
+
+-- Enable rust_analyzer
+nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
+
+-- Enable diagnostics
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = true,
+    signs = true,
+    update_in_insert = true,
+  }
+)
+
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.pylsp.setup{}
 require'lspconfig'.tsserver.setup{}
@@ -745,7 +748,7 @@ require'nvim-treesitter.configs'.setup {
   ignore_install = {}, -- List of parsers to ignore installing
   highlight = {
     enable = true,              -- false will disable the whole extension
-    disable = { "c", "rust" },  -- list of language that will be disabled
+    disable = {},  -- list of language that will be disabled
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
@@ -762,7 +765,6 @@ require'nvim-treesitter.configs'.setup {
 }
 
 
-require'lspconfig'.rust_analyzer.setup { capabilities = capabilities, }
 
 -- 
 
@@ -829,6 +831,4 @@ true_zen.setup({
 
 require("twilight").setup {}
 
-
 EOF
-

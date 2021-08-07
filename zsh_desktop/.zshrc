@@ -15,7 +15,9 @@ export ZSH="/home/noah/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="spaceship"
+SPACESHIT_TIME_SHOW=true
 POWERLEVEL9K_MODE='awesome-fontconfig'
 
 POWERLEVEL10K_LEFT_PROMPT_ELEMENTS=(dir vcs)
@@ -153,6 +155,7 @@ alias plc="nvim ~/.p10k.zsh"
 alias ic="nvim ~/.config/i3/config"
 alias pic="nvim ~/.config/picom.conf"
 alias alac="nvim ~/.config/alacritty/alacritty.yml"
+alias kc="nvim ~/.config/kitty/kitty.conf"
 alias rc="nvim ~/.config/ranger/rc.conf"
 
 # aliasing directories
