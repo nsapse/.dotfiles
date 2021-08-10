@@ -95,15 +95,26 @@ nnoremap <c-s> :w<cr>
 nnoremap <c-s[j>s :wa<cr>
 map <c-q> :qa<cr>
 
+" *******************Abbreviations*************************"
+"                                                          "
+"                    Abbreviations                         "
+"                                                          "
+" *******************Abbreviations*************************"
+
+" Plugins
+cnoreabbrev PI PlugInstall
+cnoreabbrev PC PlugClean
+
+" Diffview
+cnoreabbrev DO DiffviewOpen
+cnoreabbrev DC DiffviewClose
+
 " *******************Plugins*************************"
 "                                                 "
 "                    Plugins                           "
 "                                                             "
 " *******************Plugins*************************"
 
-" mappings
-cnoreabbrev PI PlugInstall
-cnoreabbrev PC PlugClean
 
 call plug#begin()
 
@@ -160,24 +171,29 @@ Plug 'honza/vim-snippets'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'rafamadriz/friendly-snippets'
 
+
 "colorschemes
-Plug 'maaslalani/nordbuddy'
-Plug 'sainnhe/forest-night'
-Plug 'b4skyx/serenade'
-Plug 'morhetz/gruvbox'
-Plug 'ulwlu/elly.vim'
-Plug 'sainnhe/gruvbox-material'
-Plug 'folke/tokyonight.nvim'
-Plug 'shaunsingh/nord.nvim'
-Plug 'mhartington/oceanic-next'
-Plug 'rktjmp/lush.nvim'
-Plug 'npxbr/gruvbox.nvim'
-Plug 'RRethy/nvim-base16'
-Plug 'fenetikm/falcon'
 Plug 'Murtaza-Udaipurwala/gruvqueen'
+Plug 'RRethy/nvim-base16'
+Plug 'b4skyx/serenade'
+Plug 'fenetikm/falcon'
+Plug 'folke/tokyonight.nvim'
+Plug 'jacoborus/tender.vim'
+Plug 'maaslalani/nordbuddy'
+Plug 'mhartington/oceanic-next'
+Plug 'morhetz/gruvbox'
+Plug 'npxbr/gruvbox.nvim'
+Plug 'rktjmp/lush.nvim'
+Plug 'sainnhe/forest-night'
+Plug 'sainnhe/gruvbox-material'
+Plug 'shaunsingh/nord.nvim'
+Plug 'ulwlu/elly.vim'
+
+
 
 " Git Stuff
-"Plug 'sindrets/diffview.nvim'
+Plug 'sindrets/diffview.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 
 
 
@@ -188,7 +204,7 @@ Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'aklt/plantuml-syntax'
 
 " Rust Stuff
-"Plug 'simrat39/rust-tools.nvim'
+Plug 'simrat39/rust-tools.nvim'
 
 " Optional dependenciec:
 Plug 'nvim-lua/popup.nvim'
@@ -207,8 +223,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/playground'
+"Plug 'ray-x/lsp_signature.nvim'
 Plug 'windwp/nvim-ts-autotag'
-"Plug 'windwp/nvim-ts-autotag'
 
 "Debugging
 Plug 'mfussenegger/nvim-dap'
@@ -217,6 +233,7 @@ Plug 'mfussenegger/nvim-dap'
 
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'sudormrfbin/cheatsheet.nvim'
+
 call plug#end()
 
 " ****************Colorscheme and U/I*************************"
@@ -239,7 +256,7 @@ endif
 syntax on
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-colorscheme gruvqueen
+colorscheme gruvbox-material
 
 "hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
@@ -300,7 +317,7 @@ nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-"nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
@@ -315,8 +332,8 @@ nnoremap <leader>tl <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
 "SAGA Code Actions
-nnoremap <silent><C-a> :Lspsaga code_action<CR>
-vnoremap <silent><C-a> :<C-U>Lspsaga range_code_action<CR>
+nnoremap <silent>ga :Lspsaga code_action<CR>
+vnoremap <silent>ga :<C-U>Lspsaga range_code_action<CR>
 
 "lsp provider to find the cursor word definition and reference
 nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
@@ -617,23 +634,34 @@ lua <<EOF
 -- nvim_lsp object
 local nvim_lsp = require'lspconfig'
 
--- function to attach completion when setting up lsp
-local on_attach = function(client)
-    require'completion'.on_attach(client)
-end
 
--- Enable rust_analyzer
-nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
+---- function to attach completion when setting up lsp
+--local on_attach = function(client)
+--    require'completion'.on_attach(client)
+--end
+--
+---- Enable rust_analyzer
+--nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
+--
+---- Enable diagnostics
+--vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+--  vim.lsp.diagnostic.on_publish_diagnostics, {
+--    virtual_text = true,
+--    signs = true,
+--    update_in_insert = true,
+--  }
+--)
 
--- Enable diagnostics
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = true,
-    signs = true,
-    update_in_insert = true,
-  }
-)
+-- attempt to get rust working
+require('rust-tools').setup({})
+-- set inlay hints
+require('rust-tools.inlay_hints').set_inlay_hints()
+-- Command:
+-- RustHoverActions 
+require'rust-tools.hover_actions'.hover_actions()
 
+
+--require "lsp_signature".setup()
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.pylsp.setup{}
 require'lspconfig'.tsserver.setup{}
@@ -830,5 +858,6 @@ true_zen.setup({
 
 
 require("twilight").setup {}
+require('gitsigns').setup()
 
 EOF

@@ -81,14 +81,15 @@ POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv vi_mode )
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    archlinux
     alias-finder
+    archlinux
     autojump
     autopep8
     cargo
     colorize
     docker
     docker-compose
+    fzf-tab
     git
     github
     heroku
