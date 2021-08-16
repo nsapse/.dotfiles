@@ -16,8 +16,8 @@ export ZSH="/home/noah/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="powerlevel10k/powerlevel10k"
-ZSH_THEME="spaceship"
-SPACESHIT_TIME_SHOW=true
+#ZSH_THEME="spaceship"
+SPACESHIP_TIME_SHOW=true
 POWERLEVEL9K_MODE='awesome-fontconfig'
 
 POWERLEVEL10K_LEFT_PROMPT_ELEMENTS=(dir vcs)
@@ -98,6 +98,7 @@ plugins=(
     pipenv
     pylint
     python
+    taskwarrior
     themes
     tmux
     vi-mode
@@ -158,6 +159,7 @@ alias pic="nvim ~/.config/picom.conf"
 alias alac="nvim ~/.config/alacritty/alacritty.yml"
 alias kc="nvim ~/.config/kitty/kitty.conf"
 alias rc="nvim ~/.config/ranger/rc.conf"
+alias sc="nvim ~/.config/starship.toml"
 
 # aliasing directories
 alias cdf='cd ~/.dotfiles'
@@ -274,6 +276,13 @@ alias tlmgr='TEXMFDIST/scripts/texlive/tlmgr.pl --usermode'
 # Alias Finder
 alias af="alias-finder"
 
+#TaskWarrior and TaskWarriorTUI Stuff
+alias tw="task"
+alias in="task add +in"
+alias twt="taskwarrior-tui"
+
+
+
 ### ARCHIVE EXTRACTION
 # usage: ex <file>
 ex ()
@@ -315,3 +324,7 @@ ex ()
 # sourcing FZF bindings
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
+# Launch Starship
+eval "$(starship init zsh)"
+

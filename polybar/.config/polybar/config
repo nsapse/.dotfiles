@@ -24,17 +24,17 @@ background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
-secondary = #e60053
+secondary =  #e60053
 alert = #bd2c40
 
 [bar/example]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 45 
-;offset-x = 5%
+height = 35 
+;offset-x = 67%
 ;offset-y = 5%
-;radius = 20
-fixed-center = false
+;radius = 0
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -42,11 +42,11 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
-border-color = #00000000
+border-size = 2
+border-color = #444
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
 module-margin-left = 1
 module-margin-right = 2
@@ -55,14 +55,13 @@ font-0 = FiraCode:pixelsize=13;1
 font-1 = FiraCode:fontformat=truetype:size=12:antialias=false;0
 font-2 = FiraCode:pixelsize=12;1
 
-modules-left = i3 wlan  
-modules-center = date
-modules-right = memory cpu powermenu
-;pulseaudio
+modules-left = i3 
+modules-center = date mpd
+modules-right = pulseaudio memory cpu 
 
 tray-position = right
-tray-padding = 2
-;tray-background = #0063ff
+tray-padding = 0
+tray-background =  ${xrdb:color0:#222}
 
 wm-restack = i3
 
@@ -85,6 +84,16 @@ label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
+
+[bar/i3]
+inherit = bar/example
+width = 35%
+foreground = ${colors.color1}
+
+modules-right= i3 wsnumber xwindow
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
 
 [module/filesystem]
 type = internal/fs
@@ -286,13 +295,14 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
+
 [settings]
-screenchange-reload = true
+;screenchange-reload = true
 ;compositing-background = xor
-compositing-background = screen
-compositing-foreground = source
+;compositing-background = screen
+;compositing-foreground = source
 ;compositing-border = over
-;pseudo-transparency = false
+pseudo-transparency = false
 
 [global/wm]
 margin-top = 5
@@ -300,16 +310,3 @@ margin-bottom = 5
 
 ; vim:ft=dosini
 
-;[bar/i3]
-;inherit = bar/example
-;width = 35%
-
-;foreground = ${colors.color1}
-
-;offset-x = 10
-
-
-;modules-left = i3 wsnumber xwindow
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev

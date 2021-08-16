@@ -119,32 +119,22 @@ cnoreabbrev DC DiffviewClose
 call plug#begin()
 
 Plug 'airblade/vim-rooter'
-Plug 'phaazon/hop.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
 Plug 'machakann/vim-sandwich'
-Plug 'majutsushi/tagbar'
 Plug 'markonm/traces.vim'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nsapse/f_string'
 Plug 'puremourning/vimspector'
 Plug 'raimondi/delimitmate'
-Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
 Plug 'simeji/winresizer'
 Plug 'simnalamburt/vim-mundo'
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
-Plug 'yggdroot/indentline'
 
 "Latex and Markdown
 Plug 'lervag/vimtex'
@@ -160,8 +150,20 @@ Plug 'gelguy/wilder.nvim'  "run UpdateRemotePlugins after install
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'Pocco81/TrueZen.nvim'
 Plug 'folke/twilight.nvim' 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'yggdroot/indentline'
+Plug 'ap/vim-css-color'
 
-
+" Code and File Navigation
+Plug 'unblevable/quick-scope'  
+Plug 'phaazon/hop.nvim'
+Plug 'majutsushi/tagbar'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
 
 "Plug 'yuezk/vim-js'
 
@@ -189,13 +191,9 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'shaunsingh/nord.nvim'
 Plug 'ulwlu/elly.vim'
 
-
-
 " Git Stuff
 Plug 'sindrets/diffview.nvim'
 Plug 'lewis6991/gitsigns.nvim'
-
-
 
 "UML Stuff
 "Plug 'scrooloose/vim-slumlord'
@@ -225,6 +223,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'nvim-treesitter/playground'
 "Plug 'ray-x/lsp_signature.nvim'
 Plug 'windwp/nvim-ts-autotag'
+"Plug 'alexaandru/nvim-lspupdate'
 
 "Debugging
 Plug 'mfussenegger/nvim-dap'
@@ -299,6 +298,17 @@ cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
 " only / and ? are enabled by default
 call wilder#set_option('modes', ['/', '?', ':'])
 
+" **********************Quickscope************************* "
+"                                                           "
+"                  Settings for Quickscope                  "
+"                                                           "
+" **********************Quickscope************************* "
+
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" Trigger a highlight only when pressing f and F.
+let g:qs_highlight_on_keys = ['f', 'F']
 
 
 "Plugged Additions"
@@ -362,6 +372,7 @@ nnoremap <leader><leader>V "+p
 nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
 
+" LSP UPDATE
 
 
 " ****************NerdTree*************************"
@@ -557,6 +568,7 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg :Rg<CR>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>fm <cmd>lua require('telescope.builtin').keymaps()<cr>
 
 
 
@@ -629,7 +641,6 @@ let g:vim_markdown_conceal_code_blocks = 0
 lua <<EOF
 
 
----require('rust-tools').setup({})
 
 -- nvim_lsp object
 local nvim_lsp = require'lspconfig'
@@ -804,7 +815,7 @@ true_zen.setup({
 			laststatus = 0,
 			ruler = false,
 			showmode = false,
-			showcmd = false,
+
 			cmdheight = 1,
 		},
 		top = {

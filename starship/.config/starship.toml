@@ -1,0 +1,34 @@
+[directory]
+truncation_length = 15
+truncation_symbol = "../"
+
+
+[character]
+vicmd_symbol = "[❮](bold yellow)"
+
+[git_branch]
+symbol = " "
+truncation_length = 8
+truncation_symbol = ""
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = ""
+only_detached = false
+
+[python]
+symbol = "🐍"
+version_format = "v${patch}"
+format = 'via [${symbol}($version) (\($virtualenv\))]($style)'
+pyenv_version_name = true
+detect_extensions = ["py"]
+python_binary =["python3", "python", "./venv/bin/python"]
+
+[custom.inbox]
+description = "Display number of tasks in inbox"
+command = "task +in +PENDING count"
+symbol = "📥 "
+style = "bold red"
+format = "${symbol}[$output]($style) "
+when = "task +in +PENDING count"
+#shell = ["zsh", "-NoProfile"]
