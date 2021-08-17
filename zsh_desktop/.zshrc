@@ -87,6 +87,7 @@ plugins=(
     autopep8
     cargo
     colorize
+    colored-man-pages
     docker
     docker-compose
     fzf-tab
@@ -277,10 +278,30 @@ alias tlmgr='TEXMFDIST/scripts/texlive/tlmgr.pl --usermode'
 alias af="alias-finder"
 
 #TaskWarrior and TaskWarriorTUI Stuff
-alias tw="task"
-alias in="task add +in"
+ 
+alias t="task"
+alias in="task  add +in"
+#alias job="task add project:jobs"
+alias twa="task add "
+alias tan="task annotate"
 alias twt="taskwarrior-tui"
+alias tt="vit"
+alias to="taskopen"
+alias mlt="task +LATEST modify"
+alias todo="task +next"
 
+job(){
+    task add project:jobs $1;
+    ID=$(task +LATEST ids);
+    task $ID annotate $2;
+} 
+
+jobT(){
+    task add project:jobs $1;
+    ID=$(task +LATEST ids);
+    task $ID annotate $2;
+    task $ID modify +$3
+} 
 
 
 ### ARCHIVE EXTRACTION
