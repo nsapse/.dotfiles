@@ -138,9 +138,6 @@ Plug 'voldikss/vim-floaterm'
 
 "Latex and Markdown
 Plug 'lervag/vimtex'
-"Plug 'vimwiki/vimwiki'
-"Plug 'tools-life/taskwiki'
-
 
 "Web Development
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
@@ -605,18 +602,6 @@ let g:vimtex_quickfix_mode=1
 set conceallevel=1
 nnoremap <leader><leader>vc :VimtexCompile<cr>
 
-" ****************VimWiki ************************* "
-"                                                   " 
-"                 VimWiki                           "
-"                                                   "
-" ****************VimWiki ************************* "
-
-let g:vimwiki_list = [{'path':'/home/noah/.dotfiles/vimwiki', 'syntax':'markdown', 'ext':'md'}]
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-
-let g:vimwiki_markdown_link_ext = 1
-let g:taskwiki_markup_syntax = 'markdown'
-let g:markdown_folding = 1
 
 " ****************Quickfix************************* "
 "                                                   " 
