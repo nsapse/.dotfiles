@@ -532,3 +532,1213 @@ time 1629170081
 old [annotation_1629170074:"https:\/\/salesforce.wd1.myworkdayjobs.com\/en-US\/Tableau\/job\/Washington---Seattle\/Summer-2022-Intern---Tableau-Software-Engineer_JR103736?source=LinkedIn" description:"Tableau" entry:"1629170074" modified:"1629170074" project:"jobs" status:"pending" uuid:"6d6dda4d-2787-4ae4-ab1f-5303eb5e15cd"]
 new [annotation_1629170074:"https:\/\/salesforce.wd1.myworkdayjobs.com\/en-US\/Tableau\/job\/Washington---Seattle\/Summer-2022-Intern---Tableau-Software-Engineer_JR103736?source=LinkedIn" description:"Tableau" entry:"1629170074" modified:"1629170081" project:"jobs" status:"pending" tags:"Seattle" uuid:"6d6dda4d-2787-4ae4-ab1f-5303eb5e15cd"]
 ---
+time 1629173048
+new [description:"Draft sponsorship letter" entry:"1629173048" modified:"1629173048" project:"Hackathon" status:"pending" uuid:"e68a7638-51af-4457-9f48-a916b06b0bf7"]
+---
+time 1629204392
+new [description:"decideOn nvim-BarBar" entry:"1629204392" modified:"1629204392" status:"pending" tags:"in" uuid:"d3bb476d-ccfd-499d-9026-78de96c69593"]
+---
+time 1629204820
+new [description:"find leetcode K largest in Linked List" entry:"1629204820" modified:"1629204820" status:"pending" tags:"in" uuid:"e3fecc81-ce59-4dba-a163-872fee5305d8"]
+---
+time 1629204846
+new [description:"decide on whether to switch to Kommentary" entry:"1629204846" modified:"1629204846" status:"pending" tags:"in" uuid:"88c96ad0-cda3-4a65-ba06-cea3d3078fb2"]
+---
+time 1629205000
+new [description:"redo BST anki card" entry:"1629205000" modified:"1629205000" status:"pending" tags:"in" uuid:"f3e08490-1021-4be2-9ee4-853153e07227"]
+---
+time 1629205011
+new [description:"redo DFS anki card" entry:"1629205011" modified:"1629205011" status:"pending" tags:"in" uuid:"92053a33-f057-4866-8515-073dd72b9a3d"]
+---
+time 1629205037
+old [description:"redo BST anki card" entry:"1629205000" modified:"1629205000" status:"pending" tags:"in" uuid:"f3e08490-1021-4be2-9ee4-853153e07227"]
+new [description:"redo BFS anki card" entry:"1629205000" modified:"1629205037" status:"pending" tags:"in" uuid:"f3e08490-1021-4be2-9ee4-853153e07227"]
+---
+time 1629206773
+old [annotation_1629152703:"https:\/\/leetcode.com\/problems\/maximum-depth-of-binary-tree\/" description:"LC 104: Maximum Depth" entry:"1629152667" modified:"1629168770" project:"leetcode.trees" status:"pending" tags:"next" uuid:"bc9f8701-b6f0-4fbd-9ae1-3effc368db85"]
+new [annotation_1629152703:"https:\/\/leetcode.com\/problems\/maximum-depth-of-binary-tree\/" description:"LC 104: Maximum Depth" end:"1629206773" entry:"1629152667" modified:"1629206773" project:"leetcode.trees" status:"completed" tags:"next" uuid:"bc9f8701-b6f0-4fbd-9ae1-3effc368db85"]
+---
+time 1629206922
+old [description:"decide on whether to switch to Kommentary" entry:"1629204846" modified:"1629204846" status:"pending" tags:"in" uuid:"88c96ad0-cda3-4a65-ba06-cea3d3078fb2"]
+new [description:"decide on whether to switch to Kommentary" entry:"1629204846" modified:"1629206922" project:"neovim" status:"pending" tags:"in" uuid:"88c96ad0-cda3-4a65-ba06-cea3d3078fb2"]
+---
+time 1629206933
+old [description:"decide on whether to switch to Kommentary" entry:"1629204846" modified:"1629206922" project:"neovim" status:"pending" tags:"in" uuid:"88c96ad0-cda3-4a65-ba06-cea3d3078fb2"]
+new [description:"decide on whether to switch to Kommentary" entry:"1629204846" modified:"1629206933" project:"neovim" status:"pending" uuid:"88c96ad0-cda3-4a65-ba06-cea3d3078fb2"]
+---
+time 1629206942
+old [description:"decideOn nvim-BarBar" entry:"1629204392" modified:"1629204392" status:"pending" tags:"in" uuid:"d3bb476d-ccfd-499d-9026-78de96c69593"]
+new [description:"decideOn nvim-BarBar" entry:"1629204392" modified:"1629206942" project:"neovim" status:"pending" tags:"in" uuid:"d3bb476d-ccfd-499d-9026-78de96c69593"]
+---
+time 1629206947
+old [description:"decideOn nvim-BarBar" entry:"1629204392" modified:"1629206942" project:"neovim" status:"pending" tags:"in" uuid:"d3bb476d-ccfd-499d-9026-78de96c69593"]
+new [description:"decideOn nvim-BarBar" entry:"1629204392" modified:"1629206947" project:"neovim" status:"pending" uuid:"d3bb476d-ccfd-499d-9026-78de96c69593"]
+---
+time 1629206973
+old [description:"find leetcode K largest in Linked List" entry:"1629204820" modified:"1629204820" status:"pending" tags:"in" uuid:"e3fecc81-ce59-4dba-a163-872fee5305d8"]
+new [description:"find leetcode K largest in Linked List" entry:"1629204820" modified:"1629206973" project:"leetcode.linkedlists" status:"pending" tags:"in" uuid:"e3fecc81-ce59-4dba-a163-872fee5305d8"]
+---
+time 1629206978
+old [description:"find leetcode K largest in Linked List" entry:"1629204820" modified:"1629206973" project:"leetcode.linkedlists" status:"pending" tags:"in" uuid:"e3fecc81-ce59-4dba-a163-872fee5305d8"]
+new [description:"find leetcode K largest in Linked List" entry:"1629204820" modified:"1629206978" project:"leetcode.linkedlists" status:"pending" uuid:"e3fecc81-ce59-4dba-a163-872fee5305d8"]
+---
+time 1629206985
+old [description:"redo BFS anki card" entry:"1629205000" modified:"1629205037" status:"pending" tags:"in" uuid:"f3e08490-1021-4be2-9ee4-853153e07227"]
+new [description:"redo BFS anki card" entry:"1629205000" modified:"1629206985" project:"Anki" status:"pending" tags:"in" uuid:"f3e08490-1021-4be2-9ee4-853153e07227"]
+---
+time 1629206993
+old [description:"redo BFS anki card" entry:"1629205000" modified:"1629206985" project:"Anki" status:"pending" tags:"in" uuid:"f3e08490-1021-4be2-9ee4-853153e07227"]
+new [description:"redo BFS anki card" entry:"1629205000" modified:"1629206993" project:"Anki" status:"pending" uuid:"f3e08490-1021-4be2-9ee4-853153e07227"]
+---
+time 1629207000
+old [description:"redo DFS anki card" entry:"1629205011" modified:"1629205011" status:"pending" tags:"in" uuid:"92053a33-f057-4866-8515-073dd72b9a3d"]
+new [description:"redo DFS anki card" entry:"1629205011" modified:"1629207000" project:"Anki" status:"pending" tags:"in" uuid:"92053a33-f057-4866-8515-073dd72b9a3d"]
+---
+time 1629207014
+old [description:"redo DFS anki card" entry:"1629205011" modified:"1629207000" project:"Anki" status:"pending" tags:"in" uuid:"92053a33-f057-4866-8515-073dd72b9a3d"]
+new [description:"redo DFS anki card" entry:"1629205011" modified:"1629207014" project:"Anki" status:"pending" uuid:"92053a33-f057-4866-8515-073dd72b9a3d"]
+---
+time 1629207080
+old [annotation_1629160039:"https:\/\/leetcode.com\/problems\/invert-binary-tree\/" description:"100: Same Tree" entry:"1629159206" modified:"1629160056" project:"leetcode.trees" status:"pending" uuid:"8ac82773-350c-40a0-8369-9b1a80bd9d43"]
+new [annotation_1629160039:"https:\/\/leetcode.com\/problems\/same-tree\/" description:"100: Same Tree" entry:"1629159206" modified:"1629207080" project:"leetcode.trees" status:"pending" uuid:"8ac82773-350c-40a0-8369-9b1a80bd9d43"]
+---
+time 1629209928
+old [annotation_1629160039:"https:\/\/leetcode.com\/problems\/same-tree\/" description:"100: Same Tree" entry:"1629159206" modified:"1629207080" project:"leetcode.trees" status:"pending" uuid:"8ac82773-350c-40a0-8369-9b1a80bd9d43"]
+new [annotation_1629160039:"https:\/\/leetcode.com\/problems\/same-tree\/" description:"100: Same Tree" end:"1629209928" entry:"1629159206" modified:"1629209928" project:"leetcode.trees" status:"completed" uuid:"8ac82773-350c-40a0-8369-9b1a80bd9d43"]
+---
+time 1629210165
+old [description:"redo DFS anki card" entry:"1629205011" modified:"1629207014" project:"Anki" status:"pending" uuid:"92053a33-f057-4866-8515-073dd72b9a3d"]
+new [annotation_1629210165:"https:\/\/leetcode.com\/problems\/binary-tree-maximum-path-sum\/" description:"redo DFS anki card" entry:"1629205011" modified:"1629210165" project:"Anki" status:"pending" uuid:"92053a33-f057-4866-8515-073dd72b9a3d"]
+---
+time 1629210190
+new [description:"124 Maximum Path Sum" entry:"1629210190" modified:"1629210190" status:"pending" uuid:"e8c55ba8-4342-46d5-b4af-c1ace8cb26cf"]
+---
+time 1629210190
+old [description:"124 Maximum Path Sum" entry:"1629210190" modified:"1629210190" status:"pending" uuid:"e8c55ba8-4342-46d5-b4af-c1ace8cb26cf"]
+new [annotation_1629210190:"https:\/\/leetcode.com\/problems\/binary-tree-maximum-path-sum\/" description:"124 Maximum Path Sum" entry:"1629210190" modified:"1629210190" status:"pending" uuid:"e8c55ba8-4342-46d5-b4af-c1ace8cb26cf"]
+---
+time 1629210222
+old [annotation_1629210190:"https:\/\/leetcode.com\/problems\/binary-tree-maximum-path-sum\/" description:"124 Maximum Path Sum" entry:"1629210190" modified:"1629210190" status:"pending" uuid:"e8c55ba8-4342-46d5-b4af-c1ace8cb26cf"]
+new [annotation_1629210190:"https:\/\/leetcode.com\/problems\/binary-tree-maximum-path-sum\/" description:"124 Maximum Path Sum" entry:"1629210190" modified:"1629210222" project:"leetcode.trees" status:"pending" uuid:"e8c55ba8-4342-46d5-b4af-c1ace8cb26cf"]
+---
+time 1629210234
+old [annotation_1629210190:"https:\/\/leetcode.com\/problems\/binary-tree-maximum-path-sum\/" description:"124 Maximum Path Sum" entry:"1629210190" modified:"1629210222" project:"leetcode.trees" status:"pending" uuid:"e8c55ba8-4342-46d5-b4af-c1ace8cb26cf"]
+new [annotation_1629210190:"https:\/\/leetcode.com\/problems\/binary-tree-maximum-path-sum\/" description:"124 Maximum Path Sum" entry:"1629210190" modified:"1629210234" project:"leetcode.trees" status:"pending" tags:"Hard" uuid:"e8c55ba8-4342-46d5-b4af-c1ace8cb26cf"]
+---
+time 1629210280
+new [description:"102: Level Order Traversal" entry:"1629210280" modified:"1629210280" status:"pending" uuid:"495f6eee-4499-4ca6-8cbf-f61057f7cc20"]
+---
+time 1629210280
+old [description:"102: Level Order Traversal" entry:"1629210280" modified:"1629210280" status:"pending" uuid:"495f6eee-4499-4ca6-8cbf-f61057f7cc20"]
+new [annotation_1629210280:"https:\/\/leetcode.com\/problems\/binary-tree-level-order-traversal\/" description:"102: Level Order Traversal" entry:"1629210280" modified:"1629210280" status:"pending" uuid:"495f6eee-4499-4ca6-8cbf-f61057f7cc20"]
+---
+time 1629210304
+old [annotation_1629210280:"https:\/\/leetcode.com\/problems\/binary-tree-level-order-traversal\/" description:"102: Level Order Traversal" entry:"1629210280" modified:"1629210280" status:"pending" uuid:"495f6eee-4499-4ca6-8cbf-f61057f7cc20"]
+new [annotation_1629210280:"https:\/\/leetcode.com\/problems\/binary-tree-level-order-traversal\/" description:"102: Level Order Traversal" entry:"1629210280" modified:"1629210304" project:"leetcode.trees" status:"pending" uuid:"495f6eee-4499-4ca6-8cbf-f61057f7cc20"]
+---
+time 1629210426
+new [description:"572: Subtree of Another Tree" entry:"1629210426" modified:"1629210426" status:"pending" uuid:"93d025a5-ac29-4a21-8828-98649163b893"]
+---
+time 1629210426
+old [description:"572: Subtree of Another Tree" entry:"1629210426" modified:"1629210426" status:"pending" uuid:"93d025a5-ac29-4a21-8828-98649163b893"]
+new [annotation_1629210426:"https:\/\/leetcode.com\/problems\/subtree-of-another-tree\/" description:"572: Subtree of Another Tree" entry:"1629210426" modified:"1629210426" status:"pending" uuid:"93d025a5-ac29-4a21-8828-98649163b893"]
+---
+time 1629210470
+old [annotation_1629210426:"https:\/\/leetcode.com\/problems\/subtree-of-another-tree\/" description:"572: Subtree of Another Tree" entry:"1629210426" modified:"1629210426" status:"pending" uuid:"93d025a5-ac29-4a21-8828-98649163b893"]
+new [annotation_1629210426:"https:\/\/leetcode.com\/problems\/subtree-of-another-tree\/" description:"572: Subtree of Another Tree" entry:"1629210426" modified:"1629210470" project:"leetcode.trees" status:"pending" uuid:"93d025a5-ac29-4a21-8828-98649163b893"]
+---
+time 1629210584
+new [description:"Larger Leetcode List" entry:"1629210584" modified:"1629210584" status:"pending" uuid:"8eefda4b-1707-4a37-90f2-daff65d0caa0"]
+---
+time 1629210584
+old [description:"Larger Leetcode List" entry:"1629210584" modified:"1629210584" status:"pending" uuid:"8eefda4b-1707-4a37-90f2-daff65d0caa0"]
+new [annotation_1629210584:"https:\/\/www.notion.so\/Leetcode-211799e3ec124968a55c33092f5c3027" description:"Larger Leetcode List" entry:"1629210584" modified:"1629210584" status:"pending" uuid:"8eefda4b-1707-4a37-90f2-daff65d0caa0"]
+---
+time 1629210623
+old [annotation_1629210584:"https:\/\/www.notion.so\/Leetcode-211799e3ec124968a55c33092f5c3027" description:"Larger Leetcode List" entry:"1629210584" modified:"1629210584" status:"pending" uuid:"8eefda4b-1707-4a37-90f2-daff65d0caa0"]
+new [annotation_1629210584:"https:\/\/www.notion.so\/Leetcode-211799e3ec124968a55c33092f5c3027" description:"Larger Leetcode List" entry:"1629210584" modified:"1629210623" project:"references.leetcode" status:"pending" uuid:"8eefda4b-1707-4a37-90f2-daff65d0caa0"]
+---
+time 1629210809
+new [description:"finish C basics (section 2) of Bari course" entry:"1629210809" modified:"1629210809" status:"pending" tags:"in" uuid:"959abf76-1e33-4c68-99ad-6f210ed82fdc"]
+---
+time 1629210833
+old [description:"finish C basics (section 2) of Bari course" entry:"1629210809" modified:"1629210809" status:"pending" tags:"in" uuid:"959abf76-1e33-4c68-99ad-6f210ed82fdc"]
+new [description:"finish C basics (section 2) of Bari course" entry:"1629210809" modified:"1629210833" project:"Udemy.c_and_DSA" status:"pending" tags:"in" uuid:"959abf76-1e33-4c68-99ad-6f210ed82fdc"]
+---
+time 1629211125
+old [annotation_1629168214:"https:\/\/www.linkedin.com\/jobs\/view\/2681917498\/" description:"SteelCase" entry:"1629168214" modified:"1629168219" project:"jobs" status:"pending" tags:"CT" uuid:"39806943-2b46-4803-a7fc-2c5a3742c0fb"]
+new [annotation_1629168214:"https:\/\/www.linkedin.com\/jobs\/view\/2681917498\/" description:"SteelCase" entry:"1629168214" modified:"1629211125" project:"jobs" status:"pending" tags:"next,CT" uuid:"39806943-2b46-4803-a7fc-2c5a3742c0fb"]
+---
+time 1629211136
+old [annotation_1629168160:"https:\/\/www.linkedin.com\/jobs\/view\/2666398044\/" description:"Clever" entry:"1629168160" modified:"1629168162" project:"jobs" status:"pending" tags:"Remote" uuid:"238198dc-aa46-462e-86e4-ca42881db6f2"]
+new [annotation_1629168160:"https:\/\/www.linkedin.com\/jobs\/view\/2666398044\/" description:"Clever" entry:"1629168160" modified:"1629211136" project:"jobs" status:"pending" tags:"next,Remote" uuid:"238198dc-aa46-462e-86e4-ca42881db6f2"]
+---
+time 1629211149
+old [description:"finish C basics (section 2) of Bari course" entry:"1629210809" modified:"1629210833" project:"Udemy.c_and_DSA" status:"pending" tags:"in" uuid:"959abf76-1e33-4c68-99ad-6f210ed82fdc"]
+new [description:"finish C basics (section 2) of Bari course" entry:"1629210809" modified:"1629211149" project:"Udemy.c_and_DSA" status:"pending" tags:"next" uuid:"959abf76-1e33-4c68-99ad-6f210ed82fdc"]
+---
+time 1629211268
+old [annotation_1629160092:"https:\/\/leetcode.com\/problems\/invert-binary-tree\/" description:"226: Invert Binary Tree" entry:"1629159839" modified:"1629160092" project:"leetcode.trees" status:"pending" uuid:"5f1f2e68-fc48-4a2a-91d5-f782397ff721"]
+new [annotation_1629160092:"https:\/\/leetcode.com\/problems\/invert-binary-tree\/" description:"226: Invert Binary Tree" entry:"1629159839" modified:"1629211268" project:"leetcode.trees" status:"pending" tags:"next" uuid:"5f1f2e68-fc48-4a2a-91d5-f782397ff721"]
+---
+time 1629227454
+new [description:"comment on gifs added by travis" entry:"1629227454" modified:"1629227454" status:"pending" tags:"in" uuid:"8d23c08e-66b2-421d-9c9f-e4172b2f8e70"]
+---
+time 1629228923
+old [annotation_1629168405:"https:\/\/www.linkedin.com\/jobs\/view\/2650073058\/" description:"Microsoft(Sponsored Org)" entry:"1629168405" modified:"1629168732" priority:"H" project:"jobs" status:"pending" tags:"Seattle,next" uuid:"a0d82211-c9c0-4b5e-a006-33f44bcd62b6"]
+new [annotation_1629168405:"https:\/\/www.linkedin.com\/jobs\/view\/2650073058\/" description:"Microsoft(Sponsored Org)" end:"1629228923" entry:"1629168405" modified:"1629228923" priority:"H" project:"jobs" status:"completed" tags:"Seattle,next" uuid:"a0d82211-c9c0-4b5e-a006-33f44bcd62b6"]
+---
+time 1629229073
+old [annotation_1629168160:"https:\/\/www.linkedin.com\/jobs\/view\/2666398044\/" description:"Clever" entry:"1629168160" modified:"1629211136" project:"jobs" status:"pending" tags:"next,Remote" uuid:"238198dc-aa46-462e-86e4-ca42881db6f2"]
+new [annotation_1629168160:"https:\/\/www.linkedin.com\/jobs\/view\/2666398044\/" description:"Clever" end:"1629229073" entry:"1629168160" modified:"1629229073" project:"jobs" status:"completed" tags:"next,Remote" uuid:"238198dc-aa46-462e-86e4-ca42881db6f2"]
+---
+time 1629229205
+old [annotation_1629168214:"https:\/\/www.linkedin.com\/jobs\/view\/2681917498\/" description:"SteelCase" entry:"1629168214" modified:"1629211125" project:"jobs" status:"pending" tags:"next,CT" uuid:"39806943-2b46-4803-a7fc-2c5a3742c0fb"]
+new [annotation_1629168214:"https:\/\/www.linkedin.com\/jobs\/view\/2681917498\/" description:"SteelCase" entry:"1629168214" modified:"1629229205" project:"jobs" status:"pending" tags:"CT" uuid:"39806943-2b46-4803-a7fc-2c5a3742c0fb"]
+---
+time 1629229250
+old [annotation_1629167848:"https:\/\/www.linkedin.com\/jobs\/view\/2679705178\/" description:"+Co-Op" entry:"1629167848" modified:"1629168281" project:"jobs" status:"pending" tags:"Remote,Co-Op,New_York" uuid:"c6ed34d8-7c88-415d-9e9a-3a4035fe21cc"]
+new [annotation_1629167848:"https:\/\/www.linkedin.com\/jobs\/view\/2679705178\/" description:"GaoTek" entry:"1629167848" modified:"1629229250" project:"jobs" status:"pending" tags:"Remote,Co-Op,New_York" uuid:"c6ed34d8-7c88-415d-9e9a-3a4035fe21cc"]
+---
+time 1629229268
+old [annotation_1629167848:"https:\/\/www.linkedin.com\/jobs\/view\/2679705178\/" description:"GaoTek" entry:"1629167848" modified:"1629229250" project:"jobs" status:"pending" tags:"Remote,Co-Op,New_York" uuid:"c6ed34d8-7c88-415d-9e9a-3a4035fe21cc"]
+new [annotation_1629167848:"https:\/\/www.linkedin.com\/jobs\/view\/2679705178\/" description:"GaoTek" entry:"1629167848" modified:"1629229268" project:"jobs" status:"pending" tags:"Co-Op,New_York,next,Remote" uuid:"c6ed34d8-7c88-415d-9e9a-3a4035fe21cc"]
+---
+time 1629229305
+old [annotation_1629167848:"https:\/\/www.linkedin.com\/jobs\/view\/2679705178\/" description:"GaoTek" entry:"1629167848" modified:"1629229268" project:"jobs" status:"pending" tags:"Co-Op,New_York,next,Remote" uuid:"c6ed34d8-7c88-415d-9e9a-3a4035fe21cc"]
+new [annotation_1629167848:"https:\/\/www.linkedin.com\/jobs\/view\/2679705178\/" description:"GaoTek" end:"1629229305" entry:"1629167848" modified:"1629229305" project:"jobs" status:"deleted" tags:"Co-Op,New_York,next,Remote" uuid:"c6ed34d8-7c88-415d-9e9a-3a4035fe21cc"]
+---
+time 1629229344
+old [annotation_1629161463:"https:\/\/app.joinhandshake.com\/jobs\/5162270" description:"IBM_Backend" entry:"1629161457" modified:"1629161637" project:"jobs" status:"pending" uuid:"cbedc8fc-a561-4503-bb14-09aefbd203bf"]
+new [annotation_1629161463:"https:\/\/app.joinhandshake.com\/jobs\/5162270" description:"IBM_Backend" entry:"1629161457" modified:"1629229344" project:"jobs" status:"pending" tags:"next" uuid:"cbedc8fc-a561-4503-bb14-09aefbd203bf"]
+---
+time 1629230321
+old [annotation_1629161463:"https:\/\/app.joinhandshake.com\/jobs\/5162270" description:"IBM_Backend" entry:"1629161457" modified:"1629229344" project:"jobs" status:"pending" tags:"next" uuid:"cbedc8fc-a561-4503-bb14-09aefbd203bf"]
+new [annotation_1629161463:"https:\/\/app.joinhandshake.com\/jobs\/5162270" description:"IBM_Backend" end:"1629230321" entry:"1629161457" modified:"1629230321" project:"jobs" status:"completed" tags:"next" uuid:"cbedc8fc-a561-4503-bb14-09aefbd203bf"]
+---
+time 1629230951
+new [description:"find makefile tutorial" entry:"1629230951" modified:"1629230951" status:"pending" tags:"in" uuid:"6df5479f-bffc-471b-8e02-b2cccd606308"]
+---
+time 1629231023
+new [description:"Makefiles, but in English" entry:"1629231023" modified:"1629231023" status:"pending" uuid:"f115d2a4-be54-446a-947d-8bcd3b49a08a"]
+---
+time 1629231023
+old [description:"Makefiles, but in English" entry:"1629231023" modified:"1629231023" status:"pending" uuid:"f115d2a4-be54-446a-947d-8bcd3b49a08a"]
+new [annotation_1629231023:"https:\/\/www.youtube.com\/watch?v=FfG-QqRK4cY" description:"Makefiles, but in English" entry:"1629231023" modified:"1629231023" status:"pending" uuid:"f115d2a4-be54-446a-947d-8bcd3b49a08a"]
+---
+time 1629231076
+old [annotation_1629231023:"https:\/\/www.youtube.com\/watch?v=FfG-QqRK4cY" description:"Makefiles, but in English" entry:"1629231023" modified:"1629231023" status:"pending" uuid:"f115d2a4-be54-446a-947d-8bcd3b49a08a"]
+new [annotation_1629231023:"https:\/\/www.youtube.com\/watch?v=FfG-QqRK4cY" description:"Makefiles, but in English" entry:"1629231023" modified:"1629231076" project:"references.c" status:"pending" uuid:"f115d2a4-be54-446a-947d-8bcd3b49a08a"]
+---
+time 1629231323
+old [annotation_1629231023:"https:\/\/www.youtube.com\/watch?v=FfG-QqRK4cY" description:"Makefiles, but in English" entry:"1629231023" modified:"1629231076" project:"references.c" status:"pending" uuid:"f115d2a4-be54-446a-947d-8bcd3b49a08a"]
+new [annotation_1629231023:"https:\/\/www.youtube.com\/watch?v=FfG-QqRK4cY" description:"Makefiles, but in English" entry:"1629231023" modified:"1629231323" project:"references.c" status:"pending" tags:"To_Watch" uuid:"f115d2a4-be54-446a-947d-8bcd3b49a08a"]
+---
+time 1629231411
+new [description:"Email Hackathon Dates" entry:"1629231411" modified:"1629231411" status:"pending" tags:"next" uuid:"15fc0385-1dd0-4661-b6a7-e1283feed822"]
+---
+time 1629232370
+old [description:"finish C basics (section 2) of Bari course" entry:"1629210809" modified:"1629211149" project:"Udemy.c_and_DSA" status:"pending" tags:"next" uuid:"959abf76-1e33-4c68-99ad-6f210ed82fdc"]
+new [description:"finish C basics (section 2) of Bari course" end:"1629232370" entry:"1629210809" modified:"1629232370" project:"Udemy.c_and_DSA" status:"deleted" tags:"next" uuid:"959abf76-1e33-4c68-99ad-6f210ed82fdc"]
+---
+time 1629232838
+new [description:"read engineering email blast" entry:"1629232838" modified:"1629232838" status:"pending" tags:"in" uuid:"ba554303-c85a-4500-b296-05749bb575b7"]
+---
+time 1629237642
+new [description:"Look at Tesla Internships" entry:"1629237642" modified:"1629237642" status:"pending" tags:"in" uuid:"c1834827-228c-4fc2-b2f7-2740ef992b6b"]
+---
+time 1629237691
+old [description:"Look at Tesla Internships" entry:"1629237642" modified:"1629237642" status:"pending" tags:"in" uuid:"c1834827-228c-4fc2-b2f7-2740ef992b6b"]
+new [annotation_1629237691:"https:\/\/www.tesla.com\/careers\/search\/?country=US&query=internship" description:"Look at Tesla Internships" entry:"1629237642" modified:"1629237691" status:"pending" tags:"in" uuid:"c1834827-228c-4fc2-b2f7-2740ef992b6b"]
+---
+time 1629237710
+old [annotation_1629237691:"https:\/\/www.tesla.com\/careers\/search\/?country=US&query=internship" description:"Look at Tesla Internships" entry:"1629237642" modified:"1629237691" status:"pending" tags:"in" uuid:"c1834827-228c-4fc2-b2f7-2740ef992b6b"]
+new [annotation_1629237691:"https:\/\/www.tesla.com\/careers\/search\/?country=US&query=internship" description:"Look at Tesla Internships" entry:"1629237642" modified:"1629237710" project:"jobs" status:"pending" tags:"in" uuid:"c1834827-228c-4fc2-b2f7-2740ef992b6b"]
+---
+time 1629237799
+new [description:"Freddie-Mac" entry:"1629237799" modified:"1629237799" project:"jobs" status:"pending" uuid:"1a35d7f7-0d0c-41c3-8b69-1ab5b5a223ed"]
+---
+time 1629237799
+old [description:"Freddie-Mac" entry:"1629237799" modified:"1629237799" project:"jobs" status:"pending" uuid:"1a35d7f7-0d0c-41c3-8b69-1ab5b5a223ed"]
+new [annotation_1629237799:"https:\/\/www.linkedin.com\/jobs\/view\/2654235471\/?midToken=AQHTeYBHgcRl7A&midSig=1GPbEYokW7lpU1&trkEmail=eml-email_jobs_saved_job_reminder_01-null-0-mercado_redesign-null-25heya%7Eksgg91w1%7E8u-null-jobs%7Eview" description:"Freddie-Mac" entry:"1629237799" modified:"1629237799" project:"jobs" status:"pending" uuid:"1a35d7f7-0d0c-41c3-8b69-1ab5b5a223ed"]
+---
+time 1629238439
+new [description:"cd - hour Anki" entry:"1629238439" modified:"1629238439" status:"pending" uuid:"7fc8e595-2568-4d8f-910e-2cd2df8b5a18"]
+---
+time 1629238477
+old [description:"cd - hour Anki" entry:"1629238439" modified:"1629238439" status:"pending" uuid:"7fc8e595-2568-4d8f-910e-2cd2df8b5a18"]
+new [description:"1 hour Anki" entry:"1629238439" modified:"1629238477" status:"pending" uuid:"7fc8e595-2568-4d8f-910e-2cd2df8b5a18"]
+---
+time 1629238481
+old [description:"1 hour Anki" entry:"1629238439" modified:"1629238477" status:"pending" uuid:"7fc8e595-2568-4d8f-910e-2cd2df8b5a18"]
+new [description:"1 hour Anki" entry:"1629238439" modified:"1629238481" status:"pending" tags:"next" uuid:"7fc8e595-2568-4d8f-910e-2cd2df8b5a18"]
+---
+time 1629238502
+old [annotation_1629237691:"https:\/\/www.tesla.com\/careers\/search\/?country=US&query=internship" description:"Look at Tesla Internships" entry:"1629237642" modified:"1629237710" project:"jobs" status:"pending" tags:"in" uuid:"c1834827-228c-4fc2-b2f7-2740ef992b6b"]
+new [annotation_1629237691:"https:\/\/www.tesla.com\/careers\/search\/?country=US&query=internship" description:"Look at Tesla Internships" entry:"1629237642" modified:"1629238502" project:"jobs" status:"pending" uuid:"c1834827-228c-4fc2-b2f7-2740ef992b6b"]
+---
+time 1629238512
+old [description:"comment on gifs added by travis" entry:"1629227454" modified:"1629227454" status:"pending" tags:"in" uuid:"8d23c08e-66b2-421d-9c9f-e4172b2f8e70"]
+new [description:"comment on gifs added by travis" entry:"1629227454" modified:"1629238512" status:"pending" tags:"next" uuid:"8d23c08e-66b2-421d-9c9f-e4172b2f8e70"]
+---
+time 1629238519
+old [description:"read engineering email blast" entry:"1629232838" modified:"1629232838" status:"pending" tags:"in" uuid:"ba554303-c85a-4500-b296-05749bb575b7"]
+new [description:"read engineering email blast" end:"1629238519" entry:"1629232838" modified:"1629238519" status:"completed" tags:"in" uuid:"ba554303-c85a-4500-b296-05749bb575b7"]
+---
+time 1629238939
+old [description:"find makefile tutorial" entry:"1629230951" modified:"1629230951" status:"pending" tags:"in" uuid:"6df5479f-bffc-471b-8e02-b2cccd606308"]
+new [description:"find makefile tutorial" end:"1629238939" entry:"1629230951" modified:"1629238939" status:"completed" tags:"in" uuid:"6df5479f-bffc-471b-8e02-b2cccd606308"]
+---
+time 1629238954
+old [annotation_1629160092:"https:\/\/leetcode.com\/problems\/invert-binary-tree\/" description:"226: Invert Binary Tree" entry:"1629159839" modified:"1629211268" project:"leetcode.trees" status:"pending" tags:"next" uuid:"5f1f2e68-fc48-4a2a-91d5-f782397ff721"]
+new [annotation_1629160092:"https:\/\/leetcode.com\/problems\/invert-binary-tree\/" description:"226: Invert Binary Tree" end:"1629238954" entry:"1629159839" modified:"1629238954" project:"leetcode.trees" status:"completed" tags:"next" uuid:"5f1f2e68-fc48-4a2a-91d5-f782397ff721"]
+---
+time 1629239110
+old [description:"comment on gifs added by travis" entry:"1629227454" modified:"1629238512" status:"pending" tags:"next" uuid:"8d23c08e-66b2-421d-9c9f-e4172b2f8e70"]
+new [description:"comment on gifs added by travis" end:"1629239110" entry:"1629227454" modified:"1629239110" status:"completed" tags:"next" uuid:"8d23c08e-66b2-421d-9c9f-e4172b2f8e70"]
+---
+time 1629239279
+new [description:"Construct from Traversal" entry:"1629239279" modified:"1629239279" status:"pending" uuid:"5be8b905-866a-49b2-a97f-d179323a38b3"]
+---
+time 1629239279
+old [description:"Construct from Traversal" entry:"1629239279" modified:"1629239279" status:"pending" uuid:"5be8b905-866a-49b2-a97f-d179323a38b3"]
+new [annotation_1629239279:"https:\/\/leetcode.com\/problems\/construct-binary-tree-from-preorder-and-inorder-traversal\/" description:"Construct from Traversal" entry:"1629239279" modified:"1629239279" status:"pending" uuid:"5be8b905-866a-49b2-a97f-d179323a38b3"]
+---
+time 1629239311
+new [description:"Validate BST" entry:"1629239311" modified:"1629239311" status:"pending" uuid:"bbecf448-acab-4a05-b68d-86d6e89904a9"]
+---
+time 1629239311
+old [description:"Validate BST" entry:"1629239311" modified:"1629239311" status:"pending" uuid:"bbecf448-acab-4a05-b68d-86d6e89904a9"]
+new [annotation_1629239311:"https:\/\/leetcode.com\/problems\/validate-binary-search-tree\/" description:"Validate BST" entry:"1629239311" modified:"1629239311" status:"pending" uuid:"bbecf448-acab-4a05-b68d-86d6e89904a9"]
+---
+time 1629239339
+new [description:"Kths Smallest Element" entry:"1629239339" modified:"1629239339" status:"pending" uuid:"006c989d-8aae-4a06-97aa-cb6e18f1ff0d"]
+---
+time 1629239339
+old [description:"Kths Smallest Element" entry:"1629239339" modified:"1629239339" status:"pending" uuid:"006c989d-8aae-4a06-97aa-cb6e18f1ff0d"]
+new [annotation_1629239339:"https:\/\/leetcode.com\/problems\/kth-smallest-element-in-a-bst\/" description:"Kths Smallest Element" entry:"1629239339" modified:"1629239339" status:"pending" uuid:"006c989d-8aae-4a06-97aa-cb6e18f1ff0d"]
+---
+time 1629239372
+old [annotation_1629239279:"https:\/\/leetcode.com\/problems\/construct-binary-tree-from-preorder-and-inorder-traversal\/" description:"Construct from Traversal" entry:"1629239279" modified:"1629239279" status:"pending" uuid:"5be8b905-866a-49b2-a97f-d179323a38b3"]
+new [annotation_1629239279:"https:\/\/leetcode.com\/problems\/construct-binary-tree-from-preorder-and-inorder-traversal\/" description:"Construct from Traversal" entry:"1629239279" modified:"1629239372" project:"leetcode.trees" status:"pending" uuid:"5be8b905-866a-49b2-a97f-d179323a38b3"]
+---
+time 1629239373
+old [annotation_1629239311:"https:\/\/leetcode.com\/problems\/validate-binary-search-tree\/" description:"Validate BST" entry:"1629239311" modified:"1629239311" status:"pending" uuid:"bbecf448-acab-4a05-b68d-86d6e89904a9"]
+new [annotation_1629239311:"https:\/\/leetcode.com\/problems\/validate-binary-search-tree\/" description:"Validate BST" entry:"1629239311" modified:"1629239373" project:"leetcode.trees" status:"pending" uuid:"bbecf448-acab-4a05-b68d-86d6e89904a9"]
+---
+time 1629239374
+old [annotation_1629239339:"https:\/\/leetcode.com\/problems\/kth-smallest-element-in-a-bst\/" description:"Kths Smallest Element" entry:"1629239339" modified:"1629239339" status:"pending" uuid:"006c989d-8aae-4a06-97aa-cb6e18f1ff0d"]
+new [annotation_1629239339:"https:\/\/leetcode.com\/problems\/kth-smallest-element-in-a-bst\/" description:"Kths Smallest Element" entry:"1629239339" modified:"1629239374" project:"leetcode.trees" status:"pending" uuid:"006c989d-8aae-4a06-97aa-cb6e18f1ff0d"]
+---
+time 1629239415
+new [description:"Word Search" entry:"1629239415" modified:"1629239415" status:"pending" uuid:"31510072-6680-4e81-b858-2ed1f34a8248"]
+---
+time 1629239415
+old [description:"Word Search" entry:"1629239415" modified:"1629239415" status:"pending" uuid:"31510072-6680-4e81-b858-2ed1f34a8248"]
+new [annotation_1629239415:"https:\/\/leetcode.com\/problems\/word-search-ii\/" description:"Word Search" entry:"1629239415" modified:"1629239415" status:"pending" uuid:"31510072-6680-4e81-b858-2ed1f34a8248"]
+---
+time 1629239461
+new [description:"Design Add and Search Words DS" entry:"1629239461" modified:"1629239461" status:"pending" uuid:"3b849a27-257a-476d-84cd-196da6ed02a6"]
+---
+time 1629239461
+old [description:"Design Add and Search Words DS" entry:"1629239461" modified:"1629239461" status:"pending" uuid:"3b849a27-257a-476d-84cd-196da6ed02a6"]
+new [annotation_1629239461:"https:\/\/leetcode.com\/problems\/design-add-and-search-words-data-structure\/" description:"Design Add and Search Words DS" entry:"1629239461" modified:"1629239461" status:"pending" uuid:"3b849a27-257a-476d-84cd-196da6ed02a6"]
+---
+time 1629239478
+new [description:"Prefix Tree" entry:"1629239478" modified:"1629239478" status:"pending" uuid:"f37b2db0-c4d8-4570-b3fd-dcb3bbe231f3"]
+---
+time 1629239478
+old [description:"Prefix Tree" entry:"1629239478" modified:"1629239478" status:"pending" uuid:"f37b2db0-c4d8-4570-b3fd-dcb3bbe231f3"]
+new [annotation_1629239478:"https:\/\/leetcode.com\/problems\/implement-trie-prefix-tree\/" description:"Prefix Tree" entry:"1629239478" modified:"1629239478" status:"pending" uuid:"f37b2db0-c4d8-4570-b3fd-dcb3bbe231f3"]
+---
+time 1629239504
+new [description:"Lowest Common Ancestor of BST" entry:"1629239504" modified:"1629239504" status:"pending" uuid:"df3e23e7-5f5a-410c-9ea5-0d29fa1a0627"]
+---
+time 1629239504
+old [description:"Lowest Common Ancestor of BST" entry:"1629239504" modified:"1629239504" status:"pending" uuid:"df3e23e7-5f5a-410c-9ea5-0d29fa1a0627"]
+new [annotation_1629239504:"https:\/\/leetcode.com\/problems\/lowest-common-ancestor-of-a-binary-search-tree\/" description:"Lowest Common Ancestor of BST" entry:"1629239504" modified:"1629239504" status:"pending" uuid:"df3e23e7-5f5a-410c-9ea5-0d29fa1a0627"]
+---
+time 1629239559
+old [annotation_1629239415:"https:\/\/leetcode.com\/problems\/word-search-ii\/" description:"Word Search" entry:"1629239415" modified:"1629239415" status:"pending" uuid:"31510072-6680-4e81-b858-2ed1f34a8248"]
+new [annotation_1629239415:"https:\/\/leetcode.com\/problems\/word-search-ii\/" description:"Word Search" entry:"1629239415" modified:"1629239559" project:"leetcode.trees" status:"pending" uuid:"31510072-6680-4e81-b858-2ed1f34a8248"]
+---
+time 1629239559
+old [annotation_1629239461:"https:\/\/leetcode.com\/problems\/design-add-and-search-words-data-structure\/" description:"Design Add and Search Words DS" entry:"1629239461" modified:"1629239461" status:"pending" uuid:"3b849a27-257a-476d-84cd-196da6ed02a6"]
+new [annotation_1629239461:"https:\/\/leetcode.com\/problems\/design-add-and-search-words-data-structure\/" description:"Design Add and Search Words DS" entry:"1629239461" modified:"1629239559" project:"leetcode.trees" status:"pending" uuid:"3b849a27-257a-476d-84cd-196da6ed02a6"]
+---
+time 1629239559
+old [annotation_1629239478:"https:\/\/leetcode.com\/problems\/implement-trie-prefix-tree\/" description:"Prefix Tree" entry:"1629239478" modified:"1629239478" status:"pending" uuid:"f37b2db0-c4d8-4570-b3fd-dcb3bbe231f3"]
+new [annotation_1629239478:"https:\/\/leetcode.com\/problems\/implement-trie-prefix-tree\/" description:"Prefix Tree" entry:"1629239478" modified:"1629239559" project:"leetcode.trees" status:"pending" uuid:"f37b2db0-c4d8-4570-b3fd-dcb3bbe231f3"]
+---
+time 1629239559
+old [annotation_1629239504:"https:\/\/leetcode.com\/problems\/lowest-common-ancestor-of-a-binary-search-tree\/" description:"Lowest Common Ancestor of BST" entry:"1629239504" modified:"1629239504" status:"pending" uuid:"df3e23e7-5f5a-410c-9ea5-0d29fa1a0627"]
+new [annotation_1629239504:"https:\/\/leetcode.com\/problems\/lowest-common-ancestor-of-a-binary-search-tree\/" description:"Lowest Common Ancestor of BST" entry:"1629239504" modified:"1629239559" project:"leetcode.trees" status:"pending" uuid:"df3e23e7-5f5a-410c-9ea5-0d29fa1a0627"]
+---
+time 1629251613
+old [description:"Email Hackathon Dates" entry:"1629231411" modified:"1629231411" status:"pending" tags:"next" uuid:"15fc0385-1dd0-4661-b6a7-e1283feed822"]
+new [description:"Email Hackathon Dates" end:"1629251613" entry:"1629231411" modified:"1629251613" status:"completed" tags:"next" uuid:"15fc0385-1dd0-4661-b6a7-e1283feed822"]
+---
+time 1629291539
+new [description:"CoinBase Winter Internship" entry:"1629291539" modified:"1629291539" project:"jobs" status:"pending" uuid:"6f237414-5791-485c-a6e4-fc70c0be9ba8"]
+---
+time 1629291539
+old [description:"CoinBase Winter Internship" entry:"1629291539" modified:"1629291539" project:"jobs" status:"pending" uuid:"6f237414-5791-485c-a6e4-fc70c0be9ba8"]
+new [annotation_1629291539:"https:\/\/www.coinbase.com\/careers\/positions\/1724656?gh_jid=1724656" description:"CoinBase Winter Internship" entry:"1629291539" modified:"1629291539" project:"jobs" status:"pending" uuid:"6f237414-5791-485c-a6e4-fc70c0be9ba8"]
+---
+time 1629291861
+old [annotation_1629166844:"https:\/\/campus.capitalone.com\/job\/mclean\/technology-internship-program-summer-2022\/1786\/19643592" description:"CapitalOne" entry:"1629166844" modified:"1629166950" project:"jobs" status:"pending" tags:"New_York,Boston,San_Francisco" uuid:"f7302fb4-0b43-435b-bf49-22e3883030d8"]
+new [annotation_1629166844:"https:\/\/campus.capitalone.com\/job\/mclean\/technology-internship-program-summer-2022\/1786\/19643592" description:"CapitalOne" entry:"1629166844" modified:"1629291861" project:"jobs" status:"pending" tags:"San_Francisco,next,Boston,New_York" uuid:"f7302fb4-0b43-435b-bf49-22e3883030d8"]
+---
+time 1629291896
+old [annotation_1629166227:"https:\/\/jobs.lever.co\/convoy\/27c772ba-2da3-4854-bb74-94f94eeb8d2f?lever-origin=applied&lever-source%5B%5D=LinkedIn&lever-source=LinkedInJobs" description:"Convoy" entry:"1629166227" modified:"1629166402" project:"jobs" status:"pending" tags:"Seattle" uuid:"b5b7a5e7-2257-4288-8223-9ba3076600aa"]
+new [annotation_1629166227:"https:\/\/jobs.lever.co\/convoy\/27c772ba-2da3-4854-bb74-94f94eeb8d2f?lever-origin=applied&lever-source%5B%5D=LinkedIn&lever-source=LinkedInJobs" description:"Convoy" entry:"1629166227" modified:"1629291896" project:"jobs" status:"pending" tags:"Seattle,next" uuid:"b5b7a5e7-2257-4288-8223-9ba3076600aa"]
+---
+time 1629291910
+old [annotation_1629166796:"https:\/\/boards.greenhouse.io\/earlycareerprograms\/jobs\/3351820" description:"Asana:Apprentice" entry:"1629166796" modified:"1629166796" project:"jobs" status:"pending" tags:"New_York" uuid:"366defed-65cb-41a3-aadc-aede87a53a37"]
+new [annotation_1629166796:"https:\/\/boards.greenhouse.io\/earlycareerprograms\/jobs\/3351820" description:"Asana:Apprentice" entry:"1629166796" modified:"1629291910" project:"jobs" status:"pending" tags:"next,New_York" uuid:"366defed-65cb-41a3-aadc-aede87a53a37"]
+---
+time 1629291931
+old [annotation_1629210165:"https:\/\/leetcode.com\/problems\/binary-tree-maximum-path-sum\/" description:"redo DFS anki card" entry:"1629205011" modified:"1629210165" project:"Anki" status:"pending" uuid:"92053a33-f057-4866-8515-073dd72b9a3d"]
+new [annotation_1629210165:"https:\/\/leetcode.com\/problems\/binary-tree-maximum-path-sum\/" description:"redo DFS anki card" entry:"1629205011" modified:"1629291931" project:"Anki" status:"pending" tags:"next" uuid:"92053a33-f057-4866-8515-073dd72b9a3d"]
+---
+time 1629291953
+old [annotation_1629210190:"https:\/\/leetcode.com\/problems\/binary-tree-maximum-path-sum\/" description:"124 Maximum Path Sum" entry:"1629210190" modified:"1629210234" project:"leetcode.trees" status:"pending" tags:"Hard" uuid:"e8c55ba8-4342-46d5-b4af-c1ace8cb26cf"]
+new [annotation_1629210190:"https:\/\/leetcode.com\/problems\/binary-tree-maximum-path-sum\/" description:"124 Maximum Path Sum" entry:"1629210190" modified:"1629291953" project:"leetcode.trees" status:"pending" tags:"next,Hard" uuid:"e8c55ba8-4342-46d5-b4af-c1ace8cb26cf"]
+---
+time 1629291959
+old [annotation_1629210280:"https:\/\/leetcode.com\/problems\/binary-tree-level-order-traversal\/" description:"102: Level Order Traversal" entry:"1629210280" modified:"1629210304" project:"leetcode.trees" status:"pending" uuid:"495f6eee-4499-4ca6-8cbf-f61057f7cc20"]
+new [annotation_1629210280:"https:\/\/leetcode.com\/problems\/binary-tree-level-order-traversal\/" description:"102: Level Order Traversal" entry:"1629210280" modified:"1629291959" project:"leetcode.trees" status:"pending" tags:"next" uuid:"495f6eee-4499-4ca6-8cbf-f61057f7cc20"]
+---
+time 1629291979
+old [annotation_1629239504:"https:\/\/leetcode.com\/problems\/lowest-common-ancestor-of-a-binary-search-tree\/" description:"Lowest Common Ancestor of BST" entry:"1629239504" modified:"1629239559" project:"leetcode.trees" status:"pending" uuid:"df3e23e7-5f5a-410c-9ea5-0d29fa1a0627"]
+new [annotation_1629239504:"https:\/\/leetcode.com\/problems\/lowest-common-ancestor-of-a-binary-search-tree\/" description:"Lowest Common Ancestor of BST" entry:"1629239504" modified:"1629291979" project:"leetcode.trees" status:"pending" tags:"next" uuid:"df3e23e7-5f5a-410c-9ea5-0d29fa1a0627"]
+---
+time 1629292707
+new [description:"Minimum Window Substring" entry:"1629292707" modified:"1629292707" project:"leetcode" status:"pending" uuid:"2435b7bd-edcc-4d62-b973-f5946c0adfbc"]
+---
+time 1629292707
+old [description:"Minimum Window Substring" entry:"1629292707" modified:"1629292707" project:"leetcode" status:"pending" uuid:"2435b7bd-edcc-4d62-b973-f5946c0adfbc"]
+new [annotation_1629292707:"https:\/\/leetcode.com\/problems\/minimum-window-substring\/" description:"Minimum Window Substring" entry:"1629292707" modified:"1629292707" project:"leetcode" status:"pending" uuid:"2435b7bd-edcc-4d62-b973-f5946c0adfbc"]
+---
+time 1629292742
+old [annotation_1629292707:"https:\/\/leetcode.com\/problems\/minimum-window-substring\/" description:"Minimum Window Substring" entry:"1629292707" modified:"1629292707" project:"leetcode" status:"pending" uuid:"2435b7bd-edcc-4d62-b973-f5946c0adfbc"]
+new [annotation_1629292707:"https:\/\/leetcode.com\/problems\/minimum-window-substring\/" description:"Minimum Window Substring" entry:"1629292707" modified:"1629292742" project:"leetcode" status:"pending" tags:"attempted" uuid:"2435b7bd-edcc-4d62-b973-f5946c0adfbc"]
+---
+time 1629292773
+old [annotation_1629292707:"https:\/\/leetcode.com\/problems\/minimum-window-substring\/" description:"Minimum Window Substring" entry:"1629292707" modified:"1629292742" project:"leetcode" status:"pending" tags:"attempted" uuid:"2435b7bd-edcc-4d62-b973-f5946c0adfbc"]
+new [annotation_1629292707:"https:\/\/leetcode.com\/problems\/minimum-window-substring\/" description:"Minimum Window Substring" entry:"1629292707" modified:"1629292773" project:"leetcode.strings" status:"pending" tags:"attempted" uuid:"2435b7bd-edcc-4d62-b973-f5946c0adfbc"]
+---
+time 1629298307
+new [description:"review Hackthon github slides" entry:"1629298307" modified:"1629298307" status:"pending" uuid:"95d65622-a852-4873-a978-c8f17c3840c8"]
+---
+time 1629301022
+old [annotation_1629166844:"https:\/\/campus.capitalone.com\/job\/mclean\/technology-internship-program-summer-2022\/1786\/19643592" description:"CapitalOne" entry:"1629166844" modified:"1629291861" project:"jobs" status:"pending" tags:"San_Francisco,next,Boston,New_York" uuid:"f7302fb4-0b43-435b-bf49-22e3883030d8"]
+new [annotation_1629166844:"https:\/\/campus.capitalone.com\/job\/mclean\/technology-internship-program-summer-2022\/1786\/19643592" description:"CapitalOne" end:"1629301022" entry:"1629166844" modified:"1629301022" project:"jobs" status:"completed" tags:"San_Francisco,next,Boston,New_York" uuid:"f7302fb4-0b43-435b-bf49-22e3883030d8"]
+---
+time 1629301231
+old [annotation_1629166227:"https:\/\/jobs.lever.co\/convoy\/27c772ba-2da3-4854-bb74-94f94eeb8d2f?lever-origin=applied&lever-source%5B%5D=LinkedIn&lever-source=LinkedInJobs" description:"Convoy" entry:"1629166227" modified:"1629291896" project:"jobs" status:"pending" tags:"Seattle,next" uuid:"b5b7a5e7-2257-4288-8223-9ba3076600aa"]
+new [annotation_1629166227:"https:\/\/jobs.lever.co\/convoy\/27c772ba-2da3-4854-bb74-94f94eeb8d2f?lever-origin=applied&lever-source%5B%5D=LinkedIn&lever-source=LinkedInJobs" description:"Convoy" end:"1629301231" entry:"1629166227" modified:"1629301231" project:"jobs" status:"completed" tags:"Seattle,next" uuid:"b5b7a5e7-2257-4288-8223-9ba3076600aa"]
+---
+time 1629301491
+old [annotation_1629166796:"https:\/\/boards.greenhouse.io\/earlycareerprograms\/jobs\/3351820" description:"Asana:Apprentice" entry:"1629166796" modified:"1629291910" project:"jobs" status:"pending" tags:"next,New_York" uuid:"366defed-65cb-41a3-aadc-aede87a53a37"]
+new [annotation_1629166796:"https:\/\/boards.greenhouse.io\/earlycareerprograms\/jobs\/3351820" description:"Asana:Intern" entry:"1629166796" modified:"1629301491" project:"jobs" status:"pending" tags:"next,San_Francisco" uuid:"366defed-65cb-41a3-aadc-aede87a53a37"]
+---
+time 1629301508
+old [annotation_1629166796:"https:\/\/boards.greenhouse.io\/earlycareerprograms\/jobs\/3351820" description:"Asana:Intern" entry:"1629166796" modified:"1629301491" project:"jobs" status:"pending" tags:"next,San_Francisco" uuid:"366defed-65cb-41a3-aadc-aede87a53a37"]
+new [annotation_1629166796:"https:\/\/boards.greenhouse.io\/earlycareerprograms\/jobs\/3351820" description:"Asana:Intern" end:"1629301508" entry:"1629166796" modified:"1629301508" project:"jobs" status:"completed" tags:"next,San_Francisco" uuid:"366defed-65cb-41a3-aadc-aede87a53a37"]
+---
+time 1629301641
+new [description:"CapitalOne Codesignal" entry:"1629301641" modified:"1629301641" status:"pending" uuid:"65a92dd3-9f62-4a4d-83bb-11cddce3597f"]
+---
+time 1629301659
+old [description:"CapitalOne Codesignal" entry:"1629301641" modified:"1629301641" status:"pending" uuid:"65a92dd3-9f62-4a4d-83bb-11cddce3597f"]
+new [description:"CapitalOne Codesignal" entry:"1629301641" modified:"1629301659" project:"jobs.OA" status:"pending" uuid:"65a92dd3-9f62-4a4d-83bb-11cddce3597f"]
+---
+time 1629301830
+old [description:"CapitalOne Codesignal" entry:"1629301641" modified:"1629301659" project:"jobs.OA" status:"pending" uuid:"65a92dd3-9f62-4a4d-83bb-11cddce3597f"]
+new [description:"CapitalOne Codesignal" due:"1630468800" entry:"1629301641" modified:"1629301830" project:"jobs.OA" status:"pending" uuid:"65a92dd3-9f62-4a4d-83bb-11cddce3597f"]
+---
+time 1629301862
+old [description:"transfer chao to brine" due:"1629412247" entry:"1629153047" modified:"1629160201" project:"food.fermentation" scheduled:"1629412247" status:"pending" uuid:"914c35eb-7caa-49b8-8ceb-b13d931208f9"]
+new [description:"transfer chao to brine" due:"1629412247" end:"1629301862" entry:"1629153047" modified:"1629301862" project:"food.fermentation" scheduled:"1629412247" status:"completed" uuid:"914c35eb-7caa-49b8-8ceb-b13d931208f9"]
+---
+time 1629302229
+old [annotation_1629167173:"https:\/\/www.linkedin.com\/jobs\/view\/2671545713\/?trackingId=PXdP2QwfeQp\/n3+YmQ46PQ==" description:"DropBox" entry:"1629167173" modified:"1629167175" project:"jobs" status:"pending" tags:"New_York" uuid:"586d8786-7d3c-441d-9904-2f54613238a5"]
+new [annotation_1629167173:"https:\/\/www.linkedin.com\/jobs\/view\/2671545713\/?trackingId=PXdP2QwfeQp\/n3+YmQ46PQ==" description:"DropBox" end:"1629302229" entry:"1629167173" modified:"1629302229" project:"jobs" status:"completed" tags:"New_York" uuid:"586d8786-7d3c-441d-9904-2f54613238a5"]
+---
+time 1629302246
+old [annotation_1629231023:"https:\/\/www.youtube.com\/watch?v=FfG-QqRK4cY" description:"Makefiles, but in English" entry:"1629231023" modified:"1629231323" project:"references.c" status:"pending" tags:"To_Watch" uuid:"f115d2a4-be54-446a-947d-8bcd3b49a08a"]
+new [annotation_1629231023:"https:\/\/www.youtube.com\/watch?v=FfG-QqRK4cY" description:"Makefiles, but in English" end:"1629302246" entry:"1629231023" modified:"1629302246" project:"references.c" status:"deleted" tags:"To_Watch" uuid:"f115d2a4-be54-446a-947d-8bcd3b49a08a"]
+---
+time 1629302254
+old [annotation_1629292707:"https:\/\/leetcode.com\/problems\/minimum-window-substring\/" description:"Minimum Window Substring" entry:"1629292707" modified:"1629292773" project:"leetcode.strings" status:"pending" tags:"attempted" uuid:"2435b7bd-edcc-4d62-b973-f5946c0adfbc"]
+new [annotation_1629292707:"https:\/\/leetcode.com\/problems\/minimum-window-substring\/" description:"Minimum Window Substring" end:"1629302254" entry:"1629292707" modified:"1629302254" project:"leetcode.strings" status:"completed" tags:"attempted" uuid:"2435b7bd-edcc-4d62-b973-f5946c0adfbc"]
+---
+time 1629302835
+old [annotation_1629291539:"https:\/\/www.coinbase.com\/careers\/positions\/1724656?gh_jid=1724656" description:"CoinBase Winter Internship" entry:"1629291539" modified:"1629291539" project:"jobs" status:"pending" uuid:"6f237414-5791-485c-a6e4-fc70c0be9ba8"]
+new [annotation_1629291539:"https:\/\/www.coinbase.com\/careers\/positions\/1724656?gh_jid=1724656" description:"CoinBase Winter Internship" end:"1629302835" entry:"1629291539" modified:"1629302835" project:"jobs" status:"completed" uuid:"6f237414-5791-485c-a6e4-fc70c0be9ba8"]
+---
+time 1629304041
+new [description:"RobinHood BackEnd" entry:"1629304041" modified:"1629304041" project:"jobs" status:"pending" uuid:"81ba2765-c583-4327-ac29-c4c0b3758ee3"]
+---
+time 1629304041
+old [description:"RobinHood BackEnd" entry:"1629304041" modified:"1629304041" project:"jobs" status:"pending" uuid:"81ba2765-c583-4327-ac29-c4c0b3758ee3"]
+new [annotation_1629304041:"https:\/\/robinhood.com\/us\/en\/careers\/openings\/?gh_jid=3339166" description:"RobinHood BackEnd" entry:"1629304041" modified:"1629304041" project:"jobs" status:"pending" uuid:"81ba2765-c583-4327-ac29-c4c0b3758ee3"]
+---
+time 1629306600
+old [annotation_1629210280:"https:\/\/leetcode.com\/problems\/binary-tree-level-order-traversal\/" description:"102: Level Order Traversal" entry:"1629210280" modified:"1629291959" project:"leetcode.trees" status:"pending" tags:"next" uuid:"495f6eee-4499-4ca6-8cbf-f61057f7cc20"]
+new [annotation_1629210280:"https:\/\/leetcode.com\/problems\/binary-tree-level-order-traversal\/" description:"102: Level Order Traversal" end:"1629306600" entry:"1629210280" modified:"1629306600" project:"leetcode.trees" status:"completed" tags:"next" uuid:"495f6eee-4499-4ca6-8cbf-f61057f7cc20"]
+---
+time 1629307368
+new [description:"complete convoy canvas" entry:"1629307368" modified:"1629307368" status:"pending" tags:"in" uuid:"7ee1ceb4-9bc0-4c7d-8eaa-01b17946aa1e"]
+---
+time 1629319288
+old [description:"complete convoy canvas" entry:"1629307368" modified:"1629307368" status:"pending" tags:"in" uuid:"7ee1ceb4-9bc0-4c7d-8eaa-01b17946aa1e"]
+new [description:"complete convoy canvas" entry:"1629307368" modified:"1629319288" status:"pending" tags:"next" uuid:"7ee1ceb4-9bc0-4c7d-8eaa-01b17946aa1e"]
+---
+time 1629321408
+new [description:"Paypal NYC" entry:"1629321408" modified:"1629321408" project:"jobs" status:"pending" uuid:"fd7efd44-649a-44c5-a654-11730712b1d9"]
+---
+time 1629321408
+old [description:"Paypal NYC" entry:"1629321408" modified:"1629321408" project:"jobs" status:"pending" uuid:"fd7efd44-649a-44c5-a654-11730712b1d9"]
+new [annotation_1629321408:"https:\/\/wd1.myworkdaysite.com\/recruiting\/paypal\/jobs\/job\/San-Jose-CA\/Software-Engineer-Intern_R0075012?Codes=W-LINKEDIN" description:"Paypal NYC" entry:"1629321408" modified:"1629321408" project:"jobs" status:"pending" uuid:"fd7efd44-649a-44c5-a654-11730712b1d9"]
+---
+time 1629328785
+old [annotation_1629239504:"https:\/\/leetcode.com\/problems\/lowest-common-ancestor-of-a-binary-search-tree\/" description:"Lowest Common Ancestor of BST" entry:"1629239504" modified:"1629291979" project:"leetcode.trees" status:"pending" tags:"next" uuid:"df3e23e7-5f5a-410c-9ea5-0d29fa1a0627"]
+new [annotation_1629239504:"https:\/\/leetcode.com\/problems\/lowest-common-ancestor-of-a-binary-search-tree\/" description:"Lowest Common Ancestor of BST" end:"1629328785" entry:"1629239504" modified:"1629328785" project:"leetcode.trees" status:"completed" tags:"next" uuid:"df3e23e7-5f5a-410c-9ea5-0d29fa1a0627"]
+---
+time 1629329652
+old [annotation_1629239279:"https:\/\/leetcode.com\/problems\/construct-binary-tree-from-preorder-and-inorder-traversal\/" description:"Construct from Traversal" entry:"1629239279" modified:"1629239372" project:"leetcode.trees" status:"pending" uuid:"5be8b905-866a-49b2-a97f-d179323a38b3"]
+new [annotation_1629239279:"https:\/\/leetcode.com\/problems\/construct-binary-tree-from-preorder-and-inorder-traversal\/" description:"34," entry:"1629239279" modified:"1629329652" project:"leetcode.trees" status:"pending" tags:"next" uuid:"5be8b905-866a-49b2-a97f-d179323a38b3"]
+---
+time 1629329675
+old [annotation_1629210426:"https:\/\/leetcode.com\/problems\/subtree-of-another-tree\/" description:"572: Subtree of Another Tree" entry:"1629210426" modified:"1629210470" project:"leetcode.trees" status:"pending" uuid:"93d025a5-ac29-4a21-8828-98649163b893"]
+new [annotation_1629210426:"https:\/\/leetcode.com\/problems\/subtree-of-another-tree\/" description:"572: Subtree of Another Tree" entry:"1629210426" modified:"1629329675" project:"leetcode.trees" status:"pending" tags:"next" uuid:"93d025a5-ac29-4a21-8828-98649163b893"]
+---
+time 1629329694
+old [description:"redo BFS anki card" entry:"1629205000" modified:"1629206993" project:"Anki" status:"pending" uuid:"f3e08490-1021-4be2-9ee4-853153e07227"]
+new [description:"redo BFS anki card" entry:"1629205000" modified:"1629329694" project:"Anki" status:"pending" tags:"next" uuid:"f3e08490-1021-4be2-9ee4-853153e07227"]
+---
+time 1629334994
+new [description:"Prashad Leetcode Patterns" entry:"1629334994" modified:"1629334994" status:"pending" uuid:"a8028286-c0dd-4bf1-8ff2-46334497d843"]
+---
+time 1629334994
+old [description:"Prashad Leetcode Patterns" entry:"1629334994" modified:"1629334994" status:"pending" uuid:"a8028286-c0dd-4bf1-8ff2-46334497d843"]
+new [annotation_1629334994:"https:\/\/seanprashad.com\/leetcode-patterns\/" description:"Prashad Leetcode Patterns" entry:"1629334994" modified:"1629334994" status:"pending" uuid:"a8028286-c0dd-4bf1-8ff2-46334497d843"]
+---
+time 1629335014
+old [annotation_1629334994:"https:\/\/seanprashad.com\/leetcode-patterns\/" description:"Prashad Leetcode Patterns" entry:"1629334994" modified:"1629334994" status:"pending" uuid:"a8028286-c0dd-4bf1-8ff2-46334497d843"]
+new [annotation_1629334994:"https:\/\/seanprashad.com\/leetcode-patterns\/" description:"Prashad Leetcode Patterns" entry:"1629334994" modified:"1629335014" project:"references.leetcode" status:"pending" uuid:"a8028286-c0dd-4bf1-8ff2-46334497d843"]
+---
+time 1629336524
+old [annotation_1629161201:"https:\/\/app.joinhandshake.com\/jobs\/5140754?search_id=4609e1c5-8678-4e2d-b753-4a1bfc40b253" description:"JPMorganChase" entry:"1629161178" modified:"1629166497" project:"jobs" status:"pending" tags:"New_York" uuid:"7b1925c7-ea4d-43b0-965b-6cf71b8ba2b4"]
+new [annotation_1629161201:"https:\/\/app.joinhandshake.com\/jobs\/5140754?search_id=4609e1c5-8678-4e2d-b753-4a1bfc40b253" description:"JPMorganChase" end:"1629336524" entry:"1629161178" modified:"1629336524" project:"jobs" status:"completed" tags:"New_York" uuid:"7b1925c7-ea4d-43b0-965b-6cf71b8ba2b4"]
+---
+time 1629384237
+new [description:"email Carissa" entry:"1629384237" modified:"1629384237" status:"pending" tags:"in" uuid:"cc0c4d9c-c5bd-40a6-bbab-5c73079e3370"]
+---
+time 1629384291
+new [description:"email Anna" entry:"1629384291" modified:"1629384291" status:"pending" tags:"in" uuid:"4a0f589c-1103-471d-a416-cadd762cc456"]
+---
+time 1629384303
+old [description:"email Carissa" entry:"1629384237" modified:"1629384237" status:"pending" tags:"in" uuid:"cc0c4d9c-c5bd-40a6-bbab-5c73079e3370"]
+new [description:"email Carissa" entry:"1629384237" modified:"1629384303" status:"pending" tags:"next" uuid:"cc0c4d9c-c5bd-40a6-bbab-5c73079e3370"]
+---
+time 1629384309
+old [description:"email Anna" entry:"1629384291" modified:"1629384291" status:"pending" tags:"in" uuid:"4a0f589c-1103-471d-a416-cadd762cc456"]
+new [description:"email Anna" entry:"1629384291" modified:"1629384309" status:"pending" tags:"next" uuid:"4a0f589c-1103-471d-a416-cadd762cc456"]
+---
+time 1629384315
+old [description:"review Hackthon github slides" entry:"1629298307" modified:"1629298307" status:"pending" uuid:"95d65622-a852-4873-a978-c8f17c3840c8"]
+new [description:"review Hackthon github slides" entry:"1629298307" modified:"1629384315" status:"pending" tags:"next" uuid:"95d65622-a852-4873-a978-c8f17c3840c8"]
+---
+time 1629384876
+old [description:"email Carissa" entry:"1629384237" modified:"1629384303" status:"pending" tags:"next" uuid:"cc0c4d9c-c5bd-40a6-bbab-5c73079e3370"]
+new [description:"email Carissa" end:"1629384876" entry:"1629384237" modified:"1629384876" status:"completed" tags:"next" uuid:"cc0c4d9c-c5bd-40a6-bbab-5c73079e3370"]
+---
+time 1629393116
+old [description:"email Anna" entry:"1629384291" modified:"1629384309" status:"pending" tags:"next" uuid:"4a0f589c-1103-471d-a416-cadd762cc456"]
+new [description:"email Anna" end:"1629393116" entry:"1629384291" modified:"1629393116" status:"completed" tags:"next" uuid:"4a0f589c-1103-471d-a416-cadd762cc456"]
+---
+time 1629408431
+old [annotation_1629334994:"https:\/\/seanprashad.com\/leetcode-patterns\/" description:"Prashad Leetcode Patterns" entry:"1629334994" modified:"1629335014" project:"references.leetcode" status:"pending" uuid:"a8028286-c0dd-4bf1-8ff2-46334497d843"]
+new [annotation_1629334994:"https:\/\/seanprashad.com\/leetcode-patterns\/" description:"Prashad Leetcode Patterns" entry:"1629334994" modified:"1629408431" project:"references.leetcode" status:"pending" tags:"in" uuid:"a8028286-c0dd-4bf1-8ff2-46334497d843"]
+---
+time 1629408439
+old [annotation_1629334994:"https:\/\/seanprashad.com\/leetcode-patterns\/" description:"Prashad Leetcode Patterns" entry:"1629334994" modified:"1629408431" project:"references.leetcode" status:"pending" tags:"in" uuid:"a8028286-c0dd-4bf1-8ff2-46334497d843"]
+new [annotation_1629334994:"https:\/\/seanprashad.com\/leetcode-patterns\/" description:"Prashad Leetcode Patterns" entry:"1629334994" modified:"1629408439" project:"references.leetcode" status:"pending" tags:"next" uuid:"a8028286-c0dd-4bf1-8ff2-46334497d843"]
+---
+time 1629466528
+new [description:"Quantum Metric QA" entry:"1629466528" modified:"1629466528" project:"jobs" status:"pending" uuid:"58ae4523-d760-4f19-9a12-eca1a7cbc329"]
+---
+time 1629466528
+old [description:"Quantum Metric QA" entry:"1629466528" modified:"1629466528" project:"jobs" status:"pending" uuid:"58ae4523-d760-4f19-9a12-eca1a7cbc329"]
+new [annotation_1629466528:"https:\/\/jobs.lever.co\/quantummetric\/7b18378a-4331-4c1b-b7de-1f42614beb49" description:"Quantum Metric QA" entry:"1629466528" modified:"1629466528" project:"jobs" status:"pending" uuid:"58ae4523-d760-4f19-9a12-eca1a7cbc329"]
+---
+time 1629468226
+old [annotation_1629168532:"https:\/\/www.linkedin.com\/jobs\/view\/2675138735\/" description:"Datadog(NYC)" entry:"1629168532" modified:"1629168541" project:"jobs" status:"pending" tags:"New_York" uuid:"e4822b57-97f1-43eb-9c6f-8ce59b9e64b5"]
+new [annotation_1629168532:"https:\/\/www.linkedin.com\/jobs\/view\/2675138735\/" description:"Datadog(NYC)" end:"1629468226" entry:"1629168532" modified:"1629468226" project:"jobs" status:"completed" tags:"New_York" uuid:"e4822b57-97f1-43eb-9c6f-8ce59b9e64b5"]
+---
+time 1629571506
+new [description:"Topological Sort Anki Card" entry:"1629571506" modified:"1629571506" status:"pending" uuid:"d3e91342-0486-4d1f-ac97-4643c4b05aed"]
+---
+time 1629571512
+new [description:"Kruskal's Anki Card" entry:"1629571512" modified:"1629571512" status:"pending" uuid:"e935e534-addc-4d0d-9bc6-fec376a21eb7"]
+---
+time 1629571519
+new [description:"Prim's Anki Card" entry:"1629571519" modified:"1629571519" status:"pending" uuid:"f3c7f94d-ebbf-489f-8df6-62b899e47395"]
+---
+time 1629571546
+old [description:"Topological Sort Anki Card" entry:"1629571506" modified:"1629571506" status:"pending" uuid:"d3e91342-0486-4d1f-ac97-4643c4b05aed"]
+new [description:"Topological Sort Anki Card" entry:"1629571506" modified:"1629571546" project:"Anki.make_card" status:"pending" uuid:"d3e91342-0486-4d1f-ac97-4643c4b05aed"]
+---
+time 1629571546
+old [description:"Kruskal's Anki Card" entry:"1629571512" modified:"1629571512" status:"pending" uuid:"e935e534-addc-4d0d-9bc6-fec376a21eb7"]
+new [description:"Kruskal's Anki Card" entry:"1629571512" modified:"1629571546" project:"Anki.make_card" status:"pending" uuid:"e935e534-addc-4d0d-9bc6-fec376a21eb7"]
+---
+time 1629571546
+old [description:"Prim's Anki Card" entry:"1629571519" modified:"1629571519" status:"pending" uuid:"f3c7f94d-ebbf-489f-8df6-62b899e47395"]
+new [description:"Prim's Anki Card" entry:"1629571519" modified:"1629571546" project:"Anki.make_card" status:"pending" uuid:"f3c7f94d-ebbf-489f-8df6-62b899e47395"]
+---
+time 1629645583
+old [annotation_1629158944:"https:\/\/www.psychologytoday.com\/us\/therapists\/trauma-and-ptsd\/06798?sid=6112d25ba6e05&spec=14" description:"make list of therapists to reach out to" entry:"1629158718" modified:"1629158944" project:"Therapy" status:"pending" tags:"next" uuid:"3325b460-dec3-408f-a1cd-c915747f2976"]
+new [annotation_1629158944:"https:\/\/www.psychologytoday.com\/us\/therapists\/trauma-and-ptsd\/06798?sid=6112d25ba6e05&spec=14" description:"make list of therapists to reach out to" entry:"1629158718" modified:"1629645583" project:"Therapy" status:"pending" uuid:"3325b460-dec3-408f-a1cd-c915747f2976"]
+---
+time 1629649970
+new [description:"124 Path Sum Anki Card" entry:"1629649970" modified:"1629649970" status:"pending" tags:"in" uuid:"c3dc9942-faca-481c-b0c5-c471507ae366"]
+---
+time 1629649991
+new [description:"572 Subtree of Another Tree Anki Card" entry:"1629649991" modified:"1629649991" status:"pending" tags:"in" uuid:"45b1ff9f-c0ae-4ffe-b94b-f6dfbc08fb26"]
+---
+time 1629650802
+new [description:"Understand python closures\/nested functions" entry:"1629650802" modified:"1629650802" status:"pending" tags:"in" uuid:"cc36c7c9-1096-4ea0-8a59-d55805d2b01d"]
+---
+time 1629652186
+new [description:"Build applied jobs spreadsheet" entry:"1629652186" modified:"1629652186" status:"pending" tags:"in" uuid:"e9672d10-4696-4371-baca-6af22751949d"]
+---
+time 1629652196
+new [description:"Build leetcode spreadsheet" entry:"1629652196" modified:"1629652196" status:"pending" tags:"in" uuid:"9fdfffa2-c5f8-467f-bd64-3b955a8d9d13"]
+---
+time 1629652246
+new [description:"Add Quora to applied internships 8\/22\/21" entry:"1629652246" modified:"1629652246" status:"pending" tags:"in" uuid:"7fc15d1c-1223-4ecf-9c24-f817821b5d96"]
+---
+time 1629653954
+new [description:"LC 112 - Path Sum" entry:"1629653954" modified:"1629653954" status:"pending" tags:"in" uuid:"e0e54a78-88e8-4896-9912-afeeee2f0f2d"]
+---
+time 1629653969
+old [description:"LC 112 - Path Sum" entry:"1629653954" modified:"1629653954" status:"pending" tags:"in" uuid:"e0e54a78-88e8-4896-9912-afeeee2f0f2d"]
+new [annotation_1629653969:"https:\/\/leetcode.com\/problems\/path-sum\/" description:"LC 112 - Path Sum" entry:"1629653954" modified:"1629653969" status:"pending" tags:"in" uuid:"e0e54a78-88e8-4896-9912-afeeee2f0f2d"]
+---
+time 1629657127
+new [description:"read neorg wiki" entry:"1629657127" modified:"1629657127" status:"pending" tags:"in" uuid:"b4428b43-adb4-4436-a7b5-aeb77134a081"]
+---
+time 1629657174
+new [description:"explore neorg codebase" entry:"1629657174" modified:"1629657174" status:"pending" tags:"in" uuid:"a1a6f4db-54d8-4845-825d-16a154bf4008"]
+---
+time 1629657261
+new [description:"add certikShield to applied internship list 8\/22\/21" entry:"1629657261" modified:"1629657261" status:"pending" tags:"in" uuid:"779f7f50-aafa-48be-9632-f4f8d17bb7fb"]
+---
+time 1629664809
+old [annotation_1629210190:"https:\/\/leetcode.com\/problems\/binary-tree-maximum-path-sum\/" description:"124 Maximum Path Sum" entry:"1629210190" modified:"1629291953" project:"leetcode.trees" status:"pending" tags:"next,Hard" uuid:"e8c55ba8-4342-46d5-b4af-c1ace8cb26cf"]
+new [annotation_1629210190:"https:\/\/leetcode.com\/problems\/binary-tree-maximum-path-sum\/" description:"124 Maximum Path Sum" entry:"1629210190" modified:"1629664809" project:"leetcode.trees" status:"pending" tags:"Hard" uuid:"e8c55ba8-4342-46d5-b4af-c1ace8cb26cf"]
+---
+time 1629664884
+new [description:"Leetcode 5 - Longest Palindromic Substring" entry:"1629664884" modified:"1629664884" status:"pending" tags:"in" uuid:"e8633444-255f-4a51-869e-24a1d13f44c5"]
+---
+time 1629664920
+old [description:"Leetcode 5 - Longest Palindromic Substring" entry:"1629664884" modified:"1629664884" status:"pending" tags:"in" uuid:"e8633444-255f-4a51-869e-24a1d13f44c5"]
+new [annotation_1629664920:"https:\/\/leetcode.com\/problems\/longest-palindromic-substring\/" description:"Leetcode 5 - Longest Palindromic Substring" entry:"1629664884" modified:"1629664920" status:"pending" tags:"in" uuid:"e8633444-255f-4a51-869e-24a1d13f44c5"]
+---
+time 1629664936
+old [annotation_1629664920:"https:\/\/leetcode.com\/problems\/longest-palindromic-substring\/" description:"Leetcode 5 - Longest Palindromic Substring" entry:"1629664884" modified:"1629664920" status:"pending" tags:"in" uuid:"e8633444-255f-4a51-869e-24a1d13f44c5"]
+new [annotation_1629664920:"https:\/\/leetcode.com\/problems\/longest-palindromic-substring\/" description:"Leetcode 5 - Longest Palindromic Substring" entry:"1629664884" modified:"1629664936" status:"pending" tags:"next" uuid:"e8633444-255f-4a51-869e-24a1d13f44c5"]
+---
+time 1629664958
+old [annotation_1629167222:"https:\/\/jobs.smartrecruiters.com\/Visa\/743999765849108-undergrad-intern-technology-multiple-locations?trid=2d92f286-613b-4daf-9dfa-6340ffbecf73&source=Linkedin" description:"Visa" entry:"1629167222" modified:"1629167239" project:"jobs" status:"pending" tags:"New_York,Austin,Atlanta,San_Francisco" uuid:"644d10a5-c519-4a40-ab14-010f7da484f6"]
+new [annotation_1629167222:"https:\/\/jobs.smartrecruiters.com\/Visa\/743999765849108-undergrad-intern-technology-multiple-locations?trid=2d92f286-613b-4daf-9dfa-6340ffbecf73&source=Linkedin" description:"Visa" entry:"1629167222" modified:"1629664958" project:"jobs" status:"pending" tags:"next,Austin,New_York,Atlanta,San_Francisco" uuid:"644d10a5-c519-4a40-ab14-010f7da484f6"]
+---
+time 1629664971
+old [annotation_1629167396:"https:\/\/boards.greenhouse.io\/lyft\/jobs\/5446216002?gh_jid=5446216002" description:"Lyft" entry:"1629167396" modified:"1629167401" project:"jobs" status:"pending" tags:"New_York" uuid:"9c67ec2d-d0e2-4525-bea8-6594641e5a4a"]
+new [annotation_1629167396:"https:\/\/boards.greenhouse.io\/lyft\/jobs\/5446216002?gh_jid=5446216002" description:"Lyft" entry:"1629167396" modified:"1629664971" project:"jobs" status:"pending" tags:"next,New_York" uuid:"9c67ec2d-d0e2-4525-bea8-6594641e5a4a"]
+---
+time 1629664989
+old [annotation_1629167986:"https:\/\/www.linkedin.com\/jobs\/view\/2678783214\/" description:"BlackHawk" entry:"1629167986" modified:"1629167992" project:"jobs" status:"pending" tags:"Remote" uuid:"596eb8a1-3ca5-4738-b520-6fab111fa197"]
+new [annotation_1629167986:"https:\/\/www.linkedin.com\/jobs\/view\/2678783214\/" description:"BlackHawk" entry:"1629167986" modified:"1629664989" project:"jobs" status:"pending" tags:"next,Remote" uuid:"596eb8a1-3ca5-4738-b520-6fab111fa197"]
+---
+time 1629665114
+new [description:"Finish attempted LC problems" entry:"1629665114" modified:"1629665114" status:"pending" tags:"next" uuid:"bc10b1a9-33e2-439e-9884-963aa466f92e"]
+---
+time 1629668301
+old [description:"complete convoy canvas" entry:"1629307368" modified:"1629319288" status:"pending" tags:"next" uuid:"7ee1ceb4-9bc0-4c7d-8eaa-01b17946aa1e"]
+new [description:"complete convoy canvas" end:"1629668301" entry:"1629307368" modified:"1629668301" status:"completed" tags:"next" uuid:"7ee1ceb4-9bc0-4c7d-8eaa-01b17946aa1e"]
+---
+time 1629725129
+old [annotation_1629653969:"https:\/\/leetcode.com\/problems\/path-sum\/" description:"LC 112 - Path Sum" entry:"1629653954" modified:"1629653969" status:"pending" tags:"in" uuid:"e0e54a78-88e8-4896-9912-afeeee2f0f2d"]
+new [annotation_1629653969:"https:\/\/leetcode.com\/problems\/path-sum\/" description:"LC 112 - Path Sum" end:"1629725129" entry:"1629653954" modified:"1629725129" status:"completed" tags:"in" uuid:"e0e54a78-88e8-4896-9912-afeeee2f0f2d"]
+---
+time 1629725145
+old [description:"124 Path Sum Anki Card" entry:"1629649970" modified:"1629649970" status:"pending" tags:"in" uuid:"c3dc9942-faca-481c-b0c5-c471507ae366"]
+new [description:"124 Path Sum Anki Card" end:"1629725145" entry:"1629649970" modified:"1629725145" status:"completed" tags:"in" uuid:"c3dc9942-faca-481c-b0c5-c471507ae366"]
+---
+time 1629725172
+old [description:"Understand python closures\/nested functions" entry:"1629650802" modified:"1629650802" status:"pending" tags:"in" uuid:"cc36c7c9-1096-4ea0-8a59-d55805d2b01d"]
+new [description:"Understand python closures\/nested functions" entry:"1629650802" modified:"1629725172" status:"pending" tags:"someday\/maybe" uuid:"cc36c7c9-1096-4ea0-8a59-d55805d2b01d"]
+---
+time 1629725181
+old [description:"Build applied jobs spreadsheet" entry:"1629652186" modified:"1629652186" status:"pending" tags:"in" uuid:"e9672d10-4696-4371-baca-6af22751949d"]
+new [description:"Build applied jobs spreadsheet" entry:"1629652186" modified:"1629725181" status:"pending" tags:"next" uuid:"e9672d10-4696-4371-baca-6af22751949d"]
+---
+time 1629725192
+old [description:"Build leetcode spreadsheet" entry:"1629652196" modified:"1629652196" status:"pending" tags:"in" uuid:"9fdfffa2-c5f8-467f-bd64-3b955a8d9d13"]
+new [description:"Build leetcode spreadsheet" entry:"1629652196" modified:"1629725192" status:"pending" tags:"next" uuid:"9fdfffa2-c5f8-467f-bd64-3b955a8d9d13"]
+---
+time 1629725267
+old [description:"Add Quora to applied internships 8\/22\/21" entry:"1629652246" modified:"1629652246" status:"pending" tags:"in" uuid:"7fc15d1c-1223-4ecf-9c24-f817821b5d96"]
+new [description:"Add Quora to applied internships 8\/22\/21" end:"1629725267" entry:"1629652246" modified:"1629725267" status:"completed" tags:"in" uuid:"7fc15d1c-1223-4ecf-9c24-f817821b5d96"]
+---
+time 1629725270
+old [description:"add certikShield to applied internship list 8\/22\/21" entry:"1629657261" modified:"1629657261" status:"pending" tags:"in" uuid:"779f7f50-aafa-48be-9632-f4f8d17bb7fb"]
+new [description:"add certikShield to applied internship list 8\/22\/21" end:"1629725270" entry:"1629657261" modified:"1629725270" status:"completed" tags:"in" uuid:"779f7f50-aafa-48be-9632-f4f8d17bb7fb"]
+---
+time 1629725281
+old [description:"explore neorg codebase" entry:"1629657174" modified:"1629657174" status:"pending" tags:"in" uuid:"a1a6f4db-54d8-4845-825d-16a154bf4008"]
+new [description:"explore neorg codebase" entry:"1629657174" modified:"1629725281" status:"pending" tags:"someday\/maybe" uuid:"a1a6f4db-54d8-4845-825d-16a154bf4008"]
+---
+time 1629725299
+old [description:"572 Subtree of Another Tree Anki Card" entry:"1629649991" modified:"1629649991" status:"pending" tags:"in" uuid:"45b1ff9f-c0ae-4ffe-b94b-f6dfbc08fb26"]
+new [description:"572 Subtree of Another Tree Anki Card" end:"1629725299" entry:"1629649991" modified:"1629725299" status:"deleted" tags:"in" uuid:"45b1ff9f-c0ae-4ffe-b94b-f6dfbc08fb26"]
+---
+time 1629725313
+old [description:"read neorg wiki" entry:"1629657127" modified:"1629657127" status:"pending" tags:"in" uuid:"b4428b43-adb4-4436-a7b5-aeb77134a081"]
+new [description:"read neorg wiki" entry:"1629657127" modified:"1629725313" status:"pending" tags:"next" uuid:"b4428b43-adb4-4436-a7b5-aeb77134a081"]
+---
+time 1629725352
+old [annotation_1629334994:"https:\/\/seanprashad.com\/leetcode-patterns\/" description:"Prashad Leetcode Patterns" entry:"1629334994" modified:"1629408439" project:"references.leetcode" status:"pending" tags:"next" uuid:"a8028286-c0dd-4bf1-8ff2-46334497d843"]
+new [annotation_1629334994:"https:\/\/seanprashad.com\/leetcode-patterns\/" description:"Prashad Leetcode Patterns" entry:"1629334994" modified:"1629725352" project:"references.leetcode" status:"pending" uuid:"a8028286-c0dd-4bf1-8ff2-46334497d843"]
+---
+time 1629727064
+old [description:"Build applied jobs spreadsheet" entry:"1629652186" modified:"1629725181" status:"pending" tags:"next" uuid:"e9672d10-4696-4371-baca-6af22751949d"]
+new [description:"Build applied jobs spreadsheet" end:"1629727064" entry:"1629652186" modified:"1629727064" status:"completed" tags:"next" uuid:"e9672d10-4696-4371-baca-6af22751949d"]
+---
+time 1629727075
+old [description:"1 hour Anki" entry:"1629238439" modified:"1629238481" status:"pending" tags:"next" uuid:"7fc8e595-2568-4d8f-910e-2cd2df8b5a18"]
+new [description:"1 hour Anki" end:"1629727075" entry:"1629238439" modified:"1629727075" status:"completed" tags:"next" uuid:"7fc8e595-2568-4d8f-910e-2cd2df8b5a18"]
+---
+time 1629727859
+new [description:"Topological Sort Anki Card" entry:"1629727859" modified:"1629727859" status:"pending" uuid:"477c17cd-8d08-451f-a6d4-b8a8d16f1b02"]
+---
+time 1629727876
+old [description:"Topological Sort Anki Card" entry:"1629727859" modified:"1629727859" status:"pending" uuid:"477c17cd-8d08-451f-a6d4-b8a8d16f1b02"]
+new [description:"Topological Sort Anki Card" entry:"1629727859" modified:"1629727876" status:"pending" tags:"next" uuid:"477c17cd-8d08-451f-a6d4-b8a8d16f1b02"]
+---
+time 1629727885
+old [description:"Topological Sort Anki Card" entry:"1629727859" modified:"1629727876" status:"pending" tags:"next" uuid:"477c17cd-8d08-451f-a6d4-b8a8d16f1b02"]
+new [description:"Topological Sort Anki Card" entry:"1629727859" modified:"1629727885" project:"Anki.make_card" status:"pending" tags:"next" uuid:"477c17cd-8d08-451f-a6d4-b8a8d16f1b02"]
+---
+time 1629727895
+old [description:"redo BFS anki card" entry:"1629205000" modified:"1629329694" project:"Anki" status:"pending" tags:"next" uuid:"f3e08490-1021-4be2-9ee4-853153e07227"]
+new [description:"redo BFS anki card" entry:"1629205000" modified:"1629727895" project:"Anki.make_card" status:"pending" tags:"next" uuid:"f3e08490-1021-4be2-9ee4-853153e07227"]
+---
+time 1629731519
+old [annotation_1629664920:"https:\/\/leetcode.com\/problems\/longest-palindromic-substring\/" description:"Leetcode 5 - Longest Palindromic Substring" entry:"1629664884" modified:"1629664936" status:"pending" tags:"next" uuid:"e8633444-255f-4a51-869e-24a1d13f44c5"]
+new [annotation_1629664920:"https:\/\/leetcode.com\/problems\/longest-palindromic-substring\/" description:"Leetcode 5 - Longest Palindromic Substring" end:"1629731519" entry:"1629664884" modified:"1629731519" status:"completed" tags:"next" uuid:"e8633444-255f-4a51-869e-24a1d13f44c5"]
+---
+time 1629732886
+old [annotation_1629167222:"https:\/\/jobs.smartrecruiters.com\/Visa\/743999765849108-undergrad-intern-technology-multiple-locations?trid=2d92f286-613b-4daf-9dfa-6340ffbecf73&source=Linkedin" description:"Visa" entry:"1629167222" modified:"1629664958" project:"jobs" status:"pending" tags:"next,Austin,New_York,Atlanta,San_Francisco" uuid:"644d10a5-c519-4a40-ab14-010f7da484f6"]
+new [annotation_1629167222:"https:\/\/jobs.smartrecruiters.com\/Visa\/743999765849108-undergrad-intern-technology-multiple-locations?trid=2d92f286-613b-4daf-9dfa-6340ffbecf73&source=Linkedin" description:"Visa" end:"1629732886" entry:"1629167222" modified:"1629732886" project:"jobs" status:"completed" tags:"next,Austin,New_York,Atlanta,San_Francisco" uuid:"644d10a5-c519-4a40-ab14-010f7da484f6"]
+---
+time 1629734030
+old [annotation_1629167986:"https:\/\/www.linkedin.com\/jobs\/view\/2678783214\/" description:"BlackHawk" entry:"1629167986" modified:"1629664989" project:"jobs" status:"pending" tags:"next,Remote" uuid:"596eb8a1-3ca5-4738-b520-6fab111fa197"]
+new [annotation_1629167986:"https:\/\/www.linkedin.com\/jobs\/view\/2678783214\/" description:"BlackHawk" entry:"1629167986" modified:"1629734030" project:"jobs" status:"pending" tags:"Remote,abandoned" uuid:"596eb8a1-3ca5-4738-b520-6fab111fa197"]
+---
+time 1629734038
+old [annotation_1629167986:"https:\/\/www.linkedin.com\/jobs\/view\/2678783214\/" description:"BlackHawk" entry:"1629167986" modified:"1629734030" project:"jobs" status:"pending" tags:"Remote,abandoned" uuid:"596eb8a1-3ca5-4738-b520-6fab111fa197"]
+new [annotation_1629167986:"https:\/\/www.linkedin.com\/jobs\/view\/2678783214\/" description:"BlackHawk" end:"1629734038" entry:"1629167986" modified:"1629734038" project:"jobs" status:"completed" tags:"Remote,abandoned" uuid:"596eb8a1-3ca5-4738-b520-6fab111fa197"]
+---
+time 1629735999
+old [annotation_1629167396:"https:\/\/boards.greenhouse.io\/lyft\/jobs\/5446216002?gh_jid=5446216002" description:"Lyft" entry:"1629167396" modified:"1629664971" project:"jobs" status:"pending" tags:"next,New_York" uuid:"9c67ec2d-d0e2-4525-bea8-6594641e5a4a"]
+new [annotation_1629167396:"https:\/\/boards.greenhouse.io\/lyft\/jobs\/5446216002?gh_jid=5446216002" description:"Lyft" end:"1629735999" entry:"1629167396" modified:"1629735999" project:"jobs" status:"completed" tags:"next,New_York" uuid:"9c67ec2d-d0e2-4525-bea8-6594641e5a4a"]
+---
+time 1629750465
+old [annotation_1629239279:"https:\/\/leetcode.com\/problems\/construct-binary-tree-from-preorder-and-inorder-traversal\/" description:"34," entry:"1629239279" modified:"1629329652" project:"leetcode.trees" status:"pending" tags:"next" uuid:"5be8b905-866a-49b2-a97f-d179323a38b3"]
+new [annotation_1629239279:"https:\/\/leetcode.com\/problems\/construct-binary-tree-from-preorder-and-inorder-traversal\/" description:"34," entry:"1629239279" modified:"1629750465" project:"leetcode.trees" status:"pending" tags:"revisit" uuid:"5be8b905-866a-49b2-a97f-d179323a38b3"]
+---
+time 1629750647
+new [description:"note resources to learn treesitter (primeagen refactor, neogen, twilight)" entry:"1629750647" modified:"1629750647" status:"pending" tags:"in" uuid:"db199e00-d0d9-45ca-a668-17d041b30599"]
+---
+time 1629754801
+old [annotation_1629239339:"https:\/\/leetcode.com\/problems\/kth-smallest-element-in-a-bst\/" description:"Kths Smallest Element" entry:"1629239339" modified:"1629239374" project:"leetcode.trees" status:"pending" uuid:"006c989d-8aae-4a06-97aa-cb6e18f1ff0d"]
+new [annotation_1629239339:"https:\/\/leetcode.com\/problems\/kth-smallest-element-in-a-bst\/" description:"Kths Smallest Element" entry:"1629239339" modified:"1629754801" project:"leetcode.trees" status:"pending" tags:"revisit" uuid:"006c989d-8aae-4a06-97aa-cb6e18f1ff0d"]
+---
+time 1629755482
+new [description:"IBM OA" entry:"1629755482" modified:"1629755482" status:"pending" tags:"in" uuid:"ac26de04-6420-4e14-b32b-52051105999d"]
+---
+time 1629755492
+new [description:"Samsara OA" entry:"1629755492" modified:"1629755492" status:"pending" tags:"in" uuid:"6c95b0f5-4f99-4fba-b902-958726804358"]
+---
+time 1629755506
+old [description:"IBM OA" entry:"1629755482" modified:"1629755482" status:"pending" tags:"in" uuid:"ac26de04-6420-4e14-b32b-52051105999d"]
+new [description:"IBM OA" entry:"1629755482" modified:"1629755506" project:"jobs.OA" status:"pending" tags:"in" uuid:"ac26de04-6420-4e14-b32b-52051105999d"]
+---
+time 1629755521
+old [description:"Samsara OA" entry:"1629755492" modified:"1629755492" status:"pending" tags:"in" uuid:"6c95b0f5-4f99-4fba-b902-958726804358"]
+new [description:"Samsara OA" entry:"1629755492" modified:"1629755521" project:"jobs.OA" status:"pending" tags:"in" uuid:"6c95b0f5-4f99-4fba-b902-958726804358"]
+---
+time 1629756248
+old [description:"read neorg wiki" entry:"1629657127" modified:"1629725313" status:"pending" tags:"next" uuid:"b4428b43-adb4-4436-a7b5-aeb77134a081"]
+new [description:"read neorg wiki" end:"1629756248" entry:"1629657127" modified:"1629756248" status:"completed" tags:"next" uuid:"b4428b43-adb4-4436-a7b5-aeb77134a081"]
+---
+time 1629756298
+old [annotation_1629239415:"https:\/\/leetcode.com\/problems\/word-search-ii\/" description:"Word Search" entry:"1629239415" modified:"1629239559" project:"leetcode.trees" status:"pending" uuid:"31510072-6680-4e81-b858-2ed1f34a8248"]
+new [annotation_1629239415:"https:\/\/leetcode.com\/problems\/word-search-ii\/" description:"Word Search" entry:"1629239415" modified:"1629756298" project:"leetcode.trees" status:"pending" tags:"next" uuid:"31510072-6680-4e81-b858-2ed1f34a8248"]
+---
+time 1629756305
+old [annotation_1629239478:"https:\/\/leetcode.com\/problems\/implement-trie-prefix-tree\/" description:"Prefix Tree" entry:"1629239478" modified:"1629239559" project:"leetcode.trees" status:"pending" uuid:"f37b2db0-c4d8-4570-b3fd-dcb3bbe231f3"]
+new [annotation_1629239478:"https:\/\/leetcode.com\/problems\/implement-trie-prefix-tree\/" description:"Prefix Tree" entry:"1629239478" modified:"1629756305" project:"leetcode.trees" status:"pending" tags:"next" uuid:"f37b2db0-c4d8-4570-b3fd-dcb3bbe231f3"]
+---
+time 1629756318
+old [description:"find leetcode K largest in Linked List" entry:"1629204820" modified:"1629206978" project:"leetcode.linkedlists" status:"pending" uuid:"e3fecc81-ce59-4dba-a163-872fee5305d8"]
+new [description:"find leetcode K largest in Linked List" entry:"1629204820" modified:"1629756318" project:"leetcode.linkedlists" status:"pending" tags:"next" uuid:"e3fecc81-ce59-4dba-a163-872fee5305d8"]
+---
+time 1629771451
+new [description:"make Anki Card for LC: 2" entry:"1629771451" modified:"1629771451" status:"pending" tags:"in" uuid:"51534a08-260c-4102-9d66-0aedb4c3ffb4"]
+---
+time 1629771495
+old [description:"make Anki Card for LC: 2" entry:"1629771451" modified:"1629771451" status:"pending" tags:"in" uuid:"51534a08-260c-4102-9d66-0aedb4c3ffb4"]
+new [description:"make Anki Card for LC: 2" entry:"1629771451" modified:"1629771495" status:"pending" tags:"in,next" uuid:"51534a08-260c-4102-9d66-0aedb4c3ffb4"]
+---
+time 1629771512
+old [description:"make Anki Card for LC: 2" entry:"1629771451" modified:"1629771495" status:"pending" tags:"in,next" uuid:"51534a08-260c-4102-9d66-0aedb4c3ffb4"]
+new [annotation_1629771512:"https:\/\/leetcode.com\/problems\/add-two-numbers\/submissions\/" description:"make Anki Card for LC: 2" entry:"1629771451" modified:"1629771512" status:"pending" tags:"in,next" uuid:"51534a08-260c-4102-9d66-0aedb4c3ffb4"]
+---
+time 1629771521
+old [annotation_1629771512:"https:\/\/leetcode.com\/problems\/add-two-numbers\/submissions\/" description:"make Anki Card for LC: 2" entry:"1629771451" modified:"1629771512" status:"pending" tags:"in,next" uuid:"51534a08-260c-4102-9d66-0aedb4c3ffb4"]
+new [annotation_1629771512:"https:\/\/leetcode.com\/problems\/add-two-numbers\/submissions\/" description:"make Anki Card for LC: 2" entry:"1629771451" modified:"1629771521" status:"pending" tags:"next" uuid:"51534a08-260c-4102-9d66-0aedb4c3ffb4"]
+---
+time 1629817272
+old [description:"note resources to learn treesitter (primeagen refactor, neogen, twilight)" entry:"1629750647" modified:"1629750647" status:"pending" tags:"in" uuid:"db199e00-d0d9-45ca-a668-17d041b30599"]
+new [description:"note resources to learn treesitter (primeagen refactor, neogen, twilight)" entry:"1629750647" modified:"1629817272" status:"pending" tags:"someday\/maybe" uuid:"db199e00-d0d9-45ca-a668-17d041b30599"]
+---
+time 1629817279
+old [description:"Samsara OA" entry:"1629755492" modified:"1629755521" project:"jobs.OA" status:"pending" tags:"in" uuid:"6c95b0f5-4f99-4fba-b902-958726804358"]
+new [description:"Samsara OA" entry:"1629755492" modified:"1629817279" project:"jobs.OA" status:"pending" tags:"next" uuid:"6c95b0f5-4f99-4fba-b902-958726804358"]
+---
+time 1629817288
+old [description:"IBM OA" entry:"1629755482" modified:"1629755506" project:"jobs.OA" status:"pending" tags:"in" uuid:"ac26de04-6420-4e14-b32b-52051105999d"]
+new [description:"IBM OA" entry:"1629755482" modified:"1629817288" project:"jobs.OA" status:"pending" tags:"next" uuid:"ac26de04-6420-4e14-b32b-52051105999d"]
+---
+time 1629817326
+old [description:"CapitalOne Codesignal" due:"1630468800" entry:"1629301641" modified:"1629301830" project:"jobs.OA" status:"pending" uuid:"65a92dd3-9f62-4a4d-83bb-11cddce3597f"]
+new [description:"CapitalOne Codesignal" due:"1630468800" entry:"1629301641" modified:"1629817326" project:"jobs.OA" status:"pending" tags:"next" uuid:"65a92dd3-9f62-4a4d-83bb-11cddce3597f"]
+---
+time 1629837398
+new [description:"return to LC98 Validate BST" entry:"1629837398" modified:"1629837398" status:"pending" tags:"in" uuid:"aabdf50b-cafc-49e8-b647-11e9ef16e034"]
+---
+time 1629837491
+new [description:"return to LC79 Word Search" entry:"1629837491" modified:"1629837491" status:"pending" tags:"in" uuid:"216af638-73ec-44e8-b828-6b8a8badd2dc"]
+---
+time 1629923900
+new [description:"Amazon OA" entry:"1629923900" modified:"1629923900" status:"pending" tags:"in" uuid:"550c7dc2-a0e2-43e0-8d04-7977f380dd6b"]
+---
+time 1629923931
+old [description:"return to LC79 Word Search" entry:"1629837491" modified:"1629837491" status:"pending" tags:"in" uuid:"216af638-73ec-44e8-b828-6b8a8badd2dc"]
+new [description:"return to LC79 Word Search" end:"1629923931" entry:"1629837491" modified:"1629923931" status:"completed" tags:"in" uuid:"216af638-73ec-44e8-b828-6b8a8badd2dc"]
+---
+time 1629923959
+old [description:"return to LC98 Validate BST" entry:"1629837398" modified:"1629837398" status:"pending" tags:"in" uuid:"aabdf50b-cafc-49e8-b647-11e9ef16e034"]
+new [description:"return to LC98 Validate BST" entry:"1629837398" modified:"1629923959" status:"pending" tags:"next" uuid:"aabdf50b-cafc-49e8-b647-11e9ef16e034"]
+---
+time 1629936485
+old [annotation_1629167127:"https:\/\/jobs.td.com\/en\/job\/13581186\/2022-summer-analyst-software-engineer-new-york-ny\/" description:"TDBank" entry:"1629167127" modified:"1629167134" project:"jobs" status:"pending" tags:"New_York" uuid:"ba27492f-61d1-4cb7-8dfb-9f2a392f6869"]
+new [annotation_1629167127:"https:\/\/jobs.td.com\/en\/job\/13581186\/2022-summer-analyst-software-engineer-new-york-ny\/" description:"TDBank" end:"1629936485" entry:"1629167127" modified:"1629936485" project:"jobs" status:"deleted" tags:"New_York" uuid:"ba27492f-61d1-4cb7-8dfb-9f2a392f6869"]
+---
+time 1629938864
+new [description:"MasterCard OA" entry:"1629938864" modified:"1629938864" status:"pending" tags:"in" uuid:"d4ab5467-a3be-4c66-b445-75124b562352"]
+---
+time 1629941271
+new [description:"Stalk Carleton Alumni Network for software stuff" entry:"1629941271" modified:"1629941271" status:"pending" tags:"in" uuid:"4fb81dda-9fc6-487c-b09c-725edcb637fd"]
+---
+time 1629943552
+old [description:"Amazon OA" entry:"1629923900" modified:"1629923900" status:"pending" tags:"in" uuid:"550c7dc2-a0e2-43e0-8d04-7977f380dd6b"]
+new [description:"Amazon OA" entry:"1629923900" modified:"1629943552" status:"pending" tags:"in,next" uuid:"550c7dc2-a0e2-43e0-8d04-7977f380dd6b"]
+---
+time 1629943552
+old [description:"MasterCard OA" entry:"1629938864" modified:"1629938864" status:"pending" tags:"in" uuid:"d4ab5467-a3be-4c66-b445-75124b562352"]
+new [description:"MasterCard OA" entry:"1629938864" modified:"1629943552" status:"pending" tags:"in,next" uuid:"d4ab5467-a3be-4c66-b445-75124b562352"]
+---
+time 1629943552
+old [description:"Stalk Carleton Alumni Network for software stuff" entry:"1629941271" modified:"1629941271" status:"pending" tags:"in" uuid:"4fb81dda-9fc6-487c-b09c-725edcb637fd"]
+new [description:"Stalk Carleton Alumni Network for software stuff" entry:"1629941271" modified:"1629943552" status:"pending" tags:"in,next" uuid:"4fb81dda-9fc6-487c-b09c-725edcb637fd"]
+---
+time 1629943563
+old [description:"Amazon OA" entry:"1629923900" modified:"1629943552" status:"pending" tags:"in,next" uuid:"550c7dc2-a0e2-43e0-8d04-7977f380dd6b"]
+new [description:"Amazon OA" entry:"1629923900" modified:"1629943563" status:"pending" tags:"next" uuid:"550c7dc2-a0e2-43e0-8d04-7977f380dd6b"]
+---
+time 1629943563
+old [description:"MasterCard OA" entry:"1629938864" modified:"1629943552" status:"pending" tags:"in,next" uuid:"d4ab5467-a3be-4c66-b445-75124b562352"]
+new [description:"MasterCard OA" entry:"1629938864" modified:"1629943563" status:"pending" tags:"next" uuid:"d4ab5467-a3be-4c66-b445-75124b562352"]
+---
+time 1629943563
+old [description:"Stalk Carleton Alumni Network for software stuff" entry:"1629941271" modified:"1629943552" status:"pending" tags:"in,next" uuid:"4fb81dda-9fc6-487c-b09c-725edcb637fd"]
+new [description:"Stalk Carleton Alumni Network for software stuff" entry:"1629941271" modified:"1629943563" status:"pending" tags:"next" uuid:"4fb81dda-9fc6-487c-b09c-725edcb637fd"]
+---
+time 1629994473
+new [description:"databricks OA" entry:"1629994473" modified:"1629994473" status:"pending" tags:"in" uuid:"2a5e1223-ea37-4743-b0ff-1e565a7b87b0"]
+---
+time 1629994483
+old [description:"IBM OA" entry:"1629755482" modified:"1629817288" project:"jobs.OA" status:"pending" tags:"next" uuid:"ac26de04-6420-4e14-b32b-52051105999d"]
+new [description:"IBM OA" entry:"1629755482" modified:"1629994483" project:"jobs.OA" status:"pending" tags:"next,OA" uuid:"ac26de04-6420-4e14-b32b-52051105999d"]
+---
+time 1629994488
+old [description:"Samsara OA" entry:"1629755492" modified:"1629817279" project:"jobs.OA" status:"pending" tags:"next" uuid:"6c95b0f5-4f99-4fba-b902-958726804358"]
+new [description:"Samsara OA" entry:"1629755492" modified:"1629994488" project:"jobs.OA" status:"pending" tags:"next,OA" uuid:"6c95b0f5-4f99-4fba-b902-958726804358"]
+---
+time 1629994495
+old [description:"Amazon OA" entry:"1629923900" modified:"1629943563" status:"pending" tags:"next" uuid:"550c7dc2-a0e2-43e0-8d04-7977f380dd6b"]
+new [description:"Amazon OA" entry:"1629923900" modified:"1629994495" status:"pending" tags:"next,OA" uuid:"550c7dc2-a0e2-43e0-8d04-7977f380dd6b"]
+---
+time 1629994499
+old [description:"MasterCard OA" entry:"1629938864" modified:"1629943563" status:"pending" tags:"next" uuid:"d4ab5467-a3be-4c66-b445-75124b562352"]
+new [description:"MasterCard OA" entry:"1629938864" modified:"1629994499" status:"pending" tags:"next,OA" uuid:"d4ab5467-a3be-4c66-b445-75124b562352"]
+---
+time 1629994504
+old [description:"databricks OA" entry:"1629994473" modified:"1629994473" status:"pending" tags:"in" uuid:"2a5e1223-ea37-4743-b0ff-1e565a7b87b0"]
+new [description:"databricks OA" entry:"1629994473" modified:"1629994504" status:"pending" tags:"in,OA" uuid:"2a5e1223-ea37-4743-b0ff-1e565a7b87b0"]
+---
+time 1630015643
+new [description:"review OSU-Hackathon-Website" entry:"1630015643" modified:"1630015643" status:"pending" tags:"in" uuid:"58752329-5216-4ace-b798-85e591a50619"]
+---
+time 1630015725
+new [description:"Make judges list for Hackathon" entry:"1630015725" modified:"1630015725" status:"pending" tags:"in" uuid:"7e3ba3d1-65af-4240-82a4-eda0ac1cc02b"]
+---
+time 1630015795
+new [description:"Look at virtual leadership officer requirement" entry:"1630015795" modified:"1630015795" status:"pending" tags:"in" uuid:"fa01f861-bff6-4241-91ee-604aadc1afcf"]
+---
+time 1630016139
+new [description:"Make devpost images for fall - square AND add information to banner" entry:"1630016139" modified:"1630016139" status:"pending" tags:"in" uuid:"2777b781-750a-4289-92ad-eba1501f2e36"]
+---
+time 1630016284
+old [description:"review OSU-Hackathon-Website" entry:"1630015643" modified:"1630015643" status:"pending" tags:"in" uuid:"58752329-5216-4ace-b798-85e591a50619"]
+new [description:"review OSU-Hackathon-Website" entry:"1630015643" modified:"1630016284" project:"Hackathon.fall" status:"pending" tags:"in" uuid:"58752329-5216-4ace-b798-85e591a50619"]
+---
+time 1630016291
+old [description:"databricks OA" entry:"1629994473" modified:"1629994504" status:"pending" tags:"in,OA" uuid:"2a5e1223-ea37-4743-b0ff-1e565a7b87b0"]
+new [description:"databricks OA" entry:"1629994473" modified:"1630016291" project:"Hackathon.fall" status:"pending" tags:"in,OA" uuid:"2a5e1223-ea37-4743-b0ff-1e565a7b87b0"]
+---
+time 1630016302
+old [description:"Make judges list for Hackathon" entry:"1630015725" modified:"1630015725" status:"pending" tags:"in" uuid:"7e3ba3d1-65af-4240-82a4-eda0ac1cc02b"]
+new [description:"Make judges list for Hackathon" entry:"1630015725" modified:"1630016302" project:"Hackathon.fall" status:"pending" tags:"in" uuid:"7e3ba3d1-65af-4240-82a4-eda0ac1cc02b"]
+---
+time 1630016308
+old [description:"Look at virtual leadership officer requirement" entry:"1630015795" modified:"1630015795" status:"pending" tags:"in" uuid:"fa01f861-bff6-4241-91ee-604aadc1afcf"]
+new [description:"Look at virtual leadership officer requirement" entry:"1630015795" modified:"1630016308" project:"Hackathon.fall" status:"pending" tags:"in" uuid:"fa01f861-bff6-4241-91ee-604aadc1afcf"]
+---
+time 1630016312
+old [description:"Make devpost images for fall - square AND add information to banner" entry:"1630016139" modified:"1630016139" status:"pending" tags:"in" uuid:"2777b781-750a-4289-92ad-eba1501f2e36"]
+new [description:"Make devpost images for fall - square AND add information to banner" entry:"1630016139" modified:"1630016312" project:"Hackathon.fall" status:"pending" tags:"in" uuid:"2777b781-750a-4289-92ad-eba1501f2e36"]
+---
+time 1630016343
+old [description:"databricks OA" entry:"1629994473" modified:"1630016291" project:"Hackathon.fall" status:"pending" tags:"in,OA" uuid:"2a5e1223-ea37-4743-b0ff-1e565a7b87b0"]
+new [description:"databricks OA" entry:"1629994473" modified:"1630016343" project:"Hackathon.fall" status:"pending" tags:"OA,next" uuid:"2a5e1223-ea37-4743-b0ff-1e565a7b87b0"]
+---
+time 1630016343
+old [description:"review OSU-Hackathon-Website" entry:"1630015643" modified:"1630016284" project:"Hackathon.fall" status:"pending" tags:"in" uuid:"58752329-5216-4ace-b798-85e591a50619"]
+new [description:"review OSU-Hackathon-Website" entry:"1630015643" modified:"1630016343" project:"Hackathon.fall" status:"pending" tags:"next" uuid:"58752329-5216-4ace-b798-85e591a50619"]
+---
+time 1630016343
+old [description:"Make judges list for Hackathon" entry:"1630015725" modified:"1630016302" project:"Hackathon.fall" status:"pending" tags:"in" uuid:"7e3ba3d1-65af-4240-82a4-eda0ac1cc02b"]
+new [description:"Make judges list for Hackathon" entry:"1630015725" modified:"1630016343" project:"Hackathon.fall" status:"pending" tags:"next" uuid:"7e3ba3d1-65af-4240-82a4-eda0ac1cc02b"]
+---
+time 1630016343
+old [description:"Look at virtual leadership officer requirement" entry:"1630015795" modified:"1630016308" project:"Hackathon.fall" status:"pending" tags:"in" uuid:"fa01f861-bff6-4241-91ee-604aadc1afcf"]
+new [description:"Look at virtual leadership officer requirement" entry:"1630015795" modified:"1630016343" project:"Hackathon.fall" status:"pending" tags:"next" uuid:"fa01f861-bff6-4241-91ee-604aadc1afcf"]
+---
+time 1630016343
+old [description:"Make devpost images for fall - square AND add information to banner" entry:"1630016139" modified:"1630016312" project:"Hackathon.fall" status:"pending" tags:"in" uuid:"2777b781-750a-4289-92ad-eba1501f2e36"]
+new [description:"Make devpost images for fall - square AND add information to banner" entry:"1630016139" modified:"1630016343" project:"Hackathon.fall" status:"pending" tags:"next" uuid:"2777b781-750a-4289-92ad-eba1501f2e36"]
+---
+time 1630016366
+new [description:"make LC revisit list" entry:"1630016366" modified:"1630016366" status:"pending" tags:"in" uuid:"d13ae34c-2ba3-4db6-9c49-22ebc324791f"]
+---
+time 1630016386
+old [annotation_1629210165:"https:\/\/leetcode.com\/problems\/binary-tree-maximum-path-sum\/" description:"redo DFS anki card" entry:"1629205011" modified:"1629291931" project:"Anki" status:"pending" tags:"next" uuid:"92053a33-f057-4866-8515-073dd72b9a3d"]
+new [annotation_1629210165:"https:\/\/leetcode.com\/problems\/binary-tree-maximum-path-sum\/" description:"redo DFS anki card" end:"1630016386" entry:"1629205011" modified:"1630016386" project:"Anki" status:"deleted" tags:"next" uuid:"92053a33-f057-4866-8515-073dd72b9a3d"]
+---
+time 1630016391
+old [annotation_1629239478:"https:\/\/leetcode.com\/problems\/implement-trie-prefix-tree\/" description:"Prefix Tree" entry:"1629239478" modified:"1629756305" project:"leetcode.trees" status:"pending" tags:"next" uuid:"f37b2db0-c4d8-4570-b3fd-dcb3bbe231f3"]
+new [annotation_1629239478:"https:\/\/leetcode.com\/problems\/implement-trie-prefix-tree\/" description:"Prefix Tree" end:"1630016391" entry:"1629239478" modified:"1630016391" project:"leetcode.trees" status:"completed" tags:"next" uuid:"f37b2db0-c4d8-4570-b3fd-dcb3bbe231f3"]
+---
+time 1630016397
+old [description:"CapitalOne Codesignal" due:"1630468800" entry:"1629301641" modified:"1629817326" project:"jobs.OA" status:"pending" tags:"next" uuid:"65a92dd3-9f62-4a4d-83bb-11cddce3597f"]
+new [description:"CapitalOne Codesignal" due:"1630468800" end:"1630016397" entry:"1629301641" modified:"1630016397" project:"jobs.OA" status:"completed" tags:"next" uuid:"65a92dd3-9f62-4a4d-83bb-11cddce3597f"]
+---
+time 1630017838
+old [description:"Make Spreadsheet Comparing Spring\/Summer Hackathons" entry:"1629159505" modified:"1629168709" project:"Hackathon" status:"pending" tags:"next" uuid:"460c3f4b-62d7-430a-8bef-0984541dc945"]
+new [description:"Make Spreadsheet Comparing Spring\/Summer Hackathons" entry:"1629159505" modified:"1630017838" project:"Hackathon" status:"pending" tags:"someday\/maybe" uuid:"460c3f4b-62d7-430a-8bef-0984541dc945"]
+---
+time 1630017924
+new [description:"Tarjan's Algorithm Anki Card" entry:"1630017924" modified:"1630017924" status:"pending" tags:"in" uuid:"bf70b4c7-3a8f-4099-b691-11c93f806f31"]
+---
+time 1630017939
+new [description:"Kruskal's Algorithm Anki Card" entry:"1630017939" modified:"1630017939" status:"pending" tags:"in" uuid:"790bed54-f8ba-4152-af8a-1119eacc3471"]
+---
+time 1630017962
+new [description:"Prim's Algorithm Anki Card" entry:"1630017962" modified:"1630017962" status:"pending" tags:"in" uuid:"03fedb1b-dbfb-4519-b6a3-05a4a01f25da"]
+---
+time 1630017998
+old [description:"Build leetcode spreadsheet" entry:"1629652196" modified:"1629725192" status:"pending" tags:"next" uuid:"9fdfffa2-c5f8-467f-bd64-3b955a8d9d13"]
+new [description:"Build leetcode spreadsheet" end:"1630017998" entry:"1629652196" modified:"1630017998" status:"completed" tags:"next" uuid:"9fdfffa2-c5f8-467f-bd64-3b955a8d9d13"]
+---
+time 1630018101
+old [annotation_1629239415:"https:\/\/leetcode.com\/problems\/word-search-ii\/" description:"Word Search" entry:"1629239415" modified:"1629756298" project:"leetcode.trees" status:"pending" tags:"next" uuid:"31510072-6680-4e81-b858-2ed1f34a8248"]
+new [annotation_1629239415:"https:\/\/leetcode.com\/problems\/word-search-ii\/" description:"Word Search II" entry:"1629239415" modified:"1630018101" project:"leetcode.trees" status:"pending" tags:"next" uuid:"31510072-6680-4e81-b858-2ed1f34a8248"]
+---
+time 1630018594
+new [description:"Kth Largest Element in Array" entry:"1630018594" modified:"1630018594" status:"pending" uuid:"278eb670-0f21-4887-9bae-d90bea7b16f5"]
+---
+time 1630018594
+old [description:"Kth Largest Element in Array" entry:"1630018594" modified:"1630018594" status:"pending" uuid:"278eb670-0f21-4887-9bae-d90bea7b16f5"]
+new [annotation_1630018594:"https:\/\/leetcode.com\/problems\/kth-largest-element-in-an-array\/" description:"Kth Largest Element in Array" entry:"1630018594" modified:"1630018594" status:"pending" uuid:"278eb670-0f21-4887-9bae-d90bea7b16f5"]
+---
+time 1630100449
+old [description:"Make devpost images for fall - square AND add information to banner" entry:"1630016139" modified:"1630016343" project:"Hackathon.fall" status:"pending" tags:"next" uuid:"2777b781-750a-4289-92ad-eba1501f2e36"]
+new [description:"Make devpost images for fall - square AND add information to banner" end:"1630100449" entry:"1630016139" modified:"1630100449" project:"Hackathon.fall" status:"completed" tags:"next" uuid:"2777b781-750a-4289-92ad-eba1501f2e36"]
+---
+time 1630164236
+old [description:"MasterCard OA" entry:"1629938864" modified:"1629994499" status:"pending" tags:"next,OA" uuid:"d4ab5467-a3be-4c66-b445-75124b562352"]
+new [description:"MasterCard OA" end:"1630164236" entry:"1629938864" modified:"1630164236" status:"completed" tags:"next,OA" uuid:"d4ab5467-a3be-4c66-b445-75124b562352"]
+---
+time 1630200957
+old [annotation_1629210426:"https:\/\/leetcode.com\/problems\/subtree-of-another-tree\/" description:"572: Subtree of Another Tree" entry:"1629210426" modified:"1629329675" project:"leetcode.trees" status:"pending" tags:"next" uuid:"93d025a5-ac29-4a21-8828-98649163b893"]
+new [annotation_1629210426:"https:\/\/leetcode.com\/problems\/subtree-of-another-tree\/" description:"572: Subtree of Another Tree" entry:"1629210426" modified:"1630200957" project:"leetcode.trees" status:"pending" tags:"next,in" uuid:"93d025a5-ac29-4a21-8828-98649163b893"]
+---
+time 1630200963
+old [annotation_1629210426:"https:\/\/leetcode.com\/problems\/subtree-of-another-tree\/" description:"572: Subtree of Another Tree" entry:"1629210426" modified:"1630200957" project:"leetcode.trees" status:"pending" tags:"next,in" uuid:"93d025a5-ac29-4a21-8828-98649163b893"]
+new [annotation_1629210426:"https:\/\/leetcode.com\/problems\/subtree-of-another-tree\/" description:"572: Subtree of Another Tree" entry:"1629210426" modified:"1630200963" project:"leetcode.trees" status:"pending" tags:"next" uuid:"93d025a5-ac29-4a21-8828-98649163b893"]
+---
+time 1630201033
+old [description:"begin debugger tutorial" entry:"1629159085" modified:"1629159300" project:"261" scheduled:"1629936685" status:"pending" uuid:"a46cd6b8-e024-468c-bf56-b8e346d23ebd"]
+new [description:"+ next" entry:"1629159085" modified:"1630201033" project:"261" scheduled:"1629936685" status:"pending" uuid:"a46cd6b8-e024-468c-bf56-b8e346d23ebd"]
+---
+time 1630201033
+old [description:"make LC revisit list" entry:"1630016366" modified:"1630016366" status:"pending" tags:"in" uuid:"d13ae34c-2ba3-4db6-9c49-22ebc324791f"]
+new [description:"+ next" entry:"1630016366" modified:"1630201033" status:"pending" uuid:"d13ae34c-2ba3-4db6-9c49-22ebc324791f"]
+---
+time 1630201033
+old [description:"Tarjan's Algorithm Anki Card" entry:"1630017924" modified:"1630017924" status:"pending" tags:"in" uuid:"bf70b4c7-3a8f-4099-b691-11c93f806f31"]
+new [description:"+ next" entry:"1630017924" modified:"1630201033" status:"pending" uuid:"bf70b4c7-3a8f-4099-b691-11c93f806f31"]
+---
+time 1630201033
+old [description:"Kruskal's Algorithm Anki Card" entry:"1630017939" modified:"1630017939" status:"pending" tags:"in" uuid:"790bed54-f8ba-4152-af8a-1119eacc3471"]
+new [description:"+ next" entry:"1630017939" modified:"1630201033" status:"pending" uuid:"790bed54-f8ba-4152-af8a-1119eacc3471"]
+---
+time 1630201033
+old [description:"Prim's Algorithm Anki Card" entry:"1630017962" modified:"1630017962" status:"pending" tags:"in" uuid:"03fedb1b-dbfb-4519-b6a3-05a4a01f25da"]
+new [description:"+ next" entry:"1630017962" modified:"1630201033" status:"pending" uuid:"03fedb1b-dbfb-4519-b6a3-05a4a01f25da"]
+---
+time 1630201033
+old [annotation_1630018594:"https:\/\/leetcode.com\/problems\/kth-largest-element-in-an-array\/" description:"Kth Largest Element in Array" entry:"1630018594" modified:"1630018594" status:"pending" uuid:"278eb670-0f21-4887-9bae-d90bea7b16f5"]
+new [annotation_1630018594:"https:\/\/leetcode.com\/problems\/kth-largest-element-in-an-array\/" description:"+ next" entry:"1630018594" modified:"1630201033" status:"pending" uuid:"278eb670-0f21-4887-9bae-d90bea7b16f5"]
+---
+time 1630248588
+old [annotation_1629771512:"https:\/\/leetcode.com\/problems\/add-two-numbers\/submissions\/" description:"make Anki Card for LC: 2" entry:"1629771451" modified:"1629771521" status:"pending" tags:"next" uuid:"51534a08-260c-4102-9d66-0aedb4c3ffb4"]
+new [annotation_1629771512:"https:\/\/leetcode.com\/problems\/add-two-numbers\/submissions\/" description:"make Anki Card for LC: 2" end:"1630248588" entry:"1629771451" modified:"1630248588" status:"completed" tags:"next" uuid:"51534a08-260c-4102-9d66-0aedb4c3ffb4"]
+---
+time 1630340511
+new [description:"Atlantic Pacific Flow" entry:"1630340511" modified:"1630340511" status:"pending" uuid:"13b43b1a-a08d-41c1-9598-9174be5915b2"]
+---
+time 1630340526
+old [description:"Atlantic Pacific Flow" entry:"1630340511" modified:"1630340511" status:"pending" uuid:"13b43b1a-a08d-41c1-9598-9174be5915b2"]
+new [annotation_1630340526:"https:\/\/leetcode.com\/problems\/pacific-atlantic-water-flow\/" description:"Atlantic Pacific Flow" entry:"1630340511" modified:"1630340526" status:"pending" uuid:"13b43b1a-a08d-41c1-9598-9174be5915b2"]
+---
+time 1630340532
+old [annotation_1630340526:"https:\/\/leetcode.com\/problems\/pacific-atlantic-water-flow\/" description:"Atlantic Pacific Flow" entry:"1630340511" modified:"1630340526" status:"pending" uuid:"13b43b1a-a08d-41c1-9598-9174be5915b2"]
+new [annotation_1630340526:"https:\/\/leetcode.com\/problems\/pacific-atlantic-water-flow\/" description:"Atlantic Pacific Flow" entry:"1630340511" modified:"1630340532" status:"pending" tags:"next" uuid:"13b43b1a-a08d-41c1-9598-9174be5915b2"]
+---
+time 1630340536
+old [description:"+ next" entry:"1630016366" modified:"1630201033" status:"pending" uuid:"d13ae34c-2ba3-4db6-9c49-22ebc324791f"]
+new [description:"+ next" end:"1630340536" entry:"1630016366" modified:"1630340536" status:"deleted" uuid:"d13ae34c-2ba3-4db6-9c49-22ebc324791f"]
+---
+time 1630340538
+old [description:"+ next" entry:"1630017924" modified:"1630201033" status:"pending" uuid:"bf70b4c7-3a8f-4099-b691-11c93f806f31"]
+new [description:"+ next" end:"1630340538" entry:"1630017924" modified:"1630340538" status:"deleted" uuid:"bf70b4c7-3a8f-4099-b691-11c93f806f31"]
+---
+time 1630340539
+old [description:"+ next" entry:"1630017939" modified:"1630201033" status:"pending" uuid:"790bed54-f8ba-4152-af8a-1119eacc3471"]
+new [description:"+ next" end:"1630340539" entry:"1630017939" modified:"1630340539" status:"deleted" uuid:"790bed54-f8ba-4152-af8a-1119eacc3471"]
+---
+time 1630340541
+old [description:"+ next" entry:"1630017962" modified:"1630201033" status:"pending" uuid:"03fedb1b-dbfb-4519-b6a3-05a4a01f25da"]
+new [description:"+ next" end:"1630340541" entry:"1630017962" modified:"1630340541" status:"deleted" uuid:"03fedb1b-dbfb-4519-b6a3-05a4a01f25da"]
+---
+time 1630341892
+old [description:"return to LC98 Validate BST" entry:"1629837398" modified:"1629923959" status:"pending" tags:"next" uuid:"aabdf50b-cafc-49e8-b647-11e9ef16e034"]
+new [description:"return to LC98 Validate BST" end:"1630341892" entry:"1629837398" modified:"1630341892" status:"completed" tags:"next" uuid:"aabdf50b-cafc-49e8-b647-11e9ef16e034"]
+---
+time 1630341916
+old [description:"Look at virtual leadership officer requirement" entry:"1630015795" modified:"1630016343" project:"Hackathon.fall" status:"pending" tags:"next" uuid:"fa01f861-bff6-4241-91ee-604aadc1afcf"]
+new [description:"Look at virtual leadership officer requirement" end:"1630341916" entry:"1630015795" modified:"1630341916" project:"Hackathon.fall" status:"completed" tags:"next" uuid:"fa01f861-bff6-4241-91ee-604aadc1afcf"]
+---
+time 1630341924
+old [description:"Samsara OA" entry:"1629755492" modified:"1629994488" project:"jobs.OA" status:"pending" tags:"next,OA" uuid:"6c95b0f5-4f99-4fba-b902-958726804358"]
+new [description:"Samsara OA" end:"1630341924" entry:"1629755492" modified:"1630341924" project:"jobs.OA" status:"deleted" tags:"next,OA" uuid:"6c95b0f5-4f99-4fba-b902-958726804358"]
+---
+time 1630359341
+new [description:"Email Ruth - ask about judging" entry:"1630359341" modified:"1630359341" status:"pending" tags:"in" uuid:"0b9b31a9-7b7e-4048-a6e5-01917c79957c"]
+---
+time 1630360205
+old [description:"Topological Sort Anki Card" entry:"1629727859" modified:"1629727885" project:"Anki.make_card" status:"pending" tags:"next" uuid:"477c17cd-8d08-451f-a6d4-b8a8d16f1b02"]
+new [description:"Topological Sort Anki Card" end:"1630360205" entry:"1629727859" modified:"1630360205" project:"Anki.make_card" status:"completed" tags:"next" uuid:"477c17cd-8d08-451f-a6d4-b8a8d16f1b02"]
+---
+time 1630417002
+old [description:"Email Ruth - ask about judging" entry:"1630359341" modified:"1630359341" status:"pending" tags:"in" uuid:"0b9b31a9-7b7e-4048-a6e5-01917c79957c"]
+new [description:"Email Ruth - ask about judging" end:"1630417002" entry:"1630359341" modified:"1630417002" status:"completed" tags:"in" uuid:"0b9b31a9-7b7e-4048-a6e5-01917c79957c"]
+---
+time 1630417016
+old [annotation_1630340526:"https:\/\/leetcode.com\/problems\/pacific-atlantic-water-flow\/" description:"Atlantic Pacific Flow" entry:"1630340511" modified:"1630340532" status:"pending" tags:"next" uuid:"13b43b1a-a08d-41c1-9598-9174be5915b2"]
+new [annotation_1630340526:"https:\/\/leetcode.com\/problems\/pacific-atlantic-water-flow\/" description:"Atlantic Pacific Flow" end:"1630417016" entry:"1630340511" modified:"1630417016" status:"completed" tags:"next" uuid:"13b43b1a-a08d-41c1-9598-9174be5915b2"]
+---
+time 1630417023
+old [annotation_1629210426:"https:\/\/leetcode.com\/problems\/subtree-of-another-tree\/" description:"572: Subtree of Another Tree" entry:"1629210426" modified:"1630200963" project:"leetcode.trees" status:"pending" tags:"next" uuid:"93d025a5-ac29-4a21-8828-98649163b893"]
+new [annotation_1629210426:"https:\/\/leetcode.com\/problems\/subtree-of-another-tree\/" description:"572: Subtree of Another Tree" end:"1630417023" entry:"1629210426" modified:"1630417023" project:"leetcode.trees" status:"completed" tags:"next" uuid:"93d025a5-ac29-4a21-8828-98649163b893"]
+---
+time 1630423824
+new [description:"Respond to Ruth" entry:"1630423824" modified:"1630423824" status:"pending" tags:"in" uuid:"1b185bf9-d319-4d89-82a4-8231bca3f221"]
+---
+time 1630423834
+new [description:"Research static site generators" entry:"1630423834" modified:"1630423834" status:"pending" tags:"in" uuid:"969c0b5a-d00a-445a-9fe8-2b328d5d967d"]
+---
+time 1630423844
+new [description:"Review unbound knapsack problems" entry:"1630423844" modified:"1630423844" status:"pending" tags:"in" uuid:"ec1833d1-cec8-4425-aa98-d8cda5fcacc0"]
+---
+time 1630423950
+old [annotation_1629168214:"https:\/\/www.linkedin.com\/jobs\/view\/2681917498\/" description:"SteelCase" entry:"1629168214" modified:"1629229205" project:"jobs" status:"pending" tags:"CT" uuid:"39806943-2b46-4803-a7fc-2c5a3742c0fb"]
+new [annotation_1629168214:"https:\/\/www.linkedin.com\/jobs\/view\/2681917498\/" description:"SteelCase" end:"1630423950" entry:"1629168214" modified:"1630423950" project:"jobs" status:"deleted" tags:"CT" uuid:"39806943-2b46-4803-a7fc-2c5a3742c0fb"]
+---
+time 1630423966
+old [annotation_1629239279:"https:\/\/leetcode.com\/problems\/construct-binary-tree-from-preorder-and-inorder-traversal\/" description:"34," entry:"1629239279" modified:"1629750465" project:"leetcode.trees" status:"pending" tags:"revisit" uuid:"5be8b905-866a-49b2-a97f-d179323a38b3"]
+new [annotation_1629239279:"https:\/\/leetcode.com\/problems\/construct-binary-tree-from-preorder-and-inorder-traversal\/" description:"34," end:"1630423966" entry:"1629239279" modified:"1630423966" project:"leetcode.trees" status:"completed" tags:"revisit" uuid:"5be8b905-866a-49b2-a97f-d179323a38b3"]
+---
+time 1630423995
+old [annotation_1629239311:"https:\/\/leetcode.com\/problems\/validate-binary-search-tree\/" description:"Validate BST" entry:"1629239311" modified:"1629239373" project:"leetcode.trees" status:"pending" uuid:"bbecf448-acab-4a05-b68d-86d6e89904a9"]
+new [annotation_1629239311:"https:\/\/leetcode.com\/problems\/validate-binary-search-tree\/" description:"Validate BST" entry:"1629239311" modified:"1630423995" project:"leetcode.trees" status:"pending" tags:"next" uuid:"bbecf448-acab-4a05-b68d-86d6e89904a9"]
+---
+time 1630424010
+old [annotation_1629239461:"https:\/\/leetcode.com\/problems\/design-add-and-search-words-data-structure\/" description:"Design Add and Search Words DS" entry:"1629239461" modified:"1629239559" project:"leetcode.trees" status:"pending" uuid:"3b849a27-257a-476d-84cd-196da6ed02a6"]
+new [annotation_1629239461:"https:\/\/leetcode.com\/problems\/design-add-and-search-words-data-structure\/" description:"Design Add and Search Words DS" entry:"1629239461" modified:"1630424010" project:"leetcode.trees" status:"pending" tags:"next" uuid:"3b849a27-257a-476d-84cd-196da6ed02a6"]
+---
+time 1630424068
+new [description:"Number of Islands" entry:"1630424068" modified:"1630424068" status:"pending" uuid:"80cc5104-14b0-442c-9bc9-4c623a615b2d"]
+---
+time 1630424068
+old [description:"Number of Islands" entry:"1630424068" modified:"1630424068" status:"pending" uuid:"80cc5104-14b0-442c-9bc9-4c623a615b2d"]
+new [annotation_1630424068:"https:\/\/leetcode.com\/problems\/number-of-islands\/" description:"Number of Islands" entry:"1630424068" modified:"1630424068" status:"pending" uuid:"80cc5104-14b0-442c-9bc9-4c623a615b2d"]
+---
+time 1630433587
+new [description:"Anki card 200 Number of Islands" entry:"1630433587" modified:"1630433587" status:"pending" tags:"in" uuid:"25de90b0-5654-4265-aec8-dce6374e1c8c"]
+---
+time 1630433612
+old [description:"Anki card 200 Number of Islands" entry:"1630433587" modified:"1630433587" status:"pending" tags:"in" uuid:"25de90b0-5654-4265-aec8-dce6374e1c8c"]
+new [annotation_1630433612:"https:\/\/leetcode.com\/problems\/number-of-islands\/submissions\/" description:"Anki card 200 Number of Islands" entry:"1630433587" modified:"1630433612" status:"pending" tags:"in" uuid:"25de90b0-5654-4265-aec8-dce6374e1c8c"]
+---
+time 1630453965
+new [description:"Smallest Rectangle Enclosing Black Pixels" entry:"1630453965" modified:"1630453965" status:"pending" tags:"in" uuid:"a318ee8d-7b92-4b76-a52f-725befe6a59c"]
+---
+time 1630453984
+old [description:"Smallest Rectangle Enclosing Black Pixels" entry:"1630453965" modified:"1630453965" status:"pending" tags:"in" uuid:"a318ee8d-7b92-4b76-a52f-725befe6a59c"]
+new [annotation_1630453984:"https:\/\/leetcode.com\/problems\/smallest-rectangle-enclosing-black-pixels\/" description:"Smallest Rectangle Enclosing Black Pixels" entry:"1630453965" modified:"1630453984" status:"pending" tags:"in" uuid:"a318ee8d-7b92-4b76-a52f-725befe6a59c"]
+---
+time 1630520470
+new [description:"Thursday Workshop and Hackathon Email" entry:"1630520470" modified:"1630520470" status:"pending" tags:"in" uuid:"96aca6d1-b2d8-41cc-9c55-9f2f905067d9"]
+---
+time 1630520490
+old [description:"Review unbound knapsack problems" entry:"1630423844" modified:"1630423844" status:"pending" tags:"in" uuid:"ec1833d1-cec8-4425-aa98-d8cda5fcacc0"]
+new [description:"Review unbound knapsack problems" end:"1630520490" entry:"1630423844" modified:"1630520490" status:"completed" tags:"in" uuid:"ec1833d1-cec8-4425-aa98-d8cda5fcacc0"]
+---
+time 1630520492
+old [description:"Research static site generators" entry:"1630423834" modified:"1630423834" status:"pending" tags:"in" uuid:"969c0b5a-d00a-445a-9fe8-2b328d5d967d"]
+new [description:"Research static site generators" end:"1630520492" entry:"1630423834" modified:"1630520492" status:"deleted" tags:"in" uuid:"969c0b5a-d00a-445a-9fe8-2b328d5d967d"]
+---
+time 1630520498
+old [description:"Respond to Ruth" entry:"1630423824" modified:"1630423824" status:"pending" tags:"in" uuid:"1b185bf9-d319-4d89-82a4-8231bca3f221"]
+new [description:"Respond to Ruth" end:"1630520498" entry:"1630423824" modified:"1630520498" status:"completed" tags:"in" uuid:"1b185bf9-d319-4d89-82a4-8231bca3f221"]
+---
+time 1630520528
+old [annotation_1630453984:"https:\/\/leetcode.com\/problems\/smallest-rectangle-enclosing-black-pixels\/" description:"Smallest Rectangle Enclosing Black Pixels" entry:"1630453965" modified:"1630453984" status:"pending" tags:"in" uuid:"a318ee8d-7b92-4b76-a52f-725befe6a59c"]
+new [annotation_1630453984:"https:\/\/leetcode.com\/problems\/smallest-rectangle-enclosing-black-pixels\/" description:"Smallest Rectangle Enclosing Black Pixels" entry:"1630453965" modified:"1630520528" project:"Leetcode.graphs" status:"pending" tags:"in" uuid:"a318ee8d-7b92-4b76-a52f-725befe6a59c"]
+---
+time 1630520533
+old [annotation_1630453984:"https:\/\/leetcode.com\/problems\/smallest-rectangle-enclosing-black-pixels\/" description:"Smallest Rectangle Enclosing Black Pixels" entry:"1630453965" modified:"1630520528" project:"Leetcode.graphs" status:"pending" tags:"in" uuid:"a318ee8d-7b92-4b76-a52f-725befe6a59c"]
+new [annotation_1630453984:"https:\/\/leetcode.com\/problems\/smallest-rectangle-enclosing-black-pixels\/" description:"Smallest Rectangle Enclosing Black Pixels" entry:"1630453965" modified:"1630520533" project:"Leetcode.graphs" status:"pending" uuid:"a318ee8d-7b92-4b76-a52f-725befe6a59c"]
+---
+time 1630520549
+old [annotation_1630433612:"https:\/\/leetcode.com\/problems\/number-of-islands\/submissions\/" description:"Anki card 200 Number of Islands" entry:"1630433587" modified:"1630433612" status:"pending" tags:"in" uuid:"25de90b0-5654-4265-aec8-dce6374e1c8c"]
+new [annotation_1630433612:"https:\/\/leetcode.com\/problems\/number-of-islands\/submissions\/" description:"Anki card 200 Number of Islands" end:"1630520549" entry:"1630433587" modified:"1630520549" status:"completed" tags:"in" uuid:"25de90b0-5654-4265-aec8-dce6374e1c8c"]
+---
+time 1630520596
+old [description:"Thursday Workshop and Hackathon Email" entry:"1630520470" modified:"1630520470" status:"pending" tags:"in" uuid:"96aca6d1-b2d8-41cc-9c55-9f2f905067d9"]
+new [description:"Thursday Workshop and Hackathon Email" due:"1630606870" entry:"1630520470" modified:"1630520596" status:"pending" tags:"in" uuid:"96aca6d1-b2d8-41cc-9c55-9f2f905067d9"]
+---
+time 1630520605
+old [description:"Thursday Workshop and Hackathon Email" due:"1630606870" entry:"1630520470" modified:"1630520596" status:"pending" tags:"in" uuid:"96aca6d1-b2d8-41cc-9c55-9f2f905067d9"]
+new [description:"Thursday Workshop and Hackathon Email" due:"1630606870" entry:"1630520470" modified:"1630520605" status:"pending" tags:"next" uuid:"96aca6d1-b2d8-41cc-9c55-9f2f905067d9"]
+---
+time 1630520631
+old [annotation_1629239311:"https:\/\/leetcode.com\/problems\/validate-binary-search-tree\/" description:"Validate BST" entry:"1629239311" modified:"1630423995" project:"leetcode.trees" status:"pending" tags:"next" uuid:"bbecf448-acab-4a05-b68d-86d6e89904a9"]
+new [annotation_1629239311:"https:\/\/leetcode.com\/problems\/validate-binary-search-tree\/" description:"Validate BST" end:"1630520631" entry:"1629239311" modified:"1630520631" project:"leetcode.trees" status:"completed" tags:"next" uuid:"bbecf448-acab-4a05-b68d-86d6e89904a9"]
+---
+time 1630520656
+old [description:"IBM OA" entry:"1629755482" modified:"1629994483" project:"jobs.OA" status:"pending" tags:"next,OA" uuid:"ac26de04-6420-4e14-b32b-52051105999d"]
+new [description:"IBM OA" due:"1630878682" entry:"1629755482" modified:"1630520656" project:"jobs.OA" status:"pending" tags:"next,OA" uuid:"ac26de04-6420-4e14-b32b-52051105999d"]
+---
+time 1630520706
+old [description:"Amazon OA" entry:"1629923900" modified:"1629994495" status:"pending" tags:"next,OA" uuid:"550c7dc2-a0e2-43e0-8d04-7977f380dd6b"]
+new [description:"Amazon OA" due:"1630874300" entry:"1629923900" modified:"1630520706" status:"pending" tags:"next,OA" uuid:"550c7dc2-a0e2-43e0-8d04-7977f380dd6b"]
+---
+time 1630520716
+old [description:"redo BFS anki card" entry:"1629205000" modified:"1629727895" project:"Anki.make_card" status:"pending" tags:"next" uuid:"f3e08490-1021-4be2-9ee4-853153e07227"]
+new [description:"redo BFS anki card" end:"1630520716" entry:"1629205000" modified:"1630520716" project:"Anki.make_card" status:"deleted" tags:"next" uuid:"f3e08490-1021-4be2-9ee4-853153e07227"]
+---
+time 1630520729
+old [description:"find leetcode K largest in Linked List" entry:"1629204820" modified:"1629756318" project:"leetcode.linkedlists" status:"pending" tags:"next" uuid:"e3fecc81-ce59-4dba-a163-872fee5305d8"]
+new [description:"find leetcode K largest in Linked List" end:"1630520729" entry:"1629204820" modified:"1630520729" project:"leetcode.linkedlists" status:"completed" tags:"next" uuid:"e3fecc81-ce59-4dba-a163-872fee5305d8"]
+---
+time 1630520734
+old [description:"review OSU-Hackathon-Website" entry:"1630015643" modified:"1630016343" project:"Hackathon.fall" status:"pending" tags:"next" uuid:"58752329-5216-4ace-b798-85e591a50619"]
+new [description:"review OSU-Hackathon-Website" end:"1630520734" entry:"1630015643" modified:"1630520734" project:"Hackathon.fall" status:"deleted" tags:"next" uuid:"58752329-5216-4ace-b798-85e591a50619"]
+---
+time 1630520963
+new [description:"Yext with Referral Link" entry:"1630520963" modified:"1630520963" project:"jobs" status:"pending" uuid:"964bcd6a-d0cd-425e-9f0c-db476643ea3e"]
+---
+time 1630520963
+old [description:"Yext with Referral Link" entry:"1630520963" modified:"1630520963" project:"jobs" status:"pending" uuid:"964bcd6a-d0cd-425e-9f0c-db476643ea3e"]
+new [annotation_1630520963:"https:\/\/yext.rolepoint.com\/?shorturl=hSlcA" description:"Yext with Referral Link" entry:"1630520963" modified:"1630520963" project:"jobs" status:"pending" uuid:"964bcd6a-d0cd-425e-9f0c-db476643ea3e"]
+---
+time 1630596684
+new [description:"Reply to Carissa" entry:"1630596684" modified:"1630596684" status:"pending" tags:"in" uuid:"3a7c2498-5ecf-4211-9fc0-1b657fd658da"]
+---
+time 1630596688
+new [description:"Reply to Katie" entry:"1630596688" modified:"1630596688" status:"pending" tags:"in" uuid:"2669651e-cb4e-4936-9458-9f8e0ba15613"]
+---
+time 1630596864
+new [description:"Mathworks OA\/Hirevue" entry:"1630596864" modified:"1630596864" status:"pending" tags:"in" uuid:"f330e9e0-f3f2-4e3e-b736-b1574961498d"]
+---
+time 1630599319
+old [description:"Mathworks OA\/Hirevue" entry:"1630596864" modified:"1630596864" status:"pending" tags:"in" uuid:"f330e9e0-f3f2-4e3e-b736-b1574961498d"]
+new [description:"Mathworks OA\/Hirevue" due:"1631115264" entry:"1630596864" modified:"1630599319" status:"pending" tags:"in" uuid:"f330e9e0-f3f2-4e3e-b736-b1574961498d"]
+---
+time 1630599336
+old [description:"Reply to Carissa" entry:"1630596684" modified:"1630596684" status:"pending" tags:"in" uuid:"3a7c2498-5ecf-4211-9fc0-1b657fd658da"]
+new [description:"Reply to Carissa" end:"1630599336" entry:"1630596684" modified:"1630599336" status:"completed" tags:"in" uuid:"3a7c2498-5ecf-4211-9fc0-1b657fd658da"]
+---
+time 1630599367
+old [description:"Mathworks OA\/Hirevue" due:"1631115264" entry:"1630596864" modified:"1630599319" status:"pending" tags:"in" uuid:"f330e9e0-f3f2-4e3e-b736-b1574961498d"]
+new [description:"Mathworks OA\/Hirevue" due:"1631115264" entry:"1630596864" modified:"1630599367" status:"pending" tags:"next" uuid:"f330e9e0-f3f2-4e3e-b736-b1574961498d"]
+---
+time 1630637230
+new [description:"nvim lua guide" entry:"1630637230" modified:"1630637230" status:"pending" tags:"in" uuid:"da556535-246f-45e0-87a9-5801b28cb3da"]
+---
+time 1630637237
+old [description:"nvim lua guide" entry:"1630637230" modified:"1630637230" status:"pending" tags:"in" uuid:"da556535-246f-45e0-87a9-5801b28cb3da"]
+new [annotation_1630637237:"https:\/\/github.com\/nanotee\/nvim-lua-guide" description:"nvim lua guide" entry:"1630637230" modified:"1630637237" status:"pending" tags:"in" uuid:"da556535-246f-45e0-87a9-5801b28cb3da"]
+---

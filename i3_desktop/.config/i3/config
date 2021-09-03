@@ -10,7 +10,7 @@ exec --no-startup-id copyq
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-exec_always --no-startup-id wal -i ~/Pictures/Wallpapers/ghost_in_the_shell_1.png -e
+exec_always --no-startup-id wal -i ~/Pictures/Wallpapers/space_man_nord.png -e
 exec --no-startup-id redshift -l 41.603222:-73.087746
 
 
@@ -57,7 +57,8 @@ gaps outer 15
 
 # Grey Colorscheme
 ################################################################################################
-set $focused-color       #a1a1a1
+#set $focused-color       #a1a1a1
+set $focused-color       #D9DEE9 
 set $bg-color            #727273
 set $inactive-bg-color   #3B4252
 set $text-color          #dedede

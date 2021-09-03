@@ -17,20 +17,28 @@
 ;==========================================================
 
 [colors]
-background = ${xrdb:color0:#222}
+background = #2E3440
+background-alt = #4C566A
 ;background = #222
-background-alt = #444
+;background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
+foreground = #D9DEE9
 foreground-alt = #555
-primary = #ffb52a
-secondary =  #e60053
+primary = #EBCB8B
+secondary =  #BF616A
 alert = #bd2c40
+
+; nord colors
+red = #BF616A
+yellow = #EBCB8B
+green = #A3BE8C
+purple = #B48EAD
+blue = #81A1C1
 
 [bar/example]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 35 
+height = 40 
 ;offset-x = 67%
 ;offset-y = 5%
 ;radius = 0
@@ -40,10 +48,10 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = #f00
+line-color = ${colors.secondary}
 
-border-size = 2
-border-color = #444
+border-size = 1
+border-color = ${colors.foreground}
 
 padding-left = 0
 padding-right = 0
@@ -61,7 +69,7 @@ modules-right = pulseaudio memory cpu
 
 tray-position = right
 tray-padding = 0
-tray-background =  ${xrdb:color0:#222}
+tray-background =  ${colors.background}
 
 wm-restack = i3
 
@@ -88,7 +96,7 @@ label-indicator-underline = ${colors.secondary}
 [bar/i3]
 inherit = bar/example
 width = 35%
-foreground = ${colors.color1}
+foreground = ${colors.background-alt}
 
 modules-right= i3 wsnumber xwindow
 
@@ -161,7 +169,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = ${colors.red}
 label = CPU:%percentage:2%%
 
 [module/memory]
@@ -169,7 +177,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = ${colors.green}
 label = RAM:%percentage_used%%
 
 [module/wlan]
@@ -178,7 +186,7 @@ interface = net1
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = ${colors.purple}
 label-connected = %essid%
 
 format-disconnected =
@@ -206,7 +214,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = ${colors.blue} 
 
 label = %date% %time%
 

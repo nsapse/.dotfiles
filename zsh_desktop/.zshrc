@@ -279,15 +279,17 @@ alias af="alias-finder"
 
 #TaskWarrior and TaskWarriorTUI Stuff
 alias t="task"
-alias in="task  add +in"
+alias tm="task modify"
+alias in="task add +in"
 #alias job="task add project:jobs"
-alias twa="task add "
-alias tan="task annotate"
+alias tA="task add "
+alias tAn="task annotate"
 alias twt="taskwarrior-tui"
 alias tt="vit"
 alias to="taskopen"
 alias mlt="task +LATEST modify"
 alias todo="task +next"
+alias inbox="task +in"
 
 job(){
     task add project:jobs $1;
@@ -295,13 +297,24 @@ job(){
     task $ID annotate $2;
 } 
 
-jobT(){
-    task add project:jobs $1;
+tLC(){
+    task add project:leetcode $1;
     ID=$(task +LATEST ids);
     task $ID annotate $2;
-    task $ID modify +$3
-} 
+}
 
+#tJobT(){
+    #task add project:jobs $1;
+    #ID=$(task +LATEST ids);
+    #task $ID annotate $2;
+    #task $ID modify +$3
+#} 
+
+tAA(){
+    task add $1;
+    ID=$(task +LATEST ids);
+    task $ID annotate $2;
+}
 
 ### ARCHIVE EXTRACTION
 # usage: ex <file>

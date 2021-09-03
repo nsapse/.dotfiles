@@ -155,15 +155,20 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'yggdroot/indentline'
-Plug 'ap/vim-css-color'
+Plug 'norcalli/nvim-colorizer.lua'
+"Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'folke/which-key.nvim'
 
 " Code and File Navigation
 Plug 'unblevable/quick-scope'  
 Plug 'phaazon/hop.nvim'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
+Plug 'liuchengxu/vista.vim'
+
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 
 "Plug 'yuezk/vim-js'
 
@@ -188,8 +193,13 @@ Plug 'npxbr/gruvbox.nvim'
 Plug 'rktjmp/lush.nvim'
 Plug 'sainnhe/forest-night'
 Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/sonokai'
 Plug 'shaunsingh/nord.nvim'
 Plug 'ulwlu/elly.vim'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'NTBBloodbath/doom-one.nvim'
+
+
 
 " Git Stuff
 Plug 'sindrets/diffview.nvim'
@@ -224,6 +234,7 @@ Plug 'nvim-treesitter/playground'
 "Plug 'ray-x/lsp_signature.nvim'
 Plug 'windwp/nvim-ts-autotag'
 "Plug 'alexaandru/nvim-lspupdate'
+Plug 'mhartington/formatter.nvim'
 
 "Debugging
 Plug 'mfussenegger/nvim-dap'
@@ -232,6 +243,13 @@ Plug 'mfussenegger/nvim-dap'
 
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'sudormrfbin/cheatsheet.nvim'
+
+" Neorg
+Plug 'vhyrro/neorg'
+
+"Java
+Plug 'mfussenegger/nvim-jdtls'
+
 
 call plug#end()
 
@@ -255,7 +273,9 @@ endif
 syntax on
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-colorscheme gruvbox-material
+"colorscheme gruvbox-material
+"colorscheme OceanicNext
+colorscheme base16-nord
 
 "hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
@@ -279,7 +299,7 @@ set termguicolors
 endif
 
 map <C-_> <Leader>c<Space>
-nnoremap<c-t> :TagbarToggle<cr>
+nnoremap<c-t> :Vista!!<cr>
 
 "vim-airline settings
 
@@ -297,6 +317,14 @@ cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
 
 " only / and ? are enabled by default
 call wilder#set_option('modes', ['/', '?', ':'])
+
+" **********************Vista************************* "
+"                                                      "
+"                  Settings for Vista                  "
+"                                                      "
+" **********************Vista************************* "
+
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 
 " **********************Quickscope************************* "
 "                                                           "
@@ -374,6 +402,15 @@ nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
 
 " LSP UPDATE
 
+" ****************Treesitter*************************"
+"                                                    "
+"           Settings for Treesitter                  "
+"                                                    "
+" ****************Treesitter*************************"
+
+" Toggle TSPlayground
+
+nnoremap <silent> <leader>tp :TSPlaygroundToggle<cr>
 
 " ****************NerdTree*************************"
 "                                                  "
@@ -381,7 +418,7 @@ nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
 "                                                  "
 " ****************NerdTree*************************"
 
-map <silent><C-n> :NERDTreeToggle<CR>
+map <silent><C-n> :CHADopen<CR>
 
 
 " ****************FloatTerm*************************"
@@ -730,6 +767,7 @@ require'compe'.setup {
     vsnip = true;
     ultisnips = true;
     luasnip = true;
+    neorg= true;
   };
 }
 ---
@@ -870,5 +908,39 @@ true_zen.setup({
 
 require("twilight").setup {}
 require('gitsigns').setup()
+-- whichKey
+
+require('which-key').setup{
+    timeoutlen = 40
+}
+
+-- NeOrg General Setup
+require('neorg').setup {
+        -- Tell Neorg what modules to load
+        load = {
+            ["core.defaults"] = {}, -- Load all the default modules
+            ["core.norg.concealer"] = {}, -- Allows for use of icons
+            ["core.norg.dirman"] = { -- Manage your directories with Neorg
+                config = {
+                    workspaces = {
+                        my_workspace = "~/neorg"
+                    }
+                }
+            }
+        },
+    }
+
+-- TS Setup for NeORG
+
+local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
+
+parser_configs.norg = {
+    install_info = {
+        url = "https://github.com/vhyrro/tree-sitter-norg",
+        files = { "src/parser.c" },
+        branch = "main"
+    },
+}
+
 
 EOF
