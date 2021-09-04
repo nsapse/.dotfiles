@@ -361,3 +361,12 @@ source /usr/share/fzf/completion.zsh
 # Launch Starship
 eval "$(starship init zsh)"
 
+# For JDTLS stuff
+# Mandatory:
+# .bashrc
+export JDTLS_HOME=/usr/bin/jdtls # Directory with the plugin and configs directories
+
+# Optional:
+#export JAVA_HOME=/path/to/java_home # In case you don't have java in path or want to use a version in particular
+#export WORKSPACE=/path/to/workspace # Defaults to $HOME/workspace
+

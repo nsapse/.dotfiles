@@ -58,7 +58,7 @@ gaps outer 15
 # Grey Colorscheme
 ################################################################################################
 #set $focused-color       #a1a1a1
-set $focused-color       #D9DEE9 
+set $focused-color       #D7DEE9 
 set $bg-color            #727273
 set $inactive-bg-color   #3B4252
 set $text-color          #dedede

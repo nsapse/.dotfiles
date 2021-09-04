@@ -400,6 +400,16 @@ nnoremap <leader><leader>V "+p
 nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
 
+"Setting up java LSP
+let g:lsc_server_commands = {'java': 'usr/bin/java-language-server/dist/lang_server_linux.sh'}
+if has('nvim-0.5')
+  augroup lsp
+    au!
+    au FileType java lua require('jdtls').start_or_attach({cmd = {'jdtls'}})
+  augroup end
+endif
+
+
 " LSP UPDATE
 
 " ****************Treesitter*************************"
@@ -720,6 +730,8 @@ require'lspconfig'.gopls.setup{}
 require'lspconfig'.html.setup{}
 require'lspconfig'.jsonls.setup{}
 require'lspconfig'.sqls.setup{}
+--require'lspconfig'.jdtls.setup {cmd = {'jdtls'}}
+--require'lspconfig'.java_language_server.setup{}
 
 local saga = require 'lspsaga'
 saga.init_lsp_saga()
@@ -941,6 +953,5 @@ parser_configs.norg = {
         branch = "main"
     },
 }
-
 
 EOF

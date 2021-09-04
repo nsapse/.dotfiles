@@ -469,3 +469,36 @@
 {"description":"Mathworks OA\/Hirevue","due":"20210908T153424Z","entry":"20210902T153424Z","modified":"20210902T161607Z","status":"pending","tags":["next"],"uuid":"f330e9e0-f3f2-4e3e-b736-b1574961498d"}
 {"description":"nvim lua guide","entry":"20210903T024710Z","modified":"20210903T024710Z","status":"pending","tags":["in"],"uuid":"da556535-246f-45e0-87a9-5801b28cb3da"}
 {"description":"nvim lua guide","entry":"20210903T024710Z","modified":"20210903T024717Z","status":"pending","tags":["in"],"uuid":"da556535-246f-45e0-87a9-5801b28cb3da","annotations":[{"entry":"20210903T024717Z","description":"https:\/\/github.com\/nanotee\/nvim-lua-guide"}]}
+{"description":"Thursday Workshop and Hackathon Email","due":"20210902T182110Z","end":"20210903T151115Z","entry":"20210901T182110Z","modified":"20210903T151115Z","status":"completed","tags":["next"],"uuid":"96aca6d1-b2d8-41cc-9c55-9f2f905067d9"}
+{"description":"databricks OA","end":"20210903T151143Z","entry":"20210826T161433Z","modified":"20210903T151143Z","project":"Hackathon.fall","status":"deleted","tags":["OA","next"],"uuid":"2a5e1223-ea37-4743-b0ff-1e565a7b87b0"}
+{"description":"Reply to Katie","end":"20210903T151207Z","entry":"20210902T153128Z","modified":"20210903T151207Z","status":"completed","tags":["in"],"uuid":"2669651e-cb4e-4936-9458-9f8e0ba15613"}
+{"description":"nvim lua guide","entry":"20210903T024710Z","modified":"20210903T151225Z","project":"references.neovim","status":"pending","tags":["in"],"uuid":"da556535-246f-45e0-87a9-5801b28cb3da","annotations":[{"entry":"20210903T024717Z","description":"https:\/\/github.com\/nanotee\/nvim-lua-guide"}]}
+{"description":"nvim lua guide","entry":"20210903T024710Z","modified":"20210903T151232Z","project":"references.neovim","status":"pending","tags":["someday/maybe"],"uuid":"da556535-246f-45e0-87a9-5801b28cb3da","annotations":[{"entry":"20210903T024717Z","description":"https:\/\/github.com\/nanotee\/nvim-lua-guide"}]}
+{"description":"Set Matrix 0s","entry":"20210903T152254Z","modified":"20210903T152254Z","status":"pending","tags":["in"],"uuid":"8f4a2034-6eff-4d8c-9aed-2ce77cd788e6"}
+{"description":"Spiral Matrix","entry":"20210903T152306Z","modified":"20210903T152306Z","status":"pending","tags":["in"],"uuid":"c20a4f17-47b8-43af-83c0-21c946d8c2eb"}
+{"description":"Add and Search Word","entry":"20210903T152328Z","modified":"20210903T152328Z","status":"pending","tags":["in"],"uuid":"e6ba052c-3905-4848-aa87-f63dada6c12a"}
+{"description":"Word Search II","entry":"20210903T152332Z","modified":"20210903T152332Z","status":"pending","tags":["in"],"uuid":"62910c4b-82cd-4442-a5fd-8d84d31ab220"}
+{"description":"Encode and Decode Strings","entry":"20210903T152343Z","modified":"20210903T152343Z","status":"pending","tags":["in"],"uuid":"9424ebe7-4a0b-4478-9802-17564ecf0e07"}
+{"description":"Set Matrix 0s","entry":"20210903T152254Z","modified":"20210903T152409Z","project":"leetcode","status":"pending","tags":["in"],"uuid":"8f4a2034-6eff-4d8c-9aed-2ce77cd788e6"}
+{"description":"Spiral Matrix","entry":"20210903T152306Z","modified":"20210903T152409Z","project":"leetcode","status":"pending","tags":["in"],"uuid":"c20a4f17-47b8-43af-83c0-21c946d8c2eb"}
+{"description":"Add and Search Word","entry":"20210903T152328Z","modified":"20210903T152409Z","project":"leetcode","status":"pending","tags":["in"],"uuid":"e6ba052c-3905-4848-aa87-f63dada6c12a"}
+{"description":"Word Search II","entry":"20210903T152332Z","modified":"20210903T152409Z","project":"leetcode","status":"pending","tags":["in"],"uuid":"62910c4b-82cd-4442-a5fd-8d84d31ab220"}
+{"description":"Encode and Decode Strings","entry":"20210903T152343Z","modified":"20210903T152409Z","project":"leetcode","status":"pending","tags":["in"],"uuid":"9424ebe7-4a0b-4478-9802-17564ecf0e07"}
+{"description":"Draft sponsorship letter","end":"20210903T152431Z","entry":"20210817T040408Z","modified":"20210903T152431Z","project":"Hackathon","status":"completed","uuid":"e68a7638-51af-4457-9f48-a916b06b0bf7"}
+{"description":"decideOn nvim-BarBar","end":"20210903T152435Z","entry":"20210817T124632Z","modified":"20210903T152435Z","project":"neovim","status":"deleted","uuid":"d3bb476d-ccfd-499d-9026-78de96c69593"}
+{"description":"Topological Sort Anki Card","entry":"20210821T184506Z","modified":"20210903T152453Z","project":"Anki.make_card","status":"pending","tags":["next"],"uuid":"d3e91342-0486-4d1f-ac97-4643c4b05aed"}
+{"description":"Kruskal's Anki Card","entry":"20210821T184512Z","modified":"20210903T152459Z","project":"Anki.make_card","status":"pending","tags":["next"],"uuid":"e935e534-addc-4d0d-9bc6-fec376a21eb7"}
+{"description":"Prim's Anki Card","entry":"20210821T184519Z","modified":"20210903T152515Z","project":"Anki.make_card","status":"pending","tags":["next"],"uuid":"f3c7f94d-ebbf-489f-8df6-62b899e47395"}
+{"description":"Set Matrix 0s","entry":"20210903T152254Z","modified":"20210903T152601Z","project":"leetcode","status":"pending","tags":["next"],"uuid":"8f4a2034-6eff-4d8c-9aed-2ce77cd788e6"}
+{"description":"Spiral Matrix","entry":"20210903T152306Z","modified":"20210903T152601Z","project":"leetcode","status":"pending","tags":["next"],"uuid":"c20a4f17-47b8-43af-83c0-21c946d8c2eb"}
+{"description":"Add and Search Word","entry":"20210903T152328Z","modified":"20210903T152601Z","project":"leetcode","status":"pending","tags":["next"],"uuid":"e6ba052c-3905-4848-aa87-f63dada6c12a"}
+{"description":"Word Search II","entry":"20210903T152332Z","modified":"20210903T152601Z","project":"leetcode","status":"pending","tags":["next"],"uuid":"62910c4b-82cd-4442-a5fd-8d84d31ab220"}
+{"description":"Encode and Decode Strings","entry":"20210903T152343Z","modified":"20210903T152601Z","project":"leetcode","status":"pending","tags":["next"],"uuid":"9424ebe7-4a0b-4478-9802-17564ecf0e07"}
+{"description":"Apply to Ten Jobs","entry":"20210903T184805Z","modified":"20210903T184805Z","status":"pending","tags":["next"],"uuid":"2be4ff03-6607-42c7-8ed4-dba2ade9875e"}
+{"description":"Apply to Ten Jobs","entry":"20210903T184805Z","modified":"20210903T184828Z","priority":"H","status":"pending","tags":["next"],"uuid":"2be4ff03-6607-42c7-8ed4-dba2ade9875e"}
+{"description":"Stalk Carleton Alumni Network for software stuff","entry":"20210826T012751Z","modified":"20210903T184837Z","priority":"M","status":"pending","tags":["next"],"uuid":"4fb81dda-9fc6-487c-b09c-725edcb637fd"}
+{"description":"get new gas cap and headlights","entry":"20210904T132510Z","modified":"20210904T132510Z","status":"pending","tags":["in"],"uuid":"73f0218f-0524-45c2-949f-8486b04d43ee"}
+{"description":"get new tires","entry":"20210904T132514Z","modified":"20210904T132514Z","status":"pending","tags":["in"],"uuid":"6f636d13-89ab-4303-a692-025d911b4077"}
+{"description":"Union Find Anki Card","entry":"20210904T154942Z","modified":"20210904T154942Z","status":"pending","uuid":"edeb9185-25f7-4e51-8c2b-b079e9febb1b"}
+{"description":"Union Find Anki Card","entry":"20210904T154942Z","modified":"20210904T155008Z","project":"Anki.make_card","status":"pending","uuid":"edeb9185-25f7-4e51-8c2b-b079e9febb1b"}
+{"description":"Union Find Anki Card","entry":"20210904T154942Z","modified":"20210904T155011Z","project":"Anki.make_card","status":"pending","tags":["next"],"uuid":"edeb9185-25f7-4e51-8c2b-b079e9febb1b"}

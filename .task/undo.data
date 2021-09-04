@@ -1742,3 +1742,126 @@ time 1630637237
 old [description:"nvim lua guide" entry:"1630637230" modified:"1630637230" status:"pending" tags:"in" uuid:"da556535-246f-45e0-87a9-5801b28cb3da"]
 new [annotation_1630637237:"https:\/\/github.com\/nanotee\/nvim-lua-guide" description:"nvim lua guide" entry:"1630637230" modified:"1630637237" status:"pending" tags:"in" uuid:"da556535-246f-45e0-87a9-5801b28cb3da"]
 ---
+time 1630681875
+old [description:"Thursday Workshop and Hackathon Email" due:"1630606870" entry:"1630520470" modified:"1630520605" status:"pending" tags:"next" uuid:"96aca6d1-b2d8-41cc-9c55-9f2f905067d9"]
+new [description:"Thursday Workshop and Hackathon Email" due:"1630606870" end:"1630681875" entry:"1630520470" modified:"1630681875" status:"completed" tags:"next" uuid:"96aca6d1-b2d8-41cc-9c55-9f2f905067d9"]
+---
+time 1630681903
+old [description:"databricks OA" entry:"1629994473" modified:"1630016343" project:"Hackathon.fall" status:"pending" tags:"OA,next" uuid:"2a5e1223-ea37-4743-b0ff-1e565a7b87b0"]
+new [description:"databricks OA" end:"1630681903" entry:"1629994473" modified:"1630681903" project:"Hackathon.fall" status:"deleted" tags:"OA,next" uuid:"2a5e1223-ea37-4743-b0ff-1e565a7b87b0"]
+---
+time 1630681927
+old [description:"Reply to Katie" entry:"1630596688" modified:"1630596688" status:"pending" tags:"in" uuid:"2669651e-cb4e-4936-9458-9f8e0ba15613"]
+new [description:"Reply to Katie" end:"1630681927" entry:"1630596688" modified:"1630681927" status:"completed" tags:"in" uuid:"2669651e-cb4e-4936-9458-9f8e0ba15613"]
+---
+time 1630681945
+old [annotation_1630637237:"https:\/\/github.com\/nanotee\/nvim-lua-guide" description:"nvim lua guide" entry:"1630637230" modified:"1630637237" status:"pending" tags:"in" uuid:"da556535-246f-45e0-87a9-5801b28cb3da"]
+new [annotation_1630637237:"https:\/\/github.com\/nanotee\/nvim-lua-guide" description:"nvim lua guide" entry:"1630637230" modified:"1630681945" project:"references.neovim" status:"pending" tags:"in" uuid:"da556535-246f-45e0-87a9-5801b28cb3da"]
+---
+time 1630681952
+old [annotation_1630637237:"https:\/\/github.com\/nanotee\/nvim-lua-guide" description:"nvim lua guide" entry:"1630637230" modified:"1630681945" project:"references.neovim" status:"pending" tags:"in" uuid:"da556535-246f-45e0-87a9-5801b28cb3da"]
+new [annotation_1630637237:"https:\/\/github.com\/nanotee\/nvim-lua-guide" description:"nvim lua guide" entry:"1630637230" modified:"1630681952" project:"references.neovim" status:"pending" tags:"someday\/maybe" uuid:"da556535-246f-45e0-87a9-5801b28cb3da"]
+---
+time 1630682574
+new [description:"Set Matrix 0s" entry:"1630682574" modified:"1630682574" status:"pending" tags:"in" uuid:"8f4a2034-6eff-4d8c-9aed-2ce77cd788e6"]
+---
+time 1630682586
+new [description:"Spiral Matrix" entry:"1630682586" modified:"1630682586" status:"pending" tags:"in" uuid:"c20a4f17-47b8-43af-83c0-21c946d8c2eb"]
+---
+time 1630682608
+new [description:"Add and Search Word" entry:"1630682608" modified:"1630682608" status:"pending" tags:"in" uuid:"e6ba052c-3905-4848-aa87-f63dada6c12a"]
+---
+time 1630682612
+new [description:"Word Search II" entry:"1630682612" modified:"1630682612" status:"pending" tags:"in" uuid:"62910c4b-82cd-4442-a5fd-8d84d31ab220"]
+---
+time 1630682623
+new [description:"Encode and Decode Strings" entry:"1630682623" modified:"1630682623" status:"pending" tags:"in" uuid:"9424ebe7-4a0b-4478-9802-17564ecf0e07"]
+---
+time 1630682649
+old [description:"Set Matrix 0s" entry:"1630682574" modified:"1630682574" status:"pending" tags:"in" uuid:"8f4a2034-6eff-4d8c-9aed-2ce77cd788e6"]
+new [description:"Set Matrix 0s" entry:"1630682574" modified:"1630682649" project:"leetcode" status:"pending" tags:"in" uuid:"8f4a2034-6eff-4d8c-9aed-2ce77cd788e6"]
+---
+time 1630682649
+old [description:"Spiral Matrix" entry:"1630682586" modified:"1630682586" status:"pending" tags:"in" uuid:"c20a4f17-47b8-43af-83c0-21c946d8c2eb"]
+new [description:"Spiral Matrix" entry:"1630682586" modified:"1630682649" project:"leetcode" status:"pending" tags:"in" uuid:"c20a4f17-47b8-43af-83c0-21c946d8c2eb"]
+---
+time 1630682649
+old [description:"Add and Search Word" entry:"1630682608" modified:"1630682608" status:"pending" tags:"in" uuid:"e6ba052c-3905-4848-aa87-f63dada6c12a"]
+new [description:"Add and Search Word" entry:"1630682608" modified:"1630682649" project:"leetcode" status:"pending" tags:"in" uuid:"e6ba052c-3905-4848-aa87-f63dada6c12a"]
+---
+time 1630682649
+old [description:"Word Search II" entry:"1630682612" modified:"1630682612" status:"pending" tags:"in" uuid:"62910c4b-82cd-4442-a5fd-8d84d31ab220"]
+new [description:"Word Search II" entry:"1630682612" modified:"1630682649" project:"leetcode" status:"pending" tags:"in" uuid:"62910c4b-82cd-4442-a5fd-8d84d31ab220"]
+---
+time 1630682649
+old [description:"Encode and Decode Strings" entry:"1630682623" modified:"1630682623" status:"pending" tags:"in" uuid:"9424ebe7-4a0b-4478-9802-17564ecf0e07"]
+new [description:"Encode and Decode Strings" entry:"1630682623" modified:"1630682649" project:"leetcode" status:"pending" tags:"in" uuid:"9424ebe7-4a0b-4478-9802-17564ecf0e07"]
+---
+time 1630682671
+old [description:"Draft sponsorship letter" entry:"1629173048" modified:"1629173048" project:"Hackathon" status:"pending" uuid:"e68a7638-51af-4457-9f48-a916b06b0bf7"]
+new [description:"Draft sponsorship letter" end:"1630682671" entry:"1629173048" modified:"1630682671" project:"Hackathon" status:"completed" uuid:"e68a7638-51af-4457-9f48-a916b06b0bf7"]
+---
+time 1630682675
+old [description:"decideOn nvim-BarBar" entry:"1629204392" modified:"1629206947" project:"neovim" status:"pending" uuid:"d3bb476d-ccfd-499d-9026-78de96c69593"]
+new [description:"decideOn nvim-BarBar" end:"1630682675" entry:"1629204392" modified:"1630682675" project:"neovim" status:"deleted" uuid:"d3bb476d-ccfd-499d-9026-78de96c69593"]
+---
+time 1630682693
+old [description:"Topological Sort Anki Card" entry:"1629571506" modified:"1629571546" project:"Anki.make_card" status:"pending" uuid:"d3e91342-0486-4d1f-ac97-4643c4b05aed"]
+new [description:"Topological Sort Anki Card" entry:"1629571506" modified:"1630682693" project:"Anki.make_card" status:"pending" tags:"next" uuid:"d3e91342-0486-4d1f-ac97-4643c4b05aed"]
+---
+time 1630682699
+old [description:"Kruskal's Anki Card" entry:"1629571512" modified:"1629571546" project:"Anki.make_card" status:"pending" uuid:"e935e534-addc-4d0d-9bc6-fec376a21eb7"]
+new [description:"Kruskal's Anki Card" entry:"1629571512" modified:"1630682699" project:"Anki.make_card" status:"pending" tags:"next" uuid:"e935e534-addc-4d0d-9bc6-fec376a21eb7"]
+---
+time 1630682715
+old [description:"Prim's Anki Card" entry:"1629571519" modified:"1629571546" project:"Anki.make_card" status:"pending" uuid:"f3c7f94d-ebbf-489f-8df6-62b899e47395"]
+new [description:"Prim's Anki Card" entry:"1629571519" modified:"1630682715" project:"Anki.make_card" status:"pending" tags:"next" uuid:"f3c7f94d-ebbf-489f-8df6-62b899e47395"]
+---
+time 1630682761
+old [description:"Set Matrix 0s" entry:"1630682574" modified:"1630682649" project:"leetcode" status:"pending" tags:"in" uuid:"8f4a2034-6eff-4d8c-9aed-2ce77cd788e6"]
+new [description:"Set Matrix 0s" entry:"1630682574" modified:"1630682761" project:"leetcode" status:"pending" tags:"next" uuid:"8f4a2034-6eff-4d8c-9aed-2ce77cd788e6"]
+---
+time 1630682761
+old [description:"Spiral Matrix" entry:"1630682586" modified:"1630682649" project:"leetcode" status:"pending" tags:"in" uuid:"c20a4f17-47b8-43af-83c0-21c946d8c2eb"]
+new [description:"Spiral Matrix" entry:"1630682586" modified:"1630682761" project:"leetcode" status:"pending" tags:"next" uuid:"c20a4f17-47b8-43af-83c0-21c946d8c2eb"]
+---
+time 1630682761
+old [description:"Add and Search Word" entry:"1630682608" modified:"1630682649" project:"leetcode" status:"pending" tags:"in" uuid:"e6ba052c-3905-4848-aa87-f63dada6c12a"]
+new [description:"Add and Search Word" entry:"1630682608" modified:"1630682761" project:"leetcode" status:"pending" tags:"next" uuid:"e6ba052c-3905-4848-aa87-f63dada6c12a"]
+---
+time 1630682761
+old [description:"Word Search II" entry:"1630682612" modified:"1630682649" project:"leetcode" status:"pending" tags:"in" uuid:"62910c4b-82cd-4442-a5fd-8d84d31ab220"]
+new [description:"Word Search II" entry:"1630682612" modified:"1630682761" project:"leetcode" status:"pending" tags:"next" uuid:"62910c4b-82cd-4442-a5fd-8d84d31ab220"]
+---
+time 1630682761
+old [description:"Encode and Decode Strings" entry:"1630682623" modified:"1630682649" project:"leetcode" status:"pending" tags:"in" uuid:"9424ebe7-4a0b-4478-9802-17564ecf0e07"]
+new [description:"Encode and Decode Strings" entry:"1630682623" modified:"1630682761" project:"leetcode" status:"pending" tags:"next" uuid:"9424ebe7-4a0b-4478-9802-17564ecf0e07"]
+---
+time 1630694885
+new [description:"Apply to Ten Jobs" entry:"1630694885" modified:"1630694885" status:"pending" tags:"next" uuid:"2be4ff03-6607-42c7-8ed4-dba2ade9875e"]
+---
+time 1630694908
+old [description:"Apply to Ten Jobs" entry:"1630694885" modified:"1630694885" status:"pending" tags:"next" uuid:"2be4ff03-6607-42c7-8ed4-dba2ade9875e"]
+new [description:"Apply to Ten Jobs" entry:"1630694885" modified:"1630694908" priority:"H" status:"pending" tags:"next" uuid:"2be4ff03-6607-42c7-8ed4-dba2ade9875e"]
+---
+time 1630694917
+old [description:"Stalk Carleton Alumni Network for software stuff" entry:"1629941271" modified:"1629943563" status:"pending" tags:"next" uuid:"4fb81dda-9fc6-487c-b09c-725edcb637fd"]
+new [description:"Stalk Carleton Alumni Network for software stuff" entry:"1629941271" modified:"1630694917" priority:"M" status:"pending" tags:"next" uuid:"4fb81dda-9fc6-487c-b09c-725edcb637fd"]
+---
+time 1630761910
+new [description:"get new gas cap and headlights" entry:"1630761910" modified:"1630761910" status:"pending" tags:"in" uuid:"73f0218f-0524-45c2-949f-8486b04d43ee"]
+---
+time 1630761914
+new [description:"get new tires" entry:"1630761914" modified:"1630761914" status:"pending" tags:"in" uuid:"6f636d13-89ab-4303-a692-025d911b4077"]
+---
+time 1630770582
+new [description:"Union Find Anki Card" entry:"1630770582" modified:"1630770582" status:"pending" uuid:"edeb9185-25f7-4e51-8c2b-b079e9febb1b"]
+---
+time 1630770608
+old [description:"Union Find Anki Card" entry:"1630770582" modified:"1630770582" status:"pending" uuid:"edeb9185-25f7-4e51-8c2b-b079e9febb1b"]
+new [description:"Union Find Anki Card" entry:"1630770582" modified:"1630770608" project:"Anki.make_card" status:"pending" uuid:"edeb9185-25f7-4e51-8c2b-b079e9febb1b"]
+---
+time 1630770611
+old [description:"Union Find Anki Card" entry:"1630770582" modified:"1630770608" project:"Anki.make_card" status:"pending" uuid:"edeb9185-25f7-4e51-8c2b-b079e9febb1b"]
+new [description:"Union Find Anki Card" entry:"1630770582" modified:"1630770611" project:"Anki.make_card" status:"pending" tags:"next" uuid:"edeb9185-25f7-4e51-8c2b-b079e9febb1b"]
+---
