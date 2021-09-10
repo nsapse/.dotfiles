@@ -400,14 +400,28 @@ nnoremap <leader><leader>V "+p
 nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
 
-"Setting up java LSP
+
+"Setting up java LSP JDTLS
+
 let g:lsc_server_commands = {'java': 'usr/bin/java-language-server/dist/lang_server_linux.sh'}
 if has('nvim-0.5')
   augroup lsp
     au!
     au FileType java lua require('jdtls').start_or_attach({cmd = {'jdtls'}})
+    command! -buffer JdtCompile lua require('jdtls').compile()
+    command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()
+    command! -buffer JdtJol lua require('jdtls').jol()
+    command! -buffer JdtBytecode lua require('jdtls').javap()
+    command! -buffer JdtJshell lua require('jdtls').jshell()
   augroup end
 endif
+
+nnoremap <A-o> <Cmd>lua require'jdtls'.organize_imports()<CR>
+nnoremap crv <Cmd>lua require('jdtls').extract_variable()<CR>
+vnoremap crv <Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>
+nnoremap crc <Cmd>lua require('jdtls').extract_constant()<CR>
+vnoremap crc <Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>
+vnoremap crm <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
 
 
 " LSP UPDATE
@@ -580,7 +594,7 @@ let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 " previous-history instead of down and up. If you don't like the change,
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let      g:fzf_history_dir = '~/.local/share/fzf-history'
-nmap     <leader><leader>f :Files<CR>
+nmap     ff :Files<CR>
 nmap     <leader><leader>b :Buffers<CR>
 nnoremap <leader><leader>t :Tags<CR>
 nnoremap <leader><leader>l :Lines<CR>
@@ -605,17 +619,17 @@ set rtp+=~/.vim/bundle/fzf
 "nnoremap <leader>ff <cmd>Telescope find_files<cr>
 "nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 "nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <C-h> <cmd>Telescope help_tags<cr>
+nnoremap fh <cmd>Telescope help_tags<cr>
 
 " Using Lua functions
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 "nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 "
 " Telescope grep keeps crashing - remapped to ripgrem in Floatterm
-nnoremap <leader>fg :Rg<CR>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-nnoremap <leader>fm <cmd>lua require('telescope.builtin').keymaps()<cr>
+nnoremap fg :Rg<CR>
+nnoremap fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap fm <cmd>lua require('telescope.builtin').keymaps()<cr>
 
 
 
