@@ -1951,3 +1951,13 @@ time 1631297579
 old [description:"Rust From the Ground Up" entry:"1631297579" modified:"1631297579" status:"pending" uuid:"b4f83226-8eb0-480c-9c0f-63c70b407748"]
 new [annotation_1631297579:"https:\/\/rftgu.rs\/" description:"Rust From the Ground Up" entry:"1631297579" modified:"1631297579" status:"pending" uuid:"b4f83226-8eb0-480c-9c0f-63c70b407748"]
 ---
+time 1631469337
+old [description:"Topological Sort Anki Card" entry:"1629571506" modified:"1630682693" project:"Anki.make_card" status:"pending" tags:"next" uuid:"d3e91342-0486-4d1f-ac97-4643c4b05aed"]
+new [description:"Topological Sort Anki Card" end:"1631469337" entry:"1629571506" modified:"1631469337" project:"Anki.make_card" status:"completed" tags:"next" uuid:"d3e91342-0486-4d1f-ac97-4643c4b05aed"]
+---
+time 1631470765
+new [description:"Discovery HireVue" entry:"1631470765" modified:"1631470765" status:"pending" tags:"in" uuid:"dffbb1ed-b5e3-42b4-b833-9735b9ff6a3c"]
+---
+time 1631470773
+new [description:"Apply to Cisco" entry:"1631470773" modified:"1631470773" status:"pending" tags:"in" uuid:"0193b06f-a052-42fa-90fe-dbca47642a99"]
+---

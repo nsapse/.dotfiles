@@ -525,3 +525,6 @@
 {"description":"Counting Triplets Hackerrank","entry":"20210907T140956Z","modified":"20210909T151044Z","status":"pending","tags":["someday/maybe"],"uuid":"844aa269-b17b-4215-ac64-fdac8d3139d4"}
 {"description":"Rust From the Ground Up","entry":"20210910T181259Z","modified":"20210910T181259Z","status":"pending","uuid":"b4f83226-8eb0-480c-9c0f-63c70b407748"}
 {"description":"Rust From the Ground Up","entry":"20210910T181259Z","modified":"20210910T181259Z","status":"pending","uuid":"b4f83226-8eb0-480c-9c0f-63c70b407748","annotations":[{"entry":"20210910T181259Z","description":"https:\/\/rftgu.rs\/"}]}
+{"description":"Topological Sort Anki Card","end":"20210912T175537Z","entry":"20210821T184506Z","modified":"20210912T175537Z","project":"Anki.make_card","status":"completed","tags":["next"],"uuid":"d3e91342-0486-4d1f-ac97-4643c4b05aed"}
+{"description":"Discovery HireVue","entry":"20210912T181925Z","modified":"20210912T181925Z","status":"pending","tags":["in"],"uuid":"dffbb1ed-b5e3-42b4-b833-9735b9ff6a3c"}
+{"description":"Apply to Cisco","entry":"20210912T181933Z","modified":"20210912T181933Z","status":"pending","tags":["in"],"uuid":"0193b06f-a052-42fa-90fe-dbca47642a99"}

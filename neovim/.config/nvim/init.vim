@@ -233,7 +233,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'nvim-treesitter/playground'
 "Plug 'ray-x/lsp_signature.nvim'
 Plug 'windwp/nvim-ts-autotag'
-"Plug 'alexaandru/nvim-lspupdate'
 Plug 'mhartington/formatter.nvim'
 
 "Debugging
@@ -423,6 +422,25 @@ nnoremap crc <Cmd>lua require('jdtls').extract_constant()<CR>
 vnoremap crc <Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>
 vnoremap crm <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
 
+"-- `code_action` is a superset of vim.lsp.buf.code_action and you'll be able to
+"-- use this mapping also with other language servers
+nnoremap ga <Cmd>lua require('jdtls').code_action()<CR>
+vnoremap ga <Esc><Cmd>lua require('jdtls').code_action(true)<CR>
+nnoremap <leader>r <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
+
+nnoremap <A-o> <Cmd>lua require'jdtls'.organize_imports()<CR>
+nnoremap <leader>ev <Cmd>lua require('jdtls').extract_variable()<CR>
+vnoremap <leader>ev <Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>
+nnoremap <leader>ec <Cmd>lua require('jdtls').extract_constant()<CR>
+vnoremap <leader>ec <Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>
+vnoremap <leader>em <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
+
+
+"-- If using nvim-dap
+"-- This requires java-debug and vscode-java-test bundles, see install steps in this README further below.
+"nnoremap <leader>df <Cmd>lua require'jdtls'.test_class()<CR>
+"nnoremap <leader>dn <Cmd>lua require'jdtls'.test_nearest_method()<CR>
+
 
 " LSP UPDATE
 
@@ -594,10 +612,11 @@ let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 " previous-history instead of down and up. If you don't like the change,
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let      g:fzf_history_dir = '~/.local/share/fzf-history'
-nmap     ff :Files<CR>
+nmap     <leader><leader>f :Files<CR>
 nmap     <leader><leader>b :Buffers<CR>
 nnoremap <leader><leader>t :Tags<CR>
 nnoremap <leader><leader>l :Lines<CR>
+nnoremap <leader><leader>g :Rg<CR>
 
 let g:fzf_tags_command = 'ctags -R'
 " Border jj
@@ -626,10 +645,9 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 "nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 "
 " Telescope grep keeps crashing - remapped to ripgrem in Floatterm
-nnoremap fg :Rg<CR>
-nnoremap fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-nnoremap fm <cmd>lua require('telescope.builtin').keymaps()<cr>
+nnoremap <leader>tb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>th <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>tm <cmd>lua require('telescope.builtin').keymaps()<cr>
 
 
 

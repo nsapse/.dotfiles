@@ -27,7 +27,6 @@
 [annotation_1629321408:"https:\/\/wd1.myworkdaysite.com\/recruiting\/paypal\/jobs\/job\/San-Jose-CA\/Software-Engineer-Intern_R0075012?Codes=W-LINKEDIN" description:"Paypal NYC" entry:"1629321408" modified:"1629321408" project:"jobs" status:"pending" uuid:"fd7efd44-649a-44c5-a654-11730712b1d9"]
 [annotation_1629334994:"https:\/\/seanprashad.com\/leetcode-patterns\/" description:"Prashad Leetcode Patterns" entry:"1629334994" modified:"1629725352" project:"references.leetcode" status:"pending" uuid:"a8028286-c0dd-4bf1-8ff2-46334497d843"]
 [annotation_1629466528:"https:\/\/jobs.lever.co\/quantummetric\/7b18378a-4331-4c1b-b7de-1f42614beb49" description:"Quantum Metric QA" entry:"1629466528" modified:"1629466528" project:"jobs" status:"pending" uuid:"58ae4523-d760-4f19-9a12-eca1a7cbc329"]
-[description:"Topological Sort Anki Card" entry:"1629571506" modified:"1630682693" project:"Anki.make_card" status:"pending" tags:"next" uuid:"d3e91342-0486-4d1f-ac97-4643c4b05aed"]
 [description:"Kruskal's Anki Card" entry:"1629571512" modified:"1630682699" project:"Anki.make_card" status:"pending" tags:"next" uuid:"e935e534-addc-4d0d-9bc6-fec376a21eb7"]
 [description:"Prim's Anki Card" entry:"1629571519" modified:"1630682715" project:"Anki.make_card" status:"pending" tags:"next" uuid:"f3c7f94d-ebbf-489f-8df6-62b899e47395"]
 [description:"Understand python closures\/nested functions" entry:"1629650802" modified:"1629725172" status:"pending" tags:"someday\/maybe" uuid:"cc36c7c9-1096-4ea0-8a59-d55805d2b01d"]
@@ -51,3 +50,5 @@
 [description:"Counting Triplets Hackerrank" entry:"1631023796" modified:"1631200244" status:"pending" tags:"someday\/maybe" uuid:"844aa269-b17b-4215-ac64-fdac8d3139d4"]
 [annotation_1631106758:"https:\/\/hr.gs\/october-2021-vcf" description:"Codepath VCF HackerRank" due:"1633093958" entry:"1631106758" modified:"1631106841" status:"pending" tags:"next" uuid:"a257c5b4-d714-4d12-a0fe-9b3c2a6ac4ed"]
 [annotation_1631297579:"https:\/\/rftgu.rs\/" description:"Rust From the Ground Up" entry:"1631297579" modified:"1631297579" status:"pending" uuid:"b4f83226-8eb0-480c-9c0f-63c70b407748"]
+[description:"Discovery HireVue" entry:"1631470765" modified:"1631470765" status:"pending" tags:"in" uuid:"dffbb1ed-b5e3-42b4-b833-9735b9ff6a3c"]
+[description:"Apply to Cisco" entry:"1631470773" modified:"1631470773" status:"pending" tags:"in" uuid:"0193b06f-a052-42fa-90fe-dbca47642a99"]
