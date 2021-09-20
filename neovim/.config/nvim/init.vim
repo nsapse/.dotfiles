@@ -231,7 +231,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/playground'
-"Plug 'ray-x/lsp_signature.nvim'
+Plug 'ray-x/lsp_signature.nvim'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'mhartington/formatter.nvim'
 
@@ -249,6 +249,10 @@ Plug 'vhyrro/neorg'
 "Java
 Plug 'mfussenegger/nvim-jdtls'
 
+"Debugging
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
 
 call plug#end()
 
@@ -372,8 +376,11 @@ nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 nnoremap <silent>ga :Lspsaga code_action<CR>
 vnoremap <silent>ga :<C-U>Lspsaga range_code_action<CR>
 
-"lsp provider to find the cursor word definition and reference
-nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
+"-- lsp provider to find the cursor word definition and reference
+nnoremap <silent>gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
+"-- or use command LspSagaFinder
+nnoremap <silent>gh :Lspsaga lsp_finder<CR>
+
 
 " or use command
 nnoremap <silent>K :Lspsaga hover_doc<CR>
@@ -396,6 +403,10 @@ nnoremap <silent>pd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
 nnoremap <leader><leader>V "+p 
 
 " or use command
+nnoremap <silent><leader>cd <cmd>lua
+nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
+"-- only show diagnostic if cursor is over the area
+nnoremap <silent><leader>cc <cmd>lua
 nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
 
@@ -429,17 +440,17 @@ vnoremap ga <Esc><Cmd>lua require('jdtls').code_action(true)<CR>
 nnoremap <leader>r <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
 
 nnoremap <A-o> <Cmd>lua require'jdtls'.organize_imports()<CR>
-nnoremap <leader>ev <Cmd>lua require('jdtls').extract_variable()<CR>
-vnoremap <leader>ev <Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>
-nnoremap <leader>ec <Cmd>lua require('jdtls').extract_constant()<CR>
-vnoremap <leader>ec <Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>
-vnoremap <leader>em <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
+nnoremap <leader><leader>ev <Cmd>lua require('jdtls').extract_variable()<CR>
+vnoremap <leader><leader>ev <Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>
+nnoremap <leader><leader>ec <Cmd>lua require('jdtls').extract_constant()<CR>
+vnoremap <leader><leader>ec <Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>
+vnoremap <leader><leader>em <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
 
 
 "-- If using nvim-dap
 "-- This requires java-debug and vscode-java-test bundles, see install steps in this README further below.
-"nnoremap <leader>df <Cmd>lua require'jdtls'.test_class()<CR>
-"nnoremap <leader>dn <Cmd>lua require'jdtls'.test_nearest_method()<CR>
+nnoremap <leader>df <Cmd>lua require'jdtls'.test_class()<CR>
+nnoremap <leader>dn <Cmd>lua require'jdtls'.test_nearest_method()<CR>
 
 
 " LSP UPDATE
@@ -751,22 +762,29 @@ require('rust-tools.inlay_hints').set_inlay_hints()
 require'rust-tools.hover_actions'.hover_actions()
 
 
---require "lsp_signature".setup()
+require "lsp_signature".setup()
+
+-- Setting Up Language Servers
 require'lspconfig'.bashls.setup{}
-require'lspconfig'.pylsp.setup{}
-require'lspconfig'.tsserver.setup{}
-require'lspconfig'.vimls.setup{}
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.cssls.setup{}
 require'lspconfig'.gopls.setup{}
+require'lspconfig'.hls.setup{}
 require'lspconfig'.html.setup{}
 require'lspconfig'.jsonls.setup{}
+require'lspconfig'.pylsp.setup{}
 require'lspconfig'.sqls.setup{}
+require'lspconfig'.sumneko_lua.setup{}
+require'lspconfig'.tsserver.setup{}
+require'lspconfig'.vimls.setup{}
+
 --require'lspconfig'.jdtls.setup {cmd = {'jdtls'}}
 --require'lspconfig'.java_language_server.setup{}
 
 local saga = require 'lspsaga'
 saga.init_lsp_saga()
+--require'lspsaga.diagnostic'.show_line_diagnostics()<CR>
+--require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
 
 -- Trouble
 

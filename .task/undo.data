@@ -1961,3 +1961,179 @@ new [description:"Discovery HireVue" entry:"1631470765" modified:"1631470765" st
 time 1631470773
 new [description:"Apply to Cisco" entry:"1631470773" modified:"1631470773" status:"pending" tags:"in" uuid:"0193b06f-a052-42fa-90fe-dbca47642a99"]
 ---
+time 1631569706
+old [description:"Discovery HireVue" entry:"1631470765" modified:"1631470765" status:"pending" tags:"in" uuid:"dffbb1ed-b5e3-42b4-b833-9735b9ff6a3c"]
+new [description:"Discovery HireVue" entry:"1631470765" modified:"1631569706" status:"pending" tags:"next" uuid:"dffbb1ed-b5e3-42b4-b833-9735b9ff6a3c"]
+---
+time 1631569716
+old [description:"Apply to Cisco" entry:"1631470773" modified:"1631470773" status:"pending" tags:"in" uuid:"0193b06f-a052-42fa-90fe-dbca47642a99"]
+new [description:"Apply to Cisco" entry:"1631470773" modified:"1631569716" status:"pending" tags:"next" uuid:"0193b06f-a052-42fa-90fe-dbca47642a99"]
+---
+time 1631569742
+new [description:"Send Hackathon Reminder Email" entry:"1631569742" modified:"1631569742" status:"pending" tags:"next" uuid:"1fef9756-51d9-433f-858d-92eb0045280a"]
+---
+time 1631642752
+old [description:"Spiral Matrix" entry:"1630682586" modified:"1630682761" project:"leetcode" status:"pending" tags:"next" uuid:"c20a4f17-47b8-43af-83c0-21c946d8c2eb"]
+new [description:"Spiral Matrix" end:"1631642752" entry:"1630682586" modified:"1631642752" project:"leetcode" status:"completed" tags:"next" uuid:"c20a4f17-47b8-43af-83c0-21c946d8c2eb"]
+---
+time 1631642759
+old [description:"Make judges list for Hackathon" entry:"1630015725" modified:"1630016343" project:"Hackathon.fall" status:"pending" tags:"next" uuid:"7e3ba3d1-65af-4240-82a4-eda0ac1cc02b"]
+new [description:"Make judges list for Hackathon" end:"1631642759" entry:"1630015725" modified:"1631642759" project:"Hackathon.fall" status:"completed" tags:"next" uuid:"7e3ba3d1-65af-4240-82a4-eda0ac1cc02b"]
+---
+time 1631642782
+old [description:"Set Matrix 0s" entry:"1630682574" modified:"1630682761" project:"leetcode" status:"pending" tags:"next" uuid:"8f4a2034-6eff-4d8c-9aed-2ce77cd788e6"]
+new [description:"Set Matrix 0s" end:"1631642782" entry:"1630682574" modified:"1631642782" project:"leetcode" status:"completed" tags:"next" uuid:"8f4a2034-6eff-4d8c-9aed-2ce77cd788e6"]
+---
+time 1631642796
+old [annotation_1631106758:"https:\/\/hr.gs\/october-2021-vcf" description:"Codepath VCF HackerRank" due:"1633093958" entry:"1631106758" modified:"1631106841" status:"pending" tags:"next" uuid:"a257c5b4-d714-4d12-a0fe-9b3c2a6ac4ed"]
+new [annotation_1631106758:"https:\/\/hr.gs\/october-2021-vcf" description:"Codepath VCF HackerRank" due:"1633093958" end:"1631642796" entry:"1631106758" modified:"1631642796" status:"completed" tags:"next" uuid:"a257c5b4-d714-4d12-a0fe-9b3c2a6ac4ed"]
+---
+time 1631802550
+new [description:"Guide to Making a Chip-8 Emulator" entry:"1631802550" modified:"1631802550" status:"pending" uuid:"38143d8f-b631-4647-a0c0-636fb67a8b14"]
+---
+time 1631802550
+old [description:"Guide to Making a Chip-8 Emulator" entry:"1631802550" modified:"1631802550" status:"pending" uuid:"38143d8f-b631-4647-a0c0-636fb67a8b14"]
+new [annotation_1631802550:"https:\/\/tobiasvl.github.io\/blog\/write-a-chip-8-emulator\/" description:"Guide to Making a Chip-8 Emulator" entry:"1631802550" modified:"1631802550" status:"pending" uuid:"38143d8f-b631-4647-a0c0-636fb67a8b14"]
+---
+time 1631802575
+new [description:"Chip 8 Technical Reference" entry:"1631802575" modified:"1631802575" status:"pending" uuid:"ef70feba-cb43-4e7a-9915-5d2657111190"]
+---
+time 1631802575
+old [description:"Chip 8 Technical Reference" entry:"1631802575" modified:"1631802575" status:"pending" uuid:"ef70feba-cb43-4e7a-9915-5d2657111190"]
+new [annotation_1631802575:"http:\/\/devernay.free.fr\/hacks\/chip8\/C8TECH10.HTM" description:"Chip 8 Technical Reference" entry:"1631802575" modified:"1631802575" status:"pending" uuid:"ef70feba-cb43-4e7a-9915-5d2657111190"]
+---
+time 1631823179
+old [description:"review Hackthon github slides" entry:"1629298307" modified:"1629384315" status:"pending" tags:"next" uuid:"95d65622-a852-4873-a978-c8f17c3840c8"]
+new [description:"review Hackthon github slides" end:"1631823179" entry:"1629298307" modified:"1631823179" status:"completed" tags:"next" uuid:"95d65622-a852-4873-a978-c8f17c3840c8"]
+---
+time 1631823185
+old [description:"Send Hackathon Reminder Email" entry:"1631569742" modified:"1631569742" status:"pending" tags:"next" uuid:"1fef9756-51d9-433f-858d-92eb0045280a"]
+new [description:"Send Hackathon Reminder Email" end:"1631823185" entry:"1631569742" modified:"1631823185" status:"completed" tags:"next" uuid:"1fef9756-51d9-433f-858d-92eb0045280a"]
+---
+time 1631823200
+new [description:"Cisco OA" entry:"1631823200" modified:"1631823200" status:"pending" tags:"next" uuid:"43646572-09fb-4348-b643-6306d878abd5"]
+---
+time 1631968748
+old [description:"Apply to Cisco" entry:"1631470773" modified:"1631569716" status:"pending" tags:"next" uuid:"0193b06f-a052-42fa-90fe-dbca47642a99"]
+new [description:"Apply to Cisco" end:"1631968748" entry:"1631470773" modified:"1631968748" status:"completed" tags:"next" uuid:"0193b06f-a052-42fa-90fe-dbca47642a99"]
+---
+time 1632077047
+new [description:"Twitter OA" entry:"1632077047" modified:"1632077047" status:"pending" tags:"next" uuid:"a6949ab7-7032-48fb-9ee9-d4faeb603a27"]
+---
+time 1632077074
+old [description:"get new tires" entry:"1630761914" modified:"1630809034" status:"pending" tags:"next" uuid:"6f636d13-89ab-4303-a692-025d911b4077"]
+new [description:"get new tires" end:"1632077074" entry:"1630761914" modified:"1632077074" status:"completed" tags:"next" uuid:"6f636d13-89ab-4303-a692-025d911b4077"]
+---
+time 1632077074
+old [description:"Cisco OA" entry:"1631823200" modified:"1631823200" status:"pending" tags:"next" uuid:"43646572-09fb-4348-b643-6306d878abd5"]
+new [description:"Cisco OA" end:"1632077074" entry:"1631823200" modified:"1632077074" status:"completed" tags:"next" uuid:"43646572-09fb-4348-b643-6306d878abd5"]
+---
+time 1632082810
+new [description:"Return to Tree Diameter Leetcode" entry:"1632082810" modified:"1632082810" status:"pending" uuid:"106952e7-636e-4405-b1b9-6374a7e71d92"]
+---
+time 1632082814
+old [description:"Return to Tree Diameter Leetcode" entry:"1632082810" modified:"1632082810" status:"pending" uuid:"106952e7-636e-4405-b1b9-6374a7e71d92"]
+new [annotation_1632082814:"https:\/\/leetcode.com\/problems\/diameter-of-binary-tree\/solution\/" description:"Return to Tree Diameter Leetcode" entry:"1632082810" modified:"1632082814" status:"pending" uuid:"106952e7-636e-4405-b1b9-6374a7e71d92"]
+---
+time 1632082819
+old [annotation_1632082814:"https:\/\/leetcode.com\/problems\/diameter-of-binary-tree\/solution\/" description:"Return to Tree Diameter Leetcode" entry:"1632082810" modified:"1632082814" status:"pending" uuid:"106952e7-636e-4405-b1b9-6374a7e71d92"]
+new [annotation_1632082814:"https:\/\/leetcode.com\/problems\/diameter-of-binary-tree\/solution\/" description:"Return to Tree Diameter Leetcode" entry:"1632082810" modified:"1632082819" status:"pending" tags:"next" uuid:"106952e7-636e-4405-b1b9-6374a7e71d92"]
+---
+time 1632082831
+old [annotation_1629168574:"https:\/\/www.linkedin.com\/jobs\/view\/2675987989\/" description:"++Boston" entry:"1629168574" modified:"1629168574" project:"jobs" status:"pending" uuid:"cf6174fb-d4af-41c4-8bf3-2e8d72921db8"]
+new [annotation_1629168574:"https:\/\/www.linkedin.com\/jobs\/view\/2675987989\/" description:"++Boston" end:"1632082831" entry:"1629168574" modified:"1632082831" project:"jobs" status:"deleted" uuid:"cf6174fb-d4af-41c4-8bf3-2e8d72921db8"]
+---
+time 1632082841
+old [annotation_1629161004:"https:\/\/app.joinhandshake.com\/jobs\/5015887" description:"cisco:full_stack" entry:"1629160990" modified:"1629161024" project:"jobs" status:"pending" uuid:"d8d034be-cb13-445c-a114-31b2a9c976f8"]
+new [annotation_1629161004:"https:\/\/app.joinhandshake.com\/jobs\/5015887" description:"cisco:full_stack" end:"1632082841" entry:"1629160990" modified:"1632082841" project:"jobs" status:"completed" uuid:"d8d034be-cb13-445c-a114-31b2a9c976f8"]
+---
+time 1632082852
+old [annotation_1629166566:"https:\/\/jobs.lever.co\/kapwing\/0e525c6e-9287-4621-9487-0d658e432d1d" description:"Kapwing" entry:"1629166566" modified:"1629166579" project:"jobs" status:"pending" tags:"San_Francisco" uuid:"fd9e5b79-9054-46fd-ba8e-7462b6547b21"]
+new [annotation_1629166566:"https:\/\/jobs.lever.co\/kapwing\/0e525c6e-9287-4621-9487-0d658e432d1d" description:"Kapwing" end:"1632082852" entry:"1629166566" modified:"1632082852" project:"jobs" status:"deleted" tags:"San_Francisco" uuid:"fd9e5b79-9054-46fd-ba8e-7462b6547b21"]
+---
+time 1632082858
+old [annotation_1629168099:"https:\/\/www.linkedin.com\/jobs\/view\/2682733893\/" description:"TechnologyAdvice" entry:"1629168099" modified:"1629168102" project:"jobs" status:"pending" tags:"Remote" uuid:"591dcee4-f0c4-44d3-acea-151ab55ca128"]
+new [annotation_1629168099:"https:\/\/www.linkedin.com\/jobs\/view\/2682733893\/" description:"TechnologyAdvice" end:"1632082858" entry:"1629168099" modified:"1632082858" project:"jobs" status:"deleted" tags:"Remote" uuid:"591dcee4-f0c4-44d3-acea-151ab55ca128"]
+---
+time 1632082859
+old [annotation_1629168865:"https:\/\/www.linkedin.com\/jobs\/view\/2671450456\/" description:"Stripe" entry:"1629168865" modified:"1629168895" project:"jobs" status:"pending" tags:"New_York" uuid:"314012b8-1a96-4886-aa23-02148747900c"]
+new [annotation_1629168865:"https:\/\/www.linkedin.com\/jobs\/view\/2671450456\/" description:"Stripe" end:"1632082859" entry:"1629168865" modified:"1632082859" project:"jobs" status:"completed" tags:"New_York" uuid:"314012b8-1a96-4886-aa23-02148747900c"]
+---
+time 1632082862
+old [annotation_1629168917:"https:\/\/www.linkedin.com\/jobs\/view\/2675140269\/" description:"Datadog(Boston)" entry:"1629168917" modified:"1629168921" project:"jobs" status:"pending" tags:"Boston" uuid:"6b138d46-0c76-4f19-9a29-dd99184e4cfe"]
+new [annotation_1629168917:"https:\/\/www.linkedin.com\/jobs\/view\/2675140269\/" description:"Datadog(Boston)" end:"1632082862" entry:"1629168917" modified:"1632082862" project:"jobs" status:"completed" tags:"Boston" uuid:"6b138d46-0c76-4f19-9a29-dd99184e4cfe"]
+---
+time 1632150660
+new [description:"Heapify\/Make Heap Anki Card" entry:"1632150660" modified:"1632150660" status:"pending" tags:"next" uuid:"6c5a589b-aa43-4b1e-b411-8a8b27e21334"]
+---
+time 1632150912
+new [description:"Union Data Structure Anki Card" entry:"1632150912" modified:"1632150912" status:"pending" tags:"next" uuid:"a155e361-5f28-48cd-8c7d-954ddb06ced2"]
+---
+time 1632150929
+old [description:"Heapify\/Make Heap Anki Card" entry:"1632150660" modified:"1632150660" status:"pending" tags:"next" uuid:"6c5a589b-aa43-4b1e-b411-8a8b27e21334"]
+new [description:"Heapify\/Make Heap Anki Card" entry:"1632150660" modified:"1632150929" project:"Anki.make_card" status:"pending" tags:"next" uuid:"6c5a589b-aa43-4b1e-b411-8a8b27e21334"]
+---
+time 1632150942
+old [description:"Union Data Structure Anki Card" entry:"1632150912" modified:"1632150912" status:"pending" tags:"next" uuid:"a155e361-5f28-48cd-8c7d-954ddb06ced2"]
+new [description:"Union Data Structure Anki Card" entry:"1632150912" modified:"1632150942" project:"Anki.make_card" status:"pending" tags:"next" uuid:"a155e361-5f28-48cd-8c7d-954ddb06ced2"]
+---
+time 1632151017
+old [annotation_1629167107:"https:\/\/jobs.apple.com\/en-us\/details\/200253195\/software-engineering-internship" description:"Apple" entry:"1629167107" modified:"1629167113" project:"jobs" status:"pending" tags:"Cupertino" uuid:"b8f94114-ec1c-42e8-aff4-ab96269da3a8"]
+new [annotation_1629167107:"https:\/\/jobs.apple.com\/en-us\/details\/200253195\/software-engineering-internship" description:"Apple" end:"1632151017" entry:"1629167107" modified:"1632151017" project:"jobs" status:"deleted" tags:"Cupertino" uuid:"b8f94114-ec1c-42e8-aff4-ab96269da3a8"]
+---
+time 1632151018
+old [annotation_1629167305:"https:\/\/boards.greenhouse.io\/lyft\/jobs\/5445920002?gh_jid=5445920002" description:"Lyft" entry:"1629167305" modified:"1629167317" project:"jobs" status:"pending" tags:"San_Francisco" uuid:"ccf5d173-81dc-4dc4-b5e3-d3bae019a24e"]
+new [annotation_1629167305:"https:\/\/boards.greenhouse.io\/lyft\/jobs\/5445920002?gh_jid=5445920002" description:"Lyft" end:"1632151018" entry:"1629167305" modified:"1632151018" project:"jobs" status:"deleted" tags:"San_Francisco" uuid:"ccf5d173-81dc-4dc4-b5e3-d3bae019a24e"]
+---
+time 1632151023
+old [annotation_1629161351:"https:\/\/app.joinhandshake.com\/postings?page=2&per_page=25&sort_direction=desc&sort_column=default" description:"AnswerRocket" entry:"1629161273" modified:"1629161351" project:"jobs" status:"pending" uuid:"203ccbd1-2c57-4255-bd86-8fef0c8855c3"]
+new [annotation_1629161351:"https:\/\/app.joinhandshake.com\/postings?page=2&per_page=25&sort_direction=desc&sort_column=default" description:"AnswerRocket" end:"1632151023" entry:"1629161273" modified:"1632151023" project:"jobs" status:"deleted" uuid:"203ccbd1-2c57-4255-bd86-8fef0c8855c3"]
+---
+time 1632151024
+old [annotation_1629166202:"https:\/\/www.mathworks.com\/company\/jobs\/opportunities\/16217" description:"Mathworks" entry:"1629166202" modified:"1629166202" project:"jobs" status:"pending" uuid:"46d06b3e-732b-4c80-8875-c43bbc797bc8"]
+new [annotation_1629166202:"https:\/\/www.mathworks.com\/company\/jobs\/opportunities\/16217" description:"Mathworks" end:"1632151024" entry:"1629166202" modified:"1632151024" project:"jobs" status:"deleted" uuid:"46d06b3e-732b-4c80-8875-c43bbc797bc8"]
+---
+time 1632151026
+old [annotation_1629167350:"https:\/\/boards.greenhouse.io\/lyft\/jobs\/5446225002?gh_jid=5446225002" description:"++Seattle" entry:"1629167350" modified:"1629167350" project:"jobs" status:"pending" uuid:"df9429bb-6f9b-487c-a0c1-3b4d2a03d604"]
+new [annotation_1629167350:"https:\/\/boards.greenhouse.io\/lyft\/jobs\/5446225002?gh_jid=5446225002" description:"++Seattle" end:"1632151026" entry:"1629167350" modified:"1632151026" project:"jobs" status:"deleted" uuid:"df9429bb-6f9b-487c-a0c1-3b4d2a03d604"]
+---
+time 1632151029
+old [annotation_1629237691:"https:\/\/www.tesla.com\/careers\/search\/?country=US&query=internship" description:"Look at Tesla Internships" entry:"1629237642" modified:"1629238502" project:"jobs" status:"pending" uuid:"c1834827-228c-4fc2-b2f7-2740ef992b6b"]
+new [annotation_1629237691:"https:\/\/www.tesla.com\/careers\/search\/?country=US&query=internship" description:"Look at Tesla Internships" end:"1632151029" entry:"1629237642" modified:"1632151029" project:"jobs" status:"deleted" uuid:"c1834827-228c-4fc2-b2f7-2740ef992b6b"]
+---
+time 1632151032
+old [annotation_1629237799:"https:\/\/www.linkedin.com\/jobs\/view\/2654235471\/?midToken=AQHTeYBHgcRl7A&midSig=1GPbEYokW7lpU1&trkEmail=eml-email_jobs_saved_job_reminder_01-null-0-mercado_redesign-null-25heya%7Eksgg91w1%7E8u-null-jobs%7Eview" description:"Freddie-Mac" entry:"1629237799" modified:"1629237799" project:"jobs" status:"pending" uuid:"1a35d7f7-0d0c-41c3-8b69-1ab5b5a223ed"]
+new [annotation_1629237799:"https:\/\/www.linkedin.com\/jobs\/view\/2654235471\/?midToken=AQHTeYBHgcRl7A&midSig=1GPbEYokW7lpU1&trkEmail=eml-email_jobs_saved_job_reminder_01-null-0-mercado_redesign-null-25heya%7Eksgg91w1%7E8u-null-jobs%7Eview" description:"Freddie-Mac" end:"1632151032" entry:"1629237799" modified:"1632151032" project:"jobs" status:"deleted" uuid:"1a35d7f7-0d0c-41c3-8b69-1ab5b5a223ed"]
+---
+time 1632151034
+old [annotation_1629304041:"https:\/\/robinhood.com\/us\/en\/careers\/openings\/?gh_jid=3339166" description:"RobinHood BackEnd" entry:"1629304041" modified:"1629304041" project:"jobs" status:"pending" uuid:"81ba2765-c583-4327-ac29-c4c0b3758ee3"]
+new [annotation_1629304041:"https:\/\/robinhood.com\/us\/en\/careers\/openings\/?gh_jid=3339166" description:"RobinHood BackEnd" end:"1632151034" entry:"1629304041" modified:"1632151034" project:"jobs" status:"deleted" uuid:"81ba2765-c583-4327-ac29-c4c0b3758ee3"]
+---
+time 1632151035
+old [annotation_1629321408:"https:\/\/wd1.myworkdaysite.com\/recruiting\/paypal\/jobs\/job\/San-Jose-CA\/Software-Engineer-Intern_R0075012?Codes=W-LINKEDIN" description:"Paypal NYC" entry:"1629321408" modified:"1629321408" project:"jobs" status:"pending" uuid:"fd7efd44-649a-44c5-a654-11730712b1d9"]
+new [annotation_1629321408:"https:\/\/wd1.myworkdaysite.com\/recruiting\/paypal\/jobs\/job\/San-Jose-CA\/Software-Engineer-Intern_R0075012?Codes=W-LINKEDIN" description:"Paypal NYC" end:"1632151035" entry:"1629321408" modified:"1632151035" project:"jobs" status:"deleted" uuid:"fd7efd44-649a-44c5-a654-11730712b1d9"]
+---
+time 1632156269
+old [description:"Kruskal's Anki Card" entry:"1629571512" modified:"1630682699" project:"Anki.make_card" status:"pending" tags:"next" uuid:"e935e534-addc-4d0d-9bc6-fec376a21eb7"]
+new [description:"Kruskal's Anki Card" end:"1632156269" entry:"1629571512" modified:"1632156269" project:"Anki.make_card" status:"completed" tags:"next" uuid:"e935e534-addc-4d0d-9bc6-fec376a21eb7"]
+---
+time 1632158687
+old [description:"Understand python closures\/nested functions" entry:"1629650802" modified:"1629725172" status:"pending" tags:"someday\/maybe" uuid:"cc36c7c9-1096-4ea0-8a59-d55805d2b01d"]
+new [description:"Understand python closures\/nested functions" end:"1632158687" entry:"1629650802" modified:"1632158687" status:"completed" tags:"someday\/maybe" uuid:"cc36c7c9-1096-4ea0-8a59-d55805d2b01d"]
+---
+time 1632158687
+old [description:"Counting Triplets Hackerrank" entry:"1631023796" modified:"1631200244" status:"pending" tags:"someday\/maybe" uuid:"844aa269-b17b-4215-ac64-fdac8d3139d4"]
+new [description:"Counting Triplets Hackerrank" end:"1632158687" entry:"1631023796" modified:"1632158687" status:"completed" tags:"someday\/maybe" uuid:"844aa269-b17b-4215-ac64-fdac8d3139d4"]
+---
+time 1632158726
+old [description:"Prim's Anki Card" entry:"1629571519" modified:"1630682715" project:"Anki.make_card" status:"pending" tags:"next" uuid:"f3c7f94d-ebbf-489f-8df6-62b899e47395"]
+new [description:"Prim's Anki Card" end:"1632158726" entry:"1629571519" modified:"1632158726" project:"Anki.make_card" status:"completed" tags:"next" uuid:"f3c7f94d-ebbf-489f-8df6-62b899e47395"]
+---
+time 1632158741
+old [description:"Union Find Anki Card" entry:"1630770582" modified:"1630770611" project:"Anki.make_card" status:"pending" tags:"next" uuid:"edeb9185-25f7-4e51-8c2b-b079e9febb1b"]
+new [description:"Union Find Anki Card" end:"1632158741" entry:"1630770582" modified:"1632158741" project:"Anki.make_card" status:"completed" tags:"next" uuid:"edeb9185-25f7-4e51-8c2b-b079e9febb1b"]
+---
+time 1632158758
+old [description:"Union Data Structure Anki Card" entry:"1632150912" modified:"1632150942" project:"Anki.make_card" status:"pending" tags:"next" uuid:"a155e361-5f28-48cd-8c7d-954ddb06ced2"]
+new [description:"Union Data Structure Anki Card" end:"1632158758" entry:"1632150912" modified:"1632158758" project:"Anki.make_card" status:"completed" tags:"next" uuid:"a155e361-5f28-48cd-8c7d-954ddb06ced2"]
+---
