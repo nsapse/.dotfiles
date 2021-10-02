@@ -574,3 +574,67 @@
 {"description":"Prim's Anki Card","end":"20210920T172526Z","entry":"20210821T184519Z","modified":"20210920T172526Z","project":"Anki.make_card","status":"completed","tags":["next"],"uuid":"f3c7f94d-ebbf-489f-8df6-62b899e47395"}
 {"description":"Union Find Anki Card","end":"20210920T172541Z","entry":"20210904T154942Z","modified":"20210920T172541Z","project":"Anki.make_card","status":"completed","tags":["next"],"uuid":"edeb9185-25f7-4e51-8c2b-b079e9febb1b"}
 {"description":"Union Data Structure Anki Card","end":"20210920T172558Z","entry":"20210920T151512Z","modified":"20210920T172558Z","project":"Anki.make_card","status":"completed","tags":["next"],"uuid":"a155e361-5f28-48cd-8c7d-954ddb06ced2"}
+{"description":"Make weekly schedule","entry":"20210922T145142Z","modified":"20210922T145142Z","status":"pending","tags":["in"],"uuid":"cf5cdadf-0eb4-46ef-9509-5bd18282efe0"}
+{"description":"Survey class due dates","entry":"20210922T145149Z","modified":"20210922T145149Z","status":"pending","tags":["in"],"uuid":"8f19f654-28b2-49ce-af8b-9cda9c755d7f"}
+{"description":"261 Introduction Post","entry":"20210922T145201Z","modified":"20210922T145201Z","status":"pending","tags":["in"],"uuid":"d66d4105-324c-4614-8ca1-7dba3343f97e"}
+{"description":"Read 261 email from Randy","entry":"20210922T145207Z","modified":"20210922T145207Z","status":"pending","tags":["in"],"uuid":"408675ed-a5ef-47de-a2af-bb3805259a59"}
+{"description":"362 Syllabus Quiz","entry":"20210922T145213Z","modified":"20210922T145213Z","status":"pending","tags":["in"],"uuid":"a8da687c-a31f-40ce-8e13-cf345daf1a8a"}
+{"description":"344 Syllabus Quiz","entry":"20210922T145222Z","modified":"20210922T145222Z","status":"pending","tags":["in"],"uuid":"f377cf30-da60-4244-ba35-27a2e7c0bd92"}
+{"description":"Go on Job Application Spree","entry":"20210922T145540Z","modified":"20210922T145540Z","status":"pending","tags":["in"],"uuid":"07deecf8-cbec-4f6c-bfe7-2bdf188ef534"}
+{"description":"261 Introduction Post","end":"20210922T175727Z","entry":"20210922T145201Z","modified":"20210922T175727Z","status":"completed","tags":["in"],"uuid":"d66d4105-324c-4614-8ca1-7dba3343f97e"}
+{"description":"344 Syllabus Quiz","end":"20210922T182209Z","entry":"20210922T145222Z","modified":"20210922T182209Z","status":"completed","tags":["in"],"uuid":"f377cf30-da60-4244-ba35-27a2e7c0bd92"}
+{"description":"Read 261 email from Randy","end":"20210922T190607Z","entry":"20210922T145207Z","modified":"20210922T190607Z","status":"completed","tags":["in"],"uuid":"408675ed-a5ef-47de-a2af-bb3805259a59"}
+{"description":"362 Syllabus Quiz","end":"20210922T190607Z","entry":"20210922T145213Z","modified":"20210922T190607Z","status":"completed","tags":["in"],"uuid":"a8da687c-a31f-40ce-8e13-cf345daf1a8a"}
+{"description":"Make weekly schedule","entry":"20210922T145142Z","modified":"20210922T190637Z","status":"pending","tags":["next"],"uuid":"cf5cdadf-0eb4-46ef-9509-5bd18282efe0"}
+{"description":"Go on Job Application Spree","entry":"20210922T145540Z","modified":"20210922T190637Z","status":"pending","tags":["next"],"uuid":"07deecf8-cbec-4f6c-bfe7-2bdf188ef534"}
+{"description":"Survey class due dates","end":"20210922T190647Z","entry":"20210922T145149Z","modified":"20210922T190647Z","status":"completed","tags":["in"],"uuid":"8f19f654-28b2-49ce-af8b-9cda9c755d7f"}
+{"description":"Discovery HireVue","end":"20210922T192809Z","entry":"20210912T181925Z","modified":"20210922T192809Z","status":"deleted","tags":["next"],"uuid":"dffbb1ed-b5e3-42b4-b833-9735b9ff6a3c"}
+{"description":"Start Codepath Fellowship Presentation","entry":"20210923T014634Z","modified":"20210923T014634Z","status":"pending","uuid":"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"}
+{"description":"Start Codepath Fellowship Presentation","entry":"20210923T014634Z","modified":"20210923T014639Z","priority":"H","status":"pending","uuid":"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"}
+{"description":"Start Codepath Fellowship Presentation","entry":"20210923T014634Z","modified":"20210923T014644Z","priority":"H","status":"pending","tags":["next"],"uuid":"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"}
+{"description":"Read up on Discord bots and server setup","entry":"20210923T171332Z","modified":"20210923T171332Z","status":"pending","tags":["in"],"uuid":"2725af41-e4e3-4e4f-a3a1-bbcc04ac798e"}
+{"description":"Finish attempted LC problems","end":"20210923T171340Z","entry":"20210822T204514Z","modified":"20210923T171340Z","status":"deleted","tags":["next"],"uuid":"bc10b1a9-33e2-439e-9884-963aa466f92e"}
+{"description":"Return to Tree Diameter Leetcode","end":"20210923T205141Z","entry":"20210919T202010Z","modified":"20210923T205141Z","status":"completed","tags":["next"],"uuid":"106952e7-636e-4405-b1b9-6374a7e71d92","annotations":[{"entry":"20210919T202014Z","description":"https:\/\/leetcode.com\/problems\/diameter-of-binary-tree\/solution\/"}]}
+{"description":"Setup OS Server SSH","entry":"20210923T210814Z","modified":"20210923T210814Z","status":"pending","tags":["in"],"uuid":"127a8301-5676-452a-90cc-4f911643848d"}
+{"description":"Setup VSCode with SSH into OS1","entry":"20210923T210823Z","modified":"20210923T210823Z","status":"pending","tags":["in"],"uuid":"563ff213-30ac-4291-9270-0873e913d271"}
+{"description":"Start Codepath Fellowship Presentation","entry":"20210923T210843Z","modified":"20210923T210843Z","status":"pending","tags":["in"],"uuid":"efacbfa8-d05d-4d0c-b78a-30f4607234ab"}
+{"description":"Setup VSCode with SSH into OS1","end":"20210924T173811Z","entry":"20210923T210823Z","modified":"20210924T173811Z","status":"completed","tags":["in"],"uuid":"563ff213-30ac-4291-9270-0873e913d271"}
+{"description":"Setup OS Server SSH","end":"20210924T173813Z","entry":"20210923T210814Z","modified":"20210924T173813Z","status":"completed","tags":["in"],"uuid":"127a8301-5676-452a-90cc-4f911643848d"}
+{"description":"Read up on Discord bots and server setup","entry":"20210923T171332Z","modified":"20210924T173821Z","status":"pending","tags":["someday/maybe"],"uuid":"2725af41-e4e3-4e4f-a3a1-bbcc04ac798e"}
+{"description":"Start Codepath Fellowship Presentation","end":"20210924T173826Z","entry":"20210923T210843Z","modified":"20210924T173826Z","status":"completed","tags":["in"],"uuid":"efacbfa8-d05d-4d0c-b78a-30f4607234ab"}
+{"description":"Continue Codepath Fellowship Presentation","entry":"20210923T014634Z","modified":"20210924T173918Z","priority":"H","status":"pending","tags":["next"],"uuid":"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"}
+{"description":"Update Prims Anki Car","entry":"20210925T022936Z","modified":"20210925T022936Z","status":"pending","tags":["in"],"uuid":"7d13822b-0678-4c9a-9a53-093b7659090c"}
+{"description":"Twitter OA","end":"20210925T164254Z","entry":"20210919T184407Z","modified":"20210925T164254Z","status":"completed","tags":["next"],"uuid":"a6949ab7-7032-48fb-9ee9-d4faeb603a27"}
+{"description":"Start 362 HW 1 - Git","entry":"20210925T164313Z","modified":"20210925T164313Z","status":"pending","tags":["in"],"uuid":"5581420a-5795-4d6b-a991-e2f60b9e32d8"}
+{"description":"Start 344 HW 1 - Movies","entry":"20210925T164325Z","modified":"20210925T164325Z","status":"pending","tags":["in"],"uuid":"b17c48cb-77d3-4d91-a9f6-cba258add691"}
+{"description":"test","entry":"20210925T164902Z","modified":"20210925T164902Z","status":"pending","tags":["next"],"uuid":"593cf664-ffa4-4721-99b6-8fb83db50ce6"}
+{"description":"test","end":"20210925T164918Z","entry":"20210925T164902Z","modified":"20210925T164918Z","status":"deleted","tags":["next"],"uuid":"593cf664-ffa4-4721-99b6-8fb83db50ce6"}
+{"description":"Update Prims Anki Car","end":"20210926T154013Z","entry":"20210925T022936Z","modified":"20210926T154013Z","status":"completed","tags":["in"],"uuid":"7d13822b-0678-4c9a-9a53-093b7659090c"}
+{"description":"Start 362 HW 1 - Git","entry":"20210925T164313Z","modified":"20210926T154030Z","status":"pending","tags":["next"],"uuid":"5581420a-5795-4d6b-a991-e2f60b9e32d8"}
+{"description":"Start 344 HW 1 - Movies","entry":"20210925T164325Z","modified":"20210926T154030Z","status":"pending","tags":["next"],"uuid":"b17c48cb-77d3-4d91-a9f6-cba258add691"}
+{"description":"Start 362 HW 1 - Git","end":"20210927T141705Z","entry":"20210925T164313Z","modified":"20210927T141705Z","status":"completed","tags":["next"],"uuid":"5581420a-5795-4d6b-a991-e2f60b9e32d8"}
+{"description":"Verisk Oa","entry":"20210929T005214Z","modified":"20210929T005214Z","status":"pending","tags":["in"],"uuid":"d834fad3-1c14-49d8-b223-97a706102cbf"}
+{"description":"Ebay OA","entry":"20210929T005227Z","modified":"20210929T005227Z","status":"pending","tags":["in"],"uuid":"c6eb68bf-b6b5-49ee-9cef-c2faaba71199"}
+{"description":"Verisk Oa","entry":"20210929T005214Z","modified":"20210929T234243Z","status":"pending","tags":["next"],"uuid":"d834fad3-1c14-49d8-b223-97a706102cbf"}
+{"description":"Ebay OA","entry":"20210929T005227Z","modified":"20210929T234243Z","status":"pending","tags":["next"],"uuid":"c6eb68bf-b6b5-49ee-9cef-c2faaba71199"}
+{"description":"Go on Job Application Spree","end":"20210929T234255Z","entry":"20210922T145540Z","modified":"20210929T234255Z","status":"completed","tags":["next"],"uuid":"07deecf8-cbec-4f6c-bfe7-2bdf188ef534"}
+{"description":"Finish Codepath Fellowship Presentation","entry":"20210923T014634Z","modified":"20210929T234348Z","priority":"H","status":"pending","tags":["next"],"uuid":"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"}
+{"description":"Setup","entry":"20210930T172538Z","modified":"20210930T172538Z","status":"pending","tags":["next"],"uuid":"3203f26a-bdcd-4770-a350-166f8a76398a"}
+{"description":"Switch","entry":"20210930T172549Z","modified":"20210930T172549Z","status":"pending","tags":["next"],"uuid":"ece0c556-8368-4d00-8fb6-118e4cda1a96"}
+{"description":"Switch","entry":"20210930T172607Z","modified":"20210930T172607Z","status":"pending","tags":["next"],"uuid":"0fdc7b19-b38d-4d42-aad0-afb226a1b92e"}
+{"description":"Setup NVIM DAP","entry":"20210930T172538Z","modified":"20210930T172637Z","status":"pending","tags":["next"],"uuid":"3203f26a-bdcd-4770-a350-166f8a76398a"}
+{"description":"Switch to Packer.NVIM","entry":"20210930T172549Z","modified":"20210930T172657Z","status":"pending","tags":["next"],"uuid":"ece0c556-8368-4d00-8fb6-118e4cda1a96"}
+{"description":"Switch to init.lua from init.vim","entry":"20210930T172607Z","modified":"20210930T172718Z","status":"pending","tags":["next"],"uuid":"0fdc7b19-b38d-4d42-aad0-afb226a1b92e"}
+{"description":"Square","entry":"20210930T172732Z","modified":"20210930T172732Z","status":"pending","tags":["next"],"uuid":"0119b95f-9237-419c-b1d4-fd9198b774ea"}
+{"description":"Crowdstrike application","entry":"20211001T010739Z","modified":"20211001T010739Z","status":"pending","tags":["next"],"uuid":"96cc9c62-9ca3-477c-8e03-af6ff48d49f9"}
+{"description":"Expedia OA HackerRank","entry":"20211001T010812Z","modified":"20211001T010812Z","status":"pending","tags":["next"],"uuid":"48bede94-74fc-4927-a93b-aac2acee04c0"}
+{"description":"Tech Interview Handbook","entry":"20211001T134856Z","modified":"20211001T134856Z","status":"pending","uuid":"1f65ca90-8b5c-4804-954a-cb2473f24194"}
+{"description":"Tech Interview Handbook","entry":"20211001T134856Z","modified":"20211001T134856Z","status":"pending","uuid":"1f65ca90-8b5c-4804-954a-cb2473f24194","annotations":[{"entry":"20211001T134856Z","description":"https:\/\/techinterviewhandbook.org\/resume\/"}]}
+{"description":"Crowdstrike OA","entry":"20211001T010739Z","modified":"20211001T140431Z","status":"pending","tags":["next"],"uuid":"96cc9c62-9ca3-477c-8e03-af6ff48d49f9"}
+{"description":"Verisk Oa","entry":"20210929T005214Z","modified":"20211001T140448Z","status":"pending","tags":["OA","next"],"uuid":"d834fad3-1c14-49d8-b223-97a706102cbf"}
+{"description":"Ebay OA","entry":"20210929T005227Z","modified":"20211001T140451Z","status":"pending","tags":["OA","next"],"uuid":"c6eb68bf-b6b5-49ee-9cef-c2faaba71199"}
+{"description":"Square","entry":"20210930T172732Z","modified":"20211001T140455Z","status":"pending","tags":["OA","next"],"uuid":"0119b95f-9237-419c-b1d4-fd9198b774ea"}
+{"description":"Crowdstrike OA","entry":"20211001T010739Z","modified":"20211001T140459Z","status":"pending","tags":["OA","next"],"uuid":"96cc9c62-9ca3-477c-8e03-af6ff48d49f9"}
+{"description":"+ next","end":"20211001T140504Z","entry":"20210817T001125Z","modified":"20211001T140504Z","project":"261","scheduled":"20210826T001125Z","status":"deleted","uuid":"a46cd6b8-e024-468c-bf56-b8e346d23ebd"}
+{"description":"Expedia OA HackerRank","entry":"20211001T010812Z","modified":"20211001T140514Z","status":"pending","tags":["OA","next"],"uuid":"48bede94-74fc-4927-a93b-aac2acee04c0"}
+{"description":"Verisk Oa","end":"20211001T211049Z","entry":"20210929T005214Z","modified":"20211001T211049Z","status":"completed","tags":["OA","next"],"uuid":"d834fad3-1c14-49d8-b223-97a706102cbf"}

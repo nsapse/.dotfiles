@@ -231,6 +231,7 @@ alias glp="git log --all --decorate --oneline --graph"
 
 #Random Aliases
 alias HL="heroku local"
+alias code="code-insiders"
 
 #system aliases
 alias nct="netctl"
@@ -317,6 +318,14 @@ tAA(){
     task $ID annotate $2;
 }
 
+nextt(){
+    task add $1 +next;
+}
+
+#gcm(){
+    #git commit -m $1;
+#}
+
 ### ARCHIVE EXTRACTION
 # usage: ex <file>
 ex ()
@@ -371,3 +380,5 @@ export JDTLS_HOME=/usr/bin/jdtls # Directory with the plugin and configs directo
 #export JAVA_HOME=/path/to/java_home # In case you don't have java in path or want to use a version in particular
 #export WORKSPACE=/path/to/workspace # Defaults to $HOME/workspace
 
+# set the pager to be bat with some sh preprocesing
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"

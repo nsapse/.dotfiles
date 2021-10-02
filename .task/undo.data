@@ -2137,3 +2137,234 @@ time 1632158758
 old [description:"Union Data Structure Anki Card" entry:"1632150912" modified:"1632150942" project:"Anki.make_card" status:"pending" tags:"next" uuid:"a155e361-5f28-48cd-8c7d-954ddb06ced2"]
 new [description:"Union Data Structure Anki Card" end:"1632158758" entry:"1632150912" modified:"1632158758" project:"Anki.make_card" status:"completed" tags:"next" uuid:"a155e361-5f28-48cd-8c7d-954ddb06ced2"]
 ---
+time 1632322302
+new [description:"Make weekly schedule" entry:"1632322302" modified:"1632322302" status:"pending" tags:"in" uuid:"cf5cdadf-0eb4-46ef-9509-5bd18282efe0"]
+---
+time 1632322309
+new [description:"Survey class due dates" entry:"1632322309" modified:"1632322309" status:"pending" tags:"in" uuid:"8f19f654-28b2-49ce-af8b-9cda9c755d7f"]
+---
+time 1632322321
+new [description:"261 Introduction Post" entry:"1632322321" modified:"1632322321" status:"pending" tags:"in" uuid:"d66d4105-324c-4614-8ca1-7dba3343f97e"]
+---
+time 1632322327
+new [description:"Read 261 email from Randy" entry:"1632322327" modified:"1632322327" status:"pending" tags:"in" uuid:"408675ed-a5ef-47de-a2af-bb3805259a59"]
+---
+time 1632322333
+new [description:"362 Syllabus Quiz" entry:"1632322333" modified:"1632322333" status:"pending" tags:"in" uuid:"a8da687c-a31f-40ce-8e13-cf345daf1a8a"]
+---
+time 1632322342
+new [description:"344 Syllabus Quiz" entry:"1632322342" modified:"1632322342" status:"pending" tags:"in" uuid:"f377cf30-da60-4244-ba35-27a2e7c0bd92"]
+---
+time 1632322540
+new [description:"Go on Job Application Spree" entry:"1632322540" modified:"1632322540" status:"pending" tags:"in" uuid:"07deecf8-cbec-4f6c-bfe7-2bdf188ef534"]
+---
+time 1632333447
+old [description:"261 Introduction Post" entry:"1632322321" modified:"1632322321" status:"pending" tags:"in" uuid:"d66d4105-324c-4614-8ca1-7dba3343f97e"]
+new [description:"261 Introduction Post" end:"1632333447" entry:"1632322321" modified:"1632333447" status:"completed" tags:"in" uuid:"d66d4105-324c-4614-8ca1-7dba3343f97e"]
+---
+time 1632334929
+old [description:"344 Syllabus Quiz" entry:"1632322342" modified:"1632322342" status:"pending" tags:"in" uuid:"f377cf30-da60-4244-ba35-27a2e7c0bd92"]
+new [description:"344 Syllabus Quiz" end:"1632334929" entry:"1632322342" modified:"1632334929" status:"completed" tags:"in" uuid:"f377cf30-da60-4244-ba35-27a2e7c0bd92"]
+---
+time 1632337567
+old [description:"Read 261 email from Randy" entry:"1632322327" modified:"1632322327" status:"pending" tags:"in" uuid:"408675ed-a5ef-47de-a2af-bb3805259a59"]
+new [description:"Read 261 email from Randy" end:"1632337567" entry:"1632322327" modified:"1632337567" status:"completed" tags:"in" uuid:"408675ed-a5ef-47de-a2af-bb3805259a59"]
+---
+time 1632337567
+old [description:"362 Syllabus Quiz" entry:"1632322333" modified:"1632322333" status:"pending" tags:"in" uuid:"a8da687c-a31f-40ce-8e13-cf345daf1a8a"]
+new [description:"362 Syllabus Quiz" end:"1632337567" entry:"1632322333" modified:"1632337567" status:"completed" tags:"in" uuid:"a8da687c-a31f-40ce-8e13-cf345daf1a8a"]
+---
+time 1632337597
+old [description:"Make weekly schedule" entry:"1632322302" modified:"1632322302" status:"pending" tags:"in" uuid:"cf5cdadf-0eb4-46ef-9509-5bd18282efe0"]
+new [description:"Make weekly schedule" entry:"1632322302" modified:"1632337597" status:"pending" tags:"next" uuid:"cf5cdadf-0eb4-46ef-9509-5bd18282efe0"]
+---
+time 1632337597
+old [description:"Go on Job Application Spree" entry:"1632322540" modified:"1632322540" status:"pending" tags:"in" uuid:"07deecf8-cbec-4f6c-bfe7-2bdf188ef534"]
+new [description:"Go on Job Application Spree" entry:"1632322540" modified:"1632337597" status:"pending" tags:"next" uuid:"07deecf8-cbec-4f6c-bfe7-2bdf188ef534"]
+---
+time 1632337607
+old [description:"Survey class due dates" entry:"1632322309" modified:"1632322309" status:"pending" tags:"in" uuid:"8f19f654-28b2-49ce-af8b-9cda9c755d7f"]
+new [description:"Survey class due dates" end:"1632337607" entry:"1632322309" modified:"1632337607" status:"completed" tags:"in" uuid:"8f19f654-28b2-49ce-af8b-9cda9c755d7f"]
+---
+time 1632338889
+old [description:"Discovery HireVue" entry:"1631470765" modified:"1631569706" status:"pending" tags:"next" uuid:"dffbb1ed-b5e3-42b4-b833-9735b9ff6a3c"]
+new [description:"Discovery HireVue" end:"1632338889" entry:"1631470765" modified:"1632338889" status:"deleted" tags:"next" uuid:"dffbb1ed-b5e3-42b4-b833-9735b9ff6a3c"]
+---
+time 1632361594
+new [description:"Start Codepath Fellowship Presentation" entry:"1632361594" modified:"1632361594" status:"pending" uuid:"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"]
+---
+time 1632361599
+old [description:"Start Codepath Fellowship Presentation" entry:"1632361594" modified:"1632361594" status:"pending" uuid:"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"]
+new [description:"Start Codepath Fellowship Presentation" entry:"1632361594" modified:"1632361599" priority:"H" status:"pending" uuid:"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"]
+---
+time 1632361604
+old [description:"Start Codepath Fellowship Presentation" entry:"1632361594" modified:"1632361599" priority:"H" status:"pending" uuid:"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"]
+new [description:"Start Codepath Fellowship Presentation" entry:"1632361594" modified:"1632361604" priority:"H" status:"pending" tags:"next" uuid:"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"]
+---
+time 1632417212
+new [description:"Read up on Discord bots and server setup" entry:"1632417212" modified:"1632417212" status:"pending" tags:"in" uuid:"2725af41-e4e3-4e4f-a3a1-bbcc04ac798e"]
+---
+time 1632417220
+old [description:"Finish attempted LC problems" entry:"1629665114" modified:"1629665114" status:"pending" tags:"next" uuid:"bc10b1a9-33e2-439e-9884-963aa466f92e"]
+new [description:"Finish attempted LC problems" end:"1632417220" entry:"1629665114" modified:"1632417220" status:"deleted" tags:"next" uuid:"bc10b1a9-33e2-439e-9884-963aa466f92e"]
+---
+time 1632430301
+old [annotation_1632082814:"https:\/\/leetcode.com\/problems\/diameter-of-binary-tree\/solution\/" description:"Return to Tree Diameter Leetcode" entry:"1632082810" modified:"1632082819" status:"pending" tags:"next" uuid:"106952e7-636e-4405-b1b9-6374a7e71d92"]
+new [annotation_1632082814:"https:\/\/leetcode.com\/problems\/diameter-of-binary-tree\/solution\/" description:"Return to Tree Diameter Leetcode" end:"1632430301" entry:"1632082810" modified:"1632430301" status:"completed" tags:"next" uuid:"106952e7-636e-4405-b1b9-6374a7e71d92"]
+---
+time 1632431294
+new [description:"Setup OS Server SSH" entry:"1632431294" modified:"1632431294" status:"pending" tags:"in" uuid:"127a8301-5676-452a-90cc-4f911643848d"]
+---
+time 1632431303
+new [description:"Setup VSCode with SSH into OS1" entry:"1632431303" modified:"1632431303" status:"pending" tags:"in" uuid:"563ff213-30ac-4291-9270-0873e913d271"]
+---
+time 1632431323
+new [description:"Start Codepath Fellowship Presentation" entry:"1632431323" modified:"1632431323" status:"pending" tags:"in" uuid:"efacbfa8-d05d-4d0c-b78a-30f4607234ab"]
+---
+time 1632505091
+old [description:"Setup VSCode with SSH into OS1" entry:"1632431303" modified:"1632431303" status:"pending" tags:"in" uuid:"563ff213-30ac-4291-9270-0873e913d271"]
+new [description:"Setup VSCode with SSH into OS1" end:"1632505091" entry:"1632431303" modified:"1632505091" status:"completed" tags:"in" uuid:"563ff213-30ac-4291-9270-0873e913d271"]
+---
+time 1632505093
+old [description:"Setup OS Server SSH" entry:"1632431294" modified:"1632431294" status:"pending" tags:"in" uuid:"127a8301-5676-452a-90cc-4f911643848d"]
+new [description:"Setup OS Server SSH" end:"1632505093" entry:"1632431294" modified:"1632505093" status:"completed" tags:"in" uuid:"127a8301-5676-452a-90cc-4f911643848d"]
+---
+time 1632505101
+old [description:"Read up on Discord bots and server setup" entry:"1632417212" modified:"1632417212" status:"pending" tags:"in" uuid:"2725af41-e4e3-4e4f-a3a1-bbcc04ac798e"]
+new [description:"Read up on Discord bots and server setup" entry:"1632417212" modified:"1632505101" status:"pending" tags:"someday\/maybe" uuid:"2725af41-e4e3-4e4f-a3a1-bbcc04ac798e"]
+---
+time 1632505106
+old [description:"Start Codepath Fellowship Presentation" entry:"1632431323" modified:"1632431323" status:"pending" tags:"in" uuid:"efacbfa8-d05d-4d0c-b78a-30f4607234ab"]
+new [description:"Start Codepath Fellowship Presentation" end:"1632505106" entry:"1632431323" modified:"1632505106" status:"completed" tags:"in" uuid:"efacbfa8-d05d-4d0c-b78a-30f4607234ab"]
+---
+time 1632505158
+old [description:"Start Codepath Fellowship Presentation" entry:"1632361594" modified:"1632361604" priority:"H" status:"pending" tags:"next" uuid:"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"]
+new [description:"Continue Codepath Fellowship Presentation" entry:"1632361594" modified:"1632505158" priority:"H" status:"pending" tags:"next" uuid:"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"]
+---
+time 1632536976
+new [description:"Update Prims Anki Car" entry:"1632536976" modified:"1632536976" status:"pending" tags:"in" uuid:"7d13822b-0678-4c9a-9a53-093b7659090c"]
+---
+time 1632588174
+old [description:"Twitter OA" entry:"1632077047" modified:"1632077047" status:"pending" tags:"next" uuid:"a6949ab7-7032-48fb-9ee9-d4faeb603a27"]
+new [description:"Twitter OA" end:"1632588174" entry:"1632077047" modified:"1632588174" status:"completed" tags:"next" uuid:"a6949ab7-7032-48fb-9ee9-d4faeb603a27"]
+---
+time 1632588193
+new [description:"Start 362 HW 1 - Git" entry:"1632588193" modified:"1632588193" status:"pending" tags:"in" uuid:"5581420a-5795-4d6b-a991-e2f60b9e32d8"]
+---
+time 1632588205
+new [description:"Start 344 HW 1 - Movies" entry:"1632588205" modified:"1632588205" status:"pending" tags:"in" uuid:"b17c48cb-77d3-4d91-a9f6-cba258add691"]
+---
+time 1632588542
+new [description:"test" entry:"1632588542" modified:"1632588542" status:"pending" tags:"next" uuid:"593cf664-ffa4-4721-99b6-8fb83db50ce6"]
+---
+time 1632588558
+old [description:"test" entry:"1632588542" modified:"1632588542" status:"pending" tags:"next" uuid:"593cf664-ffa4-4721-99b6-8fb83db50ce6"]
+new [description:"test" end:"1632588558" entry:"1632588542" modified:"1632588558" status:"deleted" tags:"next" uuid:"593cf664-ffa4-4721-99b6-8fb83db50ce6"]
+---
+time 1632670813
+old [description:"Update Prims Anki Car" entry:"1632536976" modified:"1632536976" status:"pending" tags:"in" uuid:"7d13822b-0678-4c9a-9a53-093b7659090c"]
+new [description:"Update Prims Anki Car" end:"1632670813" entry:"1632536976" modified:"1632670813" status:"completed" tags:"in" uuid:"7d13822b-0678-4c9a-9a53-093b7659090c"]
+---
+time 1632670830
+old [description:"Start 362 HW 1 - Git" entry:"1632588193" modified:"1632588193" status:"pending" tags:"in" uuid:"5581420a-5795-4d6b-a991-e2f60b9e32d8"]
+new [description:"Start 362 HW 1 - Git" entry:"1632588193" modified:"1632670830" status:"pending" tags:"next" uuid:"5581420a-5795-4d6b-a991-e2f60b9e32d8"]
+---
+time 1632670830
+old [description:"Start 344 HW 1 - Movies" entry:"1632588205" modified:"1632588205" status:"pending" tags:"in" uuid:"b17c48cb-77d3-4d91-a9f6-cba258add691"]
+new [description:"Start 344 HW 1 - Movies" entry:"1632588205" modified:"1632670830" status:"pending" tags:"next" uuid:"b17c48cb-77d3-4d91-a9f6-cba258add691"]
+---
+time 1632752225
+old [description:"Start 362 HW 1 - Git" entry:"1632588193" modified:"1632670830" status:"pending" tags:"next" uuid:"5581420a-5795-4d6b-a991-e2f60b9e32d8"]
+new [description:"Start 362 HW 1 - Git" end:"1632752225" entry:"1632588193" modified:"1632752225" status:"completed" tags:"next" uuid:"5581420a-5795-4d6b-a991-e2f60b9e32d8"]
+---
+time 1632876734
+new [description:"Verisk Oa" entry:"1632876734" modified:"1632876734" status:"pending" tags:"in" uuid:"d834fad3-1c14-49d8-b223-97a706102cbf"]
+---
+time 1632876747
+new [description:"Ebay OA" entry:"1632876747" modified:"1632876747" status:"pending" tags:"in" uuid:"c6eb68bf-b6b5-49ee-9cef-c2faaba71199"]
+---
+time 1632958963
+old [description:"Verisk Oa" entry:"1632876734" modified:"1632876734" status:"pending" tags:"in" uuid:"d834fad3-1c14-49d8-b223-97a706102cbf"]
+new [description:"Verisk Oa" entry:"1632876734" modified:"1632958963" status:"pending" tags:"next" uuid:"d834fad3-1c14-49d8-b223-97a706102cbf"]
+---
+time 1632958963
+old [description:"Ebay OA" entry:"1632876747" modified:"1632876747" status:"pending" tags:"in" uuid:"c6eb68bf-b6b5-49ee-9cef-c2faaba71199"]
+new [description:"Ebay OA" entry:"1632876747" modified:"1632958963" status:"pending" tags:"next" uuid:"c6eb68bf-b6b5-49ee-9cef-c2faaba71199"]
+---
+time 1632958975
+old [description:"Go on Job Application Spree" entry:"1632322540" modified:"1632337597" status:"pending" tags:"next" uuid:"07deecf8-cbec-4f6c-bfe7-2bdf188ef534"]
+new [description:"Go on Job Application Spree" end:"1632958975" entry:"1632322540" modified:"1632958975" status:"completed" tags:"next" uuid:"07deecf8-cbec-4f6c-bfe7-2bdf188ef534"]
+---
+time 1632959028
+old [description:"Continue Codepath Fellowship Presentation" entry:"1632361594" modified:"1632505158" priority:"H" status:"pending" tags:"next" uuid:"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"]
+new [description:"Finish Codepath Fellowship Presentation" entry:"1632361594" modified:"1632959028" priority:"H" status:"pending" tags:"next" uuid:"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"]
+---
+time 1633022738
+new [description:"Setup" entry:"1633022738" modified:"1633022738" status:"pending" tags:"next" uuid:"3203f26a-bdcd-4770-a350-166f8a76398a"]
+---
+time 1633022749
+new [description:"Switch" entry:"1633022749" modified:"1633022749" status:"pending" tags:"next" uuid:"ece0c556-8368-4d00-8fb6-118e4cda1a96"]
+---
+time 1633022767
+new [description:"Switch" entry:"1633022767" modified:"1633022767" status:"pending" tags:"next" uuid:"0fdc7b19-b38d-4d42-aad0-afb226a1b92e"]
+---
+time 1633022797
+old [description:"Setup" entry:"1633022738" modified:"1633022738" status:"pending" tags:"next" uuid:"3203f26a-bdcd-4770-a350-166f8a76398a"]
+new [description:"Setup NVIM DAP" entry:"1633022738" modified:"1633022797" status:"pending" tags:"next" uuid:"3203f26a-bdcd-4770-a350-166f8a76398a"]
+---
+time 1633022817
+old [description:"Switch" entry:"1633022749" modified:"1633022749" status:"pending" tags:"next" uuid:"ece0c556-8368-4d00-8fb6-118e4cda1a96"]
+new [description:"Switch to Packer.NVIM" entry:"1633022749" modified:"1633022817" status:"pending" tags:"next" uuid:"ece0c556-8368-4d00-8fb6-118e4cda1a96"]
+---
+time 1633022838
+old [description:"Switch" entry:"1633022767" modified:"1633022767" status:"pending" tags:"next" uuid:"0fdc7b19-b38d-4d42-aad0-afb226a1b92e"]
+new [description:"Switch to init.lua from init.vim" entry:"1633022767" modified:"1633022838" status:"pending" tags:"next" uuid:"0fdc7b19-b38d-4d42-aad0-afb226a1b92e"]
+---
+time 1633022852
+new [description:"Square" entry:"1633022852" modified:"1633022852" status:"pending" tags:"next" uuid:"0119b95f-9237-419c-b1d4-fd9198b774ea"]
+---
+time 1633050459
+new [description:"Crowdstrike application" entry:"1633050459" modified:"1633050459" status:"pending" tags:"next" uuid:"96cc9c62-9ca3-477c-8e03-af6ff48d49f9"]
+---
+time 1633050492
+new [description:"Expedia OA HackerRank" entry:"1633050492" modified:"1633050492" status:"pending" tags:"next" uuid:"48bede94-74fc-4927-a93b-aac2acee04c0"]
+---
+time 1633096136
+new [description:"Tech Interview Handbook" entry:"1633096136" modified:"1633096136" status:"pending" uuid:"1f65ca90-8b5c-4804-954a-cb2473f24194"]
+---
+time 1633096136
+old [description:"Tech Interview Handbook" entry:"1633096136" modified:"1633096136" status:"pending" uuid:"1f65ca90-8b5c-4804-954a-cb2473f24194"]
+new [annotation_1633096136:"https:\/\/techinterviewhandbook.org\/resume\/" description:"Tech Interview Handbook" entry:"1633096136" modified:"1633096136" status:"pending" uuid:"1f65ca90-8b5c-4804-954a-cb2473f24194"]
+---
+time 1633097071
+old [description:"Crowdstrike application" entry:"1633050459" modified:"1633050459" status:"pending" tags:"next" uuid:"96cc9c62-9ca3-477c-8e03-af6ff48d49f9"]
+new [description:"Crowdstrike OA" entry:"1633050459" modified:"1633097071" status:"pending" tags:"next" uuid:"96cc9c62-9ca3-477c-8e03-af6ff48d49f9"]
+---
+time 1633097088
+old [description:"Verisk Oa" entry:"1632876734" modified:"1632958963" status:"pending" tags:"next" uuid:"d834fad3-1c14-49d8-b223-97a706102cbf"]
+new [description:"Verisk Oa" entry:"1632876734" modified:"1633097088" status:"pending" tags:"OA,next" uuid:"d834fad3-1c14-49d8-b223-97a706102cbf"]
+---
+time 1633097091
+old [description:"Ebay OA" entry:"1632876747" modified:"1632958963" status:"pending" tags:"next" uuid:"c6eb68bf-b6b5-49ee-9cef-c2faaba71199"]
+new [description:"Ebay OA" entry:"1632876747" modified:"1633097091" status:"pending" tags:"OA,next" uuid:"c6eb68bf-b6b5-49ee-9cef-c2faaba71199"]
+---
+time 1633097095
+old [description:"Square" entry:"1633022852" modified:"1633022852" status:"pending" tags:"next" uuid:"0119b95f-9237-419c-b1d4-fd9198b774ea"]
+new [description:"Square" entry:"1633022852" modified:"1633097095" status:"pending" tags:"OA,next" uuid:"0119b95f-9237-419c-b1d4-fd9198b774ea"]
+---
+time 1633097099
+old [description:"Crowdstrike OA" entry:"1633050459" modified:"1633097071" status:"pending" tags:"next" uuid:"96cc9c62-9ca3-477c-8e03-af6ff48d49f9"]
+new [description:"Crowdstrike OA" entry:"1633050459" modified:"1633097099" status:"pending" tags:"OA,next" uuid:"96cc9c62-9ca3-477c-8e03-af6ff48d49f9"]
+---
+time 1633097104
+old [description:"+ next" entry:"1629159085" modified:"1630201033" project:"261" scheduled:"1629936685" status:"pending" uuid:"a46cd6b8-e024-468c-bf56-b8e346d23ebd"]
+new [description:"+ next" end:"1633097104" entry:"1629159085" modified:"1633097104" project:"261" scheduled:"1629936685" status:"deleted" uuid:"a46cd6b8-e024-468c-bf56-b8e346d23ebd"]
+---
+time 1633097114
+old [description:"Expedia OA HackerRank" entry:"1633050492" modified:"1633050492" status:"pending" tags:"next" uuid:"48bede94-74fc-4927-a93b-aac2acee04c0"]
+new [description:"Expedia OA HackerRank" entry:"1633050492" modified:"1633097114" status:"pending" tags:"OA,next" uuid:"48bede94-74fc-4927-a93b-aac2acee04c0"]
+---
+time 1633122649
+old [description:"Verisk Oa" entry:"1632876734" modified:"1633097088" status:"pending" tags:"OA,next" uuid:"d834fad3-1c14-49d8-b223-97a706102cbf"]
+new [description:"Verisk Oa" end:"1633122649" entry:"1632876734" modified:"1633122649" status:"completed" tags:"OA,next" uuid:"d834fad3-1c14-49d8-b223-97a706102cbf"]
+---

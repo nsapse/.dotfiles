@@ -9,7 +9,7 @@ syntax on
 set nu
 set rnu
 set termguicolors
-set tabstop=4 softtabstop=4 expandtab
+set tabstop=4 softtabstop=4
 set shiftwidth=4
 set nohlsearch
 set smartindent
@@ -23,7 +23,11 @@ set encoding=UTF-8
 "set hlsearch
 set incsearch
 set cocu="vnic"
+set nocp
 filetype plugin indent on
+
+"set autochdir
+autocmd BufEnter * silent! lcd %:p:h
 
 "This is apparently necessary for Coc definition
 set cmdheight=2
@@ -125,13 +129,14 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'machakann/vim-sandwich'
 Plug 'markonm/traces.vim'
 Plug 'nsapse/f_string'
-Plug 'puremourning/vimspector'
+"Plug 'puremourning/vimspector'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'simeji/winresizer'
 Plug 'simnalamburt/vim-mundo'
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
@@ -224,6 +229,7 @@ Plug 'glepnir/lspsaga.nvim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'kosayoda/nvim-lightbulb'
+Plug 'weilbith/nvim-code-action-menu'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp_extensions.nvim'
@@ -234,9 +240,6 @@ Plug 'nvim-treesitter/playground'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'mhartington/formatter.nvim'
-
-"Debugging
-Plug 'mfussenegger/nvim-dap'
 
 " Telescope et Al
 
@@ -250,10 +253,11 @@ Plug 'vhyrro/neorg'
 Plug 'mfussenegger/nvim-jdtls'
 
 "Debugging
+Plug 'mfussenegger/nvim-dap-python'
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'theHamsta/nvim-dap-virtual-text'
-
+"Plug 'sakhnik/nvim-gdb'
 call plug#end()
 
 " ****************Colorscheme and U/I*************************"
@@ -340,6 +344,34 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Trigger a highlight only when pressing f and F.
 let g:qs_highlight_on_keys = ['f', 'F']
+
+
+" **********************DAP ACTIONS************************* "
+"                                                            "
+"                  Settings for DAP ACTIONS                  "
+"                                                            "
+" **********************DAP ACTIONS************************* "
+" general settings for debugger
+
+nnoremap <silent> <leader>dd :lua require'dap'.continue()<CR>
+nnoremap <silent> <S-j> :lua require'dap'.step_over()<CR>
+nnoremap <silent> <S-l> :lua require'dap'.step_into()<CR>
+nnoremap <silent> <S-k> :lua require'dap'.step_out()<CR>
+nnoremap <silent> <leader>b :lua require'dap'.toggle_breakpoint()<CR>
+nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
+nnoremap <silent> <leader>dl :lua require'dap'.run_last()<CR>
+nnoremap <silent> <leader>do :lua require'dapui'.toggle()<CR>
+nnoremap <silent> <leader>dc :lua require'dapui'.close()<CR>
+
+"nnoremap <leader>di :lua require'dap.ui.variables'.visual_hover()<CR>
+
+ "python specific debugging
+lua require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+nnoremap <silent> <leader>tm :lua require('dap-python').test_method()<CR>
+nnoremap <silent> <leader>tc :lua require('dap-python').test_class()<CR>
+vnoremap <silent> <leader>ds <ESC>:lua require('dap-python').debug_selection()<CR>
 
 
 "Plugged Additions"
@@ -562,23 +594,23 @@ let g:asmsytax = 'masm'
 " ****************Vimspector*************************"
 " VSCode Mappings for Vimspector  etc
 
-let      g:vimspector_enable_mappings =     'VISUAL_STUDIO'
-nnoremap <silent><leader>dr           :VimspectorReset<CR>
-nmap     <leader>b                    <Plug>VimspectorToggleBreakpoint
-vmap     <leader>b                    <plug>VmspectorToggleBreakpoint
-nmap     <leader>bb                   <Plug>VimspectorToggleConditionalBreakpoint
-nmap     <leader>B                    :call vimspector#ClearBreakpoints()<CR>
-nmap     <leader>drc                  <Plug>VimspectorRunToCursor
-nmap     <leader>DD                   <Plug>VimspectorContinue
-nnoremap <leader>DD                   <Plug>VimspectorContinue
+"let      g:vimspector_enable_mappings =     'VISUAL_STUDIO'
+"nnoremap <silent><leader>dr           :VimspectorReset<CR>
+"nmap     <leader>b                    <Plug>VimspectorToggleBreakpoint
+"vmap     <leader>b                    <plug>VmspectorToggleBreakpoint
+"nmap     <leader>bb                   <Plug>VimspectorToggleConditionalBreakpoint
+"nmap     <leader>B                    :call vimspector#ClearBreakpoints()<CR>
+"nmap     <leader>drc                  <Plug>VimspectorRunToCursor
+"nmap     <leader>DD                   <Plug>VimspectorContinue
+"nnoremap <leader>DD                   <Plug>VimspectorContinue
 
-" remap watch command to be shorter
-cnoreabbrev vsw VimspectorWatch
-cnoreabbrev SS str(self)
+"" remap watch command to be shorter
+"cnoreabbrev vsw VimspectorWatch
+"cnoreabbrev SS str(self)
 
-nmap <leader>W :VimspectorWatch <C-R>0
-vmap <leader>W :VimspectorWatch <C-R>0
-nnoremap <leader>W :VimspectorWatch <C-R>0
+"nmap <leader>W :VimspectorWatch <C-R>0
+"vmap <leader>W :VimspectorWatch <C-R>0
+"nnoremap <leader>W :VimspectorWatch <C-R>0
 
 
 " Emmet Mappings
@@ -777,6 +809,7 @@ require'lspconfig'.sqls.setup{}
 require'lspconfig'.sumneko_lua.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.vimls.setup{}
+--require'lspconfig'.nvim-code-action-menu.setup{cmd = 'CodeActionMenue'}
 
 --require'lspconfig'.jdtls.setup {cmd = {'jdtls'}}
 --require'lspconfig'.java_language_server.setup{}
@@ -1003,5 +1036,88 @@ parser_configs.norg = {
         branch = "main"
     },
 }
+
+
+--- NVIM DAP ----
+
+local dap = require('dap')
+
+
+vim.fn.sign_define('DapBreakpoint', {text='>>', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapBreakpointCondition', {text='<>', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapStopped', {text='->', texthl='', linehl='', numhl=''})
+
+dap.adapters.lldb = {
+  type = 'executable',
+  command = '/usr/bin/lldb-vscode', -- adjust as needed
+  name = "lldb"
+}
+
+dap.configurations.cpp = {
+  {
+    name = "Launch",
+    type = "lldb",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = false,
+    args = {},
+
+    -- if you change `runInTerminal` to true, you might need to change the yama/ptrace_scope setting:
+    --
+    --    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+    --
+    -- Otherwise you might get the following error:
+    --
+    --    Error on launch: Failed to attach to the target process
+    --
+    -- But you should be aware of the implications:
+    -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
+    runInTerminal = false,
+  },
+}
+
+
+-- If you want to use this for rust and c, add something like this:
+
+dap.configurations.c = dap.configurations.cpp
+dap.configurations.rust = dap.configurations.cpp
+
+require("dapui").setup()
+
+dap.adapters.python = {
+  type = 'executable';
+  command = '/usr/bin/python';
+  args = { '-m', 'debugpy.adapter' };
+}
+
+dap.configurations.python = {
+  {
+    -- The first three options are required by nvim-dap
+    type = 'python'; -- the type here established the link to the adapter definition: `dap.adapters.python`
+    request = 'launch';
+    name = "Launch file";
+
+    -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
+
+    program = "${file}"; -- This configuration will launch the current file if used.
+    pythonPath = function()
+      -- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
+      -- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
+      -- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
+      local cwd = vim.fn.getcwd()
+      if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
+        return cwd .. '/venv/bin/python'
+      elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
+        return cwd .. '/.venv/bin/python'
+      else
+        return '/usr/bin/python'
+      end
+    end;
+  },
+}
+
 
 EOF
