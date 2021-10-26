@@ -61,15 +61,15 @@ nnoremap<silent><leader>s :wincmd v<cr>
 nnoremap<silent><leader>S :wincmd s<cr>
 nnoremap<silent><leader>c :wincmd c<cr>
 nnoremap<silent><C-c>     :wincmd c<cr>
-nnoremap<silent><leader>h :wincmd h<cr>
-nnoremap<silent><leader>j :wincmd j<cr>
-nnoremap<silent><leader>k :wincmd k<cr>
-nnoremap<silent><leader>l :wincmd l<cr>
-nnoremap<silent><leader>t :wincmd t<cr>
+nnoremap<c-h> :wincmd h<cr>
+nnoremap<c-j> :wincmd j<cr>
+nnoremap<c-k> :wincmd k<cr>
+nnoremap<c-l> :wincmd l<cr>
+nnoremap<c-t> :wincmd t<cr>
 
 "Quickfix Mappings
 
-nnoremap <leader>co :copen<cr>
+noremap <leader>co :copen<cr>
 nnoremap <leader>cp :cprev<cr>
 nnoremap <leader>cn :cnext<cr>
 
@@ -93,6 +93,10 @@ nnoremap <silent> t[ :tabprevious<cr>
 nnoremap <silent> T[ :tabfirst<cr>
 nnoremap <silent> T] :tablast<cr>
 nnoremap <leader>T :tabnew<cr>
+
+"mapping to quickly move lines
+nnoremap <leader>J :m .+1<CR>
+nnoremap <leader>K :m .-2<CR>
 
 "Traditional (Non-Vim) Save and Quit Bindings
 nnoremap <c-s> :w<cr>
@@ -573,8 +577,8 @@ inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
                                               
 nnoremap w :HopWord<CR>
 vnoremap w :HopWord<CR>
-nnoremap W :HopChar1<CR>
-vnoremap W :HopChar1<CR>
+nnoremap s :HopChar1<CR>
+vnoremap s :HopChar1<CR>
 nnoremap L :HopLine<CR>
 
 "EasyAlign Bindings
@@ -662,7 +666,7 @@ nnoremap <leader><leader>l :Lines<CR>
 nnoremap <leader><leader>g :Rg<CR>
 
 let g:fzf_tags_command = 'ctags -R'
-" Border jj
+" Border kj
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
