@@ -2,7 +2,7 @@
 #key-bindings.zsh Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -15,7 +15,7 @@ export ZSH="/home/noah/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="spaceship"
 POWERLEVEL9K_MODE='awesome-fontconfig'
 
 POWERLEVEL10K_LEFT_PROMPT_ELEMENTS=(dir vcs)
@@ -79,14 +79,13 @@ POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv vi_mode )
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	github
+    github
     colorize
     colored-man-pages
     battery
     git
     lein
     npm
-    npx
     python
     vi-mode
     zsh-autosuggestions
@@ -105,11 +104,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='nvim'
- fi
+if [[ -n $SSH_CONNECTION ]]; then
+    export EDITOR='vim'
+else
+    export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -140,7 +139,8 @@ alias muttConf="nvim ~/dotfiles/neomuttrc"
 
 
 # aliasing directories
-alias cdf='cd ~/dotfiles'
+alias cdf='cd ~/.dotfiles'
+alias cddf='cd ~/dotfiles'
 alias dev="cd ~/Developer"
 alias devC="cd ~/Developer/c_programming"
 alias conf="cd ~/.config"
@@ -156,12 +156,12 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias chx="chmod +x"
 mcd(){
-mkdir $1 && cd $1
+    mkdir $1 && cd $1
 }
 
 #nvim related aliasing and functions
 nt(){
-touch $1 && nvim $1
+    touch $1 && nvim $1
 }
 
 alias nv="nvim"
@@ -189,7 +189,7 @@ alias tls="tmux ls"
 alias ts="tmux new-session -s"
 alias tk="tmux kill-session -t"
 
-#gcc aliases 
+#gcc aliases
 
 #python aliases
 alias py="python"
@@ -205,27 +205,27 @@ alias rbook="rustup docs --book"
 # usage: ex <file>
 ex ()
 {
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.deb)       ar x $1      ;;
-      *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   unzstd $1    ;;      
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1   ;;
+            *.tar.gz)    tar xzf $1   ;;
+            *.bz2)       bunzip2 $1   ;;
+            *.rar)       unrar x $1   ;;
+            *.gz)        gunzip $1    ;;
+            *.tar)       tar xf $1    ;;
+            *.tbz2)      tar xjf $1   ;;
+            *.tgz)       tar xzf $1   ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1;;
+            *.7z)        7z x $1      ;;
+            *.deb)       ar x $1      ;;
+            *.tar.xz)    tar xf $1    ;;
+            *.tar.zst)   unzstd $1    ;;
+            *)           echo "'$1' cannot be extracted via ex()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
