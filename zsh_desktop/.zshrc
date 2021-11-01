@@ -154,7 +154,7 @@ alias tc="nvim ~/.tmux.conf"
 alias tso="source ~/.tmux.conf"
 alias lgc="nvim ~/.config/jesseduffield/lazygit/config.yml"
 alias plc="nvim ~/.p10k.zsh"
-alias ic="nvim ~/.config/i3/config"
+alias ic="nvim ~/.i3/i3_config_laptop"
 alias pic="nvim ~/.config/picom.conf"
 alias alac="nvim ~/.config/alacritty/alacritty.yml"
 alias kc="nvim ~/.config/kitty/kitty.conf"
@@ -162,6 +162,7 @@ alias rangc="nvim ~/.config/ranger/rc.conf"
 alias roc="nvim ~/.config/rofi/config"
 alias sc="nvim ~/.config/starship.toml"
 alias twc="nvim ~/.taskrc"
+alias kmc="nvim ~/.config/kmonad/thinkpad_config.kbd"
 
 # aliasing directories
 alias cdf='cd ~/.dotfiles'

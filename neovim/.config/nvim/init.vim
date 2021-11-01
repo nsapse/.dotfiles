@@ -61,12 +61,30 @@ nnoremap<silent><leader>s :wincmd v<cr>
 nnoremap<silent><leader>S :wincmd s<cr>
 nnoremap<silent><leader>c :wincmd c<cr>
 nnoremap<silent><C-c>     :wincmd c<cr>
+
 nnoremap<c-h> :wincmd h<cr>
 nnoremap<c-j> :wincmd j<cr>
 nnoremap<c-k> :wincmd k<cr>
 nnoremap<c-l> :wincmd l<cr>
 nnoremap<c-t> :wincmd t<cr>
 
+vnoremap<c-h> :wincmd h<cr>
+vnoremap<c-j> :wincmd j<cr>
+vnoremap<c-k> :wincmd k<cr>
+vnoremap<c-l> :wincmd l<cr>
+vnoremap<c-t> :wincmd t<cr>
+
+nnoremap<leader>h :wincmd h<cr>
+nnoremap<leader>j :wincmd j<cr>
+nnoremap<leader>k :wincmd k<cr>
+nnoremap<leader>l :wincmd l<cr>
+nnoremap<leader>t :wincmd t<cr>
+
+vnoremap<leader>h :wincmd h<cr>
+vnoremap<leader>j :wincmd j<cr>
+vnoremap<leader>k :wincmd k<cr>
+vnoremap<leader>l :wincmd l<cr>
+vnoremap<leader>t :wincmd t<cr>
 "Quickfix Mappings
 
 noremap <leader>co :copen<cr>
@@ -318,7 +336,7 @@ nnoremap<c-t> :Vista!!<cr>
 let g:airline#extensions#tabline#enabled = 1
 
 " Setup  lightbulb for code actions
-"autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
+autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
 
 "Wilder Menu
 call wilder#enable_cmdline_enter()
@@ -358,9 +376,9 @@ let g:qs_highlight_on_keys = ['f', 'F']
 " general settings for debugger
 
 nnoremap <silent> <leader>dd :lua require'dap'.continue()<CR>
-nnoremap <silent> <S-j> :lua require'dap'.step_over()<CR>
-nnoremap <silent> <S-l> :lua require'dap'.step_into()<CR>
-nnoremap <silent> <S-k> :lua require'dap'.step_out()<CR>
+nnoremap <silent> <leader>jj :lua require'dap'.step_over()<CR>
+nnoremap <silent> <leader>ll :lua require'dap'.step_into()<CR>
+nnoremap <silent> <leader>kk :lua require'dap'.step_out()<CR>
 nnoremap <silent> <leader>b :lua require'dap'.toggle_breakpoint()<CR>
 nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
@@ -395,7 +413,7 @@ nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+"nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <leader>D <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
@@ -419,7 +437,7 @@ nnoremap <silent>gh :Lspsaga lsp_finder<CR>
 
 
 " or use command
-nnoremap <silent>K :Lspsaga hover_doc<CR>
+"nnoremap <silent>K :Lspsaga hover_doc<CR>
 
 " scroll down hover doc or scroll in definition preview
 nnoremap <silent><C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
@@ -689,10 +707,10 @@ nnoremap fh <cmd>Telescope help_tags<cr>
 
 " Using Lua functions
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-"nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 "
 " Telescope grep keeps crashing - remapped to ripgrem in Floatterm
-nnoremap <leader>tb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>bb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>th <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>tm <cmd>lua require('telescope.builtin').keymaps()<cr>
 
@@ -986,11 +1004,11 @@ true_zen.setup({
 	integrations = {
 		vim_gitgutter = false,
 		galaxyline = false,
-		tmux = false,
+		tmux = true,
 		gitsigns = false,
 		nvim_bufferline = false,
 		limelight = false,
-		twilight = false,
+		twilight = true,
 		vim_airline = false,
 		vim_powerline = false,
 		vim_signify = false,
@@ -1122,6 +1140,36 @@ dap.configurations.python = {
     end;
   },
 }
+
+-- setup formatter
+
+require('formatter').setup({
+  filetype = {
+    cpp = {
+        -- clang-format
+       function()
+          return {
+            exe = "clang-format",
+            args = {"--assume-filename", vim.api.nvim_buf_get_name(0)},
+            stdin = true,
+            cwd = vim.fn.expand('%:p:h')  -- Run clang-format in cwd of the file.
+          }
+        end
+    },
+
+    c = {
+        -- clang-format
+       function()
+          return {
+            exe = "clang-format",
+            args = {"--assume-filename", vim.api.nvim_buf_get_name(0)},
+            stdin = true,
+            cwd = vim.fn.expand('%:p:h')  -- Run clang-format in cwd of the file.
+          }
+        end
+    },
+  }
+})
 
 
 EOF
