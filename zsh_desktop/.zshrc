@@ -163,6 +163,8 @@ alias roc="nvim ~/.config/rofi/config"
 alias sc="nvim ~/.config/starship.toml"
 alias twc="nvim ~/.taskrc"
 alias kmc="nvim ~/.config/kmonad/thinkpad_config.kbd"
+alias mc="nvim ~/.config/mutt/muttrc"
+alias nm="neomutt"
 
 # aliasing directories
 alias cdf='cd ~/.dotfiles'

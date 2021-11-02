@@ -2368,3 +2368,9 @@ time 1633122649
 old [description:"Verisk Oa" entry:"1632876734" modified:"1633097088" status:"pending" tags:"OA,next" uuid:"d834fad3-1c14-49d8-b223-97a706102cbf"]
 new [description:"Verisk Oa" end:"1633122649" entry:"1632876734" modified:"1633122649" status:"completed" tags:"OA,next" uuid:"d834fad3-1c14-49d8-b223-97a706102cbf"]
 ---
+time 1635887330
+new [description:"research google python automation cert" entry:"1635887330" modified:"1635887330" status:"pending" tags:"in" tags_in:"x" uuid:"4f5ee759-18af-4a47-a937-cb60e0e9eea4"]
+---
+time 1635887338
+new [description:"research google android cert" entry:"1635887338" modified:"1635887338" status:"pending" tags:"in" tags_in:"x" uuid:"7b06094c-4fa1-4e2e-bed5-9c98b42ee304"]
+---

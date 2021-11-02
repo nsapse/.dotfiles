@@ -261,7 +261,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'nvim-treesitter/playground'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'windwp/nvim-ts-autotag'
-Plug 'mhartington/formatter.nvim'
+"Plug 'mhartington/formatter.nvim'
+Plug 'sbdchd/neoformat'
+
 
 " Telescope et Al
 
@@ -362,6 +364,7 @@ let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 " **********************Quickscope************************* "
 
 " Trigger a highlight in the appropriate direction when pressing these keys:
+"nnoremap n <Plug>(Quickscopef)<cr>
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Trigger a highlight only when pressing f and F.
@@ -1143,33 +1146,6 @@ dap.configurations.python = {
 
 -- setup formatter
 
-require('formatter').setup({
-  filetype = {
-    cpp = {
-        -- clang-format
-       function()
-          return {
-            exe = "clang-format",
-            args = {"--assume-filename", vim.api.nvim_buf_get_name(0)},
-            stdin = true,
-            cwd = vim.fn.expand('%:p:h')  -- Run clang-format in cwd of the file.
-          }
-        end
-    },
-
-    c = {
-        -- clang-format
-       function()
-          return {
-            exe = "clang-format",
-            args = {"--assume-filename", vim.api.nvim_buf_get_name(0)},
-            stdin = true,
-            cwd = vim.fn.expand('%:p:h')  -- Run clang-format in cwd of the file.
-          }
-        end
-    },
-  }
-})
 
 
 EOF

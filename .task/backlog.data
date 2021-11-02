@@ -638,3 +638,5 @@
 {"description":"+ next","end":"20211001T140504Z","entry":"20210817T001125Z","modified":"20211001T140504Z","project":"261","scheduled":"20210826T001125Z","status":"deleted","uuid":"a46cd6b8-e024-468c-bf56-b8e346d23ebd"}
 {"description":"Expedia OA HackerRank","entry":"20211001T010812Z","modified":"20211001T140514Z","status":"pending","tags":["OA","next"],"uuid":"48bede94-74fc-4927-a93b-aac2acee04c0"}
 {"description":"Verisk Oa","end":"20211001T211049Z","entry":"20210929T005214Z","modified":"20211001T211049Z","status":"completed","tags":["OA","next"],"uuid":"d834fad3-1c14-49d8-b223-97a706102cbf"}
+{"description":"research google python automation cert","entry":"20211102T210850Z","modified":"20211102T210850Z","status":"pending","uuid":"4f5ee759-18af-4a47-a937-cb60e0e9eea4","tags":["in"]}
+{"description":"research google android cert","entry":"20211102T210858Z","modified":"20211102T210858Z","status":"pending","uuid":"7b06094c-4fa1-4e2e-bed5-9c98b42ee304","tags":["in"]}

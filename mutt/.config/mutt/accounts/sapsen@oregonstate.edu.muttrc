@@ -1,0 +1,20 @@
+# vim: filetype=neomuttrc
+# muttrc file for account sapsen@oregonstate.edu
+set realname = "sapsen"
+set from = "sapsen@oregonstate.edu"
+set sendmail = "msmtp -a sapsen@oregonstate.edu"
+alias me sapsen <sapsen@oregonstate.edu>
+set folder = "/home/noah/.local/share/mail/sapsen@oregonstate.edu"
+set header_cache = /home/noah/.cache/mutt-wizard/sapsen@oregonstate.edu/headers
+set message_cachedir = /home/noah/.cache/mutt-wizard/sapsen@oregonstate.edu/bodies
+set mbox_type = Maildir
+set hostname = "oregonstate.edu"
+source /usr/share/mutt-wizard/switch.muttrc
+set spoolfile = +INBOX
+set postponed = +Drafts
+set trash = +Trash
+set record = +Sent
+
+macro index o "<shell-escape>mw -y sapsen@oregonstate.edu<enter>" "run mbsync to sync sapsen@oregonstate.edu"
+
+mailboxes "=INBOX/Inbox" "=Mailspring/Snoozed" "=[Airmail]/Done" "=[Airmail]/Memo" "=[Airmail]/Send Later" "=[Airmail]/Snooze" "=[Airmail]/To Do" "=[Gmail]/All Mail" "=[Gmail]/Drafts" "=[Gmail]/Important" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=[Gmail]/Trash"
