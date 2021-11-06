@@ -118,7 +118,7 @@ nnoremap <leader>K :m .-2<CR>
 
 "Traditional (Non-Vim) Save and Quit Bindings
 nnoremap <c-s> :w<cr>
-nnoremap <c-s[j>s :wa<cr>
+"nnoremap <c-s> :wa<cr>
 map <c-q> :qa<cr>
 
 " *******************Abbreviations*************************"
@@ -151,9 +151,9 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'machakann/vim-sandwich'
 Plug 'markonm/traces.vim'
 Plug 'nsapse/f_string'
-"Plug 'puremourning/vimspector'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdcommenter'
+" Plug 'b3nj5m1n/kommentary'
 Plug 'simeji/winresizer'
 Plug 'simnalamburt/vim-mundo'
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
@@ -177,14 +177,16 @@ Plug 'gelguy/wilder.nvim'  "run UpdateRemotePlugins after install
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'Pocco81/TrueZen.nvim'
 Plug 'folke/twilight.nvim' 
-Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'yggdroot/indentline'
 Plug 'norcalli/nvim-colorizer.lua'
-"Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'folke/which-key.nvim'
+Plug 'romgrk/barbar.nvim'
+
 
 " Code and File Navigation
 Plug 'unblevable/quick-scope'  
@@ -227,13 +229,11 @@ Plug 'EdenEast/nightfox.nvim'
 Plug 'NTBBloodbath/doom-one.nvim'
 
 
-
 " Git Stuff
 Plug 'sindrets/diffview.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 "UML Stuff
-"Plug 'scrooloose/vim-slumlord'
 Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'aklt/plantuml-syntax'
@@ -245,11 +245,10 @@ Plug 'simrat39/rust-tools.nvim'
 Plug 'nvim-lua/popup.nvim'
 
 "Native LSP
-"Plug  'hrsh7th/nvim-compe' 
 
 Plug 'folke/trouble.nvim'
 Plug 'glepnir/lspsaga.nvim'
-Plug 'hrsh7th/vim-vsnip'
+"Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'kosayoda/nvim-lightbulb'
 Plug 'weilbith/nvim-code-action-menu'
@@ -265,6 +264,7 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'windwp/nvim-ts-autotag'
 "Plug 'mhartington/formatter.nvim'
 Plug 'sbdchd/neoformat'
+Plug 'onsails/lspkind-nvim'
 
 "CMP
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -279,12 +279,12 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
 " For luasnip users.
- Plug 'L3MON4D3/LuaSnip'
- Plug 'saadparwaiz1/cmp_luasnip'
+  "Plug 'L3MON4D3/LuaSnip'
+  "Plug 'saadparwaiz1/cmp_luasnip'
 
 " For ultisnips users.
-" Plug 'SirVer/ultisnips'
- Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+ "Plug 'SirVer/ultisnips'
+ "Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Telescope et Al
 
@@ -303,6 +303,14 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'theHamsta/nvim-dap-virtual-text'
 "Plug 'sakhnik/nvim-gdb'
+
+"Vimwiki Stuff
+Plug 'vimwiki/vimwiki'
+Plug 'tbabej/taskwiki'
+Plug 'plasticboy/vim-markdown'
+Plug 'pontusk/cmp-vimwiki-tags'
+Plug 'kdheepak/cmp-latex-symbols'
+
 call plug#end()
 
 " ****************Colorscheme and U/I*************************"
@@ -369,6 +377,58 @@ cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
 
 " only / and ? are enabled by default
 call wilder#set_option('modes', ['/', '?', ':'])
+
+" small augroup to read .kbd files for kmonad
+augroup kbd
+  au!
+  autocmd BufNewFile,BufRead *.kbd   set filetype=kbd 
+augroup END
+
+" **********************Barbar************************* "
+"                                                      "
+"                  Settings for Barbar                  "
+"                                                      "
+" **********************Barbar************************* "
+
+" Move to previous/next
+"nnoremap <silent>    <A-,> :BufferPrevious<CR>
+"nnoremap <silent>    <A-.> :BufferNext<CR>
+" Re-order to previous/next
+"nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
+"nnoremap <silent>    <A->> :BufferMoveNext<CR>
+" Goto buffer in position...
+nnoremap <silent>    b1 :BufferGoto 1<CR>
+nnoremap <silent>    b2 :BufferGoto 2<CR>
+nnoremap <silent>    b3 :BufferGoto 3<CR>
+nnoremap <silent>    b4 :BufferGoto 4<CR>
+nnoremap <silent>    b5 :BufferGoto 5<CR>
+nnoremap <silent>    b6 :BufferGoto 6<CR>
+nnoremap <silent>    b7 :BufferGoto 7<CR>
+nnoremap <silent>    b8 :BufferGoto 8<CR>
+nnoremap <silent>    b9 :BufferLast<CR>
+" Pin/unpin buffer
+nnoremap <silent>    bp :BufferPin<CR>
+" Close buffer
+nnoremap <silent>    bc :BufferClose<CR>
+" Wipeout buffer
+"                          :BufferWipeout<CR>
+" Close commands
+"                          :BufferCloseAllButCurrent<CR>
+"                          :BufferCloseAllButPinned<CR>
+"                          :BufferCloseBuffersLeft<CR>
+"                          :BufferCloseBuffersRight<CR>
+" Magic buffer-picking mode
+nnoremap <silent> >    :BufferPick<CR>
+" Sort automatically by...
+" nnoremap <silent> <Space>bb :BufferOrderByBufferNumber<CR>
+" nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
+" nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
+" nnoremap <silent> <Space>bw :BufferOrderByWindowNumber<CR>
+
+" Other:
+" :BarbarEnable - enables barbar (enabled by default)
+" :BarbarDisable - very bad command, should never be used
+
 
 " **********************Vista************************* "
 "                                                      "
@@ -582,7 +642,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 
 " possible value: 'UltiSnips', 'Neosnippet', 'vim-vsnip', 'snippets.nvim'
-let g:completion_enable_snippet = 'UltiSnips'
+let g:completion_enable_snippet = 'vim-vsnip'
 "let g:vsnip_snippet_dirs = ['~/.config/nvim/plugged/friendly-snippets']
 
 " Set completeopt to have a better completion experience
@@ -593,15 +653,15 @@ set shortmess+=c
 
 " Autoformatting
 autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)
+"autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1000)
 
-
+" vsnip settings
 "ultisnips
-let g:UltiSnipsExpandTrigger='~'
-let g:UltiSnipsJumpForwardTrigger = '<c-j>'
-let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+"let g:UltiSnipsExpandTrigger='~'
+"let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+"let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 
 "inoremap <silent><expr> <C-Space> compe#complete()
 "inoremap <silent><expr> <CR>      compe#confirm('<CR>')
@@ -850,11 +910,16 @@ require'lspconfig'.gopls.setup{}
 require'lspconfig'.hls.setup{}
 require'lspconfig'.html.setup{}
 require'lspconfig'.jsonls.setup{}
-require'lspconfig'.pylsp.setup{}
+--require'lspconfig'.pylsp.setup{}
+require'lspconfig'.pyright.setup{}
 require'lspconfig'.sqls.setup{}
 require'lspconfig'.sumneko_lua.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.vimls.setup{}
+
+
+-- setup pyright
+
 --require'lspconfig'.nvim-code-action-menu.setup{cmd = 'CodeActionMenue'}
 
 --require'lspconfig'.jdtls.setup {cmd = {'jdtls'}}
@@ -1201,9 +1266,9 @@ cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+       vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        --require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        --vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
       end,
     },
@@ -1213,7 +1278,7 @@ cmp.setup({
 --      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 --      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
 --      ['<C-e>'] = cmp.mapping({
---        i = cmp.mapping.abort(),
+--        i = cmp.mapping.abvimwiki-tagsort(),
 --        c = cmp.mapping.close(),
 --      }),
 --      ['<CR>'] = cmp.mapping.confirm({ select = true }),
@@ -1237,14 +1302,16 @@ cmp.setup({
 
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
-      { name = 'luasnip' }, -- For luasnip users.
-      { name = 'ultisnips' }, -- For ultisnips users.
-      -- { name = 'snippy' }, -- For snippy users.
-    }, {
+	  { name = 'vsnip' }, -- For vsnip users.
+	  { name = 'vimwiki-tags' }, -- For vimwiki
+      { name = 'latex_symbols' }, -- For vimwiki
       { name = 'buffer' },
+      { name = 'path' },
+    }, {
     })
   })
+  --{ name = 'luasnip' }, -- For luasnip users.
+      --{ name = 'ultisnips' }, -- For ultisnips users.
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline('/', {
@@ -1254,6 +1321,7 @@ cmp.setup({
   })
 
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+
   cmp.setup.cmdline(':', {
     sources = cmp.config.sources({
       { name = 'path' }
@@ -1265,14 +1333,129 @@ cmp.setup({
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['pylsp'].setup {
-    capabilities = capabilities
+  --require('lspconfig')['pylsp'].setup {
+  --  capabilities = capabilities
+  --}
+ require('lspconfig')['pyright'].setup {
+   capabilities = capabilities
   }
+
   require('lspconfig')['vimls'].setup {
     capabilities = capabilities
   }
   require('lspconfig')['clangd'].setup {
     capabilities = capabilities
   }
+
+
+--LSP KIND for nice pretty lsp
+local lspkind = require('lspkind')
+cmp.setup {
+  formatting = {
+    format = lspkind.cmp_format({with_text = false, maxwidth = 50})
+  }
+}
+
+-- BarBar Options
+-- Set barbar's options
+vim.g.bufferline = {
+  -- Enable/disable animations
+  animation = true,
+
+  -- Enable/disable auto-hiding the tab bar when there is a single buffer
+  auto_hide = false,
+
+  -- Enable/disable current/total tabpages indicator (top right corner)
+  tabpages = true,
+
+  -- Enable/disable close button
+  closable = true,
+
+  -- Enables/disable clickable tabs
+  --  - left-click: go to buffer
+  --  - middle-click: delete buffer
+  clickable = true,
+
+  -- Excludes buffers from the tabline
+  exclude_ft = {'javascript'},
+  exclude_name = {'package.json'},
+
+  -- Enable/disable icons
+  -- if set to 'numbers', will show buffer index in the tabline
+  -- if set to 'both', will show buffer index and icons in the tabline
+  icons = true,
+
+  -- If set, the icon color will follow its corresponding buffer
+  -- highlight group. By default, the Buffer*Icon group is linked to the
+  -- Buffer* group (see Highlighting below). Otherwise, it will take its
+  -- default value as defined by devicons.
+  icon_custom_colors = false,
+
+  -- Configure icons on the bufferline.
+  icon_separator_active = '▎',
+  icon_separator_inactive = '▎',
+  icon_close_tab = '',
+  icon_close_tab_modified = '●',
+  icon_pinned = '車',
+
+  -- If true, new buffers will be inserted at the start/end of the list.
+  -- Default is to insert after current buffer.
+  insert_at_end = false,
+  insert_at_start = false,
+
+  -- Sets the maximum padding width with which to surround each tab
+  maximum_padding = 1,
+
+  -- Sets the maximum buffer name length.
+  maximum_length = 30,
+
+  -- If set, the letters for each buffer in buffer-pick mode will be
+  -- assigned based on their name. Otherwise or in case all letters are
+  -- already assigned, the behavior is to assign letters in order of
+  -- usability (see order below)
+  semantic_letters = true,
+
+  -- New buffer letters are assigned in this order. This order is
+  -- optimal for the qwerty keyboard layout but might need adjustement
+  -- for other layouts.
+  letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
+
+  -- Sets the name of unnamed buffers. By default format is "[Buffer X]"
+  -- where X is the buffer number. But only a static string is accepted here.
+  no_name_title = nil,
+}
+--"require('kommentary.config').use_extended_mappings()
+
+-- lualine setup
+require'lualine'.setup {
+  options = {
+    icons_enabled = true,
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {},
+    always_divide_middle = true,
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff',
+                  {'diagnostics', sources={'nvim_lsp', 'coc'}}},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {'tabs'},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  extensions = {'chadtree', 'quickfix'}
+}
+
 
 EOF

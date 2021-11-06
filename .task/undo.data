@@ -2374,3 +2374,52 @@ new [description:"research google python automation cert" entry:"1635887330" mod
 time 1635887338
 new [description:"research google android cert" entry:"1635887338" modified:"1635887338" status:"pending" tags:"in" tags_in:"x" uuid:"7b06094c-4fa1-4e2e-bed5-9c98b42ee304"]
 ---
+time 1635991955
+old [description:"Finish Codepath Fellowship Presentation" entry:"1632361594" modified:"1632959028" priority:"H" status:"pending" tags:"next" tags_next:"x" uuid:"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"]
+new [description:"Finish Codepath Fellowship Presentation" end:"1635991952" entry:"1632361594" modified:"1635991955" priority:"H" status:"completed" tags:"next" tags_next:"x" uuid:"527b2fcd-a9b2-4c4f-9f83-320473ce83d9"]
+---
+time 1635991960
+old [description:"Ebay OA" entry:"1632876747" modified:"1633097091" status:"pending" tags:"OA,next" tags_OA:"x" tags_next:"x" uuid:"c6eb68bf-b6b5-49ee-9cef-c2faaba71199"]
+new [description:"Ebay OA" end:"1635991955" entry:"1632876747" modified:"1635991960" status:"completed" tags:"OA,next" tags_OA:"x" tags_next:"x" uuid:"c6eb68bf-b6b5-49ee-9cef-c2faaba71199"]
+---
+time 1635991961
+old [description:"Square" entry:"1633022852" modified:"1633097095" status:"pending" tags:"OA,next" tags_OA:"x" tags_next:"x" uuid:"0119b95f-9237-419c-b1d4-fd9198b774ea"]
+new [description:"Square" end:"1635991960" entry:"1633022852" modified:"1635991961" status:"completed" tags:"OA,next" tags_OA:"x" tags_next:"x" uuid:"0119b95f-9237-419c-b1d4-fd9198b774ea"]
+---
+time 1635991962
+old [description:"Crowdstrike OA" entry:"1633050459" modified:"1633097099" status:"pending" tags:"OA,next" tags_OA:"x" tags_next:"x" uuid:"96cc9c62-9ca3-477c-8e03-af6ff48d49f9"]
+new [description:"Crowdstrike OA" end:"1635991961" entry:"1633050459" modified:"1635991962" status:"completed" tags:"OA,next" tags_OA:"x" tags_next:"x" uuid:"96cc9c62-9ca3-477c-8e03-af6ff48d49f9"]
+---
+time 1635991963
+old [description:"Expedia OA HackerRank" entry:"1633050492" modified:"1633097114" status:"pending" tags:"OA,next" tags_OA:"x" tags_next:"x" uuid:"48bede94-74fc-4927-a93b-aac2acee04c0"]
+new [description:"Expedia OA HackerRank" end:"1635991962" entry:"1633050492" modified:"1635991963" status:"completed" tags:"OA,next" tags_OA:"x" tags_next:"x" uuid:"48bede94-74fc-4927-a93b-aac2acee04c0"]
+---
+time 1635992233
+new [description:"setup Kmonad" entry:"1635992233" modified:"1635992233" status:"pending" tags:"in" tags_in:"x" uuid:"4afd3e74-d3b9-4e29-9fb5-f4bb33c0f98c"]
+---
+time 1635992243
+new [description:"setup vimwiki" entry:"1635992243" modified:"1635992243" status:"pending" tags:"in" tags_in:"x" uuid:"06fd2e93-02c0-44d3-a48a-a498da40a241"]
+---
+time 1635992247
+new [description:"setup taskwiki" entry:"1635992247" modified:"1635992247" status:"pending" tags:"in" tags_in:"x" uuid:"4a8d6de4-d7dd-41aa-b8c2-223b5b7d4f5d"]
+---
+time 1636135754
+old [description:"research google python automation cert" entry:"1635887330" modified:"1635887330" status:"pending" tags:"in" tags_in:"x" uuid:"4f5ee759-18af-4a47-a937-cb60e0e9eea4"]
+new [description:"+someday\/maybe" entry:"1635887330" modified:"1636135754" status:"pending" uuid:"4f5ee759-18af-4a47-a937-cb60e0e9eea4"]
+---
+time 1636135754
+old [description:"research google android cert" entry:"1635887338" modified:"1635887338" status:"pending" tags:"in" tags_in:"x" uuid:"7b06094c-4fa1-4e2e-bed5-9c98b42ee304"]
+new [description:"+someday\/maybe" entry:"1635887338" modified:"1636135754" status:"pending" uuid:"7b06094c-4fa1-4e2e-bed5-9c98b42ee304"]
+---
+time 1636135803
+old [description:"setup Kmonad" entry:"1635992233" modified:"1635992233" status:"pending" tags:"in" tags_in:"x" uuid:"4afd3e74-d3b9-4e29-9fb5-f4bb33c0f98c"]
+new [description:"setup Kmonad" entry:"1635992233" modified:"1636135803" status:"pending" tags:"next" tags_next:"x" uuid:"4afd3e74-d3b9-4e29-9fb5-f4bb33c0f98c"]
+---
+time 1636135803
+old [description:"setup vimwiki" entry:"1635992243" modified:"1635992243" status:"pending" tags:"in" tags_in:"x" uuid:"06fd2e93-02c0-44d3-a48a-a498da40a241"]
+new [description:"setup vimwiki" entry:"1635992243" modified:"1636135803" status:"pending" tags:"next" tags_next:"x" uuid:"06fd2e93-02c0-44d3-a48a-a498da40a241"]
+---
+time 1636135803
+old [description:"setup taskwiki" entry:"1635992247" modified:"1635992247" status:"pending" tags:"in" tags_in:"x" uuid:"4a8d6de4-d7dd-41aa-b8c2-223b5b7d4f5d"]
+new [description:"setup taskwiki" entry:"1635992247" modified:"1636135803" status:"pending" tags:"next" tags_next:"x" uuid:"4a8d6de4-d7dd-41aa-b8c2-223b5b7d4f5d"]
+---

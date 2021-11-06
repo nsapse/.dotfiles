@@ -640,3 +640,16 @@
 {"description":"Verisk Oa","end":"20211001T211049Z","entry":"20210929T005214Z","modified":"20211001T211049Z","status":"completed","tags":["OA","next"],"uuid":"d834fad3-1c14-49d8-b223-97a706102cbf"}
 {"description":"research google python automation cert","entry":"20211102T210850Z","modified":"20211102T210850Z","status":"pending","uuid":"4f5ee759-18af-4a47-a937-cb60e0e9eea4","tags":["in"]}
 {"description":"research google android cert","entry":"20211102T210858Z","modified":"20211102T210858Z","status":"pending","uuid":"7b06094c-4fa1-4e2e-bed5-9c98b42ee304","tags":["in"]}
+{"description":"Finish Codepath Fellowship Presentation","end":"20211104T021232Z","entry":"20210923T014634Z","modified":"20211104T021235Z","priority":"H","status":"completed","uuid":"527b2fcd-a9b2-4c4f-9f83-320473ce83d9","tags":["next"]}
+{"description":"Ebay OA","end":"20211104T021235Z","entry":"20210929T005227Z","modified":"20211104T021240Z","status":"completed","uuid":"c6eb68bf-b6b5-49ee-9cef-c2faaba71199","tags":["OA","next"]}
+{"description":"Square","end":"20211104T021240Z","entry":"20210930T172732Z","modified":"20211104T021241Z","status":"completed","uuid":"0119b95f-9237-419c-b1d4-fd9198b774ea","tags":["OA","next"]}
+{"description":"Crowdstrike OA","end":"20211104T021241Z","entry":"20211001T010739Z","modified":"20211104T021242Z","status":"completed","uuid":"96cc9c62-9ca3-477c-8e03-af6ff48d49f9","tags":["OA","next"]}
+{"description":"Expedia OA HackerRank","end":"20211104T021242Z","entry":"20211001T010812Z","modified":"20211104T021243Z","status":"completed","uuid":"48bede94-74fc-4927-a93b-aac2acee04c0","tags":["OA","next"]}
+{"description":"setup Kmonad","entry":"20211104T021713Z","modified":"20211104T021713Z","status":"pending","uuid":"4afd3e74-d3b9-4e29-9fb5-f4bb33c0f98c","tags":["in"]}
+{"description":"setup vimwiki","entry":"20211104T021723Z","modified":"20211104T021723Z","status":"pending","uuid":"06fd2e93-02c0-44d3-a48a-a498da40a241","tags":["in"]}
+{"description":"setup taskwiki","entry":"20211104T021727Z","modified":"20211104T021727Z","status":"pending","uuid":"4a8d6de4-d7dd-41aa-b8c2-223b5b7d4f5d","tags":["in"]}
+{"description":"+someday\/maybe","entry":"20211102T210850Z","modified":"20211105T180914Z","status":"pending","uuid":"4f5ee759-18af-4a47-a937-cb60e0e9eea4"}
+{"description":"+someday\/maybe","entry":"20211102T210858Z","modified":"20211105T180914Z","status":"pending","uuid":"7b06094c-4fa1-4e2e-bed5-9c98b42ee304"}
+{"description":"setup Kmonad","entry":"20211104T021713Z","modified":"20211105T181003Z","status":"pending","uuid":"4afd3e74-d3b9-4e29-9fb5-f4bb33c0f98c","tags":["next"]}
+{"description":"setup vimwiki","entry":"20211104T021723Z","modified":"20211105T181003Z","status":"pending","uuid":"06fd2e93-02c0-44d3-a48a-a498da40a241","tags":["next"]}
+{"description":"setup taskwiki","entry":"20211104T021727Z","modified":"20211105T181003Z","status":"pending","uuid":"4a8d6de4-d7dd-41aa-b8c2-223b5b7d4f5d","tags":["next"]}

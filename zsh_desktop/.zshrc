@@ -165,6 +165,8 @@ alias twc="nvim ~/.taskrc"
 alias kmc="nvim ~/.config/kmonad/thinkpad_config.kbd"
 alias mc="nvim ~/.config/mutt/muttrc"
 alias nm="neomutt"
+alias wiki="nvim ~/vimwiki/index.wiki"
+alias ww="wiki"
 
 # aliasing directories
 alias cdf='cd ~/.dotfiles'

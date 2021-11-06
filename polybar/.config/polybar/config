@@ -63,7 +63,7 @@ font-0 = FiraCode:pixelsize=13;1
 font-1 = FiraCode:fontformat=truetype:size=12:antialias=false;0
 font-2 = FiraCode:pixelsize=12;1
 
-modules-left = powermenu i3 
+modules-left = i3 
 modules-center = date mpd
 modules-right = pulseaudio memory cpu temperature
 
