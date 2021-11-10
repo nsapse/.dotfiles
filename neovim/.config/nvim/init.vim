@@ -24,7 +24,8 @@ set encoding=UTF-8
 set incsearch
 set cocu="vnic"
 set nocp
-filetype plugin indent on
+set nocompatible
+filetype plugin on
  
 
 "set autochdir
@@ -186,6 +187,7 @@ Plug 'yggdroot/indentline'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'folke/which-key.nvim'
 Plug 'romgrk/barbar.nvim'
+Plug 'luukvbaal/stabilize.nvim'
 
 
 " Code and File Navigation
@@ -258,7 +260,7 @@ Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'romgrk/nvim-treesitter-context'
+"Plug 'romgrk/nvim-treesitter-context'
 Plug 'nvim-treesitter/playground'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'windwp/nvim-ts-autotag'
@@ -279,12 +281,12 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
 " For luasnip users.
-  "Plug 'L3MON4D3/LuaSnip'
-  "Plug 'saadparwaiz1/cmp_luasnip'
+  Plug 'L3MON4D3/LuaSnip'
+  Plug 'saadparwaiz1/cmp_luasnip'
 
 " For ultisnips users.
- "Plug 'SirVer/ultisnips'
- "Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+ Plug 'SirVer/ultisnips'
+ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Telescope et Al
 
@@ -334,7 +336,7 @@ syntax on
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 "colorscheme gruvbox-material
-"colorscheme OceanicNext
+"colorscheme base16-oceanicnext
 colorscheme base16-nord
 
 "hi Normal guibg=NONE ctermbg=NONE
@@ -642,8 +644,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 
 " possible value: 'UltiSnips', 'Neosnippet', 'vim-vsnip', 'snippets.nvim'
-let g:completion_enable_snippet = 'vim-vsnip'
-"let g:vsnip_snippet_dirs = ['~/.config/nvim/plugged/friendly-snippets']
+"let g:completion_enable_snippet = 'vim-vsnip'
+let g:vsnip_snippet_dirs = ['~/.config/nvim/plugged/friendly-snippets']
 
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect,preview
@@ -1233,41 +1235,41 @@ dap.configurations.python = {
 -- setup formatter
 
 -- for TS Context
-require'treesitter-context'.setup{
-    enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
-    throttle = true, -- Throttles plugin updates (may improve performance)
-    max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
-    patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
-        -- For all filetypes
-        -- Note that setting an entry here replaces all other patterns for this entry.
-        -- By setting the 'default' entry below, you can control which nodes you want to
-        -- appear in the context window.
-        default = {
-            'class',
-            'function',
-            'method',
-            -- 'for', -- These won't appear in the context
-            -- 'while',
-            -- 'if',
-            -- 'switch',
-            -- 'case',
-        },
-        -- Example for a specific filetype.
-        -- If a pattern is missing, *open a PR* so everyone can benefit.
-        --   rust = {
-        --       'impl_item',
-        --   },
-    },
-}
-
+--require'treesitter-context'.setup{
+--    enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+--    throttle = true, -- Throttles plugin updates (may improve performance)
+--    max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+--    patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
+--        -- For all filetypes
+--        -- Note that setting an entry here replaces all other patterns for this entry.
+--        -- By setting the 'default' entry below, you can control which nodes you want to
+--        -- appear in the context window.
+--        default = {
+--            'class',
+--            'function',
+--            'method',
+--            -- 'for', -- These won't appear in the context
+--            -- 'while',
+--            -- 'if',
+--            -- 'switch',
+--            -- 'case',
+--        },
+--        -- Example for a specific filetype.
+--        -- If a pattern is missing, *open a PR* so everyone can benefit.
+--        --   rust = {
+--        --       'impl_item',
+--        --   },
+--    },
+--}
+--
 -- CMP SETUP
 local cmp = require'cmp'
 cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-       vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        --require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      --vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+	  require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         --vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
       end,
@@ -1306,12 +1308,12 @@ cmp.setup({
 	  { name = 'vimwiki-tags' }, -- For vimwiki
       { name = 'latex_symbols' }, -- For vimwiki
       { name = 'buffer' },
-      { name = 'path' },
-    }, {
-    })
-  })
-  --{ name = 'luasnip' }, -- For luasnip users.
+	  --{ name = 'luasnip' }, -- For luasnip users.
       --{ name = 'ultisnips' }, -- For ultisnips users.
+      { name = 'path' },
+    }
+    )
+  })
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline('/', {
@@ -1457,5 +1459,6 @@ require'lualine'.setup {
   extensions = {'chadtree', 'quickfix'}
 }
 
-
+-- stabilize
+--require("stabilize").setup()
 EOF
