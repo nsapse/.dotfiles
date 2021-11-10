@@ -2423,3 +2423,12 @@ time 1636135803
 old [description:"setup taskwiki" entry:"1635992247" modified:"1635992247" status:"pending" tags:"in" tags_in:"x" uuid:"4a8d6de4-d7dd-41aa-b8c2-223b5b7d4f5d"]
 new [description:"setup taskwiki" entry:"1635992247" modified:"1636135803" status:"pending" tags:"next" tags_next:"x" uuid:"4a8d6de4-d7dd-41aa-b8c2-223b5b7d4f5d"]
 ---
+time 1636558930
+new [description:"add tmux leader in QMK" entry:"1636558930" modified:"1636558930" status:"pending" tags:"in" tags_in:"x" uuid:"5f93520f-0caf-4f74-96b2-e9309c02a568"]
+---
+time 1636561894
+new [description:"configure dunst" entry:"1636561894" modified:"1636561894" status:"pending" tags:"in" tags_in:"x" uuid:"38cd0c07-0983-4f4d-8691-76c2f592b1a9"]
+---
+time 1636562195
+new [description:"configure calcurse" entry:"1636562195" modified:"1636562195" status:"pending" tags:"in" tags_in:"x" uuid:"28c6a259-8766-413b-a989-8bbe46241865"]
+---

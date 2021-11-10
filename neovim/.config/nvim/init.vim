@@ -347,8 +347,8 @@ hi EndOfBuffer guibg=NONE ctermbg=NONE
 "colorscheme hybrid_material
 let g:airline_theme='hybrid'
 
-"set background=dark
-"hi normal guibg=none ctermbg=none
+set background=dark
+hi normal guibg=none ctermbg=none
 
 if (has("nvim"))
 "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -644,7 +644,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 
 " possible value: 'UltiSnips', 'Neosnippet', 'vim-vsnip', 'snippets.nvim'
-"let g:completion_enable_snippet = 'vim-vsnip'
+let g:completion_enable_snippet = 'vim-vsnip'
 let g:vsnip_snippet_dirs = ['~/.config/nvim/plugged/friendly-snippets']
 
 " Set completeopt to have a better completion experience
@@ -1268,8 +1268,8 @@ cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-      --vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-	  require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+	  --require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         --vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
       end,
@@ -1309,7 +1309,7 @@ cmp.setup({
       { name = 'latex_symbols' }, -- For vimwiki
       { name = 'buffer' },
 	  --{ name = 'luasnip' }, -- For luasnip users.
-      --{ name = 'ultisnips' }, -- For ultisnips users.
+      { name = 'ultisnips' }, -- For ultisnips users.
       { name = 'path' },
     }
     )

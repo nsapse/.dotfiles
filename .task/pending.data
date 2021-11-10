@@ -37,3 +37,6 @@
 [description:"setup Kmonad" entry:"1635992233" modified:"1636135803" status:"pending" tags:"next" tags_next:"x" uuid:"4afd3e74-d3b9-4e29-9fb5-f4bb33c0f98c"]
 [description:"setup vimwiki" entry:"1635992243" modified:"1636135803" status:"pending" tags:"next" tags_next:"x" uuid:"06fd2e93-02c0-44d3-a48a-a498da40a241"]
 [description:"setup taskwiki" entry:"1635992247" modified:"1636135803" status:"pending" tags:"next" tags_next:"x" uuid:"4a8d6de4-d7dd-41aa-b8c2-223b5b7d4f5d"]
+[description:"add tmux leader in QMK" entry:"1636558930" modified:"1636558930" status:"pending" tags:"in" tags_in:"x" uuid:"5f93520f-0caf-4f74-96b2-e9309c02a568"]
+[description:"configure dunst" entry:"1636561894" modified:"1636561894" status:"pending" tags:"in" tags_in:"x" uuid:"38cd0c07-0983-4f4d-8691-76c2f592b1a9"]
+[description:"configure calcurse" entry:"1636562195" modified:"1636562195" status:"pending" tags:"in" tags_in:"x" uuid:"28c6a259-8766-413b-a989-8bbe46241865"]

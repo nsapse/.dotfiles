@@ -653,3 +653,6 @@
 {"description":"setup Kmonad","entry":"20211104T021713Z","modified":"20211105T181003Z","status":"pending","uuid":"4afd3e74-d3b9-4e29-9fb5-f4bb33c0f98c","tags":["next"]}
 {"description":"setup vimwiki","entry":"20211104T021723Z","modified":"20211105T181003Z","status":"pending","uuid":"06fd2e93-02c0-44d3-a48a-a498da40a241","tags":["next"]}
 {"description":"setup taskwiki","entry":"20211104T021727Z","modified":"20211105T181003Z","status":"pending","uuid":"4a8d6de4-d7dd-41aa-b8c2-223b5b7d4f5d","tags":["next"]}
+{"description":"add tmux leader in QMK","entry":"20211110T154210Z","modified":"20211110T154210Z","status":"pending","uuid":"5f93520f-0caf-4f74-96b2-e9309c02a568","tags":["in"]}
+{"description":"configure dunst","entry":"20211110T163134Z","modified":"20211110T163134Z","status":"pending","uuid":"38cd0c07-0983-4f4d-8691-76c2f592b1a9","tags":["in"]}
+{"description":"configure calcurse","entry":"20211110T163635Z","modified":"20211110T163635Z","status":"pending","uuid":"28c6a259-8766-413b-a989-8bbe46241865","tags":["in"]}

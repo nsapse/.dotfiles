@@ -79,19 +79,32 @@ POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv vi_mode )
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    github
+    alias-finder
+    archlinux
+    autojump
+    autopep8
+    cargo
     colorize
-    colored-man-pages
-    battery
+    docker
+    docker-compose
+    fzf-tab
     git
+    github
+    heroku
     lein
     npm
+    pipenv
+    pylint
     python
+    taskwarrior
+    themes
+    tmux
     vi-mode
     zsh-autosuggestions
     zsh-completions
     zsh-interactive-cd
     zsh-syntax-highlighting
+    zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -135,7 +148,10 @@ alias iconf="nvim ~/dotfiles/i3_config_laptop"
 alias piconf="nvim ~/.config/picom.conf"
 alias alaconf="nvim ~/.config/alacritty/alacritty.yml"
 alias muttConf="nvim ~/dotfiles/neomuttrc"
-
+alias mc="nvim ~/.config/mutt/muttrc"
+alias nm="neomutt"
+alias wiki="nvim ~/vimwiki/index.wiki"
+alias ww="wiki"
 
 
 # aliasing directories
@@ -229,6 +245,18 @@ ex ()
 }
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# For JDTLS stuff
+# Mandatory:
+# .bashrc
+export JDTLS_HOME=/usr/bin/jdtls # Directory with the plugin and configs directories
+
+# Optional:
+#export JAVA_HOME=/path/to/java_home # In case you don't have java in path or want to use a version in particular
+#export WORKSPACE=/path/to/workspace # Defaults to $HOME/workspace
+
+# set the pager to be bat with some sh preprocesing
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
