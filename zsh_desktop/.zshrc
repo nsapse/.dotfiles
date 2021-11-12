@@ -111,6 +111,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+#bind key to enter vim mode
+bindkey -v
+
 # Define an init function and append to zvm_after_init_commands
 function my_init() {
     [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -145,7 +148,8 @@ fi
 # access config files
 alias zc="nvim ~/.zshrc"
 alias zso="source ~/.zshrc"
-alias nc="nvim ~/.config/nvim/init.vim"
+alias ncv="nvim ~/.config/nvim/init.vim"
+alias ncl="nvim ~/.config/nvim/lua/init.lua"
 alias xc="nvim ~/.xinitrc"
 alias bc="nvim ~/.config/bspwm/bspwmrc"
 alias sxc="nvim ~/.config/sxhkd/sxhkdrc"
@@ -154,7 +158,8 @@ alias tc="nvim ~/.tmux.conf"
 alias tso="source ~/.tmux.conf"
 alias lgc="nvim ~/.config/jesseduffield/lazygit/config.yml"
 alias plc="nvim ~/.p10k.zsh"
-alias ic="nvim ~/.i3/i3_config_laptop"
+alias icl="nvim ~/.i3/i3_config_laptop"
+alias icd="nvim ~/.config/i3/config"
 alias pic="nvim ~/.config/picom.conf"
 alias alac="nvim ~/.config/alacritty/alacritty.yml"
 alias kc="nvim ~/.config/kitty/kitty.conf"

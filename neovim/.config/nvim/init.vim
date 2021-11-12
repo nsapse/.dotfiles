@@ -4,37 +4,14 @@
 "                                                      "
 " ****************Vim Settings*************************"
 
-syntax on
-
-set nu
-set rnu
-set termguicolors
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set nohlsearch
-set smartindent
-set smartcase
+" source by init.lua
+lua require 'init'
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir
 set undofile
-set showmatch
-set encoding=UTF-8
-"set hlsearch
-set incsearch
-set cocu="vnic"
-set nocp
-set nocompatible
+set undodir=~/.vim/undodir
+syntax on
 filetype plugin on
- 
-
-"set autochdir
-autocmd BufEnter * silent! lcd %:p:h
-
-"This is apparently necessary for Coc definition
-set cmdheight=2
-set hidden
-set shortmess=aFc
 
 " ****************Vim Mappings*************************"
 "                                                      "
@@ -43,9 +20,9 @@ set shortmess=aFc
 " ****************Vim Mappings*************************"
 
 " Leader set to <Space>"
-
 let mapleader = " "
 let maplocalleader = "\\"
+set nohlsearch
 
 " Standard Action Remaps
 nnoremap  Y y$
@@ -54,6 +31,7 @@ nnoremap  J mzJ`z
 
 " commands to edit the vim rc quickly
 nnoremap <leader>ec :vsplit $MYVIMRC<cr>
+nnoremap <leader>lc :vsplit ~/.config/nvim/lua/init.lua<cr>
 nnoremap <leader>sc :so $MYVIMRC<cr>
 map <leader><c-s> :so %<CR>
 cnoreabbrev vc ~/.config/nvim/init.vim
@@ -87,13 +65,8 @@ vnoremap<leader>j :wincmd j<cr>
 vnoremap<leader>k :wincmd k<cr>
 vnoremap<leader>l :wincmd l<cr>
 vnoremap<leader>t :wincmd t<cr>
-"Quickfix Mappings
+"
 
-noremap <leader>co :copen<cr>
-nnoremap <leader>cp :cprev<cr>
-nnoremap <leader>cn :cnext<cr>
-
-nnoremap<silent><leader>ig :IndentGuidesToggle<cr>
 map <silent><leader><leader>n :nohlsearch<cr>
 
 " quick maps into a bunch of vim areas
@@ -103,14 +76,6 @@ nnoremap <leader>M :messages<cr>
 
 "buffer, tab, and other quick  navigation
 "
-nnoremap <silent> b] :bnext<cr>
-nnoremap <silent> b[ :bprevious<cr>
-nnoremap <silent> B[ :bfirst<cr>
-nnoremap <silent> B] :blast<cr>
-nnoremap <silent> t] :tabnext<cr>
-nnoremap <silent> t[ :tabprevious<cr>
-nnoremap <silent> T[ :tabfirst<cr>
-nnoremap <silent> T] :tablast<cr>
 nnoremap <leader>T :tabnew<cr>
 
 "mapping to quickly move lines
@@ -119,7 +84,6 @@ nnoremap <leader>K :m .-2<CR>
 
 "Traditional (Non-Vim) Save and Quit Bindings
 nnoremap <c-s> :w<cr>
-"nnoremap <c-s> :wa<cr>
 map <c-q> :qa<cr>
 
 " *******************Abbreviations*************************"
@@ -145,7 +109,6 @@ cnoreabbrev DC DiffviewClose
 
 call plug#begin()
 
-Plug 'airblade/vim-rooter'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
@@ -157,34 +120,29 @@ Plug 'scrooloose/nerdcommenter'
 " Plug 'b3nj5m1n/kommentary'
 Plug 'simeji/winresizer'
 Plug 'simnalamburt/vim-mundo'
-Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-surround'
 Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
 
 "Latex and Markdown
-Plug 'lervag/vimtex'
+"Plug 'lervag/vimtex'
 
 "Web Development
-Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-Plug 'othree/html5.vim'
-Plug 'mattn/emmet-vim'
-Plug 'mustache/vim-mustache-handlebars'
+"Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+"Plug 'mattn/emmet-vim'
+"Plug 'mustache/vim-mustache-handlebars'
 
 "UI/UX
 Plug 'gelguy/wilder.nvim'  "run UpdateRemotePlugins after install
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'Pocco81/TrueZen.nvim'
 Plug 'folke/twilight.nvim' 
-"Plug 'vim-airline/vim-airline'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'yggdroot/indentline'
-Plug 'norcalli/nvim-colorizer.lua'
+"Plug 'norcalli/nvim-colorizer.lua'
 Plug 'folke/which-key.nvim'
 Plug 'romgrk/barbar.nvim'
 Plug 'luukvbaal/stabilize.nvim'
@@ -193,15 +151,11 @@ Plug 'luukvbaal/stabilize.nvim'
 " Code and File Navigation
 Plug 'unblevable/quick-scope'  
 Plug 'phaazon/hop.nvim'
-"Plug 'majutsushi/tagbar'
 Plug 'liuchengxu/vista.vim'
-
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-"Plug 'scrooloose/nerdtree'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 
-"Plug 'yuezk/vim-js'
 
 "snippets
 Plug 'SirVer/ultisnips'
@@ -211,24 +165,24 @@ Plug 'rafamadriz/friendly-snippets'
 
 
 "colorschemes
-Plug 'Murtaza-Udaipurwala/gruvqueen'
-Plug 'RRethy/nvim-base16'
-Plug 'b4skyx/serenade'
-Plug 'fenetikm/falcon'
-Plug 'folke/tokyonight.nvim'
-Plug 'jacoborus/tender.vim'
-Plug 'maaslalani/nordbuddy'
-Plug 'mhartington/oceanic-next'
-Plug 'morhetz/gruvbox'
-Plug 'npxbr/gruvbox.nvim'
-Plug 'rktjmp/lush.nvim'
-Plug 'sainnhe/forest-night'
-Plug 'sainnhe/gruvbox-material'
-Plug 'sainnhe/sonokai'
-Plug 'shaunsingh/nord.nvim'
-Plug 'ulwlu/elly.vim'
-Plug 'EdenEast/nightfox.nvim'
-Plug 'NTBBloodbath/doom-one.nvim'
+"Plug 'Murtaza-Udaipurwala/gruvqueen'
+"Plug 'RRethy/nvim-base16'
+"Plug 'b4skyx/serenade'
+"Plug 'fenetikm/falcon'
+"Plug 'folke/tokyonight.nvim'
+"Plug 'jacoborus/tender.vim'
+"Plug 'maaslalani/nordbuddy'
+"Plug 'mhartington/oceanic-next'
+"Plug 'morhetz/gruvbox'
+"Plug 'npxbr/gruvbox.nvim'
+"Plug 'rktjmp/lush.nvim'
+"Plug 'sainnhe/forest-night'
+"Plug 'sainnhe/gruvbox-material'
+"Plug 'sainnhe/sonokai'
+"Plug 'shaunsingh/nord.nvim'
+"Plug 'ulwlu/elly.vim'
+"Plug 'EdenEast/nightfox.nvim'
+"Plug 'NTBBloodbath/doom-one.nvim'
 
 
 " Git Stuff
@@ -236,9 +190,7 @@ Plug 'sindrets/diffview.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 "UML Stuff
-Plug 'tyru/open-browser.vim'
-Plug 'weirongxu/plantuml-previewer.vim'
-Plug 'aklt/plantuml-syntax'
+"Plug 'tyru/open-browser.vim'
 
 " Rust Stuff
 Plug 'simrat39/rust-tools.nvim'
@@ -250,10 +202,8 @@ Plug 'nvim-lua/popup.nvim'
 
 Plug 'folke/trouble.nvim'
 Plug 'glepnir/lspsaga.nvim'
-"Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'kosayoda/nvim-lightbulb'
-Plug 'weilbith/nvim-code-action-menu'
+"Plug 'kosayoda/nvim-lightbulb'
+"Plug 'weilbith/nvim-code-action-menu'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp_extensions.nvim'
@@ -277,21 +227,21 @@ Plug 'hrsh7th/nvim-cmp'
 
 
 " For vsnip users.
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
+"Plug 'hrsh7th/cmp-vsnip'
+"Plug 'hrsh7th/vim-vsnip'
+"Plug 'hrsh7th/vim-vsnip-integ'
 
 " For luasnip users.
-  Plug 'L3MON4D3/LuaSnip'
-  Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 
 " For ultisnips users.
- Plug 'SirVer/ultisnips'
- Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+"Plug 'SirVer/ultisnips'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Telescope et Al
 
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'sudormrfbin/cheatsheet.nvim'
 
 " Neorg
 Plug 'vhyrro/neorg'
@@ -311,7 +261,11 @@ Plug 'vimwiki/vimwiki'
 Plug 'tbabej/taskwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'pontusk/cmp-vimwiki-tags'
-Plug 'kdheepak/cmp-latex-symbols'
+"Plug 'kdheepak/cmp-latex-symbols'
+
+"lua dev stuff
+Plug 'folke/lua-dev.nvim'
+
 
 call plug#end()
 
@@ -368,8 +322,6 @@ nnoremap<c-t> :Vista!!<cr>
 "enable smarter tab line
 let g:airline#extensions#tabline#enabled = 1
 
-" Setup  lightbulb for code actions
-autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
 
 "Wilder Menu
 call wilder#enable_cmdline_enter()
@@ -392,12 +344,6 @@ augroup END
 "                                                      "
 " **********************Barbar************************* "
 
-" Move to previous/next
-"nnoremap <silent>    <A-,> :BufferPrevious<CR>
-"nnoremap <silent>    <A-.> :BufferNext<CR>
-" Re-order to previous/next
-"nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
-"nnoremap <silent>    <A->> :BufferMoveNext<CR>
 " Goto buffer in position...
 nnoremap <silent>    b1 :BufferGoto 1<CR>
 nnoremap <silent>    b2 :BufferGoto 2<CR>
@@ -449,9 +395,6 @@ let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 " Trigger a highlight in the appropriate direction when pressing these keys:
 "nnoremap n <Plug>(Quickscopef)<cr>
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
-" Trigger a highlight only when pressing f and F.
-let g:qs_highlight_on_keys = ['f', 'F']
 
 
 " **********************DAP ACTIONS************************* "
@@ -644,8 +587,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 
 " possible value: 'UltiSnips', 'Neosnippet', 'vim-vsnip', 'snippets.nvim'
-let g:completion_enable_snippet = 'vim-vsnip'
-let g:vsnip_snippet_dirs = ['~/.config/nvim/plugged/friendly-snippets']
+"let g:completion_enable_snippet = 'vim-vsnip'
+"let g:vsnip_snippet_dirs = ['~/.config/nvim/plugged/friendly-snippets']
 
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect,preview
@@ -658,19 +601,6 @@ autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
 "autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1000)
-
-" vsnip settings
-"ultisnips
-"let g:UltiSnipsExpandTrigger='~'
-"let g:UltiSnipsJumpForwardTrigger = '<c-j>'
-"let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
-
-"inoremap <silent><expr> <C-Space> compe#complete()
-"inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-"inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-"inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-"inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
-
 
 
 " ****************Hop*************************"
@@ -729,7 +659,7 @@ autocmd FileType .html,.css EmmetInstall
 let g:mustache_abbreviations = 1
 
 " vim rainbow
-let g:rainbow_active = 1
+"let g:rainbow_active = 1
 
 "Vim-Mundo Mappings
 nnoremap <leader><leader>u :MundoToggle<cr>
@@ -789,7 +719,7 @@ set rtp+=~/.vim/bundle/fzf
 "nnoremap <leader>ff <cmd>Telescope find_files<cr>
 "nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 "nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fh<cmd>Telescope help_tags<cr>
 
 " Using Lua functions
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
@@ -875,24 +805,6 @@ lua <<EOF
 -- nvim_lsp object
 local nvim_lsp = require'lspconfig'
 
-
----- function to attach completion when setting up lsp
---local on_attach = function(client)
---    require'completion'.on_attach(client)
---end
---
----- Enable rust_analyzer
---nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
---
----- Enable diagnostics
---vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
---  vim.lsp.diagnostic.on_publish_diagnostics, {
---    virtual_text = true,
---    signs = true,
---    update_in_insert = true,
---  }
---)
-
 -- attempt to get rust working
 require('rust-tools').setup({})
 -- set inlay hints
@@ -906,7 +818,7 @@ require "lsp_signature".setup()
 
 -- Setting Up Language Servers
 require'lspconfig'.bashls.setup{}
-require'lspconfig'.clangd.setup{}
+require'lspconfig'.ccls.setup{}
 require'lspconfig'.cssls.setup{}
 require'lspconfig'.gopls.setup{}
 require'lspconfig'.hls.setup{}
@@ -915,16 +827,21 @@ require'lspconfig'.jsonls.setup{}
 --require'lspconfig'.pylsp.setup{}
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.sqls.setup{}
-require'lspconfig'.sumneko_lua.setup{}
+--require'lspconfig'.sumneko_lua.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.vimls.setup{}
+require'lspconfig'.texlab.setup{}
 
+local luadev = require("lua-dev").setup({
+   lspconfig = {
+     cmd = {"lua-language-server"}
+   },
+})
 
--- setup pyright
+local lspconfig = require('lspconfig')
+lspconfig.sumneko_lua.setup(luadev)
 
---require'lspconfig'.nvim-code-action-menu.setup{cmd = 'CodeActionMenue'}
-
---require'lspconfig'.jdtls.setup {cmd = {'jdtls'}}
+require'lspconfig'.jdtls.setup {cmd = {'jdtls'}}
 --require'lspconfig'.java_language_server.setup{}
 
 local saga = require 'lspsaga'
@@ -943,91 +860,6 @@ require("trouble").setup {
 -- Hop
 require'hop'.setup()
 
--- Compe
---require'compe'.setup {
---  enabled = true;
---  autocomplete = true;
---  debug = false;
---  min_length = 1;
---  preselect = 'enable';
---  throttle_time = 80;
---  source_timeout = 200;
---  resolve_timeout = 800;
---  incomplete_delay = 400;
---  max_abbr_width = 100;
---  max_kind_width = 100;
---  max_menu_width = 100;
---  documentation = {
---    border = { '', '' ,'', ' ', '', '', '', ' ' }, -- the border option is the same as `|help nvim_open_win|`
---    winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
---    max_width = 120,
---    min_width = 60,
---    max_height = math.floor(vim.o.lines * 0.3),
---    min_height = 1,
---  };
---
---  source = {
---    path = true;
---    buffer = true;
---    calc = true;
---    nvim_lsp = true;
---    nvim_lua = true;
---    vsnip = true;
---    ultisnips = true;
---    luasnip = true;
---    neorg= true;
---  };
---}
----
---local capabilities = vim.lsp.protocol.make_client_capabilities()
---capabilities.textDocument.completion.completionItem.snippetSupport = true
---capabilities.textDocument.completion.completionItem.resolveSupport = {
---  properties = {
---    'documentation',
---    'detail',
---    'additionalTextEdits',
---  }
---}
---
---local t = function(str)
---  return vim.api.nvim_replace_termcodes(str, true, true, true)
---end
---
---local check_back_space = function()
---    local col = vim.fn.col('.') - 1
---    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
---end
----
------ Use (s-)tab to:
------- move to prev/next item in completion menuone
------- jump to prev/next snippet's placeholder
----
----  if vim.fn.pumvisible() == 1 then
----    return t "<C-n>"
----  elseif vim.fn['vsnip#available'](1) == 1 then
----    return t "<Plug>(vsnip-expand-or-jump)"
----  elseif check_back_space() then
----    return t "<Tab>"
----  else
----    return vim.fn['compe#complete']()
----  end
----end
----_G.s_tab_complete = function()
----  if vim.fn.pumvisible() == 1 then
----    return t "<C-p>"
----  elseif vim.fn['vsnip#jumpable'](-1) == 1 then
----    return t "<Plug>(vsnip-jump-prev)"
----  else
----    -- If <S-Tab> is not working in your terminal, change it to <C-h>
----    return t "<S-Tab>"
----  end
----end
----
----vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
----vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
----vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
----vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = {}, -- List of parsers to ignore installing
@@ -1039,10 +871,11 @@ require'nvim-treesitter.configs'.setup {
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
-  },
    rainbow = {
     enable = true,
     extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+	max_file_lines = nil,
+  },
   },
   autotag = {
     enable = true,
@@ -1232,45 +1065,15 @@ dap.configurations.python = {
   },
 }
 
--- setup formatter
-
--- for TS Context
---require'treesitter-context'.setup{
---    enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
---    throttle = true, -- Throttles plugin updates (may improve performance)
---    max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
---    patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
---        -- For all filetypes
---        -- Note that setting an entry here replaces all other patterns for this entry.
---        -- By setting the 'default' entry below, you can control which nodes you want to
---        -- appear in the context window.
---        default = {
---            'class',
---            'function',
---            'method',
---            -- 'for', -- These won't appear in the context
---            -- 'while',
---            -- 'if',
---            -- 'switch',
---            -- 'case',
---        },
---        -- Example for a specific filetype.
---        -- If a pattern is missing, *open a PR* so everyone can benefit.
---        --   rust = {
---        --       'impl_item',
---        --   },
---    },
---}
---
 -- CMP SETUP
 local cmp = require'cmp'
 cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-	  --require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        --vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+	  --vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+	  require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      --vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
       end,
     },
@@ -1304,11 +1107,11 @@ cmp.setup({
 
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-	  { name = 'vsnip' }, -- For vsnip users.
+	  --{ name = 'vsnip' }, -- For vsnip users.
 	  { name = 'vimwiki-tags' }, -- For vimwiki
       { name = 'latex_symbols' }, -- For vimwiki
       { name = 'buffer' },
-	  --{ name = 'luasnip' }, -- For luasnip users.
+	  { name = 'luasnip' }, -- For luasnip users.
       { name = 'ultisnips' }, -- For ultisnips users.
       { name = 'path' },
     }
@@ -1345,7 +1148,7 @@ cmp.setup({
   require('lspconfig')['vimls'].setup {
     capabilities = capabilities
   }
-  require('lspconfig')['clangd'].setup {
+  require('lspconfig')['ccls'].setup {
     capabilities = capabilities
   }
 
@@ -1459,6 +1262,8 @@ require'lualine'.setup {
   extensions = {'chadtree', 'quickfix'}
 }
 
--- stabilize
---require("stabilize").setup()
+-- LuaSnip
+require("luasnip/loaders/from_vscode").lazy_load()
+
+
 EOF

@@ -656,3 +656,4 @@
 {"description":"add tmux leader in QMK","entry":"20211110T154210Z","modified":"20211110T154210Z","status":"pending","uuid":"5f93520f-0caf-4f74-96b2-e9309c02a568","tags":["in"]}
 {"description":"configure dunst","entry":"20211110T163134Z","modified":"20211110T163134Z","status":"pending","uuid":"38cd0c07-0983-4f4d-8691-76c2f592b1a9","tags":["in"]}
 {"description":"configure calcurse","entry":"20211110T163635Z","modified":"20211110T163635Z","status":"pending","uuid":"28c6a259-8766-413b-a989-8bbe46241865","tags":["in"]}
+{"description":"Update Resume","entry":"20211112T005218Z","modified":"20211112T005218Z","status":"pending","uuid":"2ed9404e-60ed-405b-8edd-5ccb17452a13","tags":["in"]}
