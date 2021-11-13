@@ -148,7 +148,7 @@ fi
 # access config files
 alias zc="nvim ~/.zshrc"
 alias zso="source ~/.zshrc"
-alias ncv="nvim ~/.config/nvim/init.vim"
+alias nc="nvim ~/.config/nvim/init.vim"
 alias ncl="nvim ~/.config/nvim/lua/init.lua"
 alias xc="nvim ~/.xinitrc"
 alias bc="nvim ~/.config/bspwm/bspwmrc"
@@ -303,6 +303,10 @@ alias mlt="task +LATEST modify"
 alias todo="task +next"
 alias inbox="task +in"
 
+# aliasing actual programs
+alias cat="bat"
+alias sed="sad"
+
 job(){
     task add project:jobs $1;
     ID=$(task +LATEST ids);
@@ -392,3 +396,5 @@ export JDTLS_HOME=/usr/bin/jdtls # Directory with the plugin and configs directo
 
 # set the pager to be bat with some sh preprocesing
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# set default pager to be delta
+export GIT_PAGER='delta'

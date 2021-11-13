@@ -5,7 +5,14 @@
 " ****************Vim Settings*************************"
 
 " source by init.lua
-lua require 'init'
+lua require('init')
+
+"automatically recompile when plugins changed
+augroup packer_user_config
+  autocmd!
+  autocmd BufWritePost plugins.lua source <afile> | PackerCompile profile=true
+augroup end
+
 set noswapfile
 set nobackup
 set undofile
@@ -30,7 +37,7 @@ nnoremap  V v$
 nnoremap  J mzJ`z
 
 " commands to edit the vim rc quickly
-nnoremap <leader>ec :vsplit $MYVIMRC<cr>
+nnoremap <leader>vc :vsplit $MYVIMRC<cr>
 nnoremap <leader>lc :vsplit ~/.config/nvim/lua/init.lua<cr>
 nnoremap <leader>sc :so $MYVIMRC<cr>
 map <leader><c-s> :so %<CR>
@@ -93,181 +100,26 @@ map <c-q> :qa<cr>
 " *******************Abbreviations*************************"
 
 " Plugins
-cnoreabbrev PI PlugInstall
-cnoreabbrev PC PlugClean
+cnoreabbrev PI PackerInstall
+cnoreabbrev PC PackerClean
 
 " Diffview
 cnoreabbrev DO DiffviewOpen
 cnoreabbrev DC DiffviewClose
 
+" Packer
+cnoreabbrev PS PackerSync
 " *******************Plugins*************************"
 "                                                 "
 "                    Plugins                           "
 "                                                             "
 " *******************Plugins*************************"
 
-
-call plug#begin()
-
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-peekaboo'
-Plug 'machakann/vim-sandwich'
-Plug 'markonm/traces.vim'
-Plug 'nsapse/f_string'
-Plug 'raimondi/delimitmate'
-Plug 'scrooloose/nerdcommenter'
-" Plug 'b3nj5m1n/kommentary'
-Plug 'simeji/winresizer'
-Plug 'simnalamburt/vim-mundo'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-unimpaired'
-Plug 'vim-utils/vim-man'
-Plug 'voldikss/vim-floaterm'
-
-"Latex and Markdown
-"Plug 'lervag/vimtex'
-
-"Web Development
-"Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-"Plug 'mattn/emmet-vim'
-"Plug 'mustache/vim-mustache-handlebars'
-
-"UI/UX
-Plug 'gelguy/wilder.nvim'  "run UpdateRemotePlugins after install
-Plug 'p00f/nvim-ts-rainbow'
-Plug 'Pocco81/TrueZen.nvim'
-Plug 'folke/twilight.nvim' 
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'yggdroot/indentline'
-"Plug 'norcalli/nvim-colorizer.lua'
-Plug 'folke/which-key.nvim'
-Plug 'romgrk/barbar.nvim'
-Plug 'luukvbaal/stabilize.nvim'
-
-
-" Code and File Navigation
-Plug 'unblevable/quick-scope'  
-Plug 'phaazon/hop.nvim'
-Plug 'liuchengxu/vista.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
-
-
-"snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'mlaursen/vim-react-snippets'
-Plug 'rafamadriz/friendly-snippets'
-
-
-"colorschemes
-"Plug 'Murtaza-Udaipurwala/gruvqueen'
-"Plug 'RRethy/nvim-base16'
-"Plug 'b4skyx/serenade'
-"Plug 'fenetikm/falcon'
-"Plug 'folke/tokyonight.nvim'
-"Plug 'jacoborus/tender.vim'
-"Plug 'maaslalani/nordbuddy'
-"Plug 'mhartington/oceanic-next'
-"Plug 'morhetz/gruvbox'
-"Plug 'npxbr/gruvbox.nvim'
-"Plug 'rktjmp/lush.nvim'
-"Plug 'sainnhe/forest-night'
-"Plug 'sainnhe/gruvbox-material'
-"Plug 'sainnhe/sonokai'
-"Plug 'shaunsingh/nord.nvim'
-"Plug 'ulwlu/elly.vim'
-"Plug 'EdenEast/nightfox.nvim'
-"Plug 'NTBBloodbath/doom-one.nvim'
-
-
-" Git Stuff
-Plug 'sindrets/diffview.nvim'
-Plug 'lewis6991/gitsigns.nvim'
-
-"UML Stuff
-"Plug 'tyru/open-browser.vim'
-
-" Rust Stuff
-Plug 'simrat39/rust-tools.nvim'
-
-" Optional dependenciec:
-Plug 'nvim-lua/popup.nvim'
-
-"Native LSP
-
-Plug 'folke/trouble.nvim'
-Plug 'glepnir/lspsaga.nvim'
-"Plug 'kosayoda/nvim-lightbulb'
-"Plug 'weilbith/nvim-code-action-menu'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/lsp_extensions.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-"Plug 'romgrk/nvim-treesitter-context'
-Plug 'nvim-treesitter/playground'
-Plug 'ray-x/lsp_signature.nvim'
-Plug 'windwp/nvim-ts-autotag'
-"Plug 'mhartington/formatter.nvim'
-Plug 'sbdchd/neoformat'
-Plug 'onsails/lspkind-nvim'
-
-"CMP
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-
-
-" For vsnip users.
-"Plug 'hrsh7th/cmp-vsnip'
-"Plug 'hrsh7th/vim-vsnip'
-"Plug 'hrsh7th/vim-vsnip-integ'
-
-" For luasnip users.
-Plug 'L3MON4D3/LuaSnip'
-Plug 'saadparwaiz1/cmp_luasnip'
-
-" For ultisnips users.
-"Plug 'SirVer/ultisnips'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-
-" Telescope et Al
-
-Plug 'nvim-telescope/telescope.nvim'
-
-" Neorg
-Plug 'vhyrro/neorg'
-
-"Java
-Plug 'mfussenegger/nvim-jdtls'
-
-"Debugging
-Plug 'mfussenegger/nvim-dap-python'
-Plug 'mfussenegger/nvim-dap'
-Plug 'rcarriga/nvim-dap-ui'
-Plug 'theHamsta/nvim-dap-virtual-text'
-"Plug 'sakhnik/nvim-gdb'
-
-"Vimwiki Stuff
-Plug 'vimwiki/vimwiki'
-Plug 'tbabej/taskwiki'
-Plug 'plasticboy/vim-markdown'
-Plug 'pontusk/cmp-vimwiki-tags'
-"Plug 'kdheepak/cmp-latex-symbols'
-
-"lua dev stuff
-Plug 'folke/lua-dev.nvim'
-
-
-call plug#end()
+" Moves to packer with lua/plugins/plugins.lua
+"call plug#begin()
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf.vim'
+"call plug#end()
 
 " ****************Colorscheme and U/I*************************"
 "                                                             "
@@ -317,20 +169,15 @@ endif
 map <C-_> <Leader>c<Space>
 nnoremap<c-t> :Vista!!<cr>
 
-"vim-airline settings
-
-"enable smarter tab line
-let g:airline#extensions#tabline#enabled = 1
-
 
 "Wilder Menu
-call wilder#enable_cmdline_enter()
-set wildcharm=<Tab>
-cmap <expr> <Tab> wilder#in_context() ? wilder#next() : "\<Tab>"
-cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
+"call wilder#enable_cmdline_enter()
+"set wildcharm=<Tab>
+"cmap <expr> <Tab> wilder#in_context() ? wilder#next() : "\<Tab>"
+"cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
 
-" only / and ? are enabled by default
-call wilder#set_option('modes', ['/', '?', ':'])
+"" only / and ? are enabled by default
+"call wilder#set_option('modes', ['/', '?', ':'])
 
 " small augroup to read .kbd files for kmonad
 augroup kbd
@@ -518,8 +365,8 @@ vnoremap crm <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
 
 "-- `code_action` is a superset of vim.lsp.buf.code_action and you'll be able to
 "-- use this mapping also with other language servers
-nnoremap ga <Cmd>lua require('jdtls').code_action()<CR>
-vnoremap ga <Esc><Cmd>lua require('jdtls').code_action(true)<CR>
+"nnoremap ga <Cmd>lua require('jdtls').code_action()<CR>
+"vnoremap ga <Esc><Cmd>lua require('jdtls').code_action(true)<CR>
 nnoremap <leader>r <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
 
 nnoremap <A-o> <Cmd>lua require'jdtls'.organize_imports()<CR>
@@ -625,32 +472,6 @@ vmap <leader>ga <Plug>(EasyAlign)
 " Add MASM highlighting
 let g:asmsytax = 'masm'
 
-" ****************Vimspector*************************"
-"                                                    "
-"           Settings for Vimspector                  "
-"                                                    "
-" ****************Vimspector*************************"
-" VSCode Mappings for Vimspector  etc
-
-"let      g:vimspector_enable_mappings =     'VISUAL_STUDIO'
-"nnoremap <silent><leader>dr           :VimspectorReset<CR>
-"nmap     <leader>b                    <Plug>VimspectorToggleBreakpoint
-"vmap     <leader>b                    <plug>VmspectorToggleBreakpoint
-"nmap     <leader>bb                   <Plug>VimspectorToggleConditionalBreakpoint
-"nmap     <leader>B                    :call vimspector#ClearBreakpoints()<CR>
-"nmap     <leader>drc                  <Plug>VimspectorRunToCursor
-"nmap     <leader>DD                   <Plug>VimspectorContinue
-"nnoremap <leader>DD                   <Plug>VimspectorContinue
-
-"" remap watch command to be shorter
-"cnoreabbrev vsw VimspectorWatch
-"cnoreabbrev SS str(self)
-
-"nmap <leader>W :VimspectorWatch <C-R>0
-"vmap <leader>W :VimspectorWatch <C-R>0
-"nnoremap <leader>W :VimspectorWatch <C-R>0
-
-
 " Emmet Mappings
 autocmd FileType .html,.css EmmetInstall
 
@@ -659,7 +480,7 @@ autocmd FileType .html,.css EmmetInstall
 let g:mustache_abbreviations = 1
 
 " vim rainbow
-"let g:rainbow_active = 1
+let g:rainbow_active = 1
 
 "Vim-Mundo Mappings
 nnoremap <leader><leader>u :MundoToggle<cr>
@@ -794,476 +615,3 @@ let g:jsx_ext_required = 0
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 0
 
-
-
-""" ___________  LANGUAGE SERVERS ____________
-
-lua <<EOF
-
-
-
--- nvim_lsp object
-local nvim_lsp = require'lspconfig'
-
--- attempt to get rust working
-require('rust-tools').setup({})
--- set inlay hints
-require('rust-tools.inlay_hints').set_inlay_hints()
--- Command:
--- RustHoverActions 
-require'rust-tools.hover_actions'.hover_actions()
-
-
-require "lsp_signature".setup()
-
--- Setting Up Language Servers
-require'lspconfig'.bashls.setup{}
-require'lspconfig'.ccls.setup{}
-require'lspconfig'.cssls.setup{}
-require'lspconfig'.gopls.setup{}
-require'lspconfig'.hls.setup{}
-require'lspconfig'.html.setup{}
-require'lspconfig'.jsonls.setup{}
---require'lspconfig'.pylsp.setup{}
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.sqls.setup{}
---require'lspconfig'.sumneko_lua.setup{}
-require'lspconfig'.tsserver.setup{}
-require'lspconfig'.vimls.setup{}
-require'lspconfig'.texlab.setup{}
-
-local luadev = require("lua-dev").setup({
-   lspconfig = {
-     cmd = {"lua-language-server"}
-   },
-})
-
-local lspconfig = require('lspconfig')
-lspconfig.sumneko_lua.setup(luadev)
-
-require'lspconfig'.jdtls.setup {cmd = {'jdtls'}}
---require'lspconfig'.java_language_server.setup{}
-
-local saga = require 'lspsaga'
-saga.init_lsp_saga()
---require'lspsaga.diagnostic'.show_line_diagnostics()<CR>
---require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
-
--- Trouble
-
-require("trouble").setup {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
-
--- Hop
-require'hop'.setup()
-
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  ignore_install = {}, -- List of parsers to ignore installing
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-    disable = {},  -- list of language that will be disabled
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-   rainbow = {
-    enable = true,
-    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-	max_file_lines = nil,
-  },
-  },
-  autotag = {
-    enable = true,
-  }
-}
-
-
-
--- 
-
-local true_zen = require("true-zen")
-
-true_zen.setup({
-	ui = {
-		bottom = {
-			laststatus = 0,
-			ruler = false,
-			showmode = false,
-
-			cmdheight = 1,
-		},
-		top = {
-			showtabline = 0,
-		},
-		left = {
-			number = false,
-			relativenumber = false,
-			signcolumn = "no",
-		},
-	},
-	modes = {
-		ataraxis = {
-			left_padding = 32,
-			right_padding = 32,
-			top_padding = 1,
-			bottom_padding = 1,
-			ideal_writing_area_width = {0},
-			just_do_it_for_me = true,
-			keep_default_fold_fillchars = true,
-			custom_bg = {"none", ""},
-			bg_configuration = true,
-			quit = "untoggle",
-			affected_higroups = {NonText = {}, FoldColumn = {}, ColorColumn = {}, VertSplit = {}, StatusLine = {}, StatusLineNC = {}, SignColumn = {}}
-		},
-		focus = {
-			margin_of_error = 5,
-			focus_method = "experimental"
-		},
-	},
-	integrations = {
-		vim_gitgutter = false,
-		galaxyline = false,
-		tmux = true,
-		gitsigns = false,
-		nvim_bufferline = false,
-		limelight = false,
-		twilight = true,
-		vim_airline = false,
-		vim_powerline = false,
-		vim_signify = false,
-		express_line = false,
-		lualine = false,
-	},
-	misc = {
-		on_off_commands = false,
-		ui_elements_commands = false,
-		cursor_by_mode = false,
-	}
-})
-
-
-require("twilight").setup {}
-require('gitsigns').setup()
--- whichKey
-
-require('which-key').setup{
-    timeoutlen = 40
-}
-
--- NeOrg General Setup
-require('neorg').setup {
-        -- Tell Neorg what modules to load
-        load = {
-            ["core.defaults"] = {}, -- Load all the default modules
-            ["core.norg.concealer"] = {}, -- Allows for use of icons
-            ["core.norg.dirman"] = { -- Manage your directories with Neorg
-                config = {
-                    workspaces = {
-                        my_workspace = "~/neorg"
-                    }
-                }
-            }
-        },
-    }
-
--- TS Setup for NeORG
-
-local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
-
-parser_configs.norg = {
-    install_info = {
-        url = "https://github.com/vhyrro/tree-sitter-norg",
-        files = { "src/parser.c" },
-        branch = "main"
-    },
-}
-
-
---- NVIM DAP ----
-
-local dap = require('dap')
-
-
-vim.fn.sign_define('DapBreakpoint', {text='>>', texthl='', linehl='', numhl=''})
-vim.fn.sign_define('DapBreakpointCondition', {text='<>', texthl='', linehl='', numhl=''})
-vim.fn.sign_define('DapStopped', {text='->', texthl='', linehl='', numhl=''})
-
-dap.adapters.lldb = {
-  type = 'executable',
-  command = '/usr/bin/lldb-vscode', -- adjust as needed
-  name = "lldb"
-}
-
-dap.configurations.cpp = {
-  {
-    name = "Launch",
-    type = "lldb",
-    request = "launch",
-    program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-    end,
-    cwd = '${workspaceFolder}',
-    stopOnEntry = false,
-    args = {},
-
-    -- if you change `runInTerminal` to true, you might need to change the yama/ptrace_scope setting:
-    --
-    --    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
-    --
-    -- Otherwise you might get the following error:
-    --
-    --    Error on launch: Failed to attach to the target process
-    --
-    -- But you should be aware of the implications:
-    -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
-    runInTerminal = false,
-  },
-}
-
-
--- If you want to use this for rust and c, add something like this:
-
-dap.configurations.c = dap.configurations.cpp
-dap.configurations.rust = dap.configurations.cpp
-
-require("dapui").setup()
-
-dap.adapters.python = {
-  type = 'executable';
-  command = '/usr/bin/python';
-  args = { '-m', 'debugpy.adapter' };
-}
-
-dap.configurations.python = {
-  {
-    -- The first three options are required by nvim-dap
-    type = 'python'; -- the type here established the link to the adapter definition: `dap.adapters.python`
-    request = 'launch';
-    name = "Launch file";
-
-    -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
-
-    program = "${file}"; -- This configuration will launch the current file if used.
-    pythonPath = function()
-      -- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
-      -- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
-      -- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
-      local cwd = vim.fn.getcwd()
-      if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
-        return cwd .. '/venv/bin/python'
-      elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
-        return cwd .. '/.venv/bin/python'
-      else
-        return '/usr/bin/python'
-      end
-    end;
-  },
-}
-
--- CMP SETUP
-local cmp = require'cmp'
-cmp.setup({
-    snippet = {
-      -- REQUIRED - you must specify a snippet engine
-      expand = function(args)
-	  --vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-	  require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-      --vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-        -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
-      end,
-    },
---    mapping = {
---      ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
---      ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
---      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
---      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
---      ['<C-e>'] = cmp.mapping({
---        i = cmp.mapping.abvimwiki-tagsort(),
---        c = cmp.mapping.close(),
---      }),
---      ['<CR>'] = cmp.mapping.confirm({ select = true }),
---    },
-	mapping = {
-	  ['<Tab>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-	  ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-	  ['<S-j>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-	  ['<S-k>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-	  ['<Down>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-	  ['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-	  ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-	  ['<C-f>'] = cmp.mapping.scroll_docs(4),
-	  ['<C-Space>'] = cmp.mapping.complete(),
-	  ['<C-e>'] = cmp.mapping.close(),
-	  ['<CR>'] = cmp.mapping.confirm({
-		behavior = cmp.ConfirmBehavior.Replace,
-		select = true,
-	  })
-	},
-
-    sources = cmp.config.sources({
-      { name = 'nvim_lsp' },
-	  --{ name = 'vsnip' }, -- For vsnip users.
-	  { name = 'vimwiki-tags' }, -- For vimwiki
-      { name = 'latex_symbols' }, -- For vimwiki
-      { name = 'buffer' },
-	  { name = 'luasnip' }, -- For luasnip users.
-      { name = 'ultisnips' }, -- For ultisnips users.
-      { name = 'path' },
-    }
-    )
-  })
-
-  -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline('/', {
-    sources = {
-      { name = 'buffer' }
-    }
-  })
-
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-
-  cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({
-      { name = 'path' }
-    }, {
-      { name = 'cmdline' }
-    })
-  })
-
-  -- Setup lspconfig.
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  --require('lspconfig')['pylsp'].setup {
-  --  capabilities = capabilities
-  --}
- require('lspconfig')['pyright'].setup {
-   capabilities = capabilities
-  }
-
-  require('lspconfig')['vimls'].setup {
-    capabilities = capabilities
-  }
-  require('lspconfig')['ccls'].setup {
-    capabilities = capabilities
-  }
-
-
---LSP KIND for nice pretty lsp
-local lspkind = require('lspkind')
-cmp.setup {
-  formatting = {
-    format = lspkind.cmp_format({with_text = false, maxwidth = 50})
-  }
-}
-
--- BarBar Options
--- Set barbar's options
-vim.g.bufferline = {
-  -- Enable/disable animations
-  animation = true,
-
-  -- Enable/disable auto-hiding the tab bar when there is a single buffer
-  auto_hide = false,
-
-  -- Enable/disable current/total tabpages indicator (top right corner)
-  tabpages = true,
-
-  -- Enable/disable close button
-  closable = true,
-
-  -- Enables/disable clickable tabs
-  --  - left-click: go to buffer
-  --  - middle-click: delete buffer
-  clickable = true,
-
-  -- Excludes buffers from the tabline
-  exclude_ft = {'javascript'},
-  exclude_name = {'package.json'},
-
-  -- Enable/disable icons
-  -- if set to 'numbers', will show buffer index in the tabline
-  -- if set to 'both', will show buffer index and icons in the tabline
-  icons = true,
-
-  -- If set, the icon color will follow its corresponding buffer
-  -- highlight group. By default, the Buffer*Icon group is linked to the
-  -- Buffer* group (see Highlighting below). Otherwise, it will take its
-  -- default value as defined by devicons.
-  icon_custom_colors = false,
-
-  -- Configure icons on the bufferline.
-  icon_separator_active = '▎',
-  icon_separator_inactive = '▎',
-  icon_close_tab = '',
-  icon_close_tab_modified = '●',
-  icon_pinned = '車',
-
-  -- If true, new buffers will be inserted at the start/end of the list.
-  -- Default is to insert after current buffer.
-  insert_at_end = false,
-  insert_at_start = false,
-
-  -- Sets the maximum padding width with which to surround each tab
-  maximum_padding = 1,
-
-  -- Sets the maximum buffer name length.
-  maximum_length = 30,
-
-  -- If set, the letters for each buffer in buffer-pick mode will be
-  -- assigned based on their name. Otherwise or in case all letters are
-  -- already assigned, the behavior is to assign letters in order of
-  -- usability (see order below)
-  semantic_letters = true,
-
-  -- New buffer letters are assigned in this order. This order is
-  -- optimal for the qwerty keyboard layout but might need adjustement
-  -- for other layouts.
-  letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
-
-  -- Sets the name of unnamed buffers. By default format is "[Buffer X]"
-  -- where X is the buffer number. But only a static string is accepted here.
-  no_name_title = nil,
-}
---"require('kommentary.config').use_extended_mappings()
-
--- lualine setup
-require'lualine'.setup {
-  options = {
-    icons_enabled = true,
-    theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {},
-    always_divide_middle = true,
-  },
-  sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff',
-                  {'diagnostics', sources={'nvim_lsp', 'coc'}}},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-  },
-  inactive_sections = {
-    lualine_a = {'tabs'},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  extensions = {'chadtree', 'quickfix'}
-}
-
--- LuaSnip
-require("luasnip/loaders/from_vscode").lazy_load()
-
-
-EOF
