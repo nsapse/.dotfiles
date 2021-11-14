@@ -23,7 +23,6 @@ use {'sbdchd/neoformat', opt=true, cmd="Neoformat"}
 --Misc
 use 'tpope/vim-unimpaired'
 use 'junegunn/vim-peekaboo'
---use {'gelguy/wilder.nvim', run = ':UpdateRemotePlugins'}
 use 'folke/which-key.nvim'
 use 'unblevable/quick-scope'
 use 'phaazon/hop.nvim'
@@ -74,7 +73,7 @@ use {'pontusk/cmp-vimwiki-tags', opt=true, ft={'wiki','vimwiki'}}
 ----------------------
 ---~~[Snippets]~~-------
 ---------------------
---use 'SirVer/ultisnips'
+use 'SirVer/ultisnips'
 use 'honza/vim-snippets'
 use 'rafamadriz/friendly-snippets'
 use 'L3MON4D3/LuaSnip'
@@ -90,6 +89,7 @@ use {'sakhnik/nvim-gdb', opt=true, ft={'c', 'cpp'}}
 ------------
 --~~[HTML]~~--
 ------------
+
 use { 'mattn/emmet-vim', opt=true, ft={'html'} }
 use { 'turbio/bracey.vim', opt=true, ft={'html', 'css', 'javascript'}, run = 'npm install --prefix server' }
 

@@ -6,6 +6,7 @@
 
 " source by init.lua
 lua require('init')
+colorscheme base16-nord
 
 "automatically recompile when plugins changed
 augroup packer_user_config
@@ -109,17 +110,14 @@ cnoreabbrev DC DiffviewClose
 
 " Packer
 cnoreabbrev PS PackerSync
+
 " *******************Plugins*************************"
 "                                                 "
 "                    Plugins                           "
 "                                                             "
 " *******************Plugins*************************"
 
-" Moves to packer with lua/plugins/plugins.lua
-"call plug#begin()
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-"Plug 'junegunn/fzf.vim'
-"call plug#end()
+" Moved to packer with lua/plugins/plugins.lua
 
 " ****************Colorscheme and U/I*************************"
 "                                                             "
@@ -133,51 +131,28 @@ cnoreabbrev PS PackerSync
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Or if you have Neovim >= 0.1.5
-if (has("termguicolors"))
- set termguicolors
-endif
+"if (has("termguicolors"))
+ "set termguicolors
+"endif
 
 " set theme
-syntax on
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-"colorscheme gruvbox-material
-"colorscheme base16-oceanicnext
-colorscheme base16-nord
 
 "hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
 hi SignColumn guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
 
-"colorscheme hybrid_material
-let g:airline_theme='hybrid'
-
 set background=dark
 hi normal guibg=none ctermbg=none
 
 if (has("nvim"))
-"For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-
-" Or if you have Neovim >= 0.1.5
-if (has("termguicolors"))
-set termguicolors
 endif
 
 map <C-_> <Leader>c<Space>
 nnoremap<c-t> :Vista!!<cr>
-
-
-"Wilder Menu
-"call wilder#enable_cmdline_enter()
-"set wildcharm=<Tab>
-"cmap <expr> <Tab> wilder#in_context() ? wilder#next() : "\<Tab>"
-"cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
-
-"" only / and ? are enabled by default
-"call wilder#set_option('modes', ['/', '?', ':'])
 
 " small augroup to read .kbd files for kmonad
 augroup kbd
@@ -201,29 +176,14 @@ nnoremap <silent>    b6 :BufferGoto 6<CR>
 nnoremap <silent>    b7 :BufferGoto 7<CR>
 nnoremap <silent>    b8 :BufferGoto 8<CR>
 nnoremap <silent>    b9 :BufferLast<CR>
+
 " Pin/unpin buffer
 nnoremap <silent>    bp :BufferPin<CR>
+
 " Close buffer
 nnoremap <silent>    bc :BufferClose<CR>
-" Wipeout buffer
-"                          :BufferWipeout<CR>
-" Close commands
-"                          :BufferCloseAllButCurrent<CR>
-"                          :BufferCloseAllButPinned<CR>
-"                          :BufferCloseBuffersLeft<CR>
-"                          :BufferCloseBuffersRight<CR>
-" Magic buffer-picking mode
+
 nnoremap <silent> >    :BufferPick<CR>
-" Sort automatically by...
-" nnoremap <silent> <Space>bb :BufferOrderByBufferNumber<CR>
-" nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
-" nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
-" nnoremap <silent> <Space>bw :BufferOrderByWindowNumber<CR>
-
-" Other:
-" :BarbarEnable - enables barbar (enabled by default)
-" :BarbarDisable - very bad command, should never be used
-
 
 " **********************Vista************************* "
 "                                                      "
@@ -255,8 +215,8 @@ nnoremap <silent> <leader>dd :lua require'dap'.continue()<CR>
 nnoremap <silent> <leader>jj :lua require'dap'.step_over()<CR>
 nnoremap <silent> <leader>ll :lua require'dap'.step_into()<CR>
 nnoremap <silent> <leader>kk :lua require'dap'.step_out()<CR>
-nnoremap <silent> <leader>b :lua require'dap'.toggle_breakpoint()<CR>
-nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+nnoremap <silent> <leader>b  :lua require'dap'.toggle_breakpoint()<CR>
+nnoremap <silent> <leader>B  :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
 nnoremap <silent> <leader>dl :lua require'dap'.run_last()<CR>
@@ -270,9 +230,6 @@ lua require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 nnoremap <silent> <leader>tm :lua require('dap-python').test_method()<CR>
 nnoremap <silent> <leader>tc :lua require('dap-python').test_class()<CR>
 vnoremap <silent> <leader>ds <ESC>:lua require('dap-python').debug_selection()<CR>
-
-
-"Plugged Additions"
 
 " **********************LSP ACTIONS************************* "
 "                                                            "
@@ -289,7 +246,6 @@ nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
-"nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <leader>D <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
@@ -308,6 +264,7 @@ vnoremap <silent>ga :<C-U>Lspsaga range_code_action<CR>
 
 "-- lsp provider to find the cursor word definition and reference
 nnoremap <silent>gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
+
 "-- or use command LspSagaFinder
 nnoremap <silent>gh :Lspsaga lsp_finder<CR>
 
@@ -403,7 +360,6 @@ nnoremap <silent> <leader>tp :TSPlaygroundToggle<cr>
 
 map <silent><C-n> :CHADopen<CR>
 
-
 " ****************FloatTerm*************************"
 "                                                   "
 "           Settings for FloatTerm                  "
@@ -426,29 +382,11 @@ let      g:floaterm_gitcommit='vsplit'
 "                                             "
 " ****************LSP*************************"
 
-" Use completion-nvim in every buffer
-"autocmd BufEnter * lua require'completion'.on_attach()
- "Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-
-" possible value: 'UltiSnips', 'Neosnippet', 'vim-vsnip', 'snippets.nvim'
-"let g:completion_enable_snippet = 'vim-vsnip'
-"let g:vsnip_snippet_dirs = ['~/.config/nvim/plugged/friendly-snippets']
-
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect,preview
 
 " Avoid showing message extra message when using completion
 set shortmess+=c
-
-" Autoformatting
-autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
-"autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1000)
-
 
 " ****************Hop*************************"
 "                                             "
@@ -507,7 +445,6 @@ let g:fzf_action = {
 "
 " ****************FZF*************************
 
-
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
@@ -536,12 +473,6 @@ set rtp+=~/.vim/bundle/fzf
 "
 " ****************Telescope*************************
 
-" Find files using Telescope command-line sugar.
-"nnoremap <leader>ff <cmd>Telescope find_files<cr>
-"nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-"nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh<cmd>Telescope help_tags<cr>
-
 " Using Lua functions
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
@@ -562,17 +493,11 @@ nnoremap <leader>tm <cmd>lua require('telescope.builtin').keymaps()<cr>
 map <silent><leader>z :TZAtaraxis<CR><bar>:Twilight<CR>
 map <silent><leader>Z :TZMinimalist<CR><bar>:Twilight<CR>
 
-
-"autocmd! User TZAtaraxis Twilight
-"autocmd! User GoyoLeave Limelight!
-
-
 " ****************Vimtex************************* "
 "                                                 "
 "                 Vimtex                          "
 "                                                 "
 " ****************Vimtex************************* "
-
 
 "Vimtex Options
 let g:tex_flavor='latex'
