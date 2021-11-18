@@ -1,6 +1,5 @@
 vim.cmd[[packadd packer.nvim]]
 
-
 return require('packer').startup(function (use)
 
 ----------------------
@@ -8,13 +7,21 @@ return require('packer').startup(function (use)
 ----------------------
 
 -- Misc
-use 'scrooloose/nerdcommenter'
+--use 'scrooloose/nerdommenter'
 
 -- Code Formatting
 use 'junegunn/vim-easy-align'
 use 'machakann/vim-sandwich'
 use 'raimondi/delimitmate' -- look into jiangmiao/auto-pairs
 use {'sbdchd/neoformat', opt=true, cmd="Neoformat"}
+use 'b3nj5m1n/kommentary'
+use {
+  "folke/todo-comments.nvim",
+  requires = "nvim-lua/plenary.nvim",
+  config = function()
+    require("todo-comments").setup {}
+  end
+}
 
 ----------------------
 ---~~Navigation~~---
@@ -22,7 +29,6 @@ use {'sbdchd/neoformat', opt=true, cmd="Neoformat"}
 
 --Misc
 use 'tpope/vim-unimpaired'
-use 'junegunn/vim-peekaboo'
 use 'folke/which-key.nvim'
 use 'unblevable/quick-scope'
 use 'phaazon/hop.nvim'
@@ -32,17 +38,21 @@ use {'ms-jpq/chadtree', branch = 'chad',
 use 'folke/trouble.nvim'
 use {'simnalamburt/vim-mundo', opt=true, cmd='MundoToggle'}
 use 'simeji/winresizer'
+--use {'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu'}
 
 --Telescope
 use 'nvim-telescope/telescope.nvim'
-
+use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+-- TODO - get nvim worktree going
 --FZF
 use { 'junegunn/fzf.vim', requires = { 'junegunn/fzf', run = 'cd ~/.fzf && ./install --all'}}
 
+--wildermenu
+use {'gelguy/wilder.nvim', run = ':UpdateRemotePlugins' }
 ----------------
 ---~~[[LSP]]~~--
 ----------------
-use 'glepnir/lspsaga.nvim'
+use 'tami5/lspsaga.nvim'
 use 'neovim/nvim-lspconfig'
 use 'nvim-lua/lsp_extensions.nvim'
 use 'nvim-lua/plenary.nvim'
@@ -55,6 +65,14 @@ use 'ray-x/lsp_signature.nvim'
 use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 use {'nvim-treesitter/playground', opt=true, cmd="TSPlaygroundToggle"}
 --use {'windwp/nvim-ts-autotag', opt=true, ft={'html','javascripttreact'}}
+
+use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+        {"nvim-lua/plenary.nvim"},
+        {"nvim-treesitter/nvim-treesitter"}
+    }
+}
 
 ----------------------
 ---~~[AutoComplete]~~---
@@ -72,7 +90,7 @@ use {'pontusk/cmp-vimwiki-tags', opt=true, ft={'wiki','vimwiki'}}
 
 ----------------------
 ---~~[Snippets]~~-------
----------------------
+------------------- --
 use 'SirVer/ultisnips'
 use 'honza/vim-snippets'
 use 'rafamadriz/friendly-snippets'
@@ -96,7 +114,7 @@ use { 'turbio/bracey.vim', opt=true, ft={'html', 'css', 'javascript'}, run = 'np
 ----------------
 --~~[Markdown]~~--
 ----------------
-use { 'iamcco/markdown-preview.nvim',
+	use { 'iamcco/markdown-preview.nvim',
     run = function() vim.fn['mkdp#util#install']() end,
     ft = {'markdown'},
 	cmd = 'MarkdownPreview'}
@@ -135,24 +153,27 @@ use {'folke/lua-dev.nvim'}
 ------------
 
 -- Colorschemes
-use {'Murtaza-Udaipurwala/gruvqueen', opt=true, cmd=':colorscheme'}
+use {'Murtaza-Udaipurwala/gruvqueen', opt=true, cmd={':colorscheme', ':Colors'}}
 use {'RRethy/nvim-base16'           }
-use {'b4skyx/serenade'              , opt=true, cmd=':colorscheme'}
-use {'fenetikm/falcon'              , opt=true, cmd=':colorscheme'}
-use {'folke/tokyonight.nvim'        , opt=true, cmd=':colorscheme'}
-use {'jacoborus/tender.vim'         , opt=true, cmd=':colorscheme'}
-use {'maaslalani/nordbuddy'         , opt=true, cmd=':colorscheme'}
-use {'mhartington/oceanic-next'     , opt=true, cmd=':colorscheme'}
-use {'morhetz/gruvbox'              , opt=true, cmd=':colorscheme'}
-use {'npxbr/gruvbox.nvim'           , opt=true, cmd=':colorscheme'}
-use {'rktjmp/lush.nvim'             , opt=true, cmd=':colorscheme'}
-use {'sainnhe/forest-night'         , opt=true, cmd=':colorscheme'}
-use {'sainnhe/gruvbox-material'     , opt=true, cmd=':colorscheme'}
-use {'sainnhe/sonokai'              , opt=true, cmd=':colorscheme'}
-use {'shaunsingh/nord.nvim'         , opt=true, cmd=':colorscheme'}
-use {'ulwlu/elly.vim'               , opt=true, cmd=':colorscheme'}
-use {'EdenEast/nightfox.nvim'       , opt=true, cmd=':colorscheme'}
-use {'NTBBloodbath/doom-one.nvim'   , opt=true, cmd=':colorscheme'}
+use {'b4skyx/serenade'              , opt=true, cmd={':colorscheme', ':Colors'}}
+use {'fenetikm/falcon'              , opt=true, cmd={':colorscheme', ':Colors'}}
+use {'folke/tokyonight.nvim'        , opt=true, cmd={':colorscheme', ':Colors'}}
+use {'jacoborus/tender.vim'         , opt=true, cmd={':colorscheme', ':Colors'}}
+use {'maaslalani/nordbuddy'         , opt=true, cmd={':colorscheme', ':Colors'}}
+use {'mhartington/oceanic-next'     , opt=true, cmd={':colorscheme', ':Colors'}}
+-- use {'morhetz/gruvbox'              , opt=true, c{md=':colorsche}me'}
+-- use {'npxbr/gruvbox.nvim'           , opt=true, c{md=':colorsche}me'}
+use {'rktjmp/lush.nvim'             , opt=true, cmd={':colorscheme', ':Colors'}}
+use {'sainnhe/forest-night'         , opt=true, cmd={':colorscheme', ':Colors'}}
+use {'sainnhe/gruvbox-material'     , opt=true, cmd={':colorscheme', ':Colors'}}
+use {'sainnhe/sonokai'              , opt=true, cmd={':colorscheme', ':Colors'}}
+use {'shaunsingh/nord.nvim'         , opt=true, cmd={':colorscheme', ':Colors'}}
+use {'ulwlu/elly.vim'               , opt=true, cmd={':colorscheme', ':Colors'}}
+use {'EdenEast/nightfox.nvim'       , opt=true, cmd={':colorscheme','Colors'}}
+use {'NTBBloodbath/doom-one.nvim'   , opt=true, cmd={':colorscheme', 'Colors'}}
+use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+
+
 
 -- Focus
 use {'Pocco81/TrueZen.nvim'}
@@ -193,6 +214,12 @@ use {'vhyrro/neorg'}
 
 -- Taskwarrior
 use 'blindFS/vim-taskwarrior'
+
+-- Spellcheck and grammar
+use {
+    "brymer-meneses/grammar-guard.nvim",
+    requires = "neovim/nvim-lspconfig"
+}
 
 ----------------
 -- ~~Docs, Etc--

@@ -1,6 +1,8 @@
 
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+printf '\n%.0s' {1..100}
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -15,13 +17,15 @@ export ZSH="/home/noah/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 #ZSH_THEME="spaceship"
 SPACESHIP_TIME_SHOW=true
 POWERLEVEL9K_MODE='awesome-fontconfig'
 
 POWERLEVEL10K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv vi_mode )
+POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv vi_mode)
+typeset -g POWERLEVEL9K_INSTANT_PROMPT_COMMAND_LINES=0
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -54,10 +58,10 @@ POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv vi_mode )
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -87,8 +91,8 @@ plugins=(
     autopep8
     cargo
     colorize
-    docker
-    docker-compose
+    # docker
+    # docker-compose
     fzf-tab
     git
     github
@@ -162,6 +166,7 @@ alias icl="nvim ~/.i3/i3_config_laptop"
 alias icd="nvim ~/.config/i3/config"
 alias pic="nvim ~/.config/picom.conf"
 alias alac="nvim ~/.config/alacritty/alacritty.yml"
+alias 10kc="nvim ~/.p10k.zsh"
 alias kc="nvim ~/.config/kitty/kitty.conf"
 alias rangc="nvim ~/.config/ranger/rc.conf"
 alias roc="nvim ~/.config/rofi/config"
@@ -193,7 +198,7 @@ alias _react="cd ~/Developer/learn_react"
 alias dactyl="cd ~/.dotfiles/qmk/qmk_firmware/keyboards/handwired/dactyl_manuform/5x7/keymaps/loafers_map"
 
 # navigation and history
-alias lsa="ls -a -l --color=auto"
+alias lsa="exa -a -l --icons --color=auto"
 alias lst='tree -C'
 alias lsp='ls -a -l --color=auto | less'
 alias lsg='ls -a -l --color=auto | grep --color=auto'
@@ -303,7 +308,7 @@ alias mlt="task +LATEST modify"
 alias todo="task +next"
 alias inbox="task +in"
 
-# aliasing actual programs
+# remapping system default programs
 alias cat="bat"
 alias sed="sad"
 
@@ -383,7 +388,7 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
 # Launch Starship
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # For JDTLS stuff
 # Mandatory:
@@ -398,3 +403,5 @@ export JDTLS_HOME=/usr/bin/jdtls # Directory with the plugin and configs directo
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # set default pager to be delta
 export GIT_PAGER='delta'
+
+# export TERM="screen-256color"

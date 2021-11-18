@@ -8,31 +8,70 @@
 -- Trouble
 require("trouble").setup {}
 
--- Saga
+ --Saga
 local saga = require 'lspsaga'
 saga.init_lsp_saga()
-
 -- Hop
 require'hop'.setup()
 
+--Telescope
+require('telescope').setup {
+  extensions = {
+    fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = true,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                       -- the default case_mode is "smart_case"
+    }
+  }
+}
+
+
+require('telescope').load_extension('fzf')
 ----------------
 ---~~[[LSP]]~~--
 ----------------
---
+--LSPConfig Setup
 local lspconfig = require('lspconfig')
 
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.ccls.setup{}
+-- require'lspconfig'.clangd.setup{}
 require'lspconfig'.cssls.setup{}
 require'lspconfig'.gopls.setup{}
 require'lspconfig'.hls.setup{}
 require'lspconfig'.html.setup{}
 require'lspconfig'.jsonls.setup{}
 require'lspconfig'.pyright.setup{}
+-- require'lspconfig'.pylsp.setup{}
+-- require'lspconfig'.jedi_language_server.setup{}
 require'lspconfig'.sqls.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.vimls.setup{}
 require'lspconfig'.texlab.setup{}
+
+--Starting Grammar Guard
+require("grammar-guard").init()
+require("lspconfig").grammar_guard.setup({
+	settings = {
+		ltex = {
+			enabled = { "latex", "tex", "bib", "markdown" },
+			language = "en",
+			diagnosticSeverity = "information",
+			setenceCacheSize = 2000,
+			additionalRules = {
+				enablePickyRules = true,
+				motherTongue = "en",
+			},
+			trace = { server = "verbose" },
+			dictionary = {},
+			disabledRules = {},
+			hiddenFalsePositives = {},
+		},
+	},
+})
+
 
 ----------------------
 ---~~[[Treesitter]]~~---
@@ -53,8 +92,25 @@ require'nvim-treesitter.configs'.setup {
   },
   autotag = {
     enable = true,
+  },
+   incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+   indent = {
+    enable = true
   }
 }
+
+
+--Prime Refactor
+
+-- TODO - Get this working
 
 ----------------------
 ---~~[AutoComplete]~~---
@@ -63,6 +119,13 @@ require'nvim-treesitter.configs'.setup {
 local lspkind = require('lspkind')
 ---CMP---
 local cmp = require'cmp'
+local luasnip = require("luasnip")
+
+local has_words_before = function()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
 cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
@@ -72,8 +135,29 @@ cmp.setup({
     },
 
 	mapping = {
-	  ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i', 's','c'}),
-	  ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's','c'}),
+	  --['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i', 's','c'}),
+	  --['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's','c'}),
+	 ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif has_words_before() then
+        cmp.complete()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
 	  ['<Space>'] = cmp.mapping(cmp.mapping.confirm(), {'c'}),
 	  --['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
 	  ['<S-j>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -107,21 +191,21 @@ cmp.setup({
 })
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline('/', {
+  --[[ cmp.setup.cmdline('/', {
     sources = {
       { name = 'buffer' }
     }
-  })
+  }) ]]
 
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 
-  cmp.setup.cmdline(':', {
+  --[[ cmp.setup.cmdline(':', {
     sources = cmp.config.sources({
       { name = 'path' }
     }, {
       { name = 'cmdline' }
     })
-  })
+  }) ]]
 
  -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -341,9 +425,12 @@ true_zen.setup({
 require("twilight").setup {}
 
 -- Which Key
+local wk = require("which-key")
 require('which-key').setup{
     timeoutlen = 0
 }
+
+-- TODO - Setup Mapping Tables
 
 --BarBar
 -- BarBar Options

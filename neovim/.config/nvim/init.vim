@@ -13,13 +13,14 @@ augroup packer_user_config
   autocmd!
   autocmd BufWritePost plugins.lua source <afile> | PackerCompile profile=true
 augroup end
-
+set termguicolors
 set noswapfile
 set nobackup
 set undofile
 set undodir=~/.vim/undodir
 syntax on
 filetype plugin on
+
 
 " ****************Vim Mappings*************************"
 "                                                      "
@@ -38,7 +39,7 @@ nnoremap  V v$
 nnoremap  J mzJ`z
 
 " commands to edit the vim rc quickly
-nnoremap <leader>vc :vsplit $MYVIMRC<cr>
+nnoremap <leader>ec :vsplit $MYVIMRC<cr>
 nnoremap <leader>lc :vsplit ~/.config/nvim/lua/init.lua<cr>
 nnoremap <leader>sc :so $MYVIMRC<cr>
 map <leader><c-s> :so %<CR>
@@ -74,6 +75,10 @@ vnoremap<leader>k :wincmd k<cr>
 vnoremap<leader>l :wincmd l<cr>
 vnoremap<leader>t :wincmd t<cr>
 "
+"buffer, tab, and other quick  navigation
+"
+nnoremap <leader>t :tabnew<cr>
+nnoremap <leader>tc :tabclose<cr>
 
 map <silent><leader><leader>n :nohlsearch<cr>
 
@@ -82,9 +87,6 @@ nnoremap <leader>C :Colors<cr>
 nnoremap <leader>R :reg<cr>
 nnoremap <leader>M :messages<cr>
 
-"buffer, tab, and other quick  navigation
-"
-nnoremap <leader>T :tabnew<cr>
 
 "mapping to quickly move lines
 nnoremap <leader>J :m .+1<CR>
@@ -94,6 +96,7 @@ nnoremap <leader>K :m .-2<CR>
 nnoremap <c-s> :w<cr>
 map <c-q> :qa<cr>
 
+" Mapping alternate common comment command <C-/>
 " *******************Abbreviations*************************"
 "                                                          "
 "                    Abbreviations                         "
@@ -131,15 +134,17 @@ cnoreabbrev PS PackerSync
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Or if you have Neovim >= 0.1.5
-"if (has("termguicolors"))
- "set termguicolors
-"endif
+if (has("termguicolors"))
+ set termguicolors
+endif
+ 
+highlight Comment cterm=italic
 
 " set theme
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 
-"hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
 hi SignColumn guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
@@ -150,7 +155,6 @@ hi normal guibg=none ctermbg=none
 if (has("nvim"))
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
-
 map <C-_> <Leader>c<Space>
 nnoremap<c-t> :Vista!!<cr>
 
@@ -178,12 +182,12 @@ nnoremap <silent>    b8 :BufferGoto 8<CR>
 nnoremap <silent>    b9 :BufferLast<CR>
 
 " Pin/unpin buffer
-nnoremap <silent>    bp :BufferPin<CR>
+nnoremap <silent>    bP :BufferPin<CR>
 
 " Close buffer
 nnoremap <silent>    bc :BufferClose<CR>
 
-nnoremap <silent> >    :BufferPick<CR>
+nnoremap <silent> bp    :BufferPick<CR>
 
 " **********************Vista************************* "
 "                                                      "
@@ -227,8 +231,8 @@ nnoremap <silent> <leader>dc :lua require'dapui'.close()<CR>
 
  "python specific debugging
 lua require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
-nnoremap <silent> <leader>tm :lua require('dap-python').test_method()<CR>
-nnoremap <silent> <leader>tc :lua require('dap-python').test_class()<CR>
+nnoremap <silent> ptm :lua require('dap-python').test_method()<CR>
+nnoremap <silent> ptc :lua require('dap-python').test_class()<CR>
 vnoremap <silent> <leader>ds <ESC>:lua require('dap-python').debug_selection()<CR>
 
 " **********************LSP ACTIONS************************* "
@@ -241,26 +245,24 @@ vnoremap <silent> <leader>ds <ESC>:lua require('dap-python').debug_selection()<C
 "autocmd BufEnter * lua require'completion'.on_attach()
 
 " LSP config (the mappings used in the default file don't quite work right)
-nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent>gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent>gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent>gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent>gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent>K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent><C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent><C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <leader>D <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
 
 "Trouble Mappings
 nnoremap <leader>tt <cmd>TroubleToggle<cr>
+nnoremap <leader>ttd :TodoTrouble<cr>
 nnoremap <leader>tw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
 nnoremap <leader>td <cmd>TroubleToggle lsp_document_diagnostics<cr>
 nnoremap <leader>tq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>tl <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
-"SAGA Code Actions
-nnoremap <silent>ga :Lspsaga code_action<CR>
-vnoremap <silent>ga :<C-U>Lspsaga range_code_action<CR>
 
 "-- lsp provider to find the cursor word definition and reference
 nnoremap <silent>gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
@@ -286,6 +288,10 @@ nnoremap <silent>RR <cmd>lua require('lspsaga.rename').rename()<CR>
 "preview definition
 nnoremap <silent>pd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
 
+"code action
+nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
+vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
+
 "" Macro - Paste From Current System Buffer
 nnoremap <leader><leader>V "+p 
 
@@ -296,7 +302,6 @@ nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
 nnoremap <silent><leader>cc <cmd>lua
 nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
-
 
 "Setting up java LSP JDTLS
 
@@ -324,7 +329,7 @@ vnoremap crm <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
 "-- use this mapping also with other language servers
 "nnoremap ga <Cmd>lua require('jdtls').code_action()<CR>
 "vnoremap ga <Esc><Cmd>lua require('jdtls').code_action(true)<CR>
-nnoremap <leader>r <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
+nnoremap <leader>jr <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
 
 nnoremap <A-o> <Cmd>lua require'jdtls'.organize_imports()<CR>
 nnoremap <leader><leader>ev <Cmd>lua require('jdtls').extract_variable()<CR>
@@ -339,9 +344,6 @@ vnoremap <leader><leader>em <Esc><Cmd>lua require('jdtls').extract_method(true)<
 nnoremap <leader>df <Cmd>lua require'jdtls'.test_class()<CR>
 nnoremap <leader>dn <Cmd>lua require'jdtls'.test_nearest_method()<CR>
 
-
-" LSP UPDATE
-
 " ****************Treesitter*************************"
 "                                                    "
 "           Settings for Treesitter                  "
@@ -349,8 +351,12 @@ nnoremap <leader>dn <Cmd>lua require'jdtls'.test_nearest_method()<CR>
 " ****************Treesitter*************************"
 
 " Toggle TSPlayground
-
 nnoremap <silent> <leader>tp :TSPlaygroundToggle<cr>
+
+"Enable Folding
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
+
 
 " ****************NerdTree*************************"
 "                                                  "
@@ -474,13 +480,14 @@ set rtp+=~/.vim/bundle/fzf
 " ****************Telescope*************************
 
 " Using Lua functions
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>sf <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>sg <cmd>lua require('telescope.builtin').live_grep()<cr>
 "
-" Telescope grep keeps crashing - remapped to ripgrem in Floatterm
-nnoremap <leader>bb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>th <cmd>lua require('telescope.builtin').help_tags()<cr>
-nnoremap <leader>tm <cmd>lua require('telescope.builtin').keymaps()<cr>
+" Telescope grep seeps crashing - remapped to ripgrem in Floatterm
+nnoremap <leader>sb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>sh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>sm <cmd>lua require('telescope.builtin').keymaps()<cr>
+nnoremap <leader>st :TodoTelescope<cr>
 
 
 
@@ -539,4 +546,8 @@ let g:jsx_ext_required = 0
 "Markdown Things
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 0
+
+
+"refactoring stuff
+
 
