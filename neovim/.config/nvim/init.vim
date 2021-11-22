@@ -55,13 +55,13 @@ nnoremap<c-h> :wincmd h<cr>
 nnoremap<c-j> :wincmd j<cr>
 nnoremap<c-k> :wincmd k<cr>
 nnoremap<c-l> :wincmd l<cr>
-nnoremap<c-t> :wincmd t<cr>
+" nnoremap<c-t> :wincmd t<cr>
 
 vnoremap<c-h> :wincmd h<cr>
 vnoremap<c-j> :wincmd j<cr>
 vnoremap<c-k> :wincmd k<cr>
 vnoremap<c-l> :wincmd l<cr>
-vnoremap<c-t> :wincmd t<cr>
+" vnoremap<c-t> :wincmd t<cr>
 
 nnoremap<leader>h :wincmd h<cr>
 nnoremap<leader>j :wincmd j<cr>
@@ -130,31 +130,32 @@ cnoreabbrev PS PackerSync
 
 "colorscheme and UI settings
 
-" For Neovim 0.1.3 and 0.1.4
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" " For Neovim 0.1.3 and 0.1.4
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-" Or if you have Neovim >= 0.1.5
-if (has("termguicolors"))
- set termguicolors
-endif
+" " Or if you have Neovim >= 0.1.5
+" if (has("termguicolors"))
+"  set termguicolors
+" endif
  
-highlight Comment cterm=italic
+" highlight Comment cterm=italic
 
-" set theme
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
+" " set theme
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
 
-hi Normal guibg=NONE ctermbg=NONE
-hi LineNr guibg=NONE ctermbg=NONE
-hi SignColumn guibg=NONE ctermbg=NONE
-hi EndOfBuffer guibg=NONE ctermbg=NONE
+" " hi Normal guibg=NONE ctermbg=NONE
+" " hi LineNr guibg=NONE ctermbg=NONE
+" " hi SignColumn guibg=NONE ctermbg=NONE
+" " hi EndOfBuffer guibg=NONE ctermbg=NONE
 
-set background=dark
-hi normal guibg=none ctermbg=none
+" set background=dark
+" " hi normal guibg=none ctermbg=none
 
-if (has("nvim"))
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
+" if (has("nvim"))
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" endif
+"
 map <C-_> <Leader>c<Space>
 nnoremap<c-t> :Vista!!<cr>
 
@@ -263,6 +264,10 @@ nnoremap <leader>tq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>tl <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
+" somewhat unrelated quickfix navigation
+nnoremap <silent>qn :cn<cr>
+nnoremap <silent>qp :cp<cr>
+
 
 "-- lsp provider to find the cursor word definition and reference
 nnoremap <silent>gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
@@ -354,8 +359,8 @@ nnoremap <leader>dn <Cmd>lua require'jdtls'.test_nearest_method()<CR>
 nnoremap <silent> <leader>tp :TSPlaygroundToggle<cr>
 
 "Enable Folding
-" set foldmethod=expr
-" set foldexpr=nvim_treesitter#foldexpr()
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 
 
 " ****************NerdTree*************************"

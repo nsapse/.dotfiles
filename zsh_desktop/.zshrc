@@ -168,7 +168,7 @@ alias pic="nvim ~/.config/picom.conf"
 alias alac="nvim ~/.config/alacritty/alacritty.yml"
 alias 10kc="nvim ~/.p10k.zsh"
 alias kc="nvim ~/.config/kitty/kitty.conf"
-alias rangc="nvim ~/.config/ranger/rc.conf"
+alias ranc="nvim ~/.config/ranger/rc.conf"
 alias roc="nvim ~/.config/rofi/config"
 alias sc="nvim ~/.config/starship.toml"
 alias twc="nvim ~/.taskrc"
@@ -404,4 +404,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # set default pager to be delta
 export GIT_PAGER='delta'
 
+# Start Zoxide
+eval "$(zoxide init zsh)"
 # export TERM="screen-256color"
