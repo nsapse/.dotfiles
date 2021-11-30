@@ -18,6 +18,7 @@ set noswapfile
 set nobackup
 set undofile
 set undodir=~/.vim/undodir
+set colorcolumn=80
 syntax on
 filetype plugin on
 
@@ -40,15 +41,16 @@ nnoremap  J mzJ`z
 
 " commands to edit the vim rc quickly
 nnoremap <leader>ec :vsplit $MYVIMRC<cr>
-nnoremap <leader>lc :vsplit ~/.config/nvim/lua/init.lua<cr>
+nnoremap <leader>elc :vsplit ~/.config/nvim/lua/init.lua<cr>
+" nnoremap <leader>sc :so $MYVIMRC<cr>
 nnoremap <leader>sc :so $MYVIMRC<cr>
-map <leader><c-s> :so %<CR>
+map <leader>so :so %<CR>
 cnoreabbrev vc ~/.config/nvim/init.vim
 
 "Remapping Default Commands to Leader
-nnoremap<silent><leader>s :wincmd v<cr>
-nnoremap<silent><leader>S :wincmd s<cr>
-nnoremap<silent><leader>c :wincmd c<cr>
+" nnoremap<silent><leader>s :wincmd v<cr>
+" nnoremap<silent><leader>S :wincmd s<cr>
+nnoremap<silent><leader>wc :wincmd c<cr>
 nnoremap<silent><C-c>     :wincmd c<cr>
 
 nnoremap<c-h> :wincmd h<cr>
@@ -63,26 +65,33 @@ vnoremap<c-k> :wincmd k<cr>
 vnoremap<c-l> :wincmd l<cr>
 " vnoremap<c-t> :wincmd t<cr>
 
-nnoremap<leader>h :wincmd h<cr>
-nnoremap<leader>j :wincmd j<cr>
-nnoremap<leader>k :wincmd k<cr>
-nnoremap<leader>l :wincmd l<cr>
-nnoremap<leader>t :wincmd t<cr>
+nnoremap<leader>wh :wincmd h<cr>
+nnoremap<leader>wj :wincmd j<cr>
+nnoremap<leader>wk :wincmd k<cr>
+nnoremap<leader>wl :wincmd l<cr>
+" nnoremap<leadewr>t :wincmd t<cr>
 
-vnoremap<leader>h :wincmd h<cr>
-vnoremap<leader>j :wincmd j<cr>
-vnoremap<leader>k :wincmd k<cr>
-vnoremap<leader>l :wincmd l<cr>
-vnoremap<leader>t :wincmd t<cr>
+vnoremap<leader>wh :wincmd h<cr>
+vnoremap<leader>wj :wincmd j<cr>
+vnoremap<leader>wk :wincmd k<cr>
+vnoremap<leader>wl :wincmd l<cr>
+" vnoremap<leader>t :wincmd t<cr>
 "
 "buffer, tab, and other quick  navigation
 "
-nnoremap <leader>t :tabnew<cr>
+nnoremap <leader>tn :tabnew<cr>
 nnoremap <leader>tc :tabclose<cr>
+nnoremap tp :tabprevious<cr>
+nnoremap tn :tabnext<cr>
+
+vnoremap <leader>tn :tabnew<cr>
+vnoremap <leader>tc :tabclose<cr>
+vnoremap tp :tabprevious<cr>
+vnoremap tn :tabnext<cr>
 
 map <silent><leader><leader>n :nohlsearch<cr>
 
-" quick maps into a bunch of vim areas
+" quick maps into a bunch of vi areas
 nnoremap <leader>C :Colors<cr>
 nnoremap <leader>R :reg<cr>
 nnoremap <leader>M :messages<cr>
@@ -145,12 +154,12 @@ cnoreabbrev PS PackerSync
 " let g:oceanic_next_terminal_italic = 1
 
 " " hi Normal guibg=NONE ctermbg=NONE
-" " hi LineNr guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
 " " hi SignColumn guibg=NONE ctermbg=NONE
 " " hi EndOfBuffer guibg=NONE ctermbg=NONE
 
-" set background=dark
-" " hi normal guibg=none ctermbg=none
+set background=dark
+" hi normal guibg=none ctermbg=none
 
 " if (has("nvim"))
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -187,8 +196,7 @@ nnoremap <silent>    bP :BufferPin<CR>
 
 " Close buffer
 nnoremap <silent>    bc :BufferClose<CR>
-
-nnoremap <silent> bp    :BufferPick<CR>
+nnoremap <silent>    bp :BufferPick<CR>
 
 " **********************Vista************************* "
 "                                                      "
@@ -217,12 +225,12 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " general settings for debugger
 
 nnoremap <silent> <leader>dd :lua require'dap'.continue()<CR>
-nnoremap <silent> <leader>jj :lua require'dap'.step_over()<CR>
-nnoremap <silent> <leader>ll :lua require'dap'.step_into()<CR>
-nnoremap <silent> <leader>kk :lua require'dap'.step_out()<CR>
-nnoremap <silent> <leader>b  :lua require'dap'.toggle_breakpoint()<CR>
-nnoremap <silent> <leader>B  :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
-nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+nnoremap <silent> <leader>dj :lua require'dap'.step_over()<CR>
+nnoremap <silent> <leader>dl :lua require'dap'.step_into()<CR>
+nnoremap <silent> <leader>dk :lua require'dap'.step_out()<CR>
+nnoremap <silent> <leader>db  :lua require'dap'.toggle_breakpoint()<CR>
+nnoremap <silent> <leader>dB  :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+nnoremap <silent> <leader>dlb :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
 nnoremap <silent> <leader>dl :lua require'dap'.run_last()<CR>
 nnoremap <silent> <leader>do :lua require'dapui'.toggle()<CR>
@@ -232,8 +240,8 @@ nnoremap <silent> <leader>dc :lua require'dapui'.close()<CR>
 
  "python specific debugging
 lua require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
-nnoremap <silent> ptm :lua require('dap-python').test_method()<CR>
-nnoremap <silent> ptc :lua require('dap-python').test_class()<CR>
+nnoremap <silent><leader>tm :lua require('dap-python').test_method()<CR>
+nnoremap <silent><leader>tc :lua require('dap-python').test_class()<CR>
 vnoremap <silent> <leader>ds <ESC>:lua require('dap-python').debug_selection()<CR>
 
 " **********************LSP ACTIONS************************* "
@@ -356,7 +364,7 @@ nnoremap <leader>dn <Cmd>lua require'jdtls'.test_nearest_method()<CR>
 " ****************Treesitter*************************"
 
 " Toggle TSPlayground
-nnoremap <silent> <leader>tp :TSPlaygroundToggle<cr>
+nnoremap <silent> <leader>pt :TSPlaygroundToggle<cr>
 
 "Enable Folding
 set foldmethod=expr

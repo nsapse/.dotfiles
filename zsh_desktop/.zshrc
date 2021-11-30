@@ -177,6 +177,7 @@ alias mc="nvim ~/.config/mutt/muttrc"
 alias nm="neomutt"
 alias wiki="nvim ~/vimwiki/index.wiki"
 alias ww="wiki"
+alias zathc="nvim ~/.config/zathura/zathurarc"
 
 # aliasing directories
 alias cdf='cd ~/.dotfiles'

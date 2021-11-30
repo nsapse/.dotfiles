@@ -3,6 +3,7 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
+
 	----------------------
 	---~~[Editing Actions~]~
 	----------------------
@@ -99,20 +100,70 @@ return require("packer").startup(function(use)
 	---~~Navigation~~---
 	----------------------
 
+	--Registers
+	use("tversteeg/registers.nvim")
+
 	--Misc
 	use("tpope/vim-unimpaired")
 
 	-- which_key
 	use("folke/which-key.nvim")
-	local wk = require("which-key")
+	-- local wk = require("which-key")
 	require("which-key").setup({
-		timeoutlen = 0,
+		timeoutlen = 250,
+		window = {
+			border = "single",
+		},
+		triggers_blacklist = {
+			n = { "h", "j", "k", "l", '"' },
+			v = { "h", "j", "k", "l", '"' },
+		},
 	})
+
+	-- register leader keys
+	--[[ wk.register({
+		["leader"] = {
+			e = {
+				name = "edit",
+				c = "config",
+				lc = "lua config",
+			},
+			s = {
+				name = "Scope (Telescope)",
+				f = { "find file" },
+				t = { "browse todos" },
+				b = { "browse buffers" },
+			},
+			t = {
+				name = "Tab",
+				n = { "new" },
+				c = { "close" },
+			},
+			w = {
+				name = "Window",
+				h = "left",
+				j = "up",
+				k = "down",
+				l = "right",
+				c = "close",
+			},
+		},
+		g = {
+			name = "Go To",
+			d = "definition",
+			D = "declaration",
+			f = "file (under cursor)",
+			i = "implementation",
+			r = "references",
+		},
+	}) ]]
+
 	use("unblevable/quick-scope")
 
 	-- Hop
 	use("phaazon/hop.nvim")
 	require("hop").setup()
+	-- use 'ggandor/lightspeed.nvim'
 
 	-- Vist
 	use("liuchengxu/vista.vim")
@@ -165,8 +216,9 @@ return require("packer").startup(function(use)
 	require("lspconfig").hls.setup({})
 	require("lspconfig").html.setup({})
 	require("lspconfig").jsonls.setup({})
-	require("lspconfig").pyright.setup({})
-	-- require'lspconfig'.pylsp.setup{}
+	-- require("lspconfig").pyright.setup({})
+
+	require("lspconfig").pylsp.setup({})
 	-- require'lspconfig'.jedi_language_server.setup{}
 	require("lspconfig").sqls.setup({})
 	require("lspconfig").tsserver.setup({})
@@ -174,7 +226,7 @@ return require("packer").startup(function(use)
 	require("lspconfig").texlab.setup({})
 
 	--Saga
-	use("tami5/lspsaga.nvim")
+	use({ "tami5/lspsaga.nvim", branch = "nvim51" })
 	local saga = require("lspsaga")
 	saga.init_lsp_saga()
 
@@ -257,15 +309,142 @@ return require("packer").startup(function(use)
 	----------------------
 	---~~[Snippets]~~-------
 	------------------- --
-	use("SirVer/ultisnips")
+	use({
+		"SirVer/ultisnips",
+		requires = { { "honza/vim-snippets", rtp = "." } },
+		config = function()
+			vim.g.UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"
+			vim.g.UltiSnipsJumpForwardTrigger = "<Plug>(ultisnips_jump_forward)"
+			vim.g.UltiSnipsJumpBackwardTrigger = "<Plug>(ultisnips_jump_backward)"
+			vim.g.UltiSnipsListSnippets = "<c-x><c-s>"
+			vim.g.UltiSnipsRemoveSelectModeMappings = 0
+		end,
+	})
+	-- }}}
+
+	local t = function(str)
+		return vim.api.nvim_replace_termcodes(str, true, true, true)
+	end
+
+	local cmp = require("cmp")
+	cmp.setup({
+		snippet = {
+			expand = function(args)
+				vim.fn["UltiSnips#Anon"](args.body)
+			end,
+		},
+		-- ... Your other configuration ...
+		mapping = {
+			["<Tab>"] = cmp.mapping({
+				c = function()
+					if cmp.visible() then
+						cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
+					else
+						cmp.complete()
+					end
+				end,
+				i = function(fallback)
+					if cmp.visible() then
+						cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
+					elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+						vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), "m", true)
+					else
+						fallback()
+					end
+				end,
+				s = function(fallback)
+					if vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+						vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), "m", true)
+					else
+						fallback()
+					end
+				end,
+			}),
+			["<S-Tab>"] = cmp.mapping({
+				c = function()
+					if cmp.visible() then
+						cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
+					else
+						cmp.complete()
+					end
+				end,
+				i = function(fallback)
+					if cmp.visible() then
+						cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
+					elseif vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
+						return vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_backward)"), "m", true)
+					else
+						fallback()
+					end
+				end,
+				s = function(fallback)
+					if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
+						return vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_backward)"), "m", true)
+					else
+						fallback()
+					end
+				end,
+			}),
+			["<Down>"] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), { "i" }),
+			["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), { "i" }),
+			["<C-n>"] = cmp.mapping({
+				c = function()
+					if cmp.visible() then
+						cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+					else
+						vim.api.nvim_feedkeys(t("<Down>"), "n", true)
+					end
+				end,
+				i = function(fallback)
+					if cmp.visible() then
+						cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+					else
+						fallback()
+					end
+				end,
+			}),
+			["<C-p>"] = cmp.mapping({
+				c = function()
+					if cmp.visible() then
+						cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+					else
+						vim.api.nvim_feedkeys(t("<Up>"), "n", true)
+					end
+				end,
+				i = function(fallback)
+					if cmp.visible() then
+						cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+					else
+						fallback()
+					end
+				end,
+			}),
+			["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+			["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+			["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+			["<C-e>"] = cmp.mapping({ i = cmp.mapping.close(), c = cmp.mapping.close() }),
+			["<CR>"] = cmp.mapping({
+				i = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
+				c = function(fallback)
+					if cmp.visible() then
+						cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+					else
+						fallback()
+					end
+				end,
+			}),
+			-- ... Your other configuration ...
+		},
+		-- ... Your other configuration ...
+	})
 	use("honza/vim-snippets")
 	use("rafamadriz/friendly-snippets")
 
 	--luasnip
-	use("L3MON4D3/LuaSnip")
+	--[[ use("L3MON4D3/LuaSnip")
 	local luasnip = require("luasnip")
 	-- Load Snippets into Luasnip
-	require("luasnip/loaders/from_vscode").lazy_load()
+	require("luasnip/loaders/from_vscode").lazy_load() ]]
 
 	----------------------
 	---~~[AutoComplete]~~---
@@ -276,7 +455,7 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
-	use("saadparwaiz1/cmp_luasnip")
+	-- use("saadparwaiz1/cmp_luasnip")
 	use("quangnguyen30192/cmp-nvim-ultisnips")
 	use({ "kdheepak/cmp-latex-symbols", opt = true, ft = { "latex", "tex", "texmf" } })
 	use({ "pontusk/cmp-vimwiki-tags", opt = true, ft = { "wiki", "vimwiki" } })
@@ -298,14 +477,15 @@ return require("packer").startup(function(use)
 		snippet = {
 			-- REQUIRED - you must specify a snippet engine
 			expand = function(args)
-				require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+				-- require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+				vim.fn["Ultisnips#Anon"](args.body)
 			end,
 		},
 
 		mapping = {
 			--['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i', 's','c'}),
 			--['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's','c'}),
-			["<Tab>"] = cmp.mapping(function(fallback)
+			--[[ ["<Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					cmp.select_next_item()
 				elseif luasnip.expand_or_jumpable() then
@@ -325,7 +505,7 @@ return require("packer").startup(function(use)
 				else
 					fallback()
 				end
-			end, { "i", "s" }),
+			end, { "i", "s" }), ]]
 			["<Space>"] = cmp.mapping(cmp.mapping.confirm(), { "c" }),
 			--['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
 			["<S-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -355,7 +535,7 @@ return require("packer").startup(function(use)
 			{ name = "vimwiki-tags" }, -- For vimwiki
 			{ name = "latex_symbols" }, -- For vimwiki
 			{ name = "buffer" },
-			{ name = "luasnip" }, -- For luasnip users.
+			-- { name = "luasnip" }, -- For luasnip users.
 			{ name = "ultisnips" }, -- For ultisnips users.
 			{ name = "path" },
 			{ name = "orgmode" },
@@ -593,7 +773,6 @@ return require("packer").startup(function(use)
 		tabline = {},
 		extensions = { "chadtree", "quickfix" },
 	})
-
 
 	-- BarBar
 	use("romgrk/barbar.nvim")
