@@ -114,7 +114,8 @@ map <c-q> :qa<cr>
 
 " Plugins
 cnoreabbrev PI PackerInstall
-cnoreabbrev PC PackerClean
+cnoreabbrev PCc PackerClean
+cnoreabbrev PCo PackerCompile
 
 " Diffview
 cnoreabbrev DO DiffviewOpen
@@ -147,18 +148,18 @@ cnoreabbrev PS PackerSync
 "  set termguicolors
 " endif
  
-" highlight Comment cterm=italic
+highlight Comment cterm=italic
 
 " " set theme
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
 
-" " hi Normal guibg=NONE ctermbg=NONE
-hi LineNr guibg=NONE ctermbg=NONE
-" " hi SignColumn guibg=NONE ctermbg=NONE
-" " hi EndOfBuffer guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
+" hi LineNr guibg=NONE ctermbg=NONE
+hi SignColumn guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
 
-set background=dark
+" set background=dark
 " hi normal guibg=none ctermbg=none
 
 " if (has("nvim"))
@@ -500,6 +501,7 @@ nnoremap <leader>sg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>sb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>sh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>sm <cmd>lua require('telescope.builtin').keymaps()<cr>
+nnoremap <leader>cc <cmd>lua require('telescope.builtin').colorscheme()<cr>
 nnoremap <leader>st :TodoTelescope<cr>
 
 
