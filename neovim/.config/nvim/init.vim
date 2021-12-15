@@ -7,12 +7,14 @@
 " source by init.lua
 lua require('init')
 colorscheme base16-nord
+" colorscheme nord
 
 "automatically recompile when plugins changed
 augroup packer_user_config
   autocmd!
   autocmd BufWritePost plugins.lua source <afile> | PackerCompile profile=true
 augroup end
+
 set termguicolors
 set noswapfile
 set nobackup

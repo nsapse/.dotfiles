@@ -10,6 +10,7 @@ require("which-key").setup({
 })
 
 -- register leader keys
+-- local wk = require('which_key')
 --[[ wk.register({
 		["leader"] = {
 			e = {

@@ -10,7 +10,7 @@
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location=~/.dotfiles/.task
+data.location=~/.task
 
 # Color theme (uncomment one to use)
 #include /usr/share/doc/task/rc/light-16.theme

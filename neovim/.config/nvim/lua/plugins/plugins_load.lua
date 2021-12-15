@@ -49,7 +49,7 @@ return require("packer").startup(function(use)
 	use("tpope/vim-unimpaired")
 
 	-- which_key
-	use({"folke/which-key.nvim", config = get_config("which-key"),})
+	use({"folke/which-key.nvim", config = get_config("which-key")})
 
 	-- Hop
 	use("phaazon/hop.nvim")
@@ -129,7 +129,6 @@ return require("packer").startup(function(use)
 
 	--luasnip
 	use("L3MON4D3/LuaSnip")
-	local luasnip = require("luasnip")
 	-- Load Snippets into Luasnip
 	require("luasnip/loaders/from_vscode").lazy_load()
 
@@ -316,28 +315,9 @@ return require("packer").startup(function(use)
 	use({
 		"brymer-meneses/grammar-guard.nvim",
 		requires = "neovim/nvim-lspconfig",
+		config = get_config("grammar-guard")
 	})
 
-	-- Starting Grammar Guard
-	--[[ require("grammar-guard").init()
-	require("lspconfig").grammar_guard.setup({
-		settings = {
-			ltex = {
-				enabled = { "latex", "tex", "bib", "markdown" },
-				language = "en",
-				diagnosticSeverity = "information",
-				setenceCacheSize = 2000,
-				additionalRules = {
-					enablePickyRules = true,
-					motherTongue = "en",
-				},
-				trace = { server = "verbose" },
-				dictionary = {},
-				disabledRules = {},
-				hiddenFalsePositives = {},
-			},
-		},
-	}) ]]
 
 	-- this is required for grammar guard
 	use("williamboman/nvim-lsp-installer")
@@ -352,25 +332,6 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-	parser_config.org = {
-		install_info = {
-			url = "https://github.com/milisims/tree-sitter-org",
-			revision = "main",
-			files = { "src/parser.c", "src/scanner.cc" },
-		},
-		filetype = "org",
-	}
-
-	require("nvim-treesitter.configs").setup({
-		-- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
-		highlight = {
-			enable = true,
-			disable = { "org" }, -- Remove this to use TS highlighter for some of the highlights (Experimental)
-			additional_vim_regex_highlighting = { "org" }, -- Required since TS highlighter doesn't support all syntax features (conceal)
-		},
-		ensure_installed = { "org" }, -- Or run :TSUpdate org
-	})
 
 	require("orgmode").setup({
 		org_agenda_files = { "~/Dropbox/org/*", "~/my-orgs/**/*" },

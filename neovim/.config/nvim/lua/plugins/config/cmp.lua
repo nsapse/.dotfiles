@@ -1,5 +1,6 @@
 local cmp = require("cmp")
 local lspkind = require("lspkind")
+local luasnip = require("luasnip")
 
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -50,26 +51,36 @@ cmp.setup({
 		}),
 	},
 	formatting = {
-		format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),
+		format = lspkind.cmp_format({
+			with_text = true,
+			maxwidth = 50,
+			menu = {
+				buffer = "[buf]",
+				nvim_lsp = "[lsp]",
+				luasnip = "[Lsnip]",
+				ultisnips = "[Usnip]",
+				nvim_lua = "[nv_lua]",
+				latex_symbols = "[ltex]",
+			},
+		}),
 	},
 
 	experimental = {
-		native_menu = false,
-		ghost_text = true,
+		-- native_menu = false,
+		-- ghost_text = true,
 	},
 
 	--[[ completion = { autocomplete = false,
 	}, ]]
 	sources = cmp.config.sources({
-		{ name = "ultisnips" }, -- For ultisnips users.
-		{ name = "buffer", keyword_length = 3 },
 		{ name = "nvim_lsp" },
+		{ name = "buffer", keyword_length = 3 },
+		{ name = "luasnip" }, -- For luasnip users.
+		{ name = "ultisnips" }, -- For ultisnips users.
 		-- { name = "treesitter" },
-		--{ name = 'vsnip' }, -- For vsnip users.
 		{ name = "vimwiki-tags" }, -- For vimwiki
 		{ name = "latex_symbols" }, -- For vimwiki
 		{ name = "nvim_lua" },
-		-- { name = "luasnip" }, -- For luasnip users.
 		{ name = "path" },
 		{ name = "orgmode" },
 	}),
@@ -77,14 +88,25 @@ cmp.setup({
 
 -- Setup lspconfig.
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-local lspconfig = require("lspconfig")
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require("lspconfig")["pyright"].setup({
+	capabilities = capabilities,
+})
+require("lspconfig")["bashls"].setup({
+	capabilities = capabilities,
+})
+require("lspconfig")["rust_analyzer"].setup({
 	capabilities = capabilities,
 })
 require("lspconfig")["clangd"].setup({
 	capabilities = capabilities,
 })
 require("lspconfig")["vimls"].setup({
+	capabilities = capabilities,
+})
+require("lspconfig")["jdtls"].setup({
+	capabilities = capabilities,
+})
+require("lspconfig")["sumneko_lua"].setup({
 	capabilities = capabilities,
 })
