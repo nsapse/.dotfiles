@@ -125,12 +125,13 @@ return require("packer").startup(function(use)
 	end
 
 	use("honza/vim-snippets")
+	use("hrsh7th/vim-vsnip")
+	use("hrsh7th/vim-vsnip-integ")
 	use("rafamadriz/friendly-snippets")
-
 	--luasnip
-	use("L3MON4D3/LuaSnip")
+	-- use("L3MON4D3/LuaSnip")
 	-- Load Snippets into Luasnip
-	require("luasnip/loaders/from_vscode").lazy_load()
+	-- require("luasnip/loaders/from_vscode").lazy_load()
 
 	----------------------
 	---~~[AutoComplete]~~---
@@ -143,7 +144,9 @@ return require("packer").startup(function(use)
 	use("ray-x/cmp-treesitter")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
-	use("saadparwaiz1/cmp_luasnip")
+	use("hrsh7th/cmp-vsnip")
+	-- use("saadparwaiz1/cmp_luasnip")
+	
 	use("quangnguyen30192/cmp-nvim-ultisnips")
 	use({ "kdheepak/cmp-latex-symbols", opt = true, ft = { "latex", "tex", "texmf" } })
 	use({ "pontusk/cmp-vimwiki-tags", opt = true, ft = { "wiki", "vimwiki" } })
@@ -160,11 +163,15 @@ return require("packer").startup(function(use)
 	use("rcarriga/nvim-dap-ui")
 	use("theHamsta/nvim-dap-virtual-text")
 	use({ "sakhnik/nvim-gdb", opt = true, ft = { "c", "cpp" } })
+
+	----------
+	--~~Go~~--
+	----------
 	------------
 	--~~[HTML]~~--
 	------------
 
-	use({ "mattn/emmet-vim", opt = true, ft = { "html" } })
+	use({ "mattn/emmet-vim" })
 	use({ "turbio/bracey.vim", opt = true, ft = { "html", "css", "javascript" }, run = "npm install --prefix server" })
 
 	----------------
@@ -187,7 +194,8 @@ return require("packer").startup(function(use)
 	----------------
 	----~~Rust~~----
 	----------------
-	use({ "simrat39/rust-tools.nvim" })
+	use({ "simrat39/rust-tools.nvim", config = get_config("rust-tools") })
+
 
 	require("rust-tools").setup({})
 	-- set inlay hints
@@ -198,17 +206,18 @@ return require("packer").startup(function(use)
 	---------------------
 	---~~Javascript~~-----
 	---------------------
-	use({ "mlaursen/vim-react-snippets", opt = true, ft = { "javascript", "javascripttreact" } })
+	use({ "mlaursen/vim-react-snippets"})
 
 	----------------
 	---~~Java~~-----
 	----------------
 	use({ "mfussenegger/nvim-jdtls", opt = true, ft = { "java" } })
 	require("lspconfig").jdtls.setup({ cmd = { "jdtls" } })
+
 	----------------
 	--~~LaTeX~~--
 	----------------
-	use({ "lervag/vimtex", opt = true, ft = { "latex", "tex" } })
+	use({ "lervag/vimtex" })
 
 	----------------
 	-----Lua--------

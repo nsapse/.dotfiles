@@ -97,8 +97,10 @@ plugins=(
     git
     github
     heroku
+	kubectl
     lein
     npm
+	rust
     pipenv
     pylint
     python
