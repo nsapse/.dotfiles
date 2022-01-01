@@ -89,7 +89,6 @@ plugins=(
     archlinux
     autojump
     autopep8
-    cargo
     colorize
     # docker
     # docker-compose

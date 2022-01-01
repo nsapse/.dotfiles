@@ -103,6 +103,10 @@ return require("packer").startup(function(use)
 	use("ray-x/lsp_signature.nvim")
 	require("lsp_signature").setup()
 
+	-- null-ls
+
+	use({"jose-elias-alvarez/null-ls.nvim", config = get_config("null-ls")})
+
 	----------------------
 	---~~[[Treesitter]]~~---
 	----------------------

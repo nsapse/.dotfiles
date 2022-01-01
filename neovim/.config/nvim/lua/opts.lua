@@ -10,7 +10,7 @@ local bo = vim.bo
 
 -- Window Appearance
 o.nu = true
-o.rnu = true
+o.rnu =					true
 o.termguicolors = true
 
 -- General UI/UX
