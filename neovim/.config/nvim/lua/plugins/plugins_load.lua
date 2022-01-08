@@ -60,13 +60,13 @@ return require("packer").startup(function(use)
 	use("liuchengxu/vista.vim")
 
 	-- chadtree
-	use({ "ms-jpq/chadtree", branch = "chad", run = ":CHADdeps", opt = true, cmd = "CHADopen" })
+	use({ "ms-jpq/chadtree", branch = "chad", run = ":CHADdeps"})
 
 	-- Trouble
 	use("folke/trouble.nvim")
 	require("trouble").setup({})
 
-	use({ "simnalamburt/vim-mundo", opt = true, cmd = "MundoToggle" })
+	use({ "simnalamburt/vim-mundo" })
 	use("simeji/winresizer")
 	--use {'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu'}
 
