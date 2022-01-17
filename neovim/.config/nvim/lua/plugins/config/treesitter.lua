@@ -13,7 +13,6 @@ require("nvim-treesitter.configs").setup({
 		"latex",
 		"llvm",
 		"norg",
-		"org",
 		"python",
 		"regex",
 		"ruby",
