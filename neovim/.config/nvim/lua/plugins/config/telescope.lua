@@ -7,5 +7,10 @@ require("telescope").setup({
 			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
 			-- the default case_mode is "smart_case"
 		},
+		file_browser = {
+			theme = "ivy",
+		},
 	},
 })
+require("telescope").load_extension("fzf")
+require("telescope").load_extension("file_browser")

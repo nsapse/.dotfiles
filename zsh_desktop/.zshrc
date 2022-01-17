@@ -87,7 +87,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
     alias-finder
     archlinux
-    autojump
     autopep8
     colorize
     # docker

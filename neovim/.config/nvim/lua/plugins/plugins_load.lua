@@ -11,6 +11,16 @@ return require("packer").startup(function(use)
 	----------------------
 	---~~[Editing Actions~]~
 	----------------------
+
+	--Firenvim
+
+	use({
+		"glacambre/firenvim",
+		run = function()
+			vim.fn["firenvim#install"](0)
+		end,
+	})
+
 	use({
 		"ThePrimeagen/refactoring.nvim",
 		requires = {
@@ -49,18 +59,20 @@ return require("packer").startup(function(use)
 	use("tpope/vim-unimpaired")
 
 	-- which_key
-	use({"folke/which-key.nvim", config = get_config("which-key")})
+	use({ "folke/which-key.nvim", config = get_config("which-key") })
 
 	-- Hop
-	use("phaazon/hop.nvim")
+	-- use("phaazon/hop.nvim")
+	use("ggandor/lightspeed.nvim")
+	use("tpope/vim-repeat")
 	use("unblevable/quick-scope")
-	require("hop").setup()
+	-- require("hop").setup()
 
 	-- Vista
 	use("liuchengxu/vista.vim")
 
 	-- chadtree
-	use({ "ms-jpq/chadtree", branch = "chad", run = ":CHADdeps", opt = true, cmd = "CHADopen" })
+	-- use({ "ms-jpq/chadtree", branch = "chad", run = ":CHADdeps", opt = true, cmd = "CHADopen" })
 
 	-- Trouble
 	use("folke/trouble.nvim")
@@ -72,12 +84,8 @@ return require("packer").startup(function(use)
 
 	--Telescope
 	use("nvim-telescope/telescope.nvim")
-	use({ "nvim-telescope/telescope-fzf-native.nvim",
-		run = "make",
-		config = get_config("telescope")
-	})
-
-	require("telescope").load_extension("fzf")
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", config = get_config("telescope") })
+	use({ "nvim-telescope/telescope-file-browser.nvim" })
 
 	-- TODO - get nvim worktree going
 	--FZF
@@ -89,7 +97,7 @@ return require("packer").startup(function(use)
 	---~~[[LSP]]~~--
 	----------------
 	--LSPconfig
-	use({"neovim/nvim-lspconfig", config = get_config('lsp-config')})
+	use({ "neovim/nvim-lspconfig", config = get_config("lsp-config") })
 
 	--Saga
 	use({ "tami5/lspsaga.nvim", branch = "nvim51" })
@@ -105,13 +113,13 @@ return require("packer").startup(function(use)
 
 	-- null-ls
 
-	use({"jose-elias-alvarez/null-ls.nvim", config = get_config("null-ls")})
+	use({ "jose-elias-alvarez/null-ls.nvim", config = get_config("null-ls") })
 
 	----------------------
 	---~~[[Treesitter]]~~---
 	----------------------
 	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = get_config('treesitter') })
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = get_config("treesitter") })
 	use({ "nvim-treesitter/playground", opt = true, cmd = "TSPlaygroundToggle" })
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
@@ -119,10 +127,10 @@ return require("packer").startup(function(use)
 	---~~[Snippets]~~-------
 	------------------- --
 	-- within packer init {{{
-	use({
-		"SirVer/ultisnips",
-		requires = { { "honza/vim-snippets", rtp = "." } },
-	})
+	-- use({
+	-- 	"SirVer/ultisnips",
+	-- 	requires = { { "honza/vim-snippets", rtp = "." } },
+	-- })
 
 	local t = function(str)
 		return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -141,7 +149,7 @@ return require("packer").startup(function(use)
 	---~~[AutoComplete]~~---
 	----------------------
 	--CMP Stuff
-	use({"hrsh7th/nvim-cmp", config = get_config('cmp')})
+	use({ "hrsh7th/nvim-cmp", config = get_config("cmp") })
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lua")
 	use("hrsh7th/cmp-buffer")
@@ -150,8 +158,8 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/cmp-vsnip")
 	-- use("saadparwaiz1/cmp_luasnip")
-	
-	use("quangnguyen30192/cmp-nvim-ultisnips")
+
+	-- use("quangnguyen30192/cmp-nvim-ultisnips")
 	use({ "kdheepak/cmp-latex-symbols", opt = true, ft = { "latex", "tex", "texmf" } })
 	use({ "pontusk/cmp-vimwiki-tags", opt = true, ft = { "wiki", "vimwiki" } })
 
@@ -162,7 +170,7 @@ return require("packer").startup(function(use)
 	--~~ Debugging ~~--
 	-------------------
 	-- setup nvim DAP
-	use({"mfussenegger/nvim-dap", config = get_config("nvim-dap")})
+	use({ "mfussenegger/nvim-dap", config = get_config("nvim-dap") })
 	use({ "mfussenegger/nvim-dap-python" })
 	use("rcarriga/nvim-dap-ui")
 	use("theHamsta/nvim-dap-virtual-text")
@@ -200,7 +208,6 @@ return require("packer").startup(function(use)
 	----------------
 	use({ "simrat39/rust-tools.nvim", config = get_config("rust-tools") })
 
-
 	require("rust-tools").setup({})
 	-- set inlay hints
 	require("rust-tools.inlay_hints").set_inlay_hints()
@@ -210,12 +217,12 @@ return require("packer").startup(function(use)
 	---------------------
 	---~~Javascript~~-----
 	---------------------
-	use({ "mlaursen/vim-react-snippets"})
+	use({ "mlaursen/vim-react-snippets" })
 
 	----------------
 	---~~Java~~-----
 	----------------
-	use({ "mfussenegger/nvim-jdtls", opt = true, ft = { "java" } })
+	use({ "mfussenegger/nvim-jdtls" })
 	require("lspconfig").jdtls.setup({ cmd = { "jdtls" } })
 
 	----------------
@@ -277,10 +284,10 @@ return require("packer").startup(function(use)
 
 	--UI/UX Elements
 	use("voldikss/vim-floaterm")
-	use({"nvim-lualine/lualine.nvim", config = get_config('lualine')})
+	use({ "nvim-lualine/lualine.nvim", config = get_config("lualine") })
 
 	-- BarBar
-	use({"romgrk/barbar.nvim", config = get_config("barbar")})
+	use({ "romgrk/barbar.nvim", config = get_config("barbar") })
 	use({ "nvim-lua/popup.nvim", opt = true })
 	use("kyazdani42/nvim-web-devicons")
 
@@ -292,7 +299,7 @@ return require("packer").startup(function(use)
 	require("nvim-gps").setup()
 
 	--biscuits
-	use({"code-biscuits/nvim-biscuits", config = get_config('biscuits')})
+	use({ "code-biscuits/nvim-biscuits", config = get_config("biscuits") })
 
 	----------------
 	-----GIT--------
@@ -317,9 +324,8 @@ return require("packer").startup(function(use)
 	use({
 		"nvim-neorg/neorg",
 		requires = "nvim-lua/plenary.nvim",
-		config = get_config("neorg")
+		config = get_config("neorg"),
 	})
-
 
 	-- Taskwarrior
 	use("blindFS/vim-taskwarrior")
@@ -328,9 +334,8 @@ return require("packer").startup(function(use)
 	use({
 		"brymer-meneses/grammar-guard.nvim",
 		requires = "neovim/nvim-lspconfig",
-		config = get_config("grammar-guard")
+		config = get_config("grammar-guard"),
 	})
-
 
 	-- this is required for grammar guard
 	use("williamboman/nvim-lsp-installer")
@@ -344,7 +349,6 @@ return require("packer").startup(function(use)
 			require("orgmode").setup({})
 		end,
 	})
-
 
 	require("orgmode").setup({
 		org_agenda_files = { "~/Dropbox/org/*", "~/my-orgs/**/*" },

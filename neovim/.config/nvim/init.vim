@@ -7,7 +7,7 @@
 " source by init.lua
 lua require('init')
 colorscheme base16-nord
-" colorscheme nord
+colorscheme base16-nord
 
 "automatically recompile when plugins changed
 augroup packer_user_config
@@ -380,7 +380,7 @@ set foldexpr=nvim_treesitter#foldexpr()
 "                                                  "
 " ****************NerdTree*************************"
 
-map <silent><C-n> :CHADopen<CR>
+" map <silent><C-n> :CHADopen<CR>
 
 " ****************FloatTerm*************************"
 "                                                   "
@@ -415,12 +415,12 @@ set shortmess+=c
 "           Settings for Hop                  "
 "                                             "
 " ****************Hop*************************"
-                                              
-nnoremap S :HopWord<CR>
-vnoremap S :HopWord<CR>
-nnoremap s :HopChar1<CR>
-vnoremap s :HopChar1<CR>
-nnoremap L :HopLine<CR>
+"                                               
+" nnoremap S :HopWord<CR>
+" vnoremap S :HopWord<CR>
+" nnoremap s :HopChar1<CR>
+" vnoremap s :HopChar1<CR>
+" nnoremap L :HopLine<CR>
 
 "EasyAlign Bindings
 
@@ -496,6 +496,7 @@ set rtp+=~/.vim/bundle/fzf
 " ****************Telescope*************************
 
 " Using Lua functions
+nnoremap <C-n> :Telescope file_browser<cr>
 nnoremap <leader>sf <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>sg <cmd>lua require('telescope.builtin').live_grep()<cr>
 "

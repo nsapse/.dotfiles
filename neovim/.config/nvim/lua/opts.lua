@@ -10,12 +10,12 @@ local bo = vim.bo
 
 -- Window Appearance
 o.nu = true
-o.rnu =					true
+o.rnu = true
 o.termguicolors = true
 
 -- General UI/UX
 o.showmatch = true
-o.encoding = 'UTF-8'
+o.encoding = "UTF-8"
 
 -- Tab and Shift
 o.tabstop = 4
@@ -37,4 +37,4 @@ o.incsearch = true
 --o.undodir = '~/.vim/undodir'
 
 -- Conceal
-o.cocu = 'vnic'
+o.cocu = "vnic"
