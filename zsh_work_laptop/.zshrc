@@ -211,6 +211,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias chx="chmod +x"
+alias sdi="sudo dnf install"
 
 zo(){
      zathura $1 & disown
