@@ -212,6 +212,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias chx="chmod +x"
 alias sdi="sudo dnf install"
+alias mk="minikube"
 
 zo(){
      zathura $1 & disown
@@ -410,3 +411,5 @@ export GIT_PAGER='delta'
 # Start Zoxide
 eval "$(zoxide init zsh)"
 # export TERM="screen-256color"
+
+alias luamake=/home/nsapse/Downloads/lua-language-server/3rd/luamake/luamake

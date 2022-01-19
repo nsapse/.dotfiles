@@ -193,8 +193,8 @@ bindsym $mod+Shift+d exec rofi -show drun -f lines 9 -eh 2 -width 100 -opacity "
 
 # Setup Rofi-Menu Mods 
 #bindsym $mod+d exec --no-startup-id rofi-appsmenu
-bindsym $mod+n exec --no-startup-id rofi-network
-bindsym $mod+p exec --no-startup-id rofi-power
+# bindsym $mod+n exec --no-startup-id rofi-network
+# bindsym $mod+p exec --no-startup-id rofi-power
 
 ##############################################
 #           Random Launcher Bindings         #
@@ -270,8 +270,13 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+Shift+a focus child
+
+# prev/next bindings similar to tmux
+bindsym $mod+p workspace prev
+bindsym $mod+n workspace next
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
