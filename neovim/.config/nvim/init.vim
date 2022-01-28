@@ -21,6 +21,9 @@ set nobackup
 set undofile
 set undodir=~/.vim/undodir
 set colorcolumn=80
+set title
+set titlestring=%{hostname()}\ \ %F\ \ %{strftime('%Y-%m-%d\ %H:%M',getftime(expand('%')))}
+
 syntax on
 filetype plugin on
 
@@ -380,7 +383,7 @@ set foldexpr=nvim_treesitter#foldexpr()
 "                                                  "
 " ****************NerdTree*************************"
 
-" map <silent><C-n> :CHADopen<CR>
+map <silent><C-n> :CHADopen<CR>
 
 " ****************FloatTerm*************************"
 "                                                   "
@@ -496,7 +499,7 @@ set rtp+=~/.vim/bundle/fzf
 " ****************Telescope*************************
 
 " Using Lua functions
-nnoremap <C-n> :Telescope file_browser<cr>
+nnoremap <leader>sF :Telescope file_browser<cr>
 nnoremap <leader>sf <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>sg <cmd>lua require('telescope.builtin').live_grep()<cr>
 "

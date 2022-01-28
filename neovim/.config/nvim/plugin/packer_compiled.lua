@@ -669,30 +669,30 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: telescope-fzf-native.nvim
-time([[Config for telescope-fzf-native.nvim]], true)
-require("plugins/config/telescope")
-time([[Config for telescope-fzf-native.nvim]], false)
 -- Config for: nvim-biscuits
 time([[Config for nvim-biscuits]], true)
 require("plugins/config/biscuits")
 time([[Config for nvim-biscuits]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require("plugins/config/cmp")
+time([[Config for nvim-cmp]], false)
+-- Config for: telescope-fzf-native.nvim
+time([[Config for telescope-fzf-native.nvim]], true)
+require("plugins/config/telescope")
+time([[Config for telescope-fzf-native.nvim]], false)
+-- Config for: grammar-guard.nvim
+time([[Config for grammar-guard.nvim]], true)
+require("plugins/config/grammar-guard")
+time([[Config for grammar-guard.nvim]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 require("plugins/config/lualine")
 time([[Config for lualine.nvim]], false)
--- Config for: barbar.nvim
-time([[Config for barbar.nvim]], true)
-require("plugins/config/barbar")
-time([[Config for barbar.nvim]], false)
--- Config for: neorg
-time([[Config for neorg]], true)
-require("plugins/config/neorg")
-time([[Config for neorg]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require("plugins/config/treesitter")
-time([[Config for nvim-treesitter]], false)
+-- Config for: refactoring.nvim
+time([[Config for refactoring.nvim]], true)
+require("plugins/config/refactor")
+time([[Config for refactoring.nvim]], false)
 -- Config for: todo-comments.nvim
 time([[Config for todo-comments.nvim]], true)
 require("plugins/config/todo-comments")
@@ -701,22 +701,6 @@ time([[Config for todo-comments.nvim]], false)
 time([[Config for orgmode]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\forgmode\frequire\0", "config", "orgmode")
 time([[Config for orgmode]], false)
--- Config for: refactoring.nvim
-time([[Config for refactoring.nvim]], true)
-require("plugins/config/refactor")
-time([[Config for refactoring.nvim]], false)
--- Config for: nvim-dap
-time([[Config for nvim-dap]], true)
-require("plugins/config/nvim-dap")
-time([[Config for nvim-dap]], false)
--- Config for: grammar-guard.nvim
-time([[Config for grammar-guard.nvim]], true)
-require("plugins/config/grammar-guard")
-time([[Config for grammar-guard.nvim]], false)
--- Config for: rust-tools.nvim
-time([[Config for rust-tools.nvim]], true)
-require("plugins/config/rust-tools")
-time([[Config for rust-tools.nvim]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 require("plugins/config/which-key")
@@ -729,18 +713,34 @@ time([[Config for org-bullets.nvim]], false)
 time([[Config for null-ls.nvim]], true)
 require("plugins/config/null-ls")
 time([[Config for null-ls.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require("plugins/config/cmp")
-time([[Config for nvim-cmp]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
+-- Config for: barbar.nvim
+time([[Config for barbar.nvim]], true)
+require("plugins/config/barbar")
+time([[Config for barbar.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require("plugins/config/treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-dap
+time([[Config for nvim-dap]], true)
+require("plugins/config/nvim-dap")
+time([[Config for nvim-dap]], false)
+-- Config for: rust-tools.nvim
+time([[Config for rust-tools.nvim]], true)
+require("plugins/config/rust-tools")
+time([[Config for rust-tools.nvim]], false)
+-- Config for: neorg
+time([[Config for neorg]], true)
+require("plugins/config/neorg")
+time([[Config for neorg]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
 require("plugins/config/lsp-config")
 time([[Config for nvim-lspconfig]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -753,19 +753,19 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType mardown ++once lua require("packer.load")({'vim-markdown'}, { ft = "mardown" }, _G.packer_plugins)]]
-vim.cmd [[au FileType md ++once lua require("packer.load")({'vim-markdown'}, { ft = "md" }, _G.packer_plugins)]]
 vim.cmd [[au FileType cpp ++once lua require("packer.load")({'nvim-gdb'}, { ft = "cpp" }, _G.packer_plugins)]]
-vim.cmd [[au FileType tex ++once lua require("packer.load")({'cmp-latex-symbols'}, { ft = "tex" }, _G.packer_plugins)]]
-vim.cmd [[au FileType latex ++once lua require("packer.load")({'cmp-latex-symbols'}, { ft = "latex" }, _G.packer_plugins)]]
+vim.cmd [[au FileType html ++once lua require("packer.load")({'bracey.vim'}, { ft = "html" }, _G.packer_plugins)]]
 vim.cmd [[au FileType css ++once lua require("packer.load")({'bracey.vim'}, { ft = "css" }, _G.packer_plugins)]]
 vim.cmd [[au FileType javascript ++once lua require("packer.load")({'bracey.vim'}, { ft = "javascript" }, _G.packer_plugins)]]
-vim.cmd [[au FileType html ++once lua require("packer.load")({'bracey.vim'}, { ft = "html" }, _G.packer_plugins)]]
 vim.cmd [[au FileType wiki ++once lua require("packer.load")({'cmp-vimwiki-tags', 'vim-plugin-AnsiEsc'}, { ft = "wiki" }, _G.packer_plugins)]]
 vim.cmd [[au FileType vimwiki ++once lua require("packer.load")({'cmp-vimwiki-tags', 'vim-plugin-AnsiEsc'}, { ft = "vimwiki" }, _G.packer_plugins)]]
 vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
-vim.cmd [[au FileType c ++once lua require("packer.load")({'nvim-gdb'}, { ft = "c" }, _G.packer_plugins)]]
 vim.cmd [[au FileType texmf ++once lua require("packer.load")({'cmp-latex-symbols'}, { ft = "texmf" }, _G.packer_plugins)]]
+vim.cmd [[au FileType tex ++once lua require("packer.load")({'cmp-latex-symbols'}, { ft = "tex" }, _G.packer_plugins)]]
+vim.cmd [[au FileType c ++once lua require("packer.load")({'nvim-gdb'}, { ft = "c" }, _G.packer_plugins)]]
+vim.cmd [[au FileType md ++once lua require("packer.load")({'vim-markdown'}, { ft = "md" }, _G.packer_plugins)]]
+vim.cmd [[au FileType latex ++once lua require("packer.load")({'cmp-latex-symbols'}, { ft = "latex" }, _G.packer_plugins)]]
+vim.cmd [[au FileType mardown ++once lua require("packer.load")({'vim-markdown'}, { ft = "mardown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]

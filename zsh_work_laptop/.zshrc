@@ -8,7 +8,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/nsapse/.oh-my-zsh"
@@ -314,7 +314,7 @@ alias inbox="task +in"
 
 # remapping system default programs
 alias cat="bat"
-alias sed="sad"
+# alias sed="sad"
 
 job(){
     task add project:jobs $1;
@@ -374,6 +374,53 @@ ex ()
     else
         echo "'$1' is not a valid file"
     fi
+}
+
+## For Kube and Stuff
+
+alias kinddc="kind delete cluster"
+alias kindcc="kind create cluster"
+
+kindrc()
+{
+	kinddc
+	kindcc
+}
+
+
+olmup () {
+    # Create olm-cluster if not already present
+    kind get clusters 2>&1 | grep "olm-cluster" --quiet
+    if [[ $? -eq 0 ]]; then
+        echo "Found olm-cluster was already started"
+    else
+        echo "Could not find olm-cluster, starting now..."
+        kind create cluster --name olm-cluster
+    fi
+
+    # Load OLM onto the cluster if it isn't already present
+    k api-resources | grep "coreos" --quiet
+    if [[ $? -eq 0 ]]; then
+        echo "Found olm was already installed"
+    else
+        ( cd PATH/TO/YOUR/OLM && make run-local )
+    fi
+}
+
+olmdown () {
+    # Delete the olm-cluster if it is defined
+    kind get clusters 2>&1 | grep "olm-cluster" --quiet
+    if [[ $? -eq 0 ]]; then
+        echo "Found olm-cluster, deleting now..."
+        kind delete clusters olm-cluster
+    else
+        echo "Could not find olm-cluster, nothing to delete."
+    fi
+}
+
+olmrs () {
+    olmdown
+    olmup
 }
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
