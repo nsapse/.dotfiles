@@ -5,16 +5,17 @@
 #
 # For All Three
 
-# exec_always xrandr --output XWAYLAND0 --mode 3440x1440 --pos 1080x0 --rotate normal --output XWAYLAND1 --mode 1080x1920 --pos 0x600 --rotate normal --output XWAYLAND2 --primary --mode 1920x1080 --pos 1080x1440 --rotate normal
+exec_always xrandr --output XWAYLAND0 --mode 3440x1440 --pos 1080x0 --rotate normal --output XWAYLAND1 --mode 1080x1920 --pos 0x600 --rotate normal --output XWAYLAND2 --primary --mode 1920x1080 --pos 1080x1440 --rotate normal
+
 # For Two Screens
-exec_always xrandr --output eDP-1 --primary --mode 1920x1080 --pos 1080x840 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off --output DP-2-1 --off --output DP-2-2 --off --output DP-2-3 --mode 1920x1080 --pos 0x0 --rotate left
+# exec_always xrandr --output eDP-1 --primary --mode 1920x1080 --pos 1080x840 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off --output DP-2-1 --off --output DP-2-2 --off --output DP-2-3 --mode 1920x1080 --pos 0x0 --rotate left
 
 
 ##GNOME stuff
-exec --no-startup-id /usr/lib/gsd-xsettings
-exec_always --no-startup-id gnome-power-manager
+# exec --no-startup-id /usr/lib/gsd-xsettings
+# exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id gnome-flashback
+# exec --no-startup-id gnome-flashback
 
 #exec_always xrandr --output DisplayPort-0 --off --output DisplayPort-1 --primary --mode 3440x1440 --pos 1080x480 --rotate normal --output HDMI-A-0 --off --output HDMI-A-1 --mode 1920x1080 --pos 0x0 --rotate left --output DVI-D-0 --off 
 exec_always --no-startup-id feh --bg-scale /home/nsapse/Pictures/wallpaper/nord_sea.png

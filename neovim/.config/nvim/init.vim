@@ -16,6 +16,7 @@ augroup packer_user_config
 augroup end
 
 set termguicolors
+set cursorline
 set noswapfile
 set nobackup
 set undofile

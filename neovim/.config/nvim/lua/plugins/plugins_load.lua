@@ -199,9 +199,17 @@ return require("packer").startup(function(use)
 	})
 
 	use({ "plasticboy/vim-markdown", opt = true, ft = { "mardown", "md" } })
+	--
 	----------------
 	--~~Python~~----
 	----------------
+
+
+	----------------
+	--~~Golang~~----
+	----------------
+	use 'ray-x/go.nvim'
+	require('go').setup()
 
 	----------------
 	----~~Rust~~----

@@ -8,7 +8,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH:$HOME/.config/nvim/lua-language-server/bin/
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/nsapse/.oh-my-zsh"
@@ -438,6 +438,10 @@ olmrs () {
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
+# sourcing openshift/kube autocomplete
+# source <(oc completion zsh)
+source <(kubectl completion zsh)
+
 # Launch Starship
 # eval "$(starship init zsh)"
 
@@ -451,7 +455,7 @@ export JDTLS_HOME=/usr/bin/jdtls # Directory with the plugin and configs directo
 #export WORKSPACE=/path/to/workspace # Defaults to $HOME/workspace
 
 # set the pager to be bat with some sh preprocesing
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="bat"
 # set default pager to be delta
 export GIT_PAGER='delta'
 
