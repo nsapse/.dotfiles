@@ -111,6 +111,11 @@ nnoremap <leader>K :m .-2<CR>
 nnoremap <c-s> :w<cr>
 map <c-q> :qa<cr>
 
+"Auto-center the screen on jumps
+nnoremap <c-o> <c-o>zz
+nnoremap <c-i> <c-i>zz
+
+
 " Mapping alternate common comment command <C-/>
 " *******************Abbreviations*************************"
 "                                                          "
@@ -500,7 +505,7 @@ set rtp+=~/.vim/bundle/fzf
 " ****************Telescope*************************
 
 " Using Lua functions
-nnoremap <leader>sF :Telescope file_browser<cr>
+nnoremap <leader>ff :Telescope file_browser<cr>
 nnoremap <leader>sf <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>sg <cmd>lua require('telescope.builtin').live_grep()<cr>
 "

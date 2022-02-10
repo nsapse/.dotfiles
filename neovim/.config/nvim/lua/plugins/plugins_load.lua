@@ -100,7 +100,7 @@ return require("packer").startup(function(use)
 	use({ "neovim/nvim-lspconfig", config = get_config("lsp-config") })
 
 	--Saga
-	use({ "tami5/lspsaga.nvim", branch = "nvim51" })
+	use({ "tami5/lspsaga.nvim" })
 	local saga = require("lspsaga")
 	saga.init_lsp_saga()
 
