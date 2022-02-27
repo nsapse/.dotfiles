@@ -351,7 +351,7 @@ return require("packer").startup(function(use)
 	--orgmode.nvim
 	-- init.lua
 
-	use({
+	--[[ use({
 		"nvim-orgmode/orgmode",
 		config = function()
 			require("orgmode").setup({})
@@ -372,7 +372,7 @@ return require("packer").startup(function(use)
 				end,
 			})
 		end,
-	})
+	}) ]]
 
 	----------------
 	-- ~~Docs, Etc--

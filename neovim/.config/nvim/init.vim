@@ -391,6 +391,16 @@ set foldexpr=nvim_treesitter#foldexpr()
 
 map <silent><C-n> :CHADopen<CR>
 
+
+" ****************DiffView*************************"
+"                                                  "
+"           Settings for DiffView                  "
+"                                                  "
+" ****************DiffView*************************"
+nnoremap <leader>do :DiffviewOpen<cr> 
+nnoremap <leader>dc :DiffviewClose<cr> 
+
+
 " ****************FloatTerm*************************"
 "                                                   "
 "           Settings for FloatTerm                  "
@@ -505,7 +515,7 @@ set rtp+=~/.vim/bundle/fzf
 " ****************Telescope*************************
 
 " Using Lua functions
-nnoremap <leader>ff :Telescope file_browser<cr>
+nnoremap <c-f> :Telescope file_browser<cr>
 nnoremap <leader>sf <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>sg <cmd>lua require('telescope.builtin').live_grep()<cr>
 "

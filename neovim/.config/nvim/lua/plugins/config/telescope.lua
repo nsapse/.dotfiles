@@ -1,4 +1,7 @@
 require("telescope").setup({
+	defaults = {
+		theme = "ivy"
+	},
 	extensions = {
 		fzf = {
 			fuzzy = true, -- false will only do exact matching
