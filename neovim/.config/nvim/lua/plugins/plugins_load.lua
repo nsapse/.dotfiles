@@ -62,11 +62,10 @@ return require("packer").startup(function(use)
 	use({ "folke/which-key.nvim", config = get_config("which-key") })
 
 	-- Hop
-	use("phaazon/hop.nvim")
+	use({ "phaazon/hop.nvim", config = get_config("hop") })
 	-- use("ggandor/lightspeed.nvim")
 	use("tpope/vim-repeat")
 	use("unblevable/quick-scope")
-	require("hop").setup()
 
 	-- Vista
 	use("liuchengxu/vista.vim")
