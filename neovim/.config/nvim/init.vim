@@ -518,13 +518,17 @@ set rtp+=~/.vim/bundle/fzf
 " Using Lua functions
 nnoremap <c-f> :Telescope file_browser<cr>
 nnoremap <leader>sf <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>sz <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>
+nnoremap <leader>sr <cmd>lua require('telescope.builtin').lsp_references()<cr>
 nnoremap <leader>sg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap gw <cmd>lua require('telescope.builtin').grep_string()<cr>
 "
 " Telescope grep seeps crashing - remapped to ripgrem in Floatterm
 nnoremap <leader>sb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>sh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>sm <cmd>lua require('telescope.builtin').keymaps()<cr>
 nnoremap <leader>cc <cmd>lua require('telescope.builtin').colorscheme()<cr>
+" nnoremap <leader>sa <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
 nnoremap <leader>st :TodoTelescope<cr>
 
 
