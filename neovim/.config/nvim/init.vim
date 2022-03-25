@@ -440,7 +440,14 @@ set shortmess+=c
 " vnoremap S :HopWord<CR>
 " nnoremap s :HopChar1<CR>
 " vnoremap s :HopChar1<CR>
-nnoremap L :HopLine<CR>
+" nnoremap L :HopLine<CR>
+
+" ****************LightSpeed*************************"
+"                                                    "
+"           Settings for LightSpeed                  "
+"                                                    "
+" ****************LightSpeed*************************"
+
 
 "EasyAlign Bindings
 
@@ -599,15 +606,15 @@ let g:vim_markdown_conceal_code_blocks = 0
 " ****************Sandwich************************* "
 
 
-" let g:operator_sandwich_no_default_key_mappings = 1
-" let g:textobj_sandwich_no_default_key_mappings = 1
-"
-"
-" silent! nmap <unique> Sa <Plug>(operator-sandwich-add)
-"
-" silent! xmap <unique> Sa <Plug>(operator-sandwich-add)
-"
-" silent! omap <unique> Sa <Plug>(operator-sandwich-g@)
+let g:operator_sandwich_no_default_key_mappings = 1
+let g:textobj_sandwich_no_default_key_mappings = 1
+
+
+silent! nmap <unique> <leader>sa <Plug>(operator-sandwich-add)
+
+silent! xmap <unique> <leader>sa <Plug>(operator-sandwich-add)
+
+silent! omap <unique> <leader>sa <Plug>(operator-sandwich-g@)
 "
 "
 "

@@ -89,10 +89,12 @@ plugins=(
     archlinux
     autopep8
     colorize
+	colored-man-pages
     docker
     # docker-compose
     fzf-tab
     git
+	gh
     github
     heroku
 	kubectl
@@ -206,7 +208,7 @@ alias lsp='ls -a -l --color=auto | less'
 alias lsg='ls -a -l --color=auto | grep --color=auto'
 alias lsgl='ls -a -l --color=auto | grep --color=auto | less '
 alias grep="grep --color=auto"
-alias gh="history|grep"
+alias greph="history|grep"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -455,9 +457,9 @@ export JDTLS_HOME=/usr/bin/jdtls # Directory with the plugin and configs directo
 #export WORKSPACE=/path/to/workspace # Defaults to $HOME/workspace
 
 # set the pager to be bat with some sh preprocesing
-export MANPAGER="bat"
+# export MANPAGER="bat"
 # set default pager to be delta
-export GIT_PAGER='delta'
+# export GIT_PAGER='delta'
 
 # Start Zoxide
 eval "$(zoxide init zsh)"

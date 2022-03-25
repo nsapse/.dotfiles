@@ -62,8 +62,8 @@ return require("packer").startup(function(use)
 	use({ "folke/which-key.nvim", config = get_config("which-key") })
 
 	-- Hop
-	use({ "phaazon/hop.nvim", config = get_config("hop") })
-	-- use("ggandor/lightspeed.nvim")
+	-- use({ "phaazon/hop.nvim", config = get_config("hop") })
+	use({"ggandor/lightspeed.nvim", config=get_config("lightspeed")})
 	use("tpope/vim-repeat")
 	use("unblevable/quick-scope")
 
