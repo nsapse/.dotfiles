@@ -524,19 +524,27 @@ set rtp+=~/.vim/bundle/fzf
 
 " Using Lua functions
 nnoremap <c-f> :Telescope file_browser<cr>
-nnoremap <leader>sf <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>sz <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>
-nnoremap <leader>sr <cmd>lua require('telescope.builtin').lsp_references()<cr>
-nnoremap <leader>sg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap gw <cmd>lua require('telescope.builtin').grep_string()<cr>
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy({}))<cr>
+nnoremap <leader>fz <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_ivy({}))<cr>
+nnoremap <leader>sr <cmd>lua require('telescope.builtin').lsp_references(require('telescope.themes').get_ivy({}))<cr>
+nnoremap <leader>sts <cmd>lua require('telescope.builtin').treesitter()<cr>
+nnoremap <leader>sds <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
+nnoremap <leader>sws <cmd>lua require('telescope.builtin').lsp_workspace_symbols()<cr>
+nnoremap <leader>sd <cmd>lua require('telescope.builtin').diagnostics(require('telescope.themes').get_ivy({}))<cr>
+nnoremap <leader>gg <cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))<cr>
+nnoremap <leader>gw <cmd>lua require('telescope.builtin').grep_string(require('telescope.themes').get_ivy({}))<cr>
 "
 " Telescope grep seeps crashing - remapped to ripgrem in Floatterm
-nnoremap <leader>sb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>sb <cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>sh <cmd>lua require('telescope.builtin').help_tags()<cr>
-nnoremap <leader>sm <cmd>lua require('telescope.builtin').keymaps()<cr>
+nnoremap <leader>sk <cmd>lua require('telescope.builtin').keymaps(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>cc <cmd>lua require('telescope.builtin').colorscheme()<cr>
-" nnoremap <leader>sa <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
+nnoremap <leader>ca <cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>st :TodoTelescope<cr>
+
+"telescope git stuff
+nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_commits(require('telescope.themes').get_ivy({}))<cr>
+nnoremap <leader>gbc <cmd>lua require('telescope.builtin').git_bcommits(require('telescope.themes').get_ivy({}))<cr>
 
 
 
@@ -611,16 +619,20 @@ let g:textobj_sandwich_no_default_key_mappings = 1
 
 
 silent! nmap <unique> <leader>sa <Plug>(operator-sandwich-add)
-
 silent! xmap <unique> <leader>sa <Plug>(operator-sandwich-add)
-
 silent! omap <unique> <leader>sa <Plug>(operator-sandwich-g@)
-"
-"
-"
-" silent! nmap <unique><silent> Sd <Plug>(operator-sandwich-delete)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-query-a)
-"
-" silent! nmap <unique><silent> Sr <Plug>(operator-sandwich-replace)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-query-a)
-"
-" silent! nmap <unique><silent> Sdb <Plug>(operator-sandwich-delete)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-auto-a)
+
+
+
+" silent! nmap <unique> <leader>sd <Plug>(operator-sandwich-delete)
+" silent! xmap <unique> <leader>sd <Plug>(operator-sandwich-delete)
+" silent! omap <unique> <leader>sd <Plug>(operator-sandwich-delete)
+
+" silent! nmap <leader>sr <Plug>(operator-sandwich-replace)
+" silent! xmap <leader>sr <Plug>(operator-sandwich-replace)
+" silent! omap <leader>sr <Plug>(operator-sandwich-replace)
+
+" silent! nmap <unique> <leader>sdb <Plug>(operator-sandwich-delete)
+" silent! xmap <unique> <leader>sdb <Plug>(operator-sandwich-delete)
+" silent! omap <unique> <leader>sdb <Plug>(operator-sandwich-delete)
 

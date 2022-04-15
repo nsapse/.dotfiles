@@ -13,7 +13,7 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		--formatters
-		formatting.black,
+		-- formatting.black,
 		formatting.brittany,
 		formatting.clang_format,
 		formatting.eslint_d,
