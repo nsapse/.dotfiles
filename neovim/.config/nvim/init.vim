@@ -617,22 +617,8 @@ let g:vim_markdown_conceal_code_blocks = 0
 let g:operator_sandwich_no_default_key_mappings = 1
 let g:textobj_sandwich_no_default_key_mappings = 1
 
-
 silent! nmap <unique> <leader>sa <Plug>(operator-sandwich-add)
 silent! xmap <unique> <leader>sa <Plug>(operator-sandwich-add)
 silent! omap <unique> <leader>sa <Plug>(operator-sandwich-g@)
 
-
-
-" silent! nmap <unique> <leader>sd <Plug>(operator-sandwich-delete)
-" silent! xmap <unique> <leader>sd <Plug>(operator-sandwich-delete)
-" silent! omap <unique> <leader>sd <Plug>(operator-sandwich-delete)
-
-" silent! nmap <leader>sr <Plug>(operator-sandwich-replace)
-" silent! xmap <leader>sr <Plug>(operator-sandwich-replace)
-" silent! omap <leader>sr <Plug>(operator-sandwich-replace)
-
-" silent! nmap <unique> <leader>sdb <Plug>(operator-sandwich-delete)
-" silent! xmap <unique> <leader>sdb <Plug>(operator-sandwich-delete)
-" silent! omap <unique> <leader>sdb <Plug>(operator-sandwich-delete)
-
+silent! nmap <unique> <leader>sr <Plug>(operator-sandwich-replace)<Plug>(textobj-sandwich-query-a)

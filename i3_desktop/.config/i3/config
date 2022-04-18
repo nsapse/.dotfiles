@@ -194,7 +194,8 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec rofi -show drun
 #bindsym $mod+d exec rofi -show run -f lines 9 -eh 2 -width 100 -opacity "85" -fullscreen -padding 800 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlfg "#9575cd  
 
-bindsym $mod+space exec rofi -show drun -f lines 9 -eh 2 -width 100 -opacity "85" -fullscreen -padding 800 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlfg "    #9575cd"
+bindsym $mod+d exec rofi -show drun -f lines 9 -eh 2 -width 100 -opacity "85" -fullscreen -padding 800 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlfg "    #9575cd"
+bindsym $mod+shift+d exec rofi -show run -f lines 9 -eh 2 -width 100 -opacity "85" -fullscreen -padding 800 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlfg "    #9575cd"
 
 ##############################################
 #           Random Launcher Bindings         #

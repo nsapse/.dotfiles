@@ -136,13 +136,13 @@ return require("packer").startup(function(use)
 	end
 
 	use("honza/vim-snippets")
-	use("hrsh7th/vim-vsnip")
-	use("hrsh7th/vim-vsnip-integ")
+	-- use("hrsh7th/vim-vsnip")
+	-- use("hrsh7th/vim-vsnip-integ")
 	use("rafamadriz/friendly-snippets")
 	--luasnip
-	-- use("L3MON4D3/LuaSnip")
+	use({"L3MON4D3/LuaSnip", config = get_config("luasnip")})
 	-- Load Snippets into Luasnip
-	-- require("luasnip/loaders/from_vscode").lazy_load()
+	require("luasnip/loaders/from_vscode").lazy_load()
 
 	----------------------
 	---~~[AutoComplete]~~---
@@ -155,8 +155,8 @@ return require("packer").startup(function(use)
 	use("ray-x/cmp-treesitter")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
-	use("hrsh7th/cmp-vsnip")
-	-- use("saadparwaiz1/cmp_luasnip")
+	-- use("hrsh7th/cmp-vsnip")
+	use("saadparwaiz1/cmp_luasnip")
 
 	-- use("quangnguyen30192/cmp-nvim-ultisnips")
 	use({ "kdheepak/cmp-latex-symbols", opt = true, ft = { "latex", "tex", "texmf" } })
@@ -202,7 +202,6 @@ return require("packer").startup(function(use)
 	----------------
 	--~~Python~~----
 	----------------
-
 
 	----------------
 	--~~Golang~~----
