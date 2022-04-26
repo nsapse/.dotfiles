@@ -315,7 +315,7 @@ alias todo="task +next"
 alias inbox="task +in"
 
 # remapping system default programs
-alias cat="bat"
+alias cat="bat -p"
 # alias sed="sad"
 
 job(){
