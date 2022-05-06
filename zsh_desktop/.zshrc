@@ -172,8 +172,9 @@ alias ranc="nvim ~/.config/ranger/rc.conf"
 alias roc="nvim ~/.config/rofi/config"
 alias sc="nvim ~/.config/starship.toml"
 alias twc="nvim ~/.taskrc"
-alias kmc="nvim ~/.config/kmonad/thinkpad_config.kbd"
+alias kmc="nvim ~/.config/kmonad"
 alias mc="nvim ~/.config/mutt/muttrc"
+alias emc="nvim ~/.emacs.d/init.el~"
 alias nm="neomutt"
 alias wiki="nvim ~/vimwiki/index.wiki"
 alias ww="wiki"
@@ -266,11 +267,11 @@ alias vp="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo 
 alias vy="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
 
 #tmux aliases
-alias ta="tmux attach -t"
+alias ta="tmux -u attach -t"
 alias tls="tmux ls"
-alias ts="tmux new-session -s"
+alias ts="tmux -u new-session -s"
 alias tk="tmux kill-session -t"
-alias tm="tmux"
+alias tm="tmux -u"
 
 #python aliases
 alias py="python"

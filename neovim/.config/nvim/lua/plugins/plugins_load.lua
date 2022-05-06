@@ -307,6 +307,9 @@ return require("packer").startup(function(use)
 	--biscuits
 	use({ "code-biscuits/nvim-biscuits", config = get_config("biscuits") })
 
+	--additional synatax for kmonad
+    use('kmonad/kmonad-vim')
+
 	----------------
 	-----GIT--------
 	----------------

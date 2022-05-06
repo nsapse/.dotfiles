@@ -50,6 +50,9 @@
 	;; tap for tab hold to switch to layer 2
 	lTb (tap-next tab @l2)
 
+	;; tap for tab hold to switch to alt 
+	lTa (tap-next tab alt)
+
 	;; mapping for current tmux lead
 	tmux_lead C-spc
 
