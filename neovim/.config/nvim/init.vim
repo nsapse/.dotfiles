@@ -531,7 +531,7 @@ nnoremap <leader>sts <cmd>lua require('telescope.builtin').treesitter()<cr>
 nnoremap <leader>sds <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
 nnoremap <leader>sws <cmd>lua require('telescope.builtin').lsp_workspace_symbols()<cr>
 nnoremap <leader>sd <cmd>lua require('telescope.builtin').diagnostics(require('telescope.themes').get_ivy({}))<cr>
-nnoremap <leader>gg <cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))<cr>
+nnoremap <leader>sg <cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>gw <cmd>lua require('telescope.builtin').grep_string(require('telescope.themes').get_ivy({}))<cr>
 "
 " Telescope grep seeps crashing - remapped to ripgrem in Floatterm
@@ -569,7 +569,7 @@ let g:vimtex_view_method='zathura'
 let g:tex_conceal='adbmg'
 let g:vimtex_quickfix_mode=1
 "let g:vimtex_syntax_conceal={'greek':1,'styles':1,'math_delimiters':1,'math_bounds':1,'math_super_sub':1,'math_symbols':1,'math_fracs':1,'fancy':1,'accents':0}
-set conceallevel=1
+set conceallevel=0
 nnoremap <leader><leader>vc :VimtexCompile<cr>
 
 
