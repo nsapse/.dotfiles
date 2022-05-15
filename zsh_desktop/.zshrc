@@ -8,7 +8,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/noah/.local/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/noah/.local/bin:$HOME/doomemacs/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/noah/.oh-my-zsh"
@@ -172,9 +172,8 @@ alias ranc="nvim ~/.config/ranger/rc.conf"
 alias roc="nvim ~/.config/rofi/config"
 alias sc="nvim ~/.config/starship.toml"
 alias twc="nvim ~/.taskrc"
-alias kmc="nvim ~/.config/kmonad"
+alias kmc="nvim ~/.config/kmonad/logitech_config.kbd"
 alias mc="nvim ~/.config/mutt/muttrc"
-alias emc="nvim ~/.emacs.d/init.el~"
 alias nm="neomutt"
 alias wiki="nvim ~/vimwiki/index.wiki"
 alias ww="wiki"
@@ -203,14 +202,22 @@ alias dactyl="cd ~/.dotfiles/qmk/qmk_firmware/keyboards/handwired/dactyl_manufor
 alias lsa="exa -a -l --icons --color=auto"
 alias lst='tree -C'
 alias lsp='ls -a -l --color=auto | less'
-alias lsg='ls -a -l --color=auto | grep --color=auto'
-alias lsgl='ls -a -l --color=auto | grep --color=auto | less '
-alias grep="grep --color=auto"
 alias gh="history|grep"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias chx="chmod +x"
+
+
+# piping things into grep
+# alias lsg='ls -a -l --color=auto | grep --color=auto'
+# alias lsgl='ls -a -l --color=auto | grep --color=auto | less '
+lsg(){
+    ls -a | grep $1
+}
+
+#emacs related things
+# alias emacs="emacs"
 
 zo(){
      zathura $1 & disown

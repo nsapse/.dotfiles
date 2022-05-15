@@ -17,45 +17,34 @@
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
-(require 'package)
-(setq package-archives '(
-			 ("melpa" . "https://melpa.org/packages/")
-			 ("org" . "https://orgmode.org/elpa/")
-			 ("elpa" . "https://elpa.gnu.org/packages/")
-			 ))
-(package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
-
-;; intialize use-package if we're on a non-linux platform
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
-
 (require 'use-package)
 (setq use-package-always-ensure t)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(evil counsel swiper doom-modeline ivy command-log-mode use-package)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-(use-package doom-modeline)
-(doom-modeline-mode 1)
 
-(use-package command-log-mode)
+(column-number-mode)
+(global-display-line-numbers-mode t)
+
+(dolist (mode '(org-mode-hook
+			    term-mode-hook
+				shell-mode-hook
+				eshell-mode-hook
+				(add-hook mode (lambda () (display-line-numbers-mode 0))))))
+
 (use-package ivy
-  :bind(("C-s" . swiper))
-  :config
-  (ivy-mode 1))
-
-;; setup evil
+	:diminish 
+	:bind(("C-s" . swiper)
+		:map ivy-minibuffer-map	
+		("TAB" . ivy-alt-done)
+		("C-l" . ivy-alt-done)
+		("C-j" . ivy-next-line)
+		("C-k" . ivy-previous-line)
+		:map ivy-switch-buffer-map
+		("C-k" . ivy-previous-line)
+		("C-l" . ivy-done)
+		("C-d" . ivy-switch-buffer-kill)
+		:map ivy-reverse-i-search-map
+		("C-k" . ivy-previous-line))
+	:config
+	(ivy-mode 1))
 
 (use-package evil
   :init

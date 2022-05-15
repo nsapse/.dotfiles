@@ -1,5 +1,4 @@
-
-; disable the startup message
+					; disable the startup message
 (setq inhibit-startup-message t)
 
 (scroll-bar-mode -1) ;disable the visible scrollbars
@@ -39,33 +38,79 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(evil counsel swiper doom-modeline ivy command-log-mode use-package)))
+   '(rainbow-delimiters which-key evil counsel swiper doom-modeline ivy command-log-mode use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+;; UI Improvements
 (use-package doom-modeline)
 (doom-modeline-mode 1)
 
-(use-package command-log-mode)
+; setup line numbers
+(column-number-mode)
+(global-display-line-numbers-mode t)
+
+(dolist (mode '(org-mode-hook
+		term-mode-hook
+		shell-mode-hook
+		eshell-mode-hook))
+
+(add-hook mode(lambda () (display-line-numbers-mode 0))))
+; disable line numbers for some modes
+
+
+
+;; UX Improvements
 (use-package ivy
-  :bind(("C-s" . swiper))
+  :bind(("C-s" . swiper)
+        :map ivy-minibuffer-map
+	("TAB" . ivy-alt-done)
+	("C-l" . ivy-alt-done)
+	("C-j" . ivy-next-line)
+	("C-k" . ivy-previous-line)
+	:map ivy-switch-buffer-map
+	("C-k" . ivy-previous-line)
+	("C-l" . ivy-done)
+	("C-d" . ivy-switch-buffer-kill)
+	)
   :config
-  (ivy-mode 1))
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t)
+  (setq ivy-wrap t)
+  )
 
-;; Set up package.el to work with MELPA
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
-(package-refresh-contents)
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
 
-;; Download Evil
-(unless (package-installed-p 'evil)
-  (package-install 'evil))
 
-;; Enable Evil
-(require 'evil)
-(evil-mode 1)
+(use-package which-key
+  :init
+  (setq which-key-popup-type 'minibuffer)
+  :config
+  (which-key-mode 1)
+ )
+
+;; setup evil
+(use-package evil
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybindings t)
+  (setq evil-want-C-u-scroll t)
+  (setq evil-want-C-i-jump nil)
+  :config
+  (evil-mode 1)
+  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+
+  ;; Use visual line motions even outside of visual line mode buffers
+  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
+  (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
+
+  (evil-set-initial-state 'messages-buffer-mode 'normal)
+  (evil-set-initial-state 'dashboard-mode 'normal)
+ )

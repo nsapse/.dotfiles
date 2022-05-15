@@ -6,8 +6,7 @@
 
 " source by init.lua
 lua require('init')
-colorscheme base16-nord
-colorscheme base16-nord
+colorscheme onenord
 
 "automatically recompile when plugins changed
 augroup packer_user_config

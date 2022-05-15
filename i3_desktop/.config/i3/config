@@ -13,10 +13,16 @@
 
 exec_always --no-startup-id xrandr --output DisplayPort-0 --off --output DisplayPort-1 --primary --mode 3440x1440 --pos 1920x0 --rotate normal --output HDMI-A-0 --off --output HDMI-A-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-D-0 --off
 
+# start kmonad
 exec_always --no-startup-id kmonad ~/.config/kmonad/logitech_config.kbd
 
+# start emacs daemon
+exec --no-startup-id emacs --daemon
+
+# start copyq
 exec --no-startup-id copyq
 
+#start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec_always --no-startup-id wal -i ~/Pictures/Wallpapers/space_man_nord.png -e
@@ -202,8 +208,8 @@ bindsym $mod+shift+d exec rofi -show run -f lines 9 -eh 2 -width 100 -opacity "8
 ##############################################
 
 # start file manager
-bindsym $mod+shift+b exec dolphin
-bindsym $mod+b exec kitty -e ranger
+bindsym $mod+b exec dolphin
+bindsym $mod+shift+b exec kitty -e ranger
 
 #Launch Strawberry
 bindsym $mod+Control+0 exec strawberry
