@@ -120,17 +120,26 @@
   :bind
   ([remap describe-function] . counsel-describe-function)
   ([remap describe-command] . helpful-command)
-  ([remap describe-variable] . counse-describe-variable)
+  ([remap describe-variable] . counsel-describe-variable)
   ([remap describe-key] . helpful-key))
 
+
+;(use-package evil-snipe
+  ;:config
+  ;(setq evil-snipe-mode 1)
+  ;(setq evil-snipe-override-mode 1)
+  ;(setq evil-snipe-scope 'buffer))
+(use-package evil-easymotion)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("3319c893ff355a88b86ef630a74fad7f1211f006d54ce451aab91d35d018158f" default))
  '(package-selected-packages
-   '(evil-collection helpful doom-themes ivy-rich which-key use-package rainbow-delimiters evil doom-modeline counsel command-log-mode)))
+   '(evil-easymotion evil-snipe evil-collection helpful doom-themes ivy-rich which-key use-package rainbow-delimiters evil doom-modeline counsel command-log-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
