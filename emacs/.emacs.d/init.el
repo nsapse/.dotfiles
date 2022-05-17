@@ -3,7 +3,11 @@
 (setq inhibit-startup-message t)
 
 ; make the font readable
-
+(set-face-attribute 'default nil
+                    :family "Fira Code Nerd Font Mono"
+                    :height 140 
+                    :weight 'normal
+                    :width 'normal)
 
 (scroll-bar-mode -1) ;disable the visible scrollbars
 (tool-bar-mode -1)  ;disable the visible toolbar
@@ -12,7 +16,18 @@
 
 (menu-bar-mode -1) ;disable the ugly menu bar
 
-(load-theme 'wombat)
+(use-package doom-themes
+  :ensure t
+  :config
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (load-theme 'doom-one t)
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config))
 
 
 					;setup package management
@@ -42,10 +57,10 @@
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)
-  :custom ((doom-modeline-height 25)))
+  :custom ((doom-modeline-height 40)))
 
 (use-package rainbow-delimiters
-  :hook (prog-mode . raindbow-delimiters-mode))
+  :hook ('prog-hook-mode . #'raindbow-delimiters-mode))
 
 (use-package which-key
   :init (which-key-mode)
@@ -85,6 +100,11 @@
   (evil-mode 1)
 )
 
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init)j)
+
 
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
@@ -93,13 +113,24 @@
   :config
   (setq ivy-initial-input-alist nil))
 
+(use-package helpful
+  :custom
+  (counsel-describe-function-function #'helpful-callable)
+  (counsel-describe-variable-function #'helpful-variable)
+  :bind
+  ([remap describe-function] . counsel-describe-function)
+  ([remap describe-command] . helpful-command)
+  ([remap describe-variable] . counsel-describe-variable)
+  ([remap describe-key] . helpful-key))
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(ivy-rich which-key use-package rainbow-delimiters evil doom-modeline counsel command-log-mode)))
+   '(evil-collection helpful doom-themes ivy-rich which-key use-package rainbow-delimiters evil doom-modeline counsel command-log-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
