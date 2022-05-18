@@ -8,7 +8,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH:$HOME/.config/nvim/lua-language-server/bin/:/usr/local/go/bin:$HOME/.local/bin
+export PATH=$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH:$HOME/.config/nvim/lua-language-server/bin/:$HOME/.local/bin:/usr/local/go/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/nsapse/.oh-my-zsh"
@@ -92,6 +92,7 @@ plugins=(
 	colored-man-pages
     docker
     # docker-compose
+	#forgit
     fzf-tab
     git
 	gh
@@ -380,15 +381,15 @@ ex ()
 
 ## For Kube and Stuff
 
-alias kinddc="kind delete cluster"
-alias kindcc="kind create cluster"
+alias kdc="kind delete cluster"
+alias kcc="kind create cluster"
+alias kgc="kind get clusters"
 
 kindrc()
 {
-	kinddc
-	kindcc
+	kdc
+	kcc
 }
-
 
 olmup () {
     # Create olm-cluster if not already present
@@ -439,6 +440,9 @@ olmrs () {
 # sourcing FZF bindings
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
+#source forgit
+source ~/.oh-my-zsh/plugins/forgit/forgit.plugin.zsh
 
 # sourcing openshift/kube autocomplete
 # source <(oc completion zsh)

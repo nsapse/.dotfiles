@@ -620,4 +620,4 @@ silent! nmap <unique> <leader>sa <Plug>(operator-sandwich-add)
 silent! xmap <unique> <leader>sa <Plug>(operator-sandwich-add)
 silent! omap <unique> <leader>sa <Plug>(operator-sandwich-g@)
 
-silent! nmap <unique> <leader>sr <Plug>(operator-sandwich-replace)<Plug>(textobj-sandwich-query-a)
+silent! nmap <unique> <leader>sar <Plug>(operator-sandwich-replace)<Plug>(textobj-sandwich-query-a)
