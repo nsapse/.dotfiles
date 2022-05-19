@@ -108,7 +108,7 @@ plugins=(
     taskwarrior
     themes
     tmux
-    vi-mode
+    # vi-mode
     zsh-autosuggestions
     zsh-completions
     zsh-interactive-cd
@@ -248,6 +248,7 @@ alias gC="git clone"
 alias gs="git status"
 alias gp="git push"
 alias lg="lazygit"
+alias gr="git remote -v"
  
 alias glp="git log --all --decorate --oneline --graph"
 
@@ -385,7 +386,7 @@ alias kdc="kind delete cluster"
 alias kcc="kind create cluster"
 alias kgc="kind get clusters"
 
-kindrc()
+krc()
 {
 	kdc
 	kcc

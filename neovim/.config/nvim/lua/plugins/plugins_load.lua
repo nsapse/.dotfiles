@@ -159,8 +159,8 @@ return require("packer").startup(function(use)
 	use("saadparwaiz1/cmp_luasnip")
 
 	-- use("quangnguyen30192/cmp-nvim-ultisnips")
-	use({ "kdheepak/cmp-latex-symbols", opt = true, ft = { "latex", "tex", "texmf" } })
-	use({ "pontusk/cmp-vimwiki-tags", opt = true, ft = { "wiki", "vimwiki" } })
+	-- use({ "kdheepak/cmp-latex-symbols", opt = true, ft = { "latex", "tex", "texmf" } })
+	-- use({ "pontusk/cmp-vimwiki-tags", opt = true, ft = { "wiki", "vimwiki" } })
 
 	-- lspkind to make it prettier
 	use("onsails/lspkind-nvim")
@@ -323,18 +323,18 @@ return require("packer").startup(function(use)
 	--~~Personal Organization ~~--
 	------------------------------
 	-- VimWiki
-	use({ "vimwiki/vimwiki" })
-	use({ "tbabej/taskwiki" })
-	use({ "powerman/vim-plugin-AnsiEsc", opt = true, ft = { "wiki", "vimwiki" } })
+	-- use({ "vimwiki/vimwiki" })
+	-- use({ "tbabej/taskwiki" })
+	-- use({ "powerman/vim-plugin-AnsiEsc", opt = true, ft = { "wiki", "vimwiki" } })
 	-- use 'chipsenkbeil/vimwiki-server.nvim'
 	-- use 'chipsenkbeil/vimwiki.nvim'
 
 	-- Neorg
-	use({
-		"nvim-neorg/neorg",
-		requires = "nvim-lua/plenary.nvim",
-		config = get_config("neorg"),
-	})
+	-- use({
+	-- 	"nvim-neorg/neorg",
+	-- 	requires = "nvim-lua/plenary.nvim",
+	-- 	config = get_config("neorg"),
+	-- })
 
 	-- Taskwarrior
 	use("blindFS/vim-taskwarrior")
@@ -352,17 +352,11 @@ return require("packer").startup(function(use)
 	--orgmode.nvim
 	-- init.lua
 
-	--[[ use({
+	use({
 		"nvim-orgmode/orgmode",
-		config = function()
-			require("orgmode").setup({})
-		end,
+		config = get_config("org-mode")
 	})
 
-	require("orgmode").setup({
-		org_agenda_files = { "~/Dropbox/org/*", "~/my-orgs/**/*" },
-		org_default_notes_file = "~/Dropbox/org/refile.org",
-	})
 	use({
 		"akinsho/org-bullets.nvim",
 		config = function()
@@ -373,7 +367,7 @@ return require("packer").startup(function(use)
 				end,
 			})
 		end,
-	}) ]]
+	})
 
 	----------------
 	-- ~~Docs, Etc--
