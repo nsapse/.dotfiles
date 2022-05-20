@@ -92,13 +92,13 @@
 
 (use-package evil
   :init
+  (setq evil-want-keybinding nil)
   (setq evil-want-integration t)
   (setq evil-want-keybindings t)
   (setq evil-want-C-u-scroll t)
   (setq evil-want-C-i-jump nil)
   :config
-  (evil-mode 1)
-)
+  (evil-mode 1))
 
 (use-package evil-collection
   :after evil
@@ -124,12 +124,21 @@
   ([remap describe-key] . helpful-key))
 
 
-(use-package evil-snipe
-  :config
-  (setq evil-snipe-mode 1)
-  (setq evil-snipe-override-mode 1)
-  (setq evil-snipe-scope 'buffer))
-;(use-package evil-easymotion)
+;(use-package evil-snipe
+;  :after evil
+;  :ensure t
+;  :config
+;  (setq evil-snipe-mode 1)
+;  (setq evil-snipe-override-mode 1)
+;  (setq evil-snipe-scope 'buffer))
+
+;(use-package evil-easymotion
+;  :bind
+;  (setq evilem-default-keybindings "SPC"))
+
+(use-package avy
+  :ensure t)
+(global-set-key (kbd "C-j") 'avy-goto-char-2)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

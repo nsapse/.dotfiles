@@ -104,7 +104,7 @@ plugins=(
     python
     taskwarrior
     themes
-    tmux
+    # tmux
     vi-mode
     zsh-autosuggestions
     zsh-completions
