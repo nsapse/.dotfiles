@@ -82,8 +82,8 @@ return require("packer").startup(function(use)
 	--use {'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu'}
 
 	--Telescope
-	use("nvim-telescope/telescope.nvim")
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", config = get_config("telescope") })
+	use({ "nvim-telescope/telescope.nvim", config = get_config("telescope") })
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make"})
 	use({ "nvim-telescope/telescope-file-browser.nvim" })
 
 	-- TODO - get nvim worktree going
@@ -350,7 +350,6 @@ return require("packer").startup(function(use)
 	use("williamboman/nvim-lsp-installer")
 
 	--orgmode.nvim
-	-- init.lua
 
 	use({
 		"nvim-orgmode/orgmode",
@@ -369,6 +368,12 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	 use {
+            'lukas-reineke/headlines.nvim',
+            config = function()
+              require('headlines').setup()
+            end,
+          }
 	----------------
 	-- ~~Docs, Etc--
 	----------------

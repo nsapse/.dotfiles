@@ -416,3 +416,6 @@ export GIT_PAGER='delta'
 # Start Zoxide
 eval "$(zoxide init zsh)"
 # export TERM="screen-256color"
+
+#source forgit
+source ~/.oh-my-zsh/plugins/forgit/forgit.plugin.zsh
