@@ -243,14 +243,18 @@ alias nv="nvim"
 # git aliases
 alias ga="git add "
 alias gaA="git add ."
-alias gc="git commit -m"
-alias gC="git clone"
+alias gcm="git commit -m"
+alias gcl="git clone"
+alias gclb="git clone --bare"
 alias gs="git status"
 alias gp="git push"
 alias lg="lazygit"
 alias gr="git remote -v"
  
 alias glp="git log --all --decorate --oneline --graph"
+
+alias gwa="git worktree add"
+alias gwl="git worktree list"
 
 #Random Aliases
 alias HL="heroku local"
