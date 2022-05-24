@@ -243,13 +243,19 @@ alias nv="nvim"
 # git aliases
 alias ga="git add "
 alias gaA="git add ."
-alias gcm="git commit -m"
+alias gcom="git commit -m"
 alias gcl="git clone"
 alias gclb="git clone --bare"
 alias gs="git status"
 alias gp="git push"
 alias lg="lazygit"
 alias gr="git remote -v"
+alias gcne="git commit --amend -S --no-edit"
+
+gcne-p()
+{
+	gcne && gp -f	
+}
  
 alias glp="git log --all --decorate --oneline --graph"
 
