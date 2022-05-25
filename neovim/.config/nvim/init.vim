@@ -47,7 +47,8 @@ nnoremap  J mzJ`z
 
 " commands to edit the vim rc quickly
 nnoremap <leader>ec :vsplit $MYVIMRC<cr>
-nnoremap <leader>elc :vsplit ~/.config/nvim/lua/init.lua<cr>
+" nnoremap <leader>elc :vsplit ~/.config/nvim/lua/init.lua<cr>
+nnoremap <leader>elc :Telescope find_files cwd=~/.config/nvim/lua/<cr>
 " nnoremap <leader>sc :so $MYVIMRC<cr>
 nnoremap <leader>sc :so $MYVIMRC<cr>
 map <leader>so :so %<CR>
@@ -523,27 +524,31 @@ set rtp+=~/.vim/bundle/fzf
 
 " Using Lua functions
 nnoremap <c-f> :Telescope file_browser<cr>
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>fz <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_ivy({}))<cr>
-nnoremap <leader>sr <cmd>lua require('telescope.builtin').lsp_references(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>sts <cmd>lua require('telescope.builtin').treesitter()<cr>
 nnoremap <leader>sds <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
 nnoremap <leader>sws <cmd>lua require('telescope.builtin').lsp_workspace_symbols()<cr>
 nnoremap <leader>sd <cmd>lua require('telescope.builtin').diagnostics(require('telescope.themes').get_ivy({}))<cr>
-nnoremap <leader>sg <cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))<cr>
+nnoremap <leader>gg <cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>gw <cmd>lua require('telescope.builtin').grep_string(require('telescope.themes').get_ivy({}))<cr>
-"
+nnoremap <leader>" <cmd>lua require('telescope.builtin').registers()<cr>
+"nnoremap <leader>s" <cmd>lua require('telescope.builtin').grep_string(require('telescope.themes').get_ivy({}))<cr>
+
 " Telescope grep seeps crashing - remapped to ripgrem in Floatterm
+nnoremap <leader>sr <cmd>lua require('telescope.builtin').lsp_references(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>sb <cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>sh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>sq <cmd>lua require('telescope.builtin').quickfix(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>sk <cmd>lua require('telescope.builtin').keymaps(require('telescope.themes').get_ivy({}))<cr>
+
 nnoremap <leader>cc <cmd>lua require('telescope.builtin').colorscheme()<cr>
 nnoremap <leader>ca <cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>st :TodoTelescope<cr>
 
 "telescope git stuff
-nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_commits(require('telescope.themes').get_ivy({}))<cr>
-nnoremap <leader>gbc <cmd>lua require('telescope.builtin').git_bcommits(require('telescope.themes').get_ivy({}))<cr>
+nnoremap <leader>gc  <cmd>lua require('telescope.builtin').git_commits(require('telescope.themes').get_ivy({}))<cr>
+nnoremap <leader>gcb <cmd>lua require('telescope.builtin').git_bcommits(require('telescope.themes').get_ivy({}))<cr>
+nnoremap <leader>gf  <cmd>lua require('telescope.builtin').git_files(require('telescope.themes').get_ivy({}))<cr>
 
 
 
@@ -567,7 +572,7 @@ let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:tex_conceal='adbmg'
 let g:vimtex_quickfix_mode=1
-"let g:vimtex_syntax_conceal={'greek':1,'styles':1,'math_delimiters':1,'math_bounds':1,'math_super_sub':1,'math_symbols':1,'math_fracs':1,'fancy':1,'accents':0}
+let g:vimtex_syntax_conceal={'greek':1,'styles':1,'math_delimiters':1,'math_bounds':1,'math_super_sub':1,'math_symbols':1,'math_fracs':1,'fancy':1,'accents':0}
 set conceallevel=0
 nnoremap <leader><leader>vc :VimtexCompile<cr>
 

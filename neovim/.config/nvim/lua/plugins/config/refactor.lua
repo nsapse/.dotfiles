@@ -28,21 +28,12 @@ M.refactors = function()
 	}):find()
 end
 
+-- load refactoring Telescope extension
+require("telescope").load_extension("refactoring")
+
 vim.api.nvim_set_keymap(
 	"v",
 	"<Leader>re",
-	[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
-	{ noremap = true, silent = true, expr = false }
-)
-vim.api.nvim_set_keymap(
-	"v",
-	"<Leader>rf",
-	[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]],
-	{ noremap = true, silent = true, expr = false }
-)
-vim.api.nvim_set_keymap(
-	"v",
-	"<Leader>rt",
-	[[ <Esc><Cmd>lua M.refactors()<CR>]],
+	"<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
 	{ noremap = true, silent = true, expr = false }
 )

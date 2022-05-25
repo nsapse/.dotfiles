@@ -53,7 +53,7 @@ return require("packer").startup(function(use)
 	----------------------
 
 	--Registers
-	use("tversteeg/registers.nvim")
+	-- use("tversteeg/registers.nvim")
 
 	--Misc
 	use("tpope/vim-unimpaired")
