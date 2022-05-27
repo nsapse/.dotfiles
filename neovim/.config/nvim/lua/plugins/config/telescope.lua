@@ -2,6 +2,14 @@ require("telescope").setup({
 	defaults = {
 		theme = "ivy"
 	},
+	mappings = {
+      n = {
+          ['<C-d>'] = require('telescope.actions').delete_buffer
+      }, -- n
+      i = {
+        ['<C-d>'] = require('telescope.actions').delete_buffer
+		}
+	},
 	extensions = {
 		fzf = {
 			fuzzy = true, -- false will only do exact matching
