@@ -133,9 +133,6 @@ require("lspconfig")["pylsp"].setup({
         },
 	},
 })
--- require("lspconfig")["jedi_language_server"].setup({
--- 	capabilities = capabilities,
--- })
 require("lspconfig")["bashls"].setup({
 	capabilities = capabilities,
 })
