@@ -14,6 +14,8 @@ augroup packer_user_config
   autocmd BufWritePost plugins.lua source <afile> | PackerCompile profile=true
 augroup end
 
+set laststatus=3
+" set winbar=%=%m\ %f
 set termguicolors
 set cursorline
 set noswapfile
@@ -470,7 +472,7 @@ let g:mustache_abbreviations = 1
 let g:rainbow_active = 1
 
 "Vim-Mundo Mappings
-nnoremap <leader><leader>u :MundoToggle<cr>
+nnoremap <leader><leader>u :UndotreeToggle<cr>
 
 "fzf bindings
 "   - Preview window on the right with 50% width

@@ -77,7 +77,8 @@ return require("packer").startup(function(use)
 	use("folke/trouble.nvim")
 	require("trouble").setup({})
 
-	use({ "simnalamburt/vim-mundo" })
+	-- use({ "simnalamburt/vim-mundo" })
+	use({ "mbbill/undotree" })
 	use("simeji/winresizer")
 	--use {'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu'}
 
