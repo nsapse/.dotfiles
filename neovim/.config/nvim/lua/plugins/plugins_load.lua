@@ -139,6 +139,8 @@ return require("packer").startup(function(use)
 	end
 
 	use("honza/vim-snippets")
+	-- use("hrsh7th/vim-vsnip")
+	-- use("hrsh7th/vim-vsnip-integ")
 	use("rafamadriz/friendly-snippets")
 	--luasnip
 	use({"L3MON4D3/LuaSnip", config = get_config("luasnip")})
@@ -307,6 +309,13 @@ return require("packer").startup(function(use)
 
 	--additional synatax for kmonad
     use('kmonad/kmonad-vim')
+
+
+	-- LITE
+	use({'ldelossa/litee.nvim'})
+	use({'ldelossa/litee-calltree.nvim'})
+	require('litee.lib').setup({})
+	require('litee.calltree').setup({})
 
 	----------------
 	-----GIT--------

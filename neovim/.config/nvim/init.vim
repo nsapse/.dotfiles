@@ -624,6 +624,7 @@ let g:textobj_sandwich_no_default_key_mappings = 1
 
 silent! nmap <unique> <leader>sa <Plug>(operator-sandwich-add)
 silent! xmap <unique> <leader>sa <Plug>(operator-sandwich-add)
+silent! vmap <unique> <leader>sa <Plug>(operator-sandwich-add)
 silent! omap <unique> <leader>sa <Plug>(operator-sandwich-g@)
 
 silent! nmap <unique> <leader>sar <Plug>(operator-sandwich-replace)<Plug>(textobj-sandwich-query-a)
