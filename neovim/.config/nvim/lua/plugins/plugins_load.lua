@@ -80,7 +80,6 @@ return require("packer").startup(function(use)
 	-- use({ "simnalamburt/vim-mundo" })
 	use({ "mbbill/undotree" })
 	use("simeji/winresizer")
-	--use {'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu'}
 
 	--Telescope
 	use({ "nvim-telescope/telescope.nvim", config = get_config("telescope") })
@@ -140,8 +139,6 @@ return require("packer").startup(function(use)
 	end
 
 	use("honza/vim-snippets")
-	-- use("hrsh7th/vim-vsnip")
-	-- use("hrsh7th/vim-vsnip-integ")
 	use("rafamadriz/friendly-snippets")
 	--luasnip
 	use({"L3MON4D3/LuaSnip", config = get_config("luasnip")})
@@ -250,9 +247,6 @@ return require("packer").startup(function(use)
 			cmd = { "lua-language-server" },
 		},
 	})
-
-	local lspconfig = require("lspconfig")
-	lspconfig.sumneko_lua.setup(luadev)
 	------------
 	-- ~~UI/UX~~ --
 	------------

@@ -269,56 +269,56 @@ vnoremap <silent> <leader>ds <ESC>:lua require('dap-python').debug_selection()<C
 "autocmd BufEnter * lua require'completion'.on_attach()
 
 " LSP config (the mappings used in the default file don't quite work right)
-nnoremap <silent>gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent>gD <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent>gr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent>gi <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent>K <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent><C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent><C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <leader>D <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
-
-"Trouble Mappings
-nnoremap <leader>tt <cmd>TroubleToggle<cr>
-nnoremap <leader>ttd :TodoTrouble<cr>
-nnoremap <leader>tw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
-nnoremap <leader>td <cmd>TroubleToggle lsp_document_diagnostics<cr>
-nnoremap <leader>tq <cmd>TroubleToggle quickfix<cr>
-nnoremap <leader>tl <cmd>TroubleToggle loclist<cr>
-nnoremap gR <cmd>TroubleToggle lsp_references<cr>
-
+" nnoremap <silent>gd <cmd>lua vim.lsp.buf.definition()<CR>
+" nnoremap <silent>gD <cmd>lua vim.lsp.buf.declaration()<CR>
+" nnoremap <silent>gr <cmd>lua vim.lsp.buf.references()<CR>
+" nnoremap <silent>gi <cmd>lua vim.lsp.buf.implementation()<CR>
+" nnoremap <silent>K <cmd>lua vim.lsp.buf.hover()<CR>
+" nnoremap <silent><C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+" nnoremap <silent><C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+" nnoremap <leader>D <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+"
+" "Trouble Mappings
+" nnoremap <leader>tt <cmd>TroubleToggle<cr>
+" nnoremap <leader>ttd :TodoTrouble<cr>
+" nnoremap <leader>tw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
+" nnoremap <leader>td <cmd>TroubleToggle lsp_document_diagnostics<cr>
+" nnoremap <leader>tq <cmd>TroubleToggle quickfix<cr>
+" nnoremap <leader>tl <cmd>TroubleToggle loclist<cr>
+" nnoremap gR <cmd>TroubleToggle lsp_references<cr>
+"
 " somewhat unrelated quickfix navigation
 nnoremap <silent>qn :cn<cr>
 nnoremap <silent>qp :cp<cr>
+"
 
-
-"-- lsp provider to find the cursor word definition and reference
-nnoremap <silent>gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
-
-"-- or use command LspSagaFinder
-nnoremap <silent>gh :Lspsaga lsp_finder<CR>
-
-
-" or use command
-"nnoremap <silent>K :Lspsaga hover_doc<CR>
-
-" scroll down hover doc or scroll in definition preview
-nnoremap <silent><C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-" scroll up hover doc
-nnoremap <silent><C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
-
-"or command
-nnoremap <silent>gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
-
-"rename
-nnoremap <silent>RR <cmd>lua require('lspsaga.rename').rename()<CR>
-
-"preview definition
-nnoremap <silent>pd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
-
-"code action
-nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
-vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
+" "-- lsp provider to find the cursor word definition and reference
+" nnoremap <silent>gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
+"
+" "-- or use command LspSagaFinder
+" nnoremap <silent>gh :Lspsaga lsp_finder<CR>
+"
+"
+" " or use command
+" "nnoremap <silent>K :Lspsaga hover_doc<CR>
+"
+" " scroll down hover doc or scroll in definition preview
+" nnoremap <silent><C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+" " scroll up hover doc
+" nnoremap <silent><C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+"
+" "or command
+" nnoremap <silent>gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
+"
+" "rename
+" nnoremap <silent>RR <cmd>lua require('lspsaga.rename').rename()<CR>
+"
+" "preview definition
+" nnoremap <silent>pd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
+"
+" "code action
+" nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
+" vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
 
 "" Macro - Paste From Current System Buffer
 nnoremap <leader><leader>V "+p 
@@ -528,13 +528,12 @@ set rtp+=~/.vim/bundle/fzf
 nnoremap <c-f> :Telescope file_browser<cr>
 nnoremap <leader>fz <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>sts <cmd>lua require('telescope.builtin').treesitter()<cr>
-nnoremap <leader>sds <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
-nnoremap <leader>sws <cmd>lua require('telescope.builtin').lsp_workspace_symbols()<cr>
+nnoremap <leader>ds <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
+nnoremap <leader>ws <cmd>lua require('telescope.builtin').lsp_workspace_symbols()<cr>
 nnoremap <leader>sd <cmd>lua require('telescope.builtin').diagnostics(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>gg <cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>gw <cmd>lua require('telescope.builtin').grep_string(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>" <cmd>lua require('telescope.builtin').registers()<cr>
-"nnoremap <leader>s" <cmd>lua require('telescope.builtin').grep_string(require('telescope.themes').get_ivy({}))<cr>
 
 " Telescope grep seeps crashing - remapped to ripgrem in Floatterm
 nnoremap <leader>sr <cmd>lua require('telescope.builtin').lsp_references(require('telescope.themes').get_ivy({}))<cr>
@@ -544,7 +543,7 @@ nnoremap <leader>sq <cmd>lua require('telescope.builtin').quickfix(require('tele
 nnoremap <leader>sk <cmd>lua require('telescope.builtin').keymaps(require('telescope.themes').get_ivy({}))<cr>
 
 nnoremap <leader>cc <cmd>lua require('telescope.builtin').colorscheme()<cr>
-nnoremap <leader>ca <cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_ivy({}))<cr>
+" nnoremap <leader>ca <cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>st :TodoTelescope<cr>
 
 "telescope git stuff
