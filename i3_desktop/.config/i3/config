@@ -16,6 +16,9 @@ exec_always --no-startup-id xrandr --output DisplayPort-0 --off --output Display
 # start kmonad
 exec_always --no-startup-id kmonad ~/.config/kmonad/logitech_config.kbd
 
+# start a polkit agent
+# exec --no-startup-id lxsession
+
 # start emacs daemon
 exec --no-startup-id emacs --daemon
 
