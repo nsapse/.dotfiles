@@ -8,7 +8,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/noah/.local/bin:$HOME/doomemacs/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/noah/.local/bin:$HOME/doomemacs/bin:$HOME/.arduino15
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/noah/.oh-my-zsh"
@@ -419,3 +419,5 @@ eval "$(zoxide init zsh)"
 
 #source forgit
 source ~/.oh-my-zsh/plugins/forgit/forgit.plugin.zsh
+
+[ -f "/home/noah/.ghcup/env" ] && source "/home/noah/.ghcup/env" # ghcup-env

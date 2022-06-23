@@ -168,6 +168,13 @@ return require("packer").startup(function(use)
 	-- lspkind to make it prettier
 	use("onsails/lspkind-nvim")
 
+
+	-------------------
+	--~~ Arduino   ~~--
+	-------------------
+	 use { 'stevearc/vim-arduino' }
+	use  { 'sudar/vim-arduino-syntax' }
+
 	-------------------
 	--~~ Debugging ~~--
 	-------------------
@@ -354,7 +361,7 @@ return require("packer").startup(function(use)
 	})
 
 	-- this is required for grammar guard
-	use("williamboman/nvim-lsp-installer")
+	-- use("williamboman/nvim-lsp-installer")
 
 	--orgmode.nvim
 

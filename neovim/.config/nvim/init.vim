@@ -8,6 +8,10 @@
 lua require('init')
 colorscheme onenord
 
+" for arduino
+let g:arduino_dir = "/home/noah/Arduino"
+let g:arduino_home_dir = "/home/noah/.arduino15"
+
 "automatically recompile when plugins changed
 augroup packer_user_config
   autocmd!
@@ -628,3 +632,14 @@ silent! vmap <unique> <leader>sa <Plug>(operator-sandwich-add)
 silent! omap <unique> <leader>sa <Plug>(operator-sandwich-g@)
 
 silent! nmap <unique> <leader>sar <Plug>(operator-sandwich-replace)<Plug>(textobj-sandwich-query-a)
+
+" ****************Arduino************************* "
+"                                                   " 
+"                 Arduino                          "
+"                                                   "
+" ****************Arduino************************* "
+
+nnoremap <leader>asb :ArduinoChooseBoard<cr>
+nnoremap <leader>asp :ArduinoChooseBoard<cr>
+nnoremap <leader>au :ArduinoUpload<cr>
+nnoremap <leader>av :ArduinoVerify<cr>
