@@ -22,6 +22,7 @@ nvim_lsp.hls.setup({})
 nvim_lsp.html.setup({})
 nvim_lsp.jsonls.setup({})
 nvim_lsp.pylsp.setup({})
+nvim_lsp.solargraph.setup({})
 nvim_lsp.sqls.setup({})
 nvim_lsp.sumneko_lua.setup({
 	settings = { Lua = { diagnostics = { globals = { "vim" } } } },

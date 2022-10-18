@@ -63,7 +63,7 @@ return require("packer").startup(function(use)
 
 	-- Hop
 	-- use({ "phaazon/hop.nvim", config = get_config("hop") })
-	use({"ggandor/lightspeed.nvim", config=get_config("lightspeed")})
+	use({ "ggandor/lightspeed.nvim", config = get_config("lightspeed") })
 	use("tpope/vim-repeat")
 	use("unblevable/quick-scope")
 
@@ -71,7 +71,7 @@ return require("packer").startup(function(use)
 	use("liuchengxu/vista.vim")
 
 	-- chadtree
-	use({ "ms-jpq/chadtree", branch = "chad", run = ":CHADdeps"})
+	use({ "ms-jpq/chadtree", branch = "chad", run = ":CHADdeps" })
 
 	-- Trouble
 	use("folke/trouble.nvim")
@@ -83,7 +83,7 @@ return require("packer").startup(function(use)
 
 	--Telescope
 	use({ "nvim-telescope/telescope.nvim", config = get_config("telescope") })
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make"})
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use({ "nvim-telescope/telescope-file-browser.nvim" })
 
 	-- TODO - get nvim worktree going
@@ -110,12 +110,28 @@ return require("packer").startup(function(use)
 	use("ray-x/lsp_signature.nvim")
 	require("lsp_signature").setup()
 
+	-- mason
+	use({
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"jayp0521/mason-null-ls.nvim",
+		-- "RubixDev/mason-update-all",
+		-- "jayp0521/mason-nvim-dap.nvim",
+		-- "WhoIsSethDaniel/mason-tool-installer.nvim",
+	})
+	require("mason").setup()
+	require("mason-lspconfig").setup()
+	require("mason-null-ls").setup()
+	-- require("mason-update-all").setup()
+	-- require("mason-nvim-dap").setup()
+	-- require("mason-tool-installer").setup()
+
 	-- null-ls
-	-- use({ "jose-elias-alvarez/null-ls.nvim", config = get_config("null-ls") })
+	use({ "jose-elias-alvarez/null-ls.nvim", config = get_config("null-ls") })
 
 	-- fidget
-	use({ "j-hui/fidget.nvim"})
-	require"fidget".setup{}
+	use({ "j-hui/fidget.nvim" })
+	require("fidget").setup({})
 
 	----------------------
 	---~~[[Treesitter]]~~---
@@ -143,7 +159,7 @@ return require("packer").startup(function(use)
 	-- use("hrsh7th/vim-vsnip-integ")
 	use("rafamadriz/friendly-snippets")
 	--luasnip
-	use({"L3MON4D3/LuaSnip", config = get_config("luasnip")})
+	use({ "L3MON4D3/LuaSnip", config = get_config("luasnip") })
 	-- Load Snippets into Luasnip
 	require("luasnip/loaders/from_vscode").lazy_load()
 
@@ -168,12 +184,11 @@ return require("packer").startup(function(use)
 	-- lspkind to make it prettier
 	use("onsails/lspkind-nvim")
 
-
 	-------------------
 	--~~ Arduino   ~~--
 	-------------------
-	 use { 'stevearc/vim-arduino' }
-	use  { 'sudar/vim-arduino-syntax' }
+	use({ "stevearc/vim-arduino" })
+	use({ "sudar/vim-arduino-syntax" })
 
 	-------------------
 	--~~ Debugging ~~--
@@ -216,8 +231,8 @@ return require("packer").startup(function(use)
 	----------------
 	--~~Golang~~----
 	----------------
-	use 'ray-x/go.nvim'
-	require('go').setup()
+	use("ray-x/go.nvim")
+	require("go").setup()
 
 	----------------
 	----~~Rust~~----
@@ -226,7 +241,7 @@ return require("packer").startup(function(use)
 
 	require("rust-tools").setup({})
 	-- set inlay hints
-	require("rust-tools.inlay_hints").set_inlay_hints()
+	-- require("rust-tools.inlay_hints").set_inlay_hints()
 	-- Command: RustHoverActions
 	require("rust-tools.hover_actions").hover_actions()
 
@@ -249,9 +264,9 @@ return require("packer").startup(function(use)
 	----------------
 	-----Lua--------
 	----------------
-	use({ "folke/lua-dev.nvim" })
+	use({ "folke/neodev.nvim" })
 
-	local luadev = require("lua-dev").setup({
+	local luadev = require("neodev").setup({
 		lspconfig = {
 			cmd = { "lua-language-server" },
 		},
@@ -276,7 +291,7 @@ return require("packer").startup(function(use)
 	use({ "sainnhe/gruvbox-material" })
 	use({ "sainnhe/sonokai" })
 	use({ "shaunsingh/nord.nvim" })
-	use({ "ulwlu/elly.vim" })
+	-- use({ "ulwlu/elly.vim" })
 	use({ "EdenEast/nightfox.nvim" })
 	use({ "NTBBloodbath/doom-one.nvim" })
 	use({ "ellisonleao/gruvbox.nvim" })
@@ -285,7 +300,6 @@ return require("packer").startup(function(use)
 	use("ful1e5/onedark.nvim")
 
 	-- Focus
-	use({ "Pocco81/TrueZen.nvim" })
 	use({ "folke/twilight.nvim" })
 
 	-- Coloration, Highlighting, Icons, Readability
@@ -315,14 +329,13 @@ return require("packer").startup(function(use)
 	use({ "code-biscuits/nvim-biscuits", config = get_config("biscuits") })
 
 	--additional synatax for kmonad
-    use('kmonad/kmonad-vim')
-
+	use("kmonad/kmonad-vim")
 
 	-- LITE
-	use({'ldelossa/litee.nvim'})
-	use({'ldelossa/litee-calltree.nvim'})
-	require('litee.lib').setup({})
-	require('litee.calltree').setup({})
+	-- use({ "ldelossa/litee.nvim" })
+	-- use({ "ldelossa/litee-calltree.nvim" })
+	-- require("litee.lib").setup({})
+	-- require("litee.calltree").setup({})
 
 	----------------
 	-----GIT--------
@@ -367,7 +380,7 @@ return require("packer").startup(function(use)
 
 	use({
 		"nvim-orgmode/orgmode",
-		config = get_config("org-mode")
+		config = get_config("org-mode"),
 	})
 
 	use({
@@ -382,12 +395,12 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	 use {
-            'lukas-reineke/headlines.nvim',
-            config = function()
-              require('headlines').setup()
-            end,
-          }
+	use({
+		"lukas-reineke/headlines.nvim",
+		config = function()
+			require("headlines").setup()
+		end,
+	})
 	----------------
 	-- ~~Docs, Etc--
 	----------------
