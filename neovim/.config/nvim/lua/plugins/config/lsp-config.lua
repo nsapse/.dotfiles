@@ -22,6 +22,7 @@ nvim_lsp.hls.setup({})
 nvim_lsp.html.setup({})
 nvim_lsp.jsonls.setup({})
 nvim_lsp.pylsp.setup({})
+nvim_lsp.racket_langserver.setup({})
 nvim_lsp.solargraph.setup({})
 nvim_lsp.sqls.setup({})
 nvim_lsp.sumneko_lua.setup({
@@ -44,7 +45,7 @@ nvim_lsp.yamlls.setup({
 
 -- -- Mappings.
 -- -- See `:help vim.diagnostic.*` for documentation on any of the below functions
--- local opts = { noremap = true, silent = true }
+local opts = { noremap = true, silent = true }
 -- vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
 -- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 -- vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
@@ -58,7 +59,7 @@ nvim_lsp.yamlls.setup({
 --
 -- 	-- Mappings.
 -- 	-- See `:help vim.lsp.*` for documentation on any of the below functions
--- 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
+	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 -- 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
 -- 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
 -- 	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
@@ -70,7 +71,7 @@ nvim_lsp.yamlls.setup({
 -- 		print(vim.inspect(vim.lsp.buf.list_workleader_folders()))
 -- 	end, bufopts)
 -- 	vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
--- 	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
+	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
 -- 	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
 -- 	vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
 -- 	vim.keymap.set("n", "<leader>fb", vim.lsp.buf.format, bufopts)

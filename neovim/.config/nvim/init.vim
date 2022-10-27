@@ -270,7 +270,7 @@ vnoremap <silent> <leader>ds <ESC>:lua require('dap-python').debug_selection()<C
 " **********************LSP ACTIONS************************* "
 
 " start completion
-"autocmd BufEnter * lua require'completion'.on_attach()
+" autocmd BufEnter * lua require'completion'.on_attach()
 
 " LSP config (the mappings used in the default file don't quite work right)
 nnoremap <silent>gd <cmd>lua vim.lsp.buf.definition()<CR>
@@ -315,14 +315,13 @@ nnoremap <silent>qp :cp<cr>
 " nnoremap <silent>gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
 "
 " "rename
-" nnoremap <silent>RR <cmd>lua require('lspsaga.rename').rename()<CR>
-"
-" "preview definition
-" nnoremap <silent>pd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
+nnoremap <silent>RR <cmd>lua require('lspsaga.rename').rename()<CR>
+ "preview definition
+nnoremap <silent>pd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
 "
 " "code action
-" nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
-" vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
+nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
+vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
 
 "" Macro - Paste From Current System Buffer
 nnoremap <leader><leader>V "+p 
@@ -547,7 +546,7 @@ nnoremap <leader>sq <cmd>lua require('telescope.builtin').quickfix(require('tele
 nnoremap <leader>sk <cmd>lua require('telescope.builtin').keymaps(require('telescope.themes').get_ivy({}))<cr>
 
 nnoremap <leader>cc <cmd>lua require('telescope.builtin').colorscheme()<cr>
-" nnoremap <leader>ca <cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_ivy({}))<cr>
+nnoremap <leader>ca <cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_ivy({}))<cr>
 nnoremap <leader>st :TodoTelescope<cr>
 
 "telescope git stuff

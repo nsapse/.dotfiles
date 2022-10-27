@@ -115,15 +115,15 @@ return require("packer").startup(function(use)
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"jayp0521/mason-null-ls.nvim",
-		-- "RubixDev/mason-update-all",
-		-- "jayp0521/mason-nvim-dap.nvim",
+		"RubixDev/mason-update-all",
+		"jayp0521/mason-nvim-dap.nvim",
 		-- "WhoIsSethDaniel/mason-tool-installer.nvim",
 	})
 	require("mason").setup()
 	require("mason-lspconfig").setup()
 	require("mason-null-ls").setup()
-	-- require("mason-update-all").setup()
-	-- require("mason-nvim-dap").setup()
+	require("mason-nvim-dap").setup()
+	require("mason-update-all").setup()
 	-- require("mason-tool-installer").setup()
 
 	-- null-ls
