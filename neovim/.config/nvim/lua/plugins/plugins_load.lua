@@ -53,7 +53,7 @@ return require("packer").startup(function(use)
 	----------------------
 
 	--Registers
-	-- use("tversteeg/registers.nvim")
+	use("tversteeg/registers.nvim")
 
 	--Misc
 	use("tpope/vim-unimpaired")
@@ -63,7 +63,15 @@ return require("packer").startup(function(use)
 
 	-- Hop
 	-- use({ "phaazon/hop.nvim", config = get_config("hop") })
-	use({ "ggandor/lightspeed.nvim", config = get_config("lightspeed") })
+	-- use({ "ggandor/lightspeed.nvim", config = get_config("lightspeed") })
+	-- LEAP
+	use({ "ggandor/leap.nvim" })
+	use({ "ggandor/leap-spooky.nvim" })
+	use({ "ggandor/flit.nvim" })
+	require('leap').add_default_mappings()
+	require('leap-spooky').setup()
+	require('flit').setup()
+
 	use("tpope/vim-repeat")
 	use("unblevable/quick-scope")
 
