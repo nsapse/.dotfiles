@@ -1,3 +1,6 @@
+-- Load Snippets into Luasnip
+require("luasnip/loaders/from_vscode").lazy_load()
+
 local function prequire(...)
 local status, lib = pcall(require, ...)
 if (status) then return lib end

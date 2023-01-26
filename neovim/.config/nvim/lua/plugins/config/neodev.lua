@@ -1,0 +1,5 @@
+-- local luadev = require("neodev").setup({
+-- 	lspconfig = {
+-- 		cmd = { "lua-language-server" },
+-- 	},
+-- })

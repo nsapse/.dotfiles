@@ -6,21 +6,15 @@
 
 " source by init.lua
 lua require('init')
-colorscheme onenord
+colorscheme base16-nord
 
 " for arduino
 let g:arduino_dir = "/home/noah/Arduino"
 let g:arduino_home_dir = "/home/noah/.arduino15"
 
-"automatically recompile when plugins changed
-augroup packer_user_config
-  autocmd!
-  autocmd BufWritePost plugins.lua source <afile> | PackerCompile profile=true
-augroup end
-
 set laststatus=3
 " set winbar=%=%m\ %f
-set termguicolors
+" set termguicolors
 set cursorline
 set noswapfile
 set nobackup
@@ -41,9 +35,6 @@ filetype plugin on
 "                                                      "
 " ****************Vim Mappings*************************"
 
-" Leader set to <Space>"
-let mapleader = " "
-let maplocalleader = "\\"
 set nohlsearch
 
 " Standard Action Remaps
@@ -320,8 +311,8 @@ nnoremap <silent>RR <cmd>lua require('lspsaga.rename').rename()<CR>
 nnoremap <silent>pd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
 "
 " "code action
-nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
-vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
+" nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
+" vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
 
 "" Macro - Paste From Current System Buffer
 nnoremap <leader><leader>V "+p 
@@ -387,6 +378,14 @@ nnoremap <silent> <leader>pt :TSPlaygroundToggle<cr>
 "Enable Folding
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+
+" ****************Neoge*************************"
+"                                               "
+"           Settings for Neogen                  "
+"                                               "
+" ****************Neoge*************************"
+
+nnoremap <leader>gd :Neogen<CR>
 
 
 " ****************NerdTree*************************"
@@ -546,7 +545,8 @@ nnoremap <leader>sq <cmd>lua require('telescope.builtin').quickfix(require('tele
 nnoremap <leader>sk <cmd>lua require('telescope.builtin').keymaps(require('telescope.themes').get_ivy({}))<cr>
 
 nnoremap <leader>cc <cmd>lua require('telescope.builtin').colorscheme()<cr>
-nnoremap <leader>ca <cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_ivy({}))<cr>
+" nnoremap <leader>ca <cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_ivy({}))<cr>
+nnoremap <silent><leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>st :TodoTelescope<cr>
 
 "telescope git stuff

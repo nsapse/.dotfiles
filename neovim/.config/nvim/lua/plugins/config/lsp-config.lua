@@ -1,4 +1,8 @@
+return {
 --LSPConfig Setup
+"neovim/nvim-lspconfig",
+
+setup = {
 local nvim_lsp = require('lspconfig')
 local arduino_binary = '/home/noah/.arduino15/arduino-language-server'
 local arduino_config = '/home/noah/.arduino15/arduino-cli.yaml'
@@ -42,7 +46,6 @@ nvim_lsp.yamlls.setup({
 		},
 	},
 })
-
 -- -- Mappings.
 -- -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
@@ -104,3 +107,5 @@ local opts = { noremap = true, silent = true }
 -- 		},
 -- 	})
 -- end
+	}
+}

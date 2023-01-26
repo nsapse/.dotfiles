@@ -160,6 +160,9 @@ require("lspconfig")["jdtls"].setup({
 require("lspconfig")["sumneko_lua"].setup({
 	capabilities = capabilities,
 })
+require("lspconfig")["hls"].setup({
+	capabilities = capabilities,
+})
 require("lspconfig")["gopls"].setup({
 	capabilities = capabilities,
 })

@@ -3,6 +3,13 @@
 -- Load custom tree-sitter grammar for org filetype
 require('orgmode').setup_ts_grammar()
 
+require("org-bullets").setup({
+		symbols = function(default_list)
+			table.insert(default_list, "♥")
+			return default_list
+		end,
+})
+
 -- Tree-sitter configuration
 require'nvim-treesitter.configs'.setup {
   -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
