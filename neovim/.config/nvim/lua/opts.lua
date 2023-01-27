@@ -1,9 +1,10 @@
 -- setting some local namespace variables to simplify writing
 
 local o = vim.o
+local g = vim.g
 local wo = vim.wo
 local bo = vim.bo
-
+local cmd = vim.cmd
 ------------------------
 -- ~~Global Options~~ --
 ------------------------
@@ -12,6 +13,11 @@ local bo = vim.bo
 o.nu = true
 o.rnu = true
 o.termguicolors = true
+o.cursorline = true
+o.laststatus = 3
+o.title = true
+-- g.titlestring = %{hostname()}\ \ %F\ \ %{strftime('%Y-%m-%d\ %H:%M',getftime(expand('%')))}
+cmd.colorscheme('onenord')
 
 -- General UI/UX
 o.showmatch = true
@@ -25,16 +31,19 @@ o.shiftwidth = 4
 -- Syntax, Indent, and Case
 o.smartindent = true
 o.smartcase = true
+g.Syntax = true
+g.nohlsearch = true
+
 
 -- Search
 --o.nohlsearch = true
 o.incsearch = true
 
 -- Backup
---o.noswapfile = true
---o.nobackup = true
---o.undofile = true
---o.undodir = '~/.vim/undodir'
+o.swapfile = false
+o.backup = false
+o.undofile = true
+o.undodir = 'undodir'
 
 -- Conceal
 o.cocu = "vnic"

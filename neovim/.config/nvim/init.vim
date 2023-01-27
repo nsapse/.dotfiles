@@ -6,50 +6,16 @@
 
 " source by init.lua
 lua require('init')
-colorscheme onenord
 
 " for arduino
 let g:arduino_dir = "/home/noah/Arduino"
 let g:arduino_home_dir = "/home/noah/.arduino15"
-
-"automatically recompile when plugins changed
-augroup packer_user_config
-  autocmd!
-  autocmd BufWritePost plugins.lua source <afile> | PackerCompile profile=true
-augroup end
-
-set laststatus=3
-" set winbar=%=%m\ %f
-set termguicolors
-set cursorline
-set noswapfile
-set nobackup
-set undofile
-set undodir=~/.vim/undodir
-set colorcolumn=80
-set title
-set titlestring=%{hostname()}\ \ %F\ \ %{strftime('%Y-%m-%d\ %H:%M',getftime(expand('%')))}
-
-
-syntax on
-filetype plugin on
-
 
 " ****************Vim Mappings*************************"
 "                                                      "
 "           Settings for Vim Mappings                  "
 "                                                      "
 " ****************Vim Mappings*************************"
-
-" Leader set to <Space>"
-let mapleader = " "
-let maplocalleader = "\\"
-set nohlsearch
-
-" Standard Action Remaps
-nnoremap  Y y$
-nnoremap  V v$
-nnoremap  J mzJ`z
 
 " commands to edit the vim rc quickly
 nnoremap <leader>ec :vsplit $MYVIMRC<cr>
