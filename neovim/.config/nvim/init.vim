@@ -11,90 +11,13 @@ lua require('init')
 let g:arduino_dir = "/home/noah/Arduino"
 let g:arduino_home_dir = "/home/noah/.arduino15"
 
-" ****************Vim Mappings*************************"
-"                                                      "
-"           Settings for Vim Mappings                  "
-"                                                      "
-" ****************Vim Mappings*************************"
-
-" commands to edit the vim rc quickly
-nnoremap <leader>ec :vsplit $MYVIMRC<cr>
-" nnoremap <leader>elc :vsplit ~/.config/nvim/lua/init.lua<cr>
-nnoremap <leader>elc :Telescope find_files cwd=~/.config/nvim/lua/<cr>
-" nnoremap <leader>sc :so $MYVIMRC<cr>
-nnoremap <leader>sc :so $MYVIMRC<cr>
-map <leader>so :so %<CR>
-cnoreabbrev vc ~/.config/nvim/init.vim
-
-"Remapping Default Commands to Leader
-" nnoremap<silent><leader>s :wincmd v<cr>
-" nnoremap<silent><leader>S :wincmd s<cr>
-nnoremap<silent><leader>wc :wincmd c<cr>
-nnoremap<silent><C-c>     :wincmd c<cr>
-
-nnoremap<c-h> :wincmd h<cr>
-nnoremap<c-j> :wincmd j<cr>
-nnoremap<c-k> :wincmd k<cr>
-nnoremap<c-l> :wincmd l<cr>
-" nnoremap<c-t> :wincmd t<cr>
-
-vnoremap<c-h> :wincmd h<cr>
-vnoremap<c-j> :wincmd j<cr>
-vnoremap<c-k> :wincmd k<cr>
-vnoremap<c-l> :wincmd l<cr>
-" vnoremap<c-t> :wincmd t<cr>
-
-nnoremap<leader>wh :wincmd h<cr>
-nnoremap<leader>wj :wincmd j<cr>
-nnoremap<leader>wk :wincmd k<cr>
-nnoremap<leader>wl :wincmd l<cr>
-" nnoremap<leadewr>t :wincmd t<cr>
-
-vnoremap<leader>wh :wincmd h<cr>
-vnoremap<leader>wj :wincmd j<cr>
-vnoremap<leader>wk :wincmd k<cr>
-vnoremap<leader>wl :wincmd l<cr>
-" vnoremap<leader>t :wincmd t<cr>
-"
-"buffer, tab, and other quick  navigation
-"
-nnoremap <leader>tn :tabnew<cr>
-nnoremap <leader>tc :tabclose<cr>
-nnoremap tp :tabprevious<cr>
-nnoremap tn :tabnext<cr>
-
-vnoremap <leader>tn :tabnew<cr>
-vnoremap <leader>tc :tabclose<cr>
-vnoremap tp :tabprevious<cr>
-vnoremap tn :tabnext<cr>
-
-map <silent><leader><leader>n :nohlsearch<cr>
-
-" quick maps into a bunch of vi areas
-nnoremap <leader>C :Colors<cr>
-nnoremap <leader>R :reg<cr>
-nnoremap <leader>M :messages<cr>
-
-
-"mapping to quickly move lines
-nnoremap <leader>J :m .+1<CR>
-nnoremap <leader>K :m .-2<CR>
-
-"Traditional (Non-Vim) Save and Quit Bindings
-nnoremap <c-s> :w<cr>
-map <c-q> :qa<cr>
-
-"Auto-center the screen on jumps
-nnoremap <c-o> <c-o>zz
-nnoremap <c-i> <c-i>zz
-
-
-" Mapping alternate common comment command <C-/>
 " *******************Abbreviations*************************"
+"                                                          "
 "                                                          "
 "                    Abbreviations                         "
-"                                                          "
 " *******************Abbreviations*************************"
+
+cnoreabbrev vc ~/.config/nvim/init.vim
 
 " Plugins
 cnoreabbrev PI PackerInstall
@@ -124,32 +47,12 @@ cnoreabbrev PS PackerSync
 
 "colorscheme and UI settings
 
-" " For Neovim 0.1.3 and 0.1.4
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-" " Or if you have Neovim >= 0.1.5
-" if (has("termguicolors"))
-"  set termguicolors
-" endif
  
 highlight Comment cterm=italic
 
-" " set theme
-" let g:oceanic_next_terminal_bold = 1
-" let g:oceanic_next_terminal_italic = 1
-
-" hi Normal guibg=NONE ctermbg=NONE
-" hi LineNr guibg=NONE ctermbg=NONE
 hi SignColumn guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
 
-" set background=dark
-" hi normal guibg=none ctermbg=none
-
-" if (has("nvim"))
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-" endif
-"
 map <C-_> <Leader>c<Space>
 nnoremap<c-t> :Vista!!<cr>
 
@@ -158,30 +61,6 @@ augroup kbd
   au!
   autocmd BufNewFile,BufRead *.kbd   set filetype=kbd 
 augroup END
-
-" **********************Barbar************************* "
-"                                                      "
-"                  Settings for Barbar                  "
-"                                                      "
-" **********************Barbar************************* "
-
-" Goto buffer in position...
-nnoremap <silent>    b1 :BufferGoto 1<CR>
-nnoremap <silent>    b2 :BufferGoto 2<CR>
-nnoremap <silent>    b3 :BufferGoto 3<CR>
-nnoremap <silent>    b4 :BufferGoto 4<CR>
-nnoremap <silent>    b5 :BufferGoto 5<CR>
-nnoremap <silent>    b6 :BufferGoto 6<CR>
-nnoremap <silent>    b7 :BufferGoto 7<CR>
-nnoremap <silent>    b8 :BufferGoto 8<CR>
-nnoremap <silent>    b9 :BufferLast<CR>
-
-" Pin/unpin buffer
-nnoremap <silent>    bP :BufferPin<CR>
-
-" Close buffer
-nnoremap <silent>    bc :BufferClose<CR>
-nnoremap <silent>    bp :BufferPick<CR>
 
 " **********************Vista************************* "
 "                                                      "
@@ -200,34 +79,6 @@ let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 " Trigger a highlight in the appropriate direction when pressing these keys:
 "nnoremap n <Plug>(Quickscopef)<cr>
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
-
-" **********************DAP ACTIONS************************* "
-"                                                            "
-"                  Settings for DAP ACTIONS                  "
-"                                                            "
-" **********************DAP ACTIONS************************* "
-" general settings for debugger
-
-nnoremap <silent> <leader>dd :lua require'dap'.continue()<CR>
-nnoremap <silent> <leader>dj :lua require'dap'.step_over()<CR>
-nnoremap <silent> <leader>dl :lua require'dap'.step_into()<CR>
-nnoremap <silent> <leader>dk :lua require'dap'.step_out()<CR>
-nnoremap <silent> <leader>db  :lua require'dap'.toggle_breakpoint()<CR>
-nnoremap <silent> <leader>dB  :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
-nnoremap <silent> <leader>dlb :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
-nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
-nnoremap <silent> <leader>dl :lua require'dap'.run_last()<CR>
-nnoremap <silent> <leader>do :lua require'dapui'.toggle()<CR>
-nnoremap <silent> <leader>dc :lua require'dapui'.close()<CR>
-
-"nnoremap <leader>di :lua require'dap.ui.variables'.visual_hover()<CR>
-
- "python specific debugging
-lua require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
-nnoremap <silent><leader>tm :lua require('dap-python').test_method()<CR>
-nnoremap <silent><leader>tc :lua require('dap-python').test_class()<CR>
-vnoremap <silent> <leader>ds <ESC>:lua require('dap-python').debug_selection()<CR>
 
 " **********************LSP ACTIONS************************* "
 "                                                            "
@@ -248,38 +99,11 @@ nnoremap <silent><C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent><C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <leader>D <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
 "
-" "Trouble Mappings
-" nnoremap <leader>tt <cmd>TroubleToggle<cr>
-" nnoremap <leader>ttd :TodoTrouble<cr>
-" nnoremap <leader>tw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
-" nnoremap <leader>td <cmd>TroubleToggle lsp_document_diagnostics<cr>
-" nnoremap <leader>tq <cmd>TroubleToggle quickfix<cr>
-" nnoremap <leader>tl <cmd>TroubleToggle loclist<cr>
-" nnoremap gR <cmd>TroubleToggle lsp_references<cr>
-"
 " somewhat unrelated quickfix navigation
 nnoremap <silent>qn :cn<cr>
 nnoremap <silent>qp :cp<cr>
 "
 
-" "-- lsp provider to find the cursor word definition and reference
-" nnoremap <silent>gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
-"
-" "-- or use command LspSagaFinder
-" nnoremap <silent>gh :Lspsaga lsp_finder<CR>
-"
-"
-" " or use command
-" "nnoremap <silent>K :Lspsaga hover_doc<CR>
-"
-" " scroll down hover doc or scroll in definition preview
-" nnoremap <silent><C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-" " scroll up hover doc
-" nnoremap <silent><C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
-"
-" "or command
-" nnoremap <silent>gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
-"
 " "rename
 nnoremap <silent>RR <cmd>lua require('lspsaga.rename').rename()<CR>
  "preview definition
@@ -400,18 +224,6 @@ set completeopt=menuone,noinsert,noselect,preview
 
 " Avoid showing message extra message when using completion
 set shortmess+=c
-
-" ****************Hop*************************"
-"                                             "
-"           Settings for Hop                  "
-"                                             "
-" ****************Hop*************************"
-"                                               
-" nnoremap S :HopWord<CR>
-" vnoremap S :HopWord<CR>
-" nnoremap s :HopChar1<CR>
-" vnoremap s :HopChar1<CR>
-" nnoremap L :HopLine<CR>
 
 " ****************LightSpeed*************************"
 "                                                    "
@@ -552,26 +364,6 @@ nnoremap <leader><leader>vc :VimtexCompile<cr>
 "                 Quickfix                          "
 "                                                   "
 " ****************Quickfix************************* "
-
-
-""Toggle Practice
-nnoremap <leader>q :call <SID>QuickfixToggle()<cr>
-
-let g:quickfix_is_open = 0
-
-function! s:QuickfixToggle()
-    if g:quickfix_is_open
-        cclose
-        let g:quickfix_is_open = 0
-    else
-        copen
-        let g:quickfix_is_open = 1
-    endif
-endfunction
-
-"React Stuff
-
-let g:jsx_ext_required = 0
 
 
 "Markdown Things

@@ -16,6 +16,7 @@ o.termguicolors = true
 o.cursorline = true
 o.laststatus = 3
 o.title = true
+o.colorcolumn = "80"
 -- g.titlestring = %{hostname()}\ \ %F\ \ %{strftime('%Y-%m-%d\ %H:%M',getftime(expand('%')))}
 cmd.colorscheme('onenord')
 
@@ -27,6 +28,7 @@ o.encoding = "UTF-8"
 o.tabstop = 4
 o.softtabstop = 4
 o.shiftwidth = 4
+o.expandtab = true
 
 -- Syntax, Indent, and Case
 o.smartindent = true
@@ -47,3 +49,4 @@ o.undodir = 'undodir'
 
 -- Conceal
 o.cocu = "vnic"
+

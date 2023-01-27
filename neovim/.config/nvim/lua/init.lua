@@ -3,4 +3,4 @@
 require("plugins/plugins_load")
 require("opts")
 require("setup")
-require("binds")
+require("mappings")

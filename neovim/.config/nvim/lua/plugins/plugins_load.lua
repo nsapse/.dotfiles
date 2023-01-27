@@ -73,7 +73,7 @@ return require("packer").startup(function(use)
 	require('flit').setup()
 
 	use("tpope/vim-repeat")
-	use("unblevable/quick-scope")
+	use({"unblevable/quick-scope", config = get_config("quickscope")})
 
 	-- Vista
 	use("liuchengxu/vista.vim")
@@ -185,10 +185,6 @@ return require("packer").startup(function(use)
 	-- use("hrsh7th/cmp-vsnip")
 	use("saadparwaiz1/cmp_luasnip")
 
-	-- use("quangnguyen30192/cmp-nvim-ultisnips")
-	-- use({ "kdheepak/cmp-latex-symbols", opt = true, ft = { "latex", "tex", "texmf" } })
-	-- use({ "pontusk/cmp-vimwiki-tags", opt = true, ft = { "wiki", "vimwiki" } })
-
 	-- lspkind to make it prettier
 	use("onsails/lspkind-nvim")
 
@@ -203,7 +199,7 @@ return require("packer").startup(function(use)
 	-------------------
 	-- setup nvim DAP
 	use({ "mfussenegger/nvim-dap", config = get_config("nvim-dap") })
-	use({ "mfussenegger/nvim-dap-python" })
+	use({ "mfussenegger/nvim-dap-python", config = get_config("dap-python") })
 	use("rcarriga/nvim-dap-ui")
 	use("theHamsta/nvim-dap-virtual-text")
 	use({ "sakhnik/nvim-gdb", opt = true, ft = { "c", "cpp" } })

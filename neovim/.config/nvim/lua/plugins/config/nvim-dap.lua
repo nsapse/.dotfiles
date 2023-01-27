@@ -1,4 +1,5 @@
 local dap = require("dap")
+local dapui = require("dapui")
 
 vim.fn.sign_define("DapBreakpoint", { text = "=>", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapBreakpointCondition", { text = "~>", texthl = "", linehl = "", numhl = "" })
@@ -43,7 +44,6 @@ dap.configurations.cpp = {
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
 
-require("dapui").setup()
 
 dap.adapters.python = {
 	type = "executable",
@@ -77,19 +77,35 @@ dap.configurations.python = {
 	},
 }
 
-
 dap.adapters.go = {
-  type = 'executable';
-  command = 'node';
-  args = {os.getenv('HOME') .. '/dev/golang/vscode-go/dist/debugAdapter.js'};
+	type = "executable",
+	command = "node",
+	args = { os.getenv("HOME") .. "/dev/golang/vscode-go/dist/debugAdapter.js" },
 }
 dap.configurations.go = {
-  {
-    type = 'go';
-    name = 'Debug';
-    request = 'launch';
-    showLog = false;
-    program = "${file}";
-    dlvToolPath = vim.fn.exepath('dlv')  -- Adjust to where delve is installed
-  },
+	{
+		type = "go",
+		name = "Debug",
+		request = "launch",
+		showLog = false,
+		program = "${file}",
+		dlvToolPath = vim.fn.exepath("dlv"),  -- Adjust to where delve is installed
+	},
 }
+
+-- Mappings
+
+vim.keymap.set('n', '<leader>dd', dap.continue())
+vim.keymap.set('n', '<leader>dj', dap.step_over())
+vim.keymap.set('n', '<leader>dl', dap.step_into())
+vim.keymap.set('n', '<leader>dk', dap.step_out())
+vim.keymap.set('n', '<leader>db ', dap.toggle_breakpoint())
+vim.keymap.set('n', '<leader>dB ', dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')))
+vim.keymap.set('n', '<leader>dlb', dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')))
+vim.keymap.set('n', '<leader>dr', dap.repl.open())
+vim.keymap.set('n', '<leader>do', dapui.toggle())
+vim.keymap.set('n', '<leader>dl', dap.run_last())
+vim.keymap.set('n', '<leader>dc', dapui.close())
+
+--nnoremap <leader>di :lua requiredap.ui.variables'.visual_hover()<CR>
+
