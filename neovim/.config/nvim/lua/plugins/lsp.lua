@@ -21,4 +21,7 @@ return {
 			{ "rafamadriz/friendly-snippets" }, -- Optional
 		},
 	},
+    "ray-x/lsp_signature.nvim",
+	-- lspkind to make it prettier
+	"onsails/lspkind-nvim",
 }

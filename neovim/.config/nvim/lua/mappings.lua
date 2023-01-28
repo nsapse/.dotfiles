@@ -3,9 +3,6 @@ local map = vim.keymap
 local cmd = vim.cmd
 
 --leaders
-
-g.mapleader = " "
-g.maplocalleader = "\\"
 --allow quick file sourcing
 map.set({'n'}, '<leader>so', ':so %<CR>')
 

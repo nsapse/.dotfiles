@@ -1,6 +1,3 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 return {
  ----------------------
 	---~~[Editing Actions~]~
@@ -26,11 +23,7 @@ return {
 		end,
 	},
 
-    {
-		"folke/todo-comments.nvim",
-		dependencies = "nvim-lua/plenary.nvim",
-	},
-
+    
 	----------------------
 	---~~Navigation~~---
 	----------------------
@@ -61,11 +54,6 @@ return {
 	 "mbbill/undotree",
 	"simeji/winresizer",
 
-	--Telescope
-	 "nvim-telescope/telescope.nvim",
-    {"nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    "nvim-telescope/telescope-file-browser.nvim",
-
 	-- TODO - get nvim worktree going
 	--FZF
     {"junegunn/fzf.vim", dependencies = { "junegunn/fzf", build = "cd ~/.fzf && ./install --all" } },
@@ -75,7 +63,7 @@ return {
 	----------------
 	---~~[[LSP]]~~--
 	----------------
-	"ray-x/lsp_signature.nvim",
+
 	-- fidget
 	 "j-hui/fidget.nvim",
 
@@ -88,8 +76,6 @@ return {
 	"JoosepAlviste/nvim-ts-context-commentstring",
 
 
-	-- lspkind to make it prettier
-	"onsails/lspkind-nvim",
 
 	-------------------
 	--~~ Arduino   ~~--
@@ -195,9 +181,6 @@ return {
 	"catppuccin/nvim",
 	"ful1e5/onedark.nvim",
 
-	-- Focus
-	 "folke/twilight.nvim",
-
 	-- Coloration, Highlighting, Icons, Readability
 	"markonm/traces.vim",
 	"p00f/nvim-ts-rainbow",
@@ -208,7 +191,6 @@ return {
 	--UI/UX Elements
 	"voldikss/vim-floaterm",
     "nvim-lualine/lualine.nvim",
-    'nvim-telescope/telescope-ui-select.nvim',
 
 	-- BarBar
 	 "romgrk/barbar.nvim",

@@ -18,7 +18,7 @@ o.laststatus = 3
 o.title = true
 o.colorcolumn = "80"
 o.list = true
-cmd.colorscheme('onenord')
+cmd.colorscheme('nordic')
 
 -- g.titlestring = %{hostname()}\ \ %F\ \ %{strftime('%Y-%m-%d\ %H:%M',getftime(expand('%')))}
 
