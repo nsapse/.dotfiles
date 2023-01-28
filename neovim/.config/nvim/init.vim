@@ -86,44 +86,6 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 "                                                            "
 " **********************LSP ACTIONS************************* "
 
-" start completion
-" autocmd BufEnter * lua require'completion'.on_attach()
-
-" LSP config (the mappings used in the default file don't quite work right)
-nnoremap <silent>gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent>gD <cmd>lua vim.lsp.buf.declaration()<CR>
-" nnoremap <silent>gr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent>gi <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent>K <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent><C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent><C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <leader>D <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
-"
-" somewhat unrelated quickfix navigation
-nnoremap <silent>qn :cn<cr>
-nnoremap <silent>qp :cp<cr>
-"
-
-" "rename
-nnoremap <silent>RR <cmd>lua require('lspsaga.rename').rename()<CR>
- "preview definition
-nnoremap <silent>pd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
-"
-" "code action
-nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
-vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
-
-"" Macro - Paste From Current System Buffer
-nnoremap <leader><leader>V "+p 
-
-" or use command
-nnoremap <silent><leader>cd <cmd>lua
-nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
-"-- only show diagnostic if cursor is over the area
-nnoremap <silent><leader>cc <cmd>lua
-nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
-
 "Setting up java LSP JDTLS
 
 let g:lsc_server_commands = {'java': 'usr/bin/java-language-server/dist/lang_server_linux.sh'}

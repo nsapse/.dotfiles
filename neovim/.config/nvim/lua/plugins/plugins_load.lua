@@ -15,13 +15,6 @@ return require("packer").startup(function(use)
 	--Firenvim
 
 	use({
-		"glacambre/firenvim",
-		run = function()
-			vim.fn["firenvim#install"](0)
-		end,
-	})
-
-	use({
 		"ThePrimeagen/refactoring.nvim",
 		requires = {
 			{ "nvim-lua/plenary.nvim" },
@@ -61,10 +54,6 @@ return require("packer").startup(function(use)
 	-- which_key
 	use({ "folke/which-key.nvim", config = get_config("which-key") })
 
-	-- Hop
-	-- use({ "phaazon/hop.nvim", config = get_config("hop") })
-	-- use({ "ggandor/lightspeed.nvim", config = get_config("lightspeed") })
-	-- LEAP
 	use({ "ggandor/leap.nvim" })
 	use({ "ggandor/leap-spooky.nvim" })
 	use({ "ggandor/flit.nvim" })
@@ -106,11 +95,6 @@ return require("packer").startup(function(use)
 	--LSPconfig
 	use({ "neovim/nvim-lspconfig", config = get_config("lsp-config") })
 
-	--Saga
-	use({ "tami5/lspsaga.nvim" })
-	local saga = require("lspsaga")
-	saga.init_lsp_saga()
-
 	use("nvim-lua/lsp_extensions.nvim")
 	use("nvim-lua/plenary.nvim")
 
@@ -122,20 +106,20 @@ return require("packer").startup(function(use)
 	use({
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
-		"jayp0521/mason-null-ls.nvim",
+		-- "jayp0521/mason-null-ls.nvim",
 		"RubixDev/mason-update-all",
 		"jayp0521/mason-nvim-dap.nvim",
 		-- "WhoIsSethDaniel/mason-tool-installer.nvim",
 	})
 	require("mason").setup()
 	require("mason-lspconfig").setup()
-	require("mason-null-ls").setup()
+	-- require("mason-null-ls").setup()
 	require("mason-nvim-dap").setup()
 	require("mason-update-all").setup()
 	-- require("mason-tool-installer").setup()
 
 	-- null-ls
-	use({ "jose-elias-alvarez/null-ls.nvim", config = get_config("null-ls") })
+	-- use({ "jose-elias-alvarez/null-ls.nvim", config = get_config("null-ls") })
 
 	-- fidget
 	use({ "j-hui/fidget.nvim" })
@@ -152,19 +136,11 @@ return require("packer").startup(function(use)
 	----------------------
 	---~~[Snippets]~~-------
 	------------------- --
-	-- within packer init {{{
-	-- use({
-	-- 	"SirVer/ultisnips",
-	-- 	requires = { { "honza/vim-snippets", rtp = "." } },
-	-- })
-
 	local t = function(str)
 		return vim.api.nvim_replace_termcodes(str, true, true, true)
 	end
 
 	use("honza/vim-snippets")
-	-- use("hrsh7th/vim-vsnip")
-	-- use("hrsh7th/vim-vsnip-integ")
 	use("rafamadriz/friendly-snippets")
 	--luasnip
 	use({ "L3MON4D3/LuaSnip", config = get_config("luasnip") })
@@ -198,11 +174,11 @@ return require("packer").startup(function(use)
 	--~~ Debugging ~~--
 	-------------------
 	-- setup nvim DAP
-	use({ "mfussenegger/nvim-dap", config = get_config("nvim-dap") })
-	use({ "mfussenegger/nvim-dap-python", config = get_config("dap-python") })
-	use("rcarriga/nvim-dap-ui")
-	use("theHamsta/nvim-dap-virtual-text")
-	use({ "sakhnik/nvim-gdb", opt = true, ft = { "c", "cpp" } })
+	-- use({ "mfussenegger/nvim-dap", config = get_config("nvim-dap") })
+	-- use({ "mfussenegger/nvim-dap-python", config = get_config("dap-python") })
+	-- use("rcarriga/nvim-dap-ui")
+	-- use("theHamsta/nvim-dap-virtual-text")
+	-- use({ "sakhnik/nvim-gdb", opt = true, ft = { "c", "cpp" } })
 
 	----------
 	--~~Go~~--
@@ -316,12 +292,12 @@ return require("packer").startup(function(use)
 	--UI/UX Elements
 	use("voldikss/vim-floaterm")
 	use({ "nvim-lualine/lualine.nvim", config = get_config("lualine") })
+    use {'nvim-telescope/telescope-ui-select.nvim' }
 
 	-- BarBar
 	use({ "romgrk/barbar.nvim", config = get_config("barbar") })
 	use({ "nvim-lua/popup.nvim", opt = true })
 	use("kyazdani42/nvim-web-devicons")
-
 	--nvim GPS
 	use({
 		"SmiteshP/nvim-gps",
@@ -330,7 +306,7 @@ return require("packer").startup(function(use)
 	require("nvim-gps").setup()
 
 	--biscuits
-	use({ "code-biscuits/nvim-biscuits", config = get_config("biscuits") })
+	-- use({ "code-biscuits/nvim-biscuits", config = get_config("biscuits") })
 
 	--additional synatax for kmonad
 	use("kmonad/kmonad-vim")
@@ -353,12 +329,6 @@ return require("packer").startup(function(use)
 	------------------------------
 	--~~Personal Organization ~~--
 	------------------------------
-	-- VimWiki
-	-- use({ "vimwiki/vimwiki" })
-	-- use({ "tbabej/taskwiki" })
-	-- use({ "powerman/vim-plugin-AnsiEsc", opt = true, ft = { "wiki", "vimwiki" } })
-	-- use 'chipsenkbeil/vimwiki-server.nvim'
-	-- use 'chipsenkbeil/vimwiki.nvim'
 
 	-- Neorg
 	-- use({
@@ -366,19 +336,6 @@ return require("packer").startup(function(use)
 	-- 	requires = "nvim-lua/plenary.nvim",
 	-- 	config = get_config("neorg"),
 	-- })
-
-	-- Taskwarrior
-	use("blindFS/vim-taskwarrior")
-
-	-- Spellcheck and grammar
-	use({
-		"brymer-meneses/grammar-guard.nvim",
-		requires = "neovim/nvim-lspconfig",
-		config = get_config("grammar-guard"),
-	})
-
-	-- this is required for grammar guard
-	-- use("williamboman/nvim-lsp-installer")
 
 	--orgmode.nvim
 

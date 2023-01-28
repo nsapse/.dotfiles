@@ -69,15 +69,15 @@ vim.g.bufferline = {
 -- Mappings
 --
 -- Goto buffer in position...
-vim.keymap.set('n', '1', ':BufferGoto 1<CR>')
-vim.keymap.set('n', '2', ':BufferGoto 2<CR>')
-vim.keymap.set('n', '3', ':BufferGoto 3<CR>')
-vim.keymap.set('n', '4', ':BufferGoto 4<CR>')
-vim.keymap.set('n', '5', ':BufferGoto 5<CR>')
-vim.keymap.set('n', '6', ':BufferGoto 6<CR>')
-vim.keymap.set('n', '7', ':BufferGoto 7<CR>')
-vim.keymap.set('n', '8', ':BufferGoto 8<CR>')
-vim.keymap.set('n', '9', ':BufferLast<CR>')
+vim.keymap.set('n', 'b1', ':BufferGoto 1<CR>')
+vim.keymap.set('n', 'b2', ':BufferGoto 2<CR>')
+vim.keymap.set('n', 'b3', ':BufferGoto 3<CR>')
+vim.keymap.set('n', 'b4', ':BufferGoto 4<CR>')
+vim.keymap.set('n', 'b5', ':BufferGoto 5<CR>')
+vim.keymap.set('n', 'b6', ':BufferGoto 6<CR>')
+vim.keymap.set('n', 'b7', ':BufferGoto 7<CR>')
+vim.keymap.set('n', 'b8', ':BufferGoto 8<CR>')
+vim.keymap.set('n', 'b9', ':BufferLast<CR>')
                        
 -- Pin/unpin buffer    ',
 vim.keymap.set('n', 'bP', ':BufferPin<CR>')
