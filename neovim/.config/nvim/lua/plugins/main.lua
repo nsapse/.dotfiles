@@ -1,26 +1,8 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Function to allow breaking out into setup files
-function get_config(name)
-	return string.format('require("plugins/config/%s")', name)
-end
-
-require("lazy").setup({
-	----------------------
+return {
+ ----------------------
 	---~~[Editing Actions~]~
 	----------------------
 
@@ -30,7 +12,6 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
 		},
-		config = get_config("refactor"),
 	},
 
 	-- Code Formatting
@@ -48,7 +29,6 @@ require("lazy").setup({
     {
 		"folke/todo-comments.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
-		config = get_config("todo-comments"),
 	},
 
 	----------------------
@@ -95,46 +75,7 @@ require("lazy").setup({
 	----------------
 	---~~[[LSP]]~~--
 	----------------
-	--LSPconfig
-	--  "neovim/nvim-lspconfig",
-	--
-	-- "nvim-lua/lsp_extensions.nvim",
-	-- "nvim-lua/plenary.nvim",
-
 	"ray-x/lsp_signature.nvim",
-    {
-      'VonHeikemen/lsp-zero.nvim',
-      branch = 'v1.x',
-      dependencies = {
-        -- LSP Support
-        {'neovim/nvim-lspconfig'},             -- Required
-        {'williamboman/mason.nvim'},           -- Optional
-        {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},         -- Required
-        {'hrsh7th/cmp-nvim-lsp'},     -- Required
-        {'hrsh7th/cmp-buffer'},       -- Optional
-        {'hrsh7th/cmp-path'},         -- Optional
-        {'saadparwaiz1/cmp_luasnip'}, -- Optional
-        {'hrsh7th/cmp-nvim-lua'},     -- Optional
-
-        -- Snippets
-        {'L3MON4D3/LuaSnip'},             -- Required
-        {'rafamadriz/friendly-snippets'}, -- Optional
-      }
-    },
-	-- mason
-
-    -- "williamboman/mason.nvim",
-    -- "williamboman/mason-lspconfig.nvim",
-    -- -- "jayp0521/mason-null-ls.nvim",
-    -- "RubixDev/mason-update-all",
-    -- "jayp0521/mason-nvim-dap.nvim",
-		-- "WhoIsSethDaniel/mason-tool-installer.nvim",
-	-- null-ls
-	--  "jose-elias-alvarez/null-ls.nvim",
-
 	-- fidget
 	 "j-hui/fidget.nvim",
 
@@ -142,33 +83,10 @@ require("lazy").setup({
 	---~~[[Treesitter]]~~---
 	----------------------
 	-- Treesitter
-	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate", config = get_config("treesitter") },
+	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {"nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
 	"JoosepAlviste/nvim-ts-context-commentstring",
 
-	----------------------
-	---~~[Snippets]~~-------
-	------------------- --
-
-	-- "honza/vim-snippets",
-	-- "rafamadriz/friendly-snippets",
-	-- --luasnip
-	--  "L3MON4D3/LuaSnip",
-	-- Load Snippets into Luasnip
-
-	----------------------
-	---~~[AutoComplete]~~---
-	----------------------
-	--CMP Stuff
-	--  "hrsh7th/nvim-cmp",
-	-- "hrsh7th/cmp-nvim-lsp",
-	-- "hrsh7th/cmp-nvim-lua",
-	-- "hrsh7th/cmp-buffer",
-	-- "ray-x/cmp-treesitter",
-	-- "hrsh7th/cmp-path",
-	-- "hrsh7th/cmp-cmdline",
-	-- -- "hrsh7th/cmp-vsnip",
-	-- "saadparwaiz1/cmp_luasnip",
 
 	-- lspkind to make it prettier
 	"onsails/lspkind-nvim",
@@ -317,4 +235,4 @@ require("lazy").setup({
 	----------------
 	"vim-utils/vim-man",
 	"milisims/nvim-luaref",
-})
+}
