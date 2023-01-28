@@ -1,4 +1,4 @@
--- settings
+return {-- settings
 vim.g.bufferline = {
 	-- Enable/disable animations
 	animation = true,
@@ -85,3 +85,4 @@ vim.keymap.set('n', 'bP', ':BufferPin<CR>')
 -- Close buffer        ',
 vim.keymap.set('n', 'BN', ':BufferNext<CR>')
 vim.keymap.set('n', 'BP', ':BufferPrev<CR>')
+}

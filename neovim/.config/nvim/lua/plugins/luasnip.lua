@@ -1,3 +1,4 @@
+require("luasnip/loaders/from_vscode").lazy_load()
 local function prequire(...)
 local status, lib = pcall(require, ...)
 if (status) then return lib end
@@ -32,7 +33,6 @@ _G.s_ctrl_complete = function()
     end
     return ""
 end
---
 
 vim.api.nvim_set_keymap("i", "<C-j>", "v:lua.ctrl_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<C-j>", "v:lua.ctrl_complete()", {expr = true})

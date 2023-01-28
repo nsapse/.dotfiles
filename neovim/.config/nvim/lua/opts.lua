@@ -17,8 +17,10 @@ o.cursorline = true
 o.laststatus = 3
 o.title = true
 o.colorcolumn = "80"
--- g.titlestring = %{hostname()}\ \ %F\ \ %{strftime('%Y-%m-%d\ %H:%M',getftime(expand('%')))}
+o.list = true
 cmd.colorscheme('onenord')
+
+-- g.titlestring = %{hostname()}\ \ %F\ \ %{strftime('%Y-%m-%d\ %H:%M',getftime(expand('%')))}
 
 -- General UI/UX
 o.showmatch = true
