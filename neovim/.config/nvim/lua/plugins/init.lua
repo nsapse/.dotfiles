@@ -42,16 +42,16 @@ return {
 	 "ggandor/flit.nvim",
 
 	"tpope/vim-repeat",
-    -- "unblevable/quick-scope",
+    "unblevable/quick-scope",
 
-	-- Vista
-	"liuchengxu/vista.vim",
+	-- symbols otline
+    {'simrat39/symbols-outline.nvim', config = true},
 
 	-- chadtree
 	 "ms-jpq/chadtree",
 
 	--  "simnalamburt/vim-mundo" },
-	 "mbbill/undotree",
+	"mbbill/undotree",
 	"simeji/winresizer",
 
 	-- TODO - get nvim worktree going

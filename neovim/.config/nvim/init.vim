@@ -7,10 +7,6 @@
 " source by init.lua
 lua require('init')
 
-" for arduino
-let g:arduino_dir = "/home/noah/Arduino"
-let g:arduino_home_dir = "/home/noah/.arduino15"
-
 " *******************Abbreviations*************************"
 "                                                          "
 "                                                          "
@@ -54,7 +50,7 @@ hi SignColumn guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 map <C-_> <Leader>c<Space>
-nnoremap<c-t> :Vista!!<cr>
+nnoremap<c-t> :SymbolsOutline<cr>
 
 " small augroup to read .kbd files for kmonad
 augroup kbd
@@ -62,23 +58,7 @@ augroup kbd
   autocmd BufNewFile,BufRead *.kbd   set filetype=kbd 
 augroup END
 
-" **********************Vista************************* "
-"                                                      "
-"                  Settings for Vista                  "
-"                                                      "
-" **********************Vista************************* "
 
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-
-" **********************Quickscope************************* "
-"                                                           "
-"                  Settings for Quickscope                  "
-"                                                           "
-" **********************Quickscope************************* "
-
-" Trigger a highlight in the appropriate direction when pressing these keys:
-"nnoremap n <Plug>(Quickscopef)<cr>
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " **********************LSP ACTIONS************************* "
 "                                                            "
@@ -88,18 +68,18 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 "Setting up java LSP JDTLS
 
-let g:lsc_server_commands = {'java': 'usr/bin/java-language-server/dist/lang_server_linux.sh'}
-if has('nvim-0.5')
-  augroup lsp
-    au!
-    au FileType java lua require('jdtls').start_or_attach({cmd = {'jdtls'}})
-    command! -buffer JdtCompile lua require('jdtls').compile()
-    command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()
-    command! -buffer JdtJol lua require('jdtls').jol()
-    command! -buffer JdtBytecode lua require('jdtls').javap()
-    command! -buffer JdtJshell lua require('jdtls').jshell()
-  augroup end
-endif
+" let g:lsc_server_commands = {'java': 'usr/bin/java-language-server/dist/lang_server_linux.sh'}
+" if has('nvim-0.5')
+"   augroup lsp
+"     au!
+"     au FileType java lua require('jdtls').start_or_attach({cmd = {'jdtls'}})
+"     command! -buffer JdtCompile lua require('jdtls').compile()
+"     command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()
+"     command! -buffer JdtJol lua require('jdtls').jol()
+"     command! -buffer JdtBytecode lua require('jdtls').javap()
+"     command! -buffer JdtJshell lua require('jdtls').jshell()
+"   augroup end
+" endif
 
 nnoremap <A-o> <Cmd>lua require'jdtls'.organize_imports()<CR>
 nnoremap crv <Cmd>lua require('jdtls').extract_variable()<CR>
@@ -174,19 +154,6 @@ nnoremap <silent><c-g>      :FloatermNew lazygit<cr>
 let      g:floaterm_autoclose=1
 let      g:floaterm_gitcommit='vsplit'
 
-            
-" ****************LSP*************************"
-"                                             "
-"           Settings for LSP                  "
-"                                             "
-" ****************LSP*************************"
-
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect,preview
-
-" Avoid showing message extra message when using completion
-set shortmess+=c
-
 " ****************LightSpeed*************************"
 "                                                    "
 "           Settings for LightSpeed                  "
@@ -248,7 +215,7 @@ let      g:fzf_history_dir = '~/.local/share/fzf-history'
 nmap     <leader><leader>f :Files<CR>
 nmap     <leader><leader>b :Buffers<CR>
 nnoremap <leader><leader>t :Tags<CR>
-nnoremap <leader><leader>l :Lines<CR>
+noremap <leader><leader>l :Lines<CR>
 nnoremap <leader><leader>g :Rg<CR>
 
 let g:fzf_tags_command = 'ctags -R'
@@ -259,51 +226,6 @@ let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 
 set rtp+=~/.vim/bundle/fzf
-
-
-" ****************Telescope*************************
-"                
-"           Settings for Telescope 
-"
-" ****************Telescope*************************
-
-" Using Lua functions
-nnoremap <c-f> :Telescope file_browser<cr>
-nnoremap <leader>fz <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_ivy({}))<cr>
-nnoremap <leader>sts <cmd>lua require('telescope.builtin').treesitter()<cr>
-nnoremap <leader>ds <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
-nnoremap <leader>ws <cmd>lua require('telescope.builtin').lsp_workspace_symbols()<cr>
-nnoremap <leader>sd <cmd>lua require('telescope.builtin').diagnostics(require('telescope.themes').get_ivy({}))<cr>
-nnoremap <leader>gg <cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))<cr>
-nnoremap <leader>gw <cmd>lua require('telescope.builtin').grep_string(require('telescope.themes').get_ivy({}))<cr>
-nnoremap <leader>" <cmd>lua require('telescope.builtin').registers()<cr>
-
-" Telescope grep seeps crashing - remapped to ripgrem in Floatterm
-nnoremap <leader>sr <cmd>lua require('telescope.builtin').lsp_references(require('telescope.themes').get_ivy({}))<cr>
-nnoremap <leader>sb <cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_ivy({}))<cr>
-nnoremap <leader>sh <cmd>lua require('telescope.builtin').help_tags()<cr>
-nnoremap <leader>sq <cmd>lua require('telescope.builtin').quickfix(require('telescope.themes').get_ivy({}))<cr>
-nnoremap <leader>sk <cmd>lua require('telescope.builtin').keymaps(require('telescope.themes').get_ivy({}))<cr>
-
-nnoremap <leader>cc <cmd>lua require('telescope.builtin').colorscheme()<cr>
-nnoremap <leader>ca <cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_ivy({}))<cr>
-nnoremap <leader>st :TodoTelescope<cr>
-
-"telescope git stuff
-nnoremap <leader>gc  <cmd>lua require('telescope.builtin').git_commits(require('telescope.themes').get_ivy({}))<cr>
-nnoremap <leader>gcb <cmd>lua require('telescope.builtin').git_bcommits(require('telescope.themes').get_ivy({}))<cr>
-nnoremap <leader>gf  <cmd>lua require('telescope.builtin').git_files(require('telescope.themes').get_ivy({}))<cr>
-
-
-
-" ****************Focus*************************
-"                
-"   Focus Plugins (Zen, Limelight, etc) 
-"
-" ****************Focus*************************
-
-map <silent><leader>z :TZAtaraxis<CR><bar>:Twilight<CR>
-map <silent><leader>Z :TZMinimalist<CR><bar>:Twilight<CR>
 
 " ****************Vimtex************************* "
 "                                                 "

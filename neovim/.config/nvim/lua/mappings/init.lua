@@ -41,9 +41,9 @@ map.set('n', '<C-KK>', ':m .+1<cr>', {silent=true})
 map.set('n', '<C-JJ>', ':m .-2<cr>', {silent=true})
 
 -- add "traditional" save and quit bindings
-map.set({'i', 'n', 'v'}, "<c-s>", function() cmd.w() end)
+map.set({'i', 'n', 'v'}, "<c-s>", vim.cmd.w)
+map.set({'i', 'n', 'v'}, "<c-q>", vim.cmd.qa)
 
-map.set({'i', 'n', 'v'}, "<c-q>", function() cmd.qa() end)
 -- automatically center on location jumps
 map.set('n', '<c-o>', '<c-o>zz')
 map.set('n', '<c-i>', '<c-i>zz')
@@ -52,8 +52,11 @@ map.set('n', '<c-d>', '<c-d>zz')
 
 -- allow yank/paste to/from system clipboard on <leader>y/p
 map.set({'n','i','v'}, '<leader>y', "\"+y")
-map.set({'n','i','v'}, '<leader>p', "\"+p")
+map.set({'n','v'}, '<leader>p', "\"+p")
 
 -- quickfix navigation
 map.set('n', 'qn', ':cn<cr>')
 map.set('n', 'qp', ':cp<cr>')
+
+-- telescope
+require("mappings.telescope")

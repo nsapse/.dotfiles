@@ -52,3 +52,6 @@ o.undodir = 'undodir'
 -- Conceal
 o.cocu = "vnic"
 
+-- Plugins
+-- Arduino
+require("arduino")
