@@ -5,8 +5,7 @@
 # /_/   /___/_/ completion.zsh
 #
 # - $FZF_TMUX               (default: 0)
-# - $FZF_TMUX_OPTS          (default: '-d 40%')
-# - $FZF_COMPLETION_TRIGGER (default: '**')
+# - $FZF_TMUX_OPTS          (default: '-d 40%') - $FZF_COMPLETION_TRIGGER (default: '**')
 # - $FZF_COMPLETION_OPTS    (default: empty)
 
 # Both branches of the following `if` do the same thing -- define

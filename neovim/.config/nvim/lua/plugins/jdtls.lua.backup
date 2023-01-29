@@ -3,3 +3,30 @@ local config = {
     root_dir = vim.fs.dirname(vim.fs.find({'.gradlew', '.git', 'mvnw'}, { upward = true })[1]),
 }
 require('jdtls').start_or_attach(config)
+
+nnoremap <A-o> <Cmd>lua require'jdtls'.organize_imports()<CR>
+nnoremap crv <Cmd>lua require('jdtls').extract_variable()<CR>
+vnoremap crv <Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>
+nnoremap crc <Cmd>lua require('jdtls').extract_constant()<CR>
+vnoremap crc <Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>
+vnoremap crm <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
+
+"-- `code_action` is a superset of vim.lsp.buf.code_action and you'll be able to
+"-- use this mapping also with other language servers
+"nnoremap ga <Cmd>lua require('jdtls').code_action()<CR>
+"vnoremap ga <Esc><Cmd>lua require('jdtls').code_action(true)<CR>
+nnoremap <leader>jr <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
+
+nnoremap <A-o> <Cmd>lua require'jdtls'.organize_imports()<CR>
+nnoremap <leader><leader>ev <Cmd>lua require('jdtls').extract_variable()<CR>
+vnoremap <leader><leader>ev <Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>
+nnoremap <leader><leader>ec <Cmd>lua require('jdtls').extract_constant()<CR>
+vnoremap <leader><leader>ec <Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>
+vnoremap <leader><leader>em <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
+
+
+"-- If using nvim-dap
+"-- This requires java-debug and vscode-java-test bundles, see install steps in this README further below.
+nnoremap <leader>df <Cmd>lua require'jdtls'.test_class()<CR>
+nnoremap <leader>dn <Cmd>lua require'jdtls'.test_nearest_method()<CR>
+

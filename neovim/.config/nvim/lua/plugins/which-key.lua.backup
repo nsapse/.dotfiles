@@ -1,13 +1,22 @@
-require("which-key").setup({
-	timeoutlen = 250,
-	window = {
-		border = "single",
+return {
+	{
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup({
+                mode = "",
+                buffer = nil,
+				timeoutlen = 250,
+				window = {
+					border = "single",
+				},
+				triggers_blacklist = {
+					n = { "h", "j", "k", "l", '"' },
+					v = { "h", "j", "k", "l", '"' },
+				},
+			})
+		end,
 	},
-	triggers_blacklist = {
-		n = { "h", "j", "k", "l", '"' },
-		v = { "h", "j", "k", "l", '"' },
-	},
-})
+}
 
 -- register leader keys
 -- local wk = require('which_key')

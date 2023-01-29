@@ -1,5 +1,5 @@
 return {
- ----------------------
+	----------------------
 	---~~[Editing Actions~]~
 	----------------------
 
@@ -13,9 +13,9 @@ return {
 
 	-- Code Formatting
 	"junegunn/vim-easy-align",
-	"machakann/vim-sandwich",
+	{ "machakann/vim-sandwich" },
 	"raimondi/delimitmate", -- look into jiangmiao/auto-pairs
-	 "sbdchd/neoformat",
+	"sbdchd/neoformat",
 	{
 		"numToStr/Comment.nvim",
 		config = function()
@@ -23,7 +23,6 @@ return {
 		end,
 	},
 
-    
 	----------------------
 	---~~Navigation~~---
 	----------------------
@@ -34,54 +33,34 @@ return {
 	--Misc
 	"tpope/vim-unimpaired",
 
-	-- which_key
-    "folke/which-key.nvim",
-
-	 "ggandor/leap.nvim",
-	 "ggandor/leap-spooky.nvim",
-	 "ggandor/flit.nvim",
-
+	-- 
 	"tpope/vim-repeat",
-    "unblevable/quick-scope",
+	"unblevable/quick-scope",
 
 	-- symbols otline
-    {'simrat39/symbols-outline.nvim', config = true},
+	{ "simrat39/symbols-outline.nvim", config = true },
 
 	-- chadtree
-	 "ms-jpq/chadtree",
+	"ms-jpq/chadtree",
 
 	--  "simnalamburt/vim-mundo" },
 	"mbbill/undotree",
 	"simeji/winresizer",
 
-	-- TODO - get nvim worktree going
-	--FZF
-    {"junegunn/fzf.vim", dependencies = { "junegunn/fzf", build = "cd ~/.fzf && ./install --all" } },
-
 	--wildermenu
-    {"gelguy/wilder.nvim", build = ":UpdateRemotePlugins" },
+	{ "gelguy/wilder.nvim", build = ":UpdateRemotePlugins" },
 	----------------
 	---~~[[LSP]]~~--
 	----------------
 
 	-- fidget
-	 "j-hui/fidget.nvim",
-
-	----------------------
-	---~~[[Treesitter]]~~---
-	----------------------
-	-- Treesitter
-	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
-    {"nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
-	"JoosepAlviste/nvim-ts-context-commentstring",
-
-
+    { "j-hui/fidget.nvim", config=true },
 
 	-------------------
 	--~~ Arduino   ~~--
 	-------------------
-	 "stevearc/vim-arduino",
-	 "sudar/vim-arduino-syntax",
+	"stevearc/vim-arduino",
+	"sudar/vim-arduino-syntax",
 
 	-------------------
 	--~~ Debugging ~~--
@@ -100,13 +79,13 @@ return {
 	--~~[HTML]~~--
 	------------
 
-	 "mattn/emmet-vim",
-    {"turbio/bracey.vim", ft = { "html", "css", "javascript" }, build = "npm install --prefix server" },
+	"mattn/emmet-vim",
+	{ "turbio/bracey.vim", ft = { "html", "css", "javascript" }, build = "npm install --prefix server" },
 
 	----------------
 	--~~[Markdown]~~--
 	----------------
-    {
+	{
 		"iamcco/markdown-preview.nvim",
 		build = function()
 			vim.fn["mkdp#util#install"]()
@@ -115,7 +94,7 @@ return {
 		cmd = "MarkdownPreview",
 	},
 
-	{"plasticboy/vim-markdown", ft = { "mardown", "md" } },
+	{ "plasticboy/vim-markdown", ft = { "mardown", "md" } },
 	--
 	----------------
 	--~~Python~~----
@@ -129,54 +108,52 @@ return {
 	----------------
 	----~~Rust~~----
 	----------------
-	 "simrat39/rust-tools.nvim",
-
-
+	"simrat39/rust-tools.nvim",
 
 	---------------------
 	---~~Javascript~~-----
 	---------------------
-	 "mlaursen/vim-react-snippets",
+	"mlaursen/vim-react-snippets",
 
 	----------------
 	---~~Java~~-----
 	----------------
-	 "mfussenegger/nvim-jdtls",
+	"mfussenegger/nvim-jdtls",
 
 	----------------
 	--~~LaTeX~~--
 	----------------
-	 "lervag/vimtex",
+	"lervag/vimtex",
 
 	----------------
 	-----Lua--------
 	----------------
-	 "folke/neodev.nvim",
+	"folke/neodev.nvim",
 
 	------------
 	-- ~~UI/UX~~ --
 	------------
 
 	-- Colorschemes
-	 "Murtaza-Udaipurwala/gruvqueen",
-	 "RRethy/nvim-base16",
-	 "b4skyx/serenade",
-	 "fenetikm/falcon",
+	"Murtaza-Udaipurwala/gruvqueen",
+	"RRethy/nvim-base16",
+	"b4skyx/serenade",
+	"fenetikm/falcon",
 	"folke/tokyonight.nvim",
-	 "jacoborus/tender.vim",
-	 "maaslalani/nordbuddy",
-	 "mhartington/oceanic-next",
+	"jacoborus/tender.vim",
+	"maaslalani/nordbuddy",
+	"mhartington/oceanic-next",
 	-- use {'morhetz/gruvbox'              , opt=true, c{md=':colorsche}me'}
 	-- use {'npxbr/gruvbox.nvim'           , opt=true, c{md=':colorsche}me'}
-	 "rktjmp/lush.nvim",
-	 "sainnhe/forest-night",
-	 "sainnhe/gruvbox-material",
-	 "sainnhe/sonokai",
-	 "shaunsingh/nord.nvim",
+	"rktjmp/lush.nvim",
+	"sainnhe/forest-night",
+	"sainnhe/gruvbox-material",
+	"sainnhe/sonokai",
+	"shaunsingh/nord.nvim",
 	--  "ulwlu/elly.vim",
-	 "EdenEast/nightfox.nvim",
-	 "NTBBloodbath/doom-one.nvim",
-	 "ellisonleao/gruvbox.nvim",
+	"EdenEast/nightfox.nvim",
+	"NTBBloodbath/doom-one.nvim",
+	"ellisonleao/gruvbox.nvim",
 	"rmehri01/onenord.nvim",
 	"catppuccin/nvim",
 	"ful1e5/onedark.nvim",
@@ -189,12 +166,12 @@ return {
 	"luukvbaal/stabilize.nvim",
 
 	--UI/UX Elements
-	"voldikss/vim-floaterm",
-    "nvim-lualine/lualine.nvim",
+	{ "akinsho/toggleterm.nvim", config = true },
+    "SmiteshP/nvim-gps",
 
 	-- BarBar
-	 "romgrk/barbar.nvim",
-    "nvim-lua/popup.nvim",
+	"romgrk/barbar.nvim",
+	"nvim-lua/popup.nvim",
 	"kyazdani42/nvim-web-devicons",
 
 	--additional synatax for kmonad
@@ -203,7 +180,7 @@ return {
 	----------------
 	-----GIT--------
 	----------------
-    {"sindrets/diffview.nvim", cmd = "DiffviewOpen" },
+	{ "sindrets/diffview.nvim", cmd = "DiffviewOpen" },
 
 	--gitsigns
 	"lewis6991/gitsigns.nvim",

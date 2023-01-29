@@ -33,9 +33,3 @@ return {
 	"nvim-telescope/telescope-ui-select.nvim",
 }
 
---[[ {
-	opts = {
-		
-	config = function()
-	end,
-}, ]]

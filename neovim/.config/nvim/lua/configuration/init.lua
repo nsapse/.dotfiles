@@ -54,4 +54,5 @@ o.cocu = "vnic"
 
 -- Plugins
 -- Arduino
-require("arduino")
+require("configuration.misc")
+require("configuration.treesitter")

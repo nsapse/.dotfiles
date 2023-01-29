@@ -60,3 +60,6 @@ map.set('n', 'qp', ':cp<cr>')
 
 -- telescope
 require("mappings.telescope")
+require("mappings.treesitter")
+require("mappings.misc")
+
