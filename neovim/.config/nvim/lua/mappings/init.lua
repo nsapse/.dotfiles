@@ -14,7 +14,7 @@ map.set('n', 'J', 'mzJ`z')
 -- quickly open config files
 local telescope = require("telescope.builtin")
 map.set('n', '<leader>ec', function() cmd.vsplit("$MYVIMRC") end)
-map.set('n', '<leader>elc', function() telescope.find_files({cwd='~/.config/nvim/lua'}) end)
+map.set('n', '<leader>oc', function() telescope.find_files({cwd='~/.config/nvim/lua'}) end)
 
 --window commands
 map.set('n', '<leader>wc', function() cmd.wincmd('c') end, {silent=true})
@@ -51,7 +51,7 @@ map.set('n', '<c-u>', '<c-u>zz')
 map.set('n', '<c-d>', '<c-d>zz')
 
 -- allow yank/paste to/from system clipboard on <leader>y/p
-map.set({'n','i','v'}, '<leader>y', "\"+y")
+map.set({'n','v'}, '<leader>y', "\"+y")
 map.set({'n','v'}, '<leader>p', "\"+p")
 
 -- quickfix navigation

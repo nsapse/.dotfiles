@@ -66,10 +66,6 @@ return {
 	--~~ Debugging ~~--
 	-------------------
 	-- setup nvim DAP
-	--  "mfussenegger/nvim-dap",
-	--  "mfussenegger/nvim-dap-python",
-	-- "rcarriga/nvim-dap-ui",
-	-- "theHamsta/nvim-dap-virtual-text",
 	--  "sakhnik/nvim-gdb", opt = true, ft = { "c", "cpp" } },
 
 	----------
@@ -103,7 +99,7 @@ return {
 	----------------
 	--~~Golang~~----
 	----------------
-	"ray-x/go.nvim",
+	-- "ray-x/go.nvim",
 
 	----------------
 	----~~Rust~~----

@@ -28,11 +28,7 @@ map.set('n', '<leader>au ', ':ArduinoUpload<cr>')
 map.set('n', '<leader>av ', ':ArduinoVerify<cr>')
 
 -- toggleterm (may need to breakout)
-local Terminal  = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+require("mappings.toggleterm")
 
-function _lazygit_toggle()
-  lazygit:toggle()
-end
-
-vim.api.nvim_set_keymap("n", "<C-g>", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+-- Symbols Outline
+vim.api.nvim_set_keymap("n", "<C-t>", ":SymbolsOutline<CR>", {noremap = true, silent = true})

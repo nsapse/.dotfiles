@@ -47,7 +47,7 @@ o.incsearch = true
 o.swapfile = false
 o.backup = false
 o.undofile = true
-o.undodir = 'undodir'
+o.undodir = '/home/noah/.config/nvim/undodir/'
 
 -- Conceal
 o.cocu = "vnic"

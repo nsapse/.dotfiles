@@ -200,6 +200,8 @@ alias dactyl="cd ~/.dotfiles/qmk/qmk_firmware/keyboards/handwired/dactyl_manufor
 
 # navigation and history
 alias lsa="exa -a -l --icons --color=auto"
+alias ls="exa -F -G --icons --color=auto"
+alias lsl="exa -F -G -l --icons --color=auto"
 alias lst='tree -C'
 alias lsp='ls -a -l --color=auto | less'
 alias gh="history|grep"
@@ -406,7 +408,7 @@ source /usr/share/fzf/completion.zsh
 export JDTLS_HOME=/usr/bin/jdtls # Directory with the plugin and configs directories
 
 # Optional:
-#export JAVA_HOME=/path/to/java_home # In case you don't have java in path or want to use a version in particular
+export JAVA_HOME=/usr/bin/java # In case you don't have java in path or want to use a version in particular
 #export WORKSPACE=/path/to/workspace # Defaults to $HOME/workspace
 
 # set the pager to be bat with some sh preprocesing
