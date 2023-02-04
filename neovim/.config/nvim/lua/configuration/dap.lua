@@ -1,24 +1,11 @@
 local dap = require("dap")
 local dapui = require("dapui")
 
-vim.fn.sign_define("DapBreakpoint", { text = "=>", texthl = "", linehl = "", numhl = "" })
-vim.fn.sign_define("DapBreakpointCondition", { text = "~>", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpoint", { text = "->", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpointCondition", { text = ">>", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapStopped", { text = "->", texthl = "", linehl = "", numhl = "" })
 
 -- Mappings
-local map = vim.keymap.set
-map('n', '<leader>dd', function() require('dap').continue() end)
-map('n', '<leader>dj', function() require('dap').step_over() end)
-map('n', '<leader>dl', function() require('dap').step_into() end)
-map('n', '<leader>dk', function() require('dap').step_out() end)
-map('n', '<leader>tb ', function() require('dap').toggle_breakpoint() end)
-map('n', '<leader>tB ', function() require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: ')) end)
-map('n', '<leader>tlb', function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
-map('n', '<leader>dr', function() require('dap').repl.open() end)
-map('n', '<leader>do', function() require('dapui').toggle() end)
-map('n', '<leader>dl', function() require('dap').run_last() end)
-map('n', '<leader>dc', function() require('dapui').close() end)
-
 --nnoremap <leader>di :lua requiredap.ui.variables'.visual_hover()<CR>
 
 dap.adapters.lldb = {
@@ -66,6 +53,7 @@ dap.adapters.python = {
 	command = "/usr/bin/python",
 	args = { "-m", "debugpy.adapter" },
 }
+
 
 dap.configurations.python = {
 	{

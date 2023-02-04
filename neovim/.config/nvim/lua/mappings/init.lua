@@ -62,4 +62,4 @@ map.set('n', 'qp', ':cp<cr>')
 require("mappings.telescope")
 require("mappings.treesitter")
 require("mappings.misc")
-
+require("mappings.dap")
