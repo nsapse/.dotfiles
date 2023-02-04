@@ -19,8 +19,11 @@ map.set('n', '<leader>sk', function() builtin.keymaps(require('telescope.themes'
 map.set('n', '<leader>s"', function() builtin.registers(require('telescope.themes').get_ivy({})) end)
 
 map.set('n', '<leader>cc', function() builtin.colorscheme() end)
-map.set('n', '<leader>ca', function() builtin.lsp_code_actions(require('telescope.themes').get_ivy({})) end)
 map.set('n', '<leader>st', ':TodoTelescope')
+
+
+-- this is apparently deprecated - moved to zero configs
+-- map.set('n', '<leader>ca', function() builtin.lsp_code_actions(require('telescope.themes').get_ivy({})) end)
 
 --telescope git stuff
 map.set('n', '<leader>gc',  function() builtin.git_commits(require('telescope.themes').get_ivy({})) end)
@@ -29,5 +32,5 @@ map.set('n', '<leader>gf',  function() builtin.git_files(require('telescope.them
 
 -- help and manuals
 map.set('n', '<leader>sht', function() builtin.help_tags() end)
-map.set('n', '<leader>sman', function() builtin.help_tags() end)
+map.set('n', '<leader>man', function() builtin.help_tags() end)
 

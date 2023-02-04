@@ -22,4 +22,4 @@ vim.g.maplocalleader = ' '
 require("lazy").setup("plugins")
 require("mappings")
 require("configuration")
-require("setup")
+require("setup_lsp")

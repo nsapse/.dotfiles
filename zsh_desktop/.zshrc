@@ -1,4 +1,3 @@
-
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 printf '\n%.0s' {1..100}
@@ -405,10 +404,10 @@ source /usr/share/fzf/completion.zsh
 # For JDTLS stuff
 # Mandatory:
 # .bashrc
-export JDTLS_HOME=/usr/bin/jdtls # Directory with the plugin and configs directories
+export JDTLS_HOME=/usr/share/java/jdtls/ # Directory with the plugin and configs directories
 
 # Optional:
-export JAVA_HOME=/usr/bin/java # In case you don't have java in path or want to use a version in particular
+export JAVA_HOME=/
 #export WORKSPACE=/path/to/workspace # Defaults to $HOME/workspace
 
 # set the pager to be bat with some sh preprocesing

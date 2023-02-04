@@ -56,3 +56,4 @@ o.cocu = "vnic"
 -- Arduino
 require("configuration.misc")
 require("configuration.treesitter")
+require("configuration.dap")
