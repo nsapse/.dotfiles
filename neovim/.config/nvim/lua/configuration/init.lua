@@ -18,7 +18,8 @@ o.laststatus = 3
 o.title = true
 o.colorcolumn = "80"
 o.list = true
-cmd.colorscheme('nordic')
+cmd.colorscheme('onenord')
+g.termguicolors = true
 
 -- g.titlestring = %{hostname()}\ \ %F\ \ %{strftime('%Y-%m-%d\ %H:%M',getftime(expand('%')))}
 
@@ -41,7 +42,7 @@ g.nohlsearch = true
 
 -- Search
 --o.nohlsearch = true
-o.incsearch = true
+-- o.incsearch = true
 
 -- Backup
 o.swapfile = false

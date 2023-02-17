@@ -1,6 +1,7 @@
 -- Learn the keybindings, see :help lsp-zero-keybindings
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
 local lsp = require('lsp-zero')
+local cmp = require('cmp')
 lsp.preset('recommended')
 
 -- configuration
@@ -14,7 +15,16 @@ lsp.on_attach(function(client, bufnr)
     local bind = vim.keymap.set
     bind('n', 'RR', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
     bind('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+    bind('n', '<C-y>', function() vim.lsp.buf.format {async = true} end, opts)
+
 end)
+
+lsp.setup_nvim_cmp({
+    mapping = lsp.defaults.cmp_mappings({
+        ['<Tab>'] = cmp.mapping.select_next_item(),
+        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+    })
+})
 
 
 -- -- (Optional) Configure lua language server for neovim

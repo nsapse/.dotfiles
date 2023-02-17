@@ -28,7 +28,7 @@ exec --no-startup-id copyq
 #start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-exec_always --no-startup-id wal -i ~/Pictures/Wallpapers/space_man_nord.png -e
+exec_always --no-startup-id wal -i ~/Pictures/Wallpapers/nord_water.png -e
 exec --no-startup-id redshift -l 41.603222:-73.087746
 
 # mount dropbox

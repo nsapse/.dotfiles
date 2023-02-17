@@ -31,6 +31,6 @@ map.set('n', '<leader>gcb', function() builtin.git_bcommits(require('telescope.t
 map.set('n', '<leader>gf',  function() builtin.git_files(require('telescope.themes').get_ivy({})) end)
 
 -- help and manuals
-map.set('n', '<leader>sht', function() builtin.help_tags() end)
+map.set('n', '<leader>sh', function() builtin.help_tags() end)
 map.set('n', '<leader>man', function() builtin.help_tags() end)
 

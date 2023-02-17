@@ -33,7 +33,7 @@ return {
 	--Misc
 	"tpope/vim-unimpaired",
 
-	-- 
+	--
 	"tpope/vim-repeat",
 	"unblevable/quick-scope",
 
@@ -54,7 +54,7 @@ return {
 	----------------
 
 	-- fidget
-    { "j-hui/fidget.nvim", config=true },
+	{ "j-hui/fidget.nvim", config = true },
 
 	-------------------
 	--~~ Arduino   ~~--
@@ -139,8 +139,6 @@ return {
 	"jacoborus/tender.vim",
 	"maaslalani/nordbuddy",
 	"mhartington/oceanic-next",
-	-- use {'morhetz/gruvbox'              , opt=true, c{md=':colorsche}me'}
-	-- use {'npxbr/gruvbox.nvim'           , opt=true, c{md=':colorsche}me'}
 	"rktjmp/lush.nvim",
 	"sainnhe/forest-night",
 	"sainnhe/gruvbox-material",
@@ -163,13 +161,48 @@ return {
 
 	--UI/UX Elements
 	{ "akinsho/toggleterm.nvim", config = true },
-    "SmiteshP/nvim-gps",
+	"SmiteshP/nvim-gps",
 
 	-- BarBar
 	"romgrk/barbar.nvim",
 	"nvim-lua/popup.nvim",
-	"kyazdani42/nvim-web-devicons",
+	-- "kyazdani42/nvim-web-devicons",
 
+	-- A Startup Screen
+	{
+		"glepnir/dashboard-nvim",
+		event = "VimEnter",
+		opts = {
+			theme = "hyper",
+			config = {
+				week_header = {
+					enable = true,
+				},
+				shortcut = {
+					{ desc = " Update", group = "@property", action = "Lazy update", key = "u" },
+					{
+						desc = " Files",
+						group = "Label",
+						action = "Telescope find_files",
+						key = "f",
+					},
+					{
+						desc = " Apps",
+						group = "DiagnosticHint",
+						action = "Telescope app",
+						key = "a",
+					},
+					{
+						desc = " dotfiles",
+						group = "Number",
+						action = "Telescope dotfiles",
+						key = "d",
+					},
+				},
+			},
+		},
+		dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	},
 	--additional synatax for kmonad
 	"kmonad/kmonad-vim",
 
@@ -179,7 +212,6 @@ return {
 	{ "sindrets/diffview.nvim", cmd = "DiffviewOpen" },
 
 	--gitsigns
-	"lewis6991/gitsigns.nvim",
 
 	------------------------------
 	--~~Personal Organization ~~--

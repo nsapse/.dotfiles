@@ -14,3 +14,5 @@ neovim/.config/nvim/lua/undodir/%home%noah%.dotfiles%neovim%.config%nvim%init.vi
 neovim/.config/nvim/lua/undodir
 neovim/.config/nvim/lua/undodir
 undodir
+workspace/jdt.ls-java-project
+test.java

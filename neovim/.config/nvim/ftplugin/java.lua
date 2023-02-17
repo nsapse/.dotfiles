@@ -78,6 +78,7 @@ map("v", "<leader>em", '<Esc><Cmd>lua require("jdtls").extract_method(true)<CR>'
 -- This jdtlb
 map("n", "<leader>tc", '<Esc><Cmd>lua require("jdtls").test_class()<CR>')
 map("n", "<leader>tm", '<Esc><Cmd>lua require("jdtls").test_nearest_method()<CR>')
+map("n", "<leader>cd", '<Esc><Cmd>lua require("jdtls.dap").setup_dap_main_class_configs()<CR>')
 
 -- finally launch
 jdt.start_or_attach(config)
