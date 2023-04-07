@@ -5,7 +5,7 @@
 #exec_always xrandr --output DisplayPort-0 --off --output DisplayPort-1 --primary --mode 3440x1440 --pos 1080x480 --rotate normal --output HDMI-A-0 --off --output HDMI-A-1 --mode 1920x1080 --pos 0x0 --rotate left --output DVI-D-0 --off 
 exec_always --no-startup-id feh --bg-scale /home/noah/Pictures/Wallpapers/nord_underwater.png
 exec_always --no-startup-id wal -i -e /home/noah/Pictures/Wallpapers/nord_underwater.png
-exec_always --no-startup-id redshift -l 41.603222:-73.087746 
+exec --no-startup-id redshift -l 41.603222:-73.087746 
  
 #Remap Caps to Esc (for vimming)
 #exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = Escape"
@@ -185,16 +185,16 @@ bindsym $mod+Shift+d exec rofi -show drun -f lines 9 -eh 2 -width 100 -opacity "
 
 # Setup Rofi-Menu Mods 
 #bindsym $mod+d exec --no-startup-id rofi-appsmenu
-bindsym $mod+n exec --no-startup-id rofi-network
-bindsym $mod+p exec --no-startup-id rofi-power
+bindsym $mod+Shift+n exec --no-startup-id rofi-network
+bindsym $mod+Shift+p exec --no-startup-id rofi-power
 
 ##############################################
 #           Random Launcher Bindings         #
 ##############################################
 
 # start file manager 
-bindsym $mod+b exec kitty -e ranger
-bindsym $mod+Shift+B exec dolphin
+# bindsym $mod+b exec kitty -e ranger
+# bindsym $mod+Shift+B exec dolphin
 
 #Launch Strawberry
 bindsym $mod+Control+0 exec strawberry
@@ -261,6 +261,7 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -268,6 +269,7 @@ bindsym $mod+a focus parent
 # prev/next bindings similar to tmux
 bindsym $mod+p workspace prev
 bindsym $mod+n workspace next
+workspace_auto_back_and_forth yes
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.

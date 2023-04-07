@@ -1,6 +1,4 @@
 local map = vim.keymap.set
---            chadtree
-map("n", "<C-n>", ":CHADopen<CR>", { silent = true })
 
 --            diffview
 map("n", "<leader>do", ":DiffviewOpen<cr>")
@@ -35,19 +33,15 @@ vim.api.nvim_set_keymap("n", "<C-t>", ":SymbolsOutline<CR>", {noremap = true, si
 
 
 --leap stuff
--- map({'n', 'x', 'o'}, 'f', '<Plug>(leap-forward-to)')
--- map({'n', 'x', 'o'}, 'F', '<Plug>(leap-backward-to)')
--- map({'n', 'x', 'o'}, 't', '<Plug>(leap-forward-till)')
--- map({'n', 'x', 'o'}, 'T', '<Plug>(leap-backward-till)')
+map({'n', 'x', 'o'}, 'f', '<Plug>(leap-forward-to)')
+map({'n', 'x', 'o'}, 'F', '<Plug>(leap-backward-to)')
+map({'n', 'x', 'o'}, 't', '<Plug>(leap-forward-till)')
+map({'n', 'x', 'o'}, 'T', '<Plug>(leap-backward-till)')
 
+-- autoformat
+map('n', '<leader>nf', ':Neoformat<CR>')
+
+-- Code action menu
+map({'n', 'v'}, '<leader>am', ':CodeActionMenu<CR>')
 -- Saga
--- Show cursor diagnostics
--- Like show_line_diagnostics, it supports passing the ++unfocus argument
--- map("n", "<leader>dc", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
---
--- -- Show buffer diagnostics
--- map("n", "<leader>d", "<cmd>Lspsaga show_buf_diagnostics<CR>")
---
--- -- Call hierarchy
--- map("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
--- map("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
+

@@ -1,66 +1,32 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		version = false, -- last release is way too old and doesn't work on Windows
 		build = ":TSUpdate",
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = {
-					"bash",
-					"c",
-					"cmake",
-					"comment",
-					"css",
-					"go",
-					"help",
-					"html",
-					"java",
-					"javascript",
-					"json",
-					"latex",
-					"lua",
-					"llvm",
-					"norg",
-					"python",
-					"regex",
-					"ruby",
-					"rust",
-					"toml",
-					"typescript",
-					"vim",
-					"yaml",
-				}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-				ignore_install = {}, -- List of parsers to ignore installing
-				highlight = {
-					enable = true, -- false will disable the whole extension
-					disable = { "org" }, -- list of language that will be disabled
-					additional_vim_regex_highlighting = { "org" }, -- Required since TS highlighter doesn't support all syntax features (conceal)
-				},
-				rainbow = {
-					enable = true,
-					extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-					max_file_lines = nil,
-				},
-				autotag = {
-					enable = true,
-				},
-				incremental_selection = {
-					enable = true,
-					keymaps = {
-						init_selection = "gnn",
-						node_incremental = "grn",
-						scope_incremental = "grc",
-						node_decremental = "grm",
-					},
-				},
-				indent = {
-					enable = true,
-				},
-				context_commentstring = {
-					enable = true,
-				},
-			})
-		end,
+		event = { "BufReadPost", "BufNewFile" },
+		dependencies = {
+			{
+				"nvim-treesitter/nvim-treesitter-textobjects",
+				init = function()
+					-- PERF: no need to load the plugin, if we only need its queries for mini.ai
+					local plugin = require("lazy.core.config").spec.plugins["nvim-treesitter"]
+					local opts = require("lazy.core.plugin").values(plugin, "opts", false)
+					local enabled = false
+					if opts.textobjects then
+						for _, mod in ipairs({ "move", "select", "swap", "lsp_interop" }) do
+							if opts.textobjects[mod] and opts.textobjects[mod].enable then
+								enabled = true
+								break
+							end
+						end
+					end
+					if not enabled then
+						require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
+					end
+				end,
+			},
+		},
 	},
-    {"nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
+	{ "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
 	"JoosepAlviste/nvim-ts-context-commentstring",
 }

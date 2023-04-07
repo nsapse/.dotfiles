@@ -21,7 +21,27 @@ return {
 			{ "rafamadriz/friendly-snippets" }, -- Optional
 		},
 	},
-    "ray-x/lsp_signature.nvim",
-	-- lspkind to make it prettier
+
+	-- Various Other LSP Plugins
 	"onsails/lspkind-nvim",
+	"ray-x/lsp_signature.nvim",
+	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim", config = true },
+
+	--SAGA
+	-- {
+	--     "glepnir/lspsaga.nvim",
+	--     event = "LspAttach",
+	--     config = function()
+	--         require("lspsaga").setup({})
+	--     end,
+	--     dependencies = {
+	--         -- { "nvim-tree/nvim-web-devicons" },
+	--         --Please make sure you install markdown and markdown_inline parser
+	--         { "nvim-treesitter/nvim-treesitter" }
+	--     },
+	-- },
+	-- {
+	-- 	"weilbith/nvim-code-action-menu",
+	-- 	cmd = "CodeActionMenu",
+	-- },
 }

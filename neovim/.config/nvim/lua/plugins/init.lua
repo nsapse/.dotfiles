@@ -41,7 +41,7 @@ return {
 	{ "simrat39/symbols-outline.nvim", config = true },
 
 	-- chadtree
-	"ms-jpq/chadtree",
+	-- "ms-jpq/chadtree",
 
 	--  "simnalamburt/vim-mundo" },
 	"mbbill/undotree",
@@ -154,7 +154,7 @@ return {
 
 	-- Coloration, Highlighting, Icons, Readability
 	"markonm/traces.vim",
-	"p00f/nvim-ts-rainbow",
+	-- "p00f/nvim-ts-rainbow",
 	"ryanoasis/vim-devicons",
 	"yggdroot/indentline",
 	"luukvbaal/stabilize.nvim",
@@ -166,43 +166,43 @@ return {
 	-- BarBar
 	"romgrk/barbar.nvim",
 	"nvim-lua/popup.nvim",
-	-- "kyazdani42/nvim-web-devicons",
+	"kyazdani42/nvim-web-devicons",
 
 	-- A Startup Screen
-	{
-		"glepnir/dashboard-nvim",
-		event = "VimEnter",
-		opts = {
-			theme = "hyper",
-			config = {
-				week_header = {
-					enable = true,
-				},
-				shortcut = {
-					{ desc = " Update", group = "@property", action = "Lazy update", key = "u" },
-					{
-						desc = " Files",
-						group = "Label",
-						action = "Telescope find_files",
-						key = "f",
-					},
-					{
-						desc = " Apps",
-						group = "DiagnosticHint",
-						action = "Telescope app",
-						key = "a",
-					},
-					{
-						desc = " dotfiles",
-						group = "Number",
-						action = "Telescope dotfiles",
-						key = "d",
-					},
-				},
-			},
-		},
-		dependencies = { { "nvim-tree/nvim-web-devicons" } },
-	},
+	-- {
+	-- 	"glepnir/dashboard-nvim",
+	-- 	event = "VimEnter",
+	-- 	opts = {
+	-- 		theme = "hyper",
+	-- 		config = {
+	-- 			week_header = {
+	-- 				enable = true,
+	-- 			},
+	-- 			shortcut = {
+	-- 				{ desc = " Update", group = "@property", action = "Lazy update", key = "u" },
+	-- 				{
+	-- 					desc = " Files",
+	-- 					group = "Label",
+	-- 					action = "Telescope find_files",
+	-- 					key = "f",
+	-- 				},
+	-- 				{
+	-- 					desc = " Apps",
+	-- 					group = "DiagnosticHint",
+	-- 					action = "Telescope app",
+	-- 					key = "a",
+	-- 				},
+	-- 				{
+	-- 					desc = " dotfiles",
+	-- 					group = "Number",
+	-- 					action = "Telescope dotfiles",
+	-- 					key = "d",
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 	},
+	-- 	dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	-- },
 	--additional synatax for kmonad
 	"kmonad/kmonad-vim",
 
