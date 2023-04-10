@@ -6,6 +6,17 @@ return {
 			-- LSP Support
 			{ "neovim/nvim-lspconfig" }, -- Required
 			{ "williamboman/mason.nvim" }, -- Optional
+			{
+				"jay-babu/mason-null-ls.nvim",
+				event = { "BufReadPre", "BufNewFile" },
+				dependencies = {
+					"williamboman/mason.nvim",
+					"jose-elias-alvarez/null-ls.nvim",
+				},
+				config = function()
+					require("mason-null-ls").setup() -- require your null-ls config here (example below)
+				end,
+			},
 			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 
 			-- Autocompletion
@@ -25,8 +36,7 @@ return {
 	-- Various Other LSP Plugins
 	"onsails/lspkind-nvim",
 	"ray-x/lsp_signature.nvim",
-	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim", config = true },
-
+	-- { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", config = true },
 	--SAGA
 	-- {
 	--     "glepnir/lspsaga.nvim",

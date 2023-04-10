@@ -130,28 +130,6 @@ return {
 	-- ~~UI/UX~~ --
 	------------
 
-	-- Colorschemes
-	"Murtaza-Udaipurwala/gruvqueen",
-	"RRethy/nvim-base16",
-	"b4skyx/serenade",
-	"fenetikm/falcon",
-	"folke/tokyonight.nvim",
-	"jacoborus/tender.vim",
-	"maaslalani/nordbuddy",
-	"mhartington/oceanic-next",
-	"rktjmp/lush.nvim",
-	"sainnhe/forest-night",
-	"sainnhe/gruvbox-material",
-	"sainnhe/sonokai",
-	"shaunsingh/nord.nvim",
-	--  "ulwlu/elly.vim",
-	"EdenEast/nightfox.nvim",
-	"NTBBloodbath/doom-one.nvim",
-	"ellisonleao/gruvbox.nvim",
-	"rmehri01/onenord.nvim",
-	"catppuccin/nvim",
-	"ful1e5/onedark.nvim",
-
 	-- Coloration, Highlighting, Icons, Readability
 	"markonm/traces.vim",
 	-- "p00f/nvim-ts-rainbow",

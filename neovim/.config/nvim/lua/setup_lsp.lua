@@ -3,7 +3,6 @@
 local lsp = require("lsp-zero")
 local cmp = require("cmp")
 local cmp_action = require("lsp-zero").cmp_action()
-require("luasnip.loaders.from_vscode").lazy_load()
 lsp.preset("recommended")
 
 -- configuration
@@ -65,3 +64,4 @@ end)
 lsp.nvim_workspace()
 --
 lsp.setup()
+require("luasnip.loaders.from_vscode").lazy_load()
