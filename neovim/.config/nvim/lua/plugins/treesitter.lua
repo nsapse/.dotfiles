@@ -1,9 +1,8 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        version = false, -- last release is way too old and doesn't work on Windows
+        version = nil, -- last release is way too old and doesn't work on Windows
         build = ":TSUpdate",
-        event = {"BufReadPost", "BufNewFile"},
         dependencies = {
             {
                 "nvim-treesitter/nvim-treesitter-textobjects",
@@ -43,8 +42,8 @@ return {
             indent = {enable = true, disable = {"python"}},
             context_commentstring = {enable = true, enable_autocmd = false},
             ensure_installed = {
-                "bash", "c", "help", "html", "javascript", "java", "json",
-                "lua", "markdown", "markdown_inline", "python", "query",
+                "bash", "c", "html", "javascript", "java", "json",
+                "lua", "go", "markdown", "markdown_inline", "python", "query",
                 "regex", "tsx", "typescript", "vim", "yaml"
             },
             incremental_selection = {

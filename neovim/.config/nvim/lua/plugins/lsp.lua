@@ -5,17 +5,45 @@ return {
 		dependencies = {
 			-- LSP Support
 			{ "neovim/nvim-lspconfig" }, -- Required
-			{ "williamboman/mason.nvim" }, -- Optional
+			{
+				"williamboman/mason.nvim",
+				config = function()
+					require("mason-lspconfig").setup({
+						ensure_installed = {
+							"bashls",
+							"clangd",
+							"eslint",
+							"jedi_language_server",
+							"lua_ls",
+							"rust_analyzer",
+							"arduino_language_server",
+							"cssls",
+							"dockerls",
+							"gopls",
+							"html",
+							"jdtls",
+							"jsonls",
+							"ltex",
+							"lua_ls",
+							"marksman",
+							"solargraph",
+							"sqlls",
+							"texlab",
+						},
+					})
+				end,
+			}, -- Optional
 			{
 				"jay-babu/mason-null-ls.nvim",
 				event = { "BufReadPre", "BufNewFile" },
 				dependencies = {
 					"williamboman/mason.nvim",
-					"jose-elias-alvarez/null-ls.nvim",
+					{
+						"jose-elias-alvarez/null-ls.nvim",
+						config = function()
+						end,
+					},
 				},
-				config = function()
-					require("mason-null-ls").setup() -- require your null-ls config here (example below)
-				end,
 			},
 			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 

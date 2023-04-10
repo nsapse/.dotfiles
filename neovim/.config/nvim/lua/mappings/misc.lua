@@ -45,3 +45,12 @@ map('n', '<leader>nf', ':Neoformat<CR>')
 map({'n', 'v'}, '<leader>am', ':CodeActionMenu<CR>')
 -- Saga
 
+-- Refactor
+-- prompt for a refactor to apply when the remap is triggered
+map(
+    {'v', 'n'},
+    "<leader>rr",
+    ":lua require('refactoring').select_refactor()<CR>",
+    { noremap = true, silent = true, expr = false }
+)
+--
