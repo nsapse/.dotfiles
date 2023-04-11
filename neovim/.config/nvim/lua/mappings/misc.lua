@@ -33,8 +33,8 @@ vim.api.nvim_set_keymap("n", "<C-t>", ":SymbolsOutline<CR>", {noremap = true, si
 
 
 --leap stuff
-map({'n', 'x', 'o'}, 'f', '<Plug>(leap-forward-to)')
-map({'n', 'x', 'o'}, 'F', '<Plug>(leap-backward-to)')
+map({'n', 'x', 'o'}, 's', '<Plug>(leap-forward-to)')
+map({'n', 'x', 'o'}, 'S', '<Plug>(leap-backward-to)')
 -- map({'n', 'x', 'o'}, 't', '<Plug>(leap-forward-till)')
 -- map({'n', 'x', 'o'}, 'T', '<Plug>(leap-backward-till)')
 
