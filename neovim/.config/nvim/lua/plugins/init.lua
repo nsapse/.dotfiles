@@ -140,7 +140,11 @@ return {
 	--UI/UX Elements
 	{ "akinsho/toggleterm.nvim", config = true },
 	"SmiteshP/nvim-gps",
-
+	{
+		"Fildo7525/pretty_hover",
+		event = "LspAttach",
+		opts = {},
+	},
 	-- BarBar
 	"romgrk/barbar.nvim",
 	"nvim-lua/popup.nvim",

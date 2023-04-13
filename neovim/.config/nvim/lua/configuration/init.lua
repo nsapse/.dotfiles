@@ -18,6 +18,7 @@ o.laststatus = 3
 o.title = true
 o.colorcolumn = "80"
 o.list = true
+o.foldenable = false
 cmd.colorscheme('nordfox')
 g.termguicolors = true
 

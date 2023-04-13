@@ -54,3 +54,6 @@ map(
     { noremap = true, silent = true, expr = false }
 )
 --
+
+-- PrettyHover - Pretty Hover on K
+map('n', 'H', function() require("pretty_hover").hover() end)
