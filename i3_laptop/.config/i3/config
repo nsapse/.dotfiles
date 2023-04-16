@@ -195,7 +195,7 @@ bindsym $mod+Shift+p exec --no-startup-id rofi-power
 
 # start file manager 
 # bindsym $mod+b exec kitty -e ranger
-# bindsym $mod+Shift+B exec dolphin
+bindsym $mod+B exec nautilus
 
 #Launch Strawberry
 bindsym $mod+Control+0 exec strawberry

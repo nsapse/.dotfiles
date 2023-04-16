@@ -3,7 +3,7 @@ local builtin = require('telescope.builtin')
 
 -- grepping stuff
 map.set('n', '<c-f>', ':Telescope file_browser<cr>')
-map.set('n', '<c-/>', function() builtin.current_buffer_fuzzy_find(require('telescope.themes').get_ivy({})) end)
+map.set('n', '<leader>ff', function() builtin.current_buffer_fuzzy_find(require('telescope.themes').get_ivy({})) end)
 map.set('n', '<leader>sts', function() builtin.treesitter() end)
 map.set('n', '<leader>sds', function() builtin.lsp_document_symbols() end)
 map.set('n', '<leader>sws', function() builtin.lsp_workspace_symbols() end)

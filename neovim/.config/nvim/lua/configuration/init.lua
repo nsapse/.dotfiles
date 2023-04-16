@@ -12,7 +12,7 @@ local cmd = vim.cmd
 -- Window Appearance
 o.nu = true
 o.rnu = true
-o.termguicolors = true
+-- o.termguicolors = true
 o.cursorline = true
 o.laststatus = 3
 o.title = true

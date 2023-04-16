@@ -15,6 +15,7 @@ map('n', 'J', 'mzJ`z')
 local telescope = require("telescope.builtin")
 map('n', '<leader>ec', function() cmd.vsplit("$MYVIMRC") end)
 map('n', '<leader>oc', function() telescope.find_files({cwd='~/.config/nvim/lua'}) end)
+map('n', '<leader>ftc', function() telescope.find_files({cwd='~/.config/nvim/ftplugin/'}) end)
 
 --window commands
 map('n', '<leader>wc', function() cmd.wincmd('c') end, {silent=true})
@@ -35,6 +36,7 @@ map({'n', 'v'}, '<leader>tt', function() cmd.tabnew() end, {silent=true})
 map({'n', 'v'}, '<leader>tc', function() cmd.tabclose() end, {silent=true})
 map({'n'}, 'TN', function() cmd.tabnext() end, {silent=true})
 map({'n'}, 'TP', function() cmd.tabprevious() end, {silent=true})
+map({'n'}, 'TC', function() cmd.tabclose() end, {silent=true})
 
 -- quickly move lines up or down
 map('n', '<C-KK>', ':m .+1<cr>', {silent=true})

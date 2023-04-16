@@ -24,5 +24,9 @@ return {
 	"sainnhe/gruvbox-material",
 	"sainnhe/sonokai",
 	"shaunsingh/nord.nvim",
-	--  "ulwlu/elly.vim",
+    "savq/melange-nvim",
+    "luisiacc/gruvbox-baby",
+    { "AlexvZyl/nordic.nvim"},
+    "JoosepAlviste/palenightfall.nvim",
+    "ramojus/mellifluous.nvim",
 }

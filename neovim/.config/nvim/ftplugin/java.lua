@@ -1,58 +1,55 @@
 local jdt = require("jdtls")
 
-local on_attach = function (client, bufnr)
-    require('jdtls').setup_dap({ hotcodereplace = "auto" })
-    -- require("plugins.lsp.handlers").on_attach
+local on_attach = function(client, bufnr)
+	require("jdtls").setup_dap({ hotcodereplace = "auto" })
 end
-
--- local home = os.getenv "HOME"
 
 -- make the bundle and get the java debug junk into there
 local bundles = {
-vim.fn.glob(
-    "/home/noah/Library/Java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar",
-    1
-),}
+	vim.fn.glob(
+		"/home/noah/Library/Java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar",
+		1
+	),
+}
 
 -- get vscode-java-test into the bundle
 vim.list_extend(bundles, vim.split(vim.fn.glob("/home/noah/Library/Java/vscode-java-test/server/*.jar", 1), "\n"))
 
 local config = {
 	cmd = { "/usr/bin/jdtls" },
-    
-    -- may want to add different runtimes later
-
-    -- setttings ={
-    --     configuration = {
-    --         runtimes = {
-    --             {
-    --                 name = "java-11-openjdk",
-    --                 path = ""
-    --             },
-    --         }
-    --     }
-    -- },
-	--     cmd = {
-	--     'java',
-	-- 	'Declipse.application=org.eclipse.jdt.ls.core.id1',
-	-- 	'Dosgi.bundles.defaultStartLevel=4',
-	-- 	'Declipse.product=org.eclipse.jdt.ls.core.product',
-	-- 	'Dlog.level=ALL',
-	-- 	'noverify',
-	-- 	'Xmx1G',
-	-- 	'-add-modules=ALL-SYSTEM',
-	-- 	'-add-opens java.base/java.util=ALL-UNNAMED',
-	-- 	'-add-opens java.base/java.lang=ALL-UNNAMED',
-	-- 	'jar', '/home/noah/Library/Java/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-	-- 	'configuration', '/home/noah/Library/Java/config_linux/',
-	-- 	'data', '$1',
-	--     },
 	root_dir = vim.fs.dirname(vim.fs.find({ ".gradlew", ".git", "mvnw" }, { upward = true })[1]),
 	init_options = {
 		bundles = bundles,
 	},
-	-- capabilities = require("plugins.lsp.handlers").capabilities,
-    on_attach = on_attach,
+	settings = {
+		java = {
+			configuration = {
+				-- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
+				-- And search for `interface RuntimeOption`
+				-- The `name` is NOT arbitrary, but must match one of the elements from `enum ExecutionEnvironment` in the link above
+				runtimes = {
+					{
+						name = "JavaSE-8",
+						path = "/usr/lib/jvm/java-8-openjdk/",
+					},
+					{
+						name = "JavaSE-11",
+						path = "/usr/lib/jvm/java-11-openjdk/",
+					},
+					{
+						name = "JavaSE-17",
+						path = "/usr/lib/jvm/java-17-openjdk/",
+					},
+					{
+						name = "JavaSE-19",
+						path = "/usr/lib/jvm/java-19-openjdk/",
+					},
+				},
+			},
+		},
+	},
+
+	on_attach = on_attach,
 }
 
 -- attach commands
@@ -80,5 +77,7 @@ map("n", "<leader>tc", '<Esc><Cmd>lua require("jdtls").test_class()<CR>')
 map("n", "<leader>tm", '<Esc><Cmd>lua require("jdtls").test_nearest_method()<CR>')
 map("n", "<leader>cd", '<Esc><Cmd>lua require("jdtls.dap").setup_dap_main_class_configs()<CR>')
 
+map("n", "<C-a>", "<Cmd> lua vim.lsp.buf.code_action()<CR>")
+map("n", "<leader>", "<Cmd> lua vim.lsp.buf.code_action()<CR>")
 -- finally launch
 jdt.start_or_attach(config)

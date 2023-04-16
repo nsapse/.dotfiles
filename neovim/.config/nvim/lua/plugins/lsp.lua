@@ -21,7 +21,7 @@ return {
 							"dockerls",
 							"gopls",
 							"html",
-							"jdtls",
+							-- "jdtls",
 							"jsonls",
 							"ltex",
 							"lua_ls",
@@ -29,6 +29,7 @@ return {
 							"solargraph",
 							"sqlls",
 							"texlab",
+                            "vimls",
 						},
 					})
 				end,

@@ -8,10 +8,9 @@ lsp.set_preferences({
 
 lsp.setup()
 lsp.on_attach(function(_, bufnr)
-	local opts = { buffer = bufnr }
 	local bind = vim.keymap.set
-	bind("n", "rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-	bind("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+	bind("n", "rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
+	bind("n", "<leader>ca", "lua vim.lsp.buf.code_action()")
 	-- bind("n", "<C-y>", function()
 	-- 	vim.lsp.buf.format({ async = true })
 	-- end, opts)
