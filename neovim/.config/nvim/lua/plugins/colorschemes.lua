@@ -29,4 +29,5 @@ return {
     { "AlexvZyl/nordic.nvim"},
     "JoosepAlviste/palenightfall.nvim",
     "ramojus/mellifluous.nvim",
+    "morhetz/gruvbox",
 }

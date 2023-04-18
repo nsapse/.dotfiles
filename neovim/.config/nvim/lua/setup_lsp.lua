@@ -8,9 +8,13 @@ lsp.set_preferences({
 
 lsp.setup()
 lsp.on_attach(function(_, bufnr)
-	local bind = vim.keymap.set
-	bind("n", "rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
-	bind("n", "<leader>ca", "lua vim.lsp.buf.code_action()")
+	local map = vim.keymap.set
+	map("n", "rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
+	-- map({ "n", "v" }, "<leader>ca", "lua vim.lsp.buf.code_action()<cr>")
+	-- map({ "n", "v" }, "<C-a>", "lua vim.lsp.buf.code_action()<cr>")
+	map({ "v", "n" }, "<C-a>", "<Cmd> lua vim.lsp.buf.code_action()<CR>")
+	map({ "v", "n" }, "<leader>ca", "<Cmd> lua vim.lsp.buf.code_action()<CR>")
+	map({ "v", "n" }, "<C-k>", "<Cmd> lua vim.lsp.buf.signature_help()<CR>")
 	-- bind("n", "<C-y>", function()
 	-- 	vim.lsp.buf.format({ async = true })
 	-- end, opts)

@@ -29,7 +29,7 @@ return {
 							"solargraph",
 							"sqlls",
 							"texlab",
-                            "vimls",
+							"vimls",
 						},
 					})
 				end,
@@ -37,11 +37,51 @@ return {
 			{
 				"jay-babu/mason-null-ls.nvim",
 				event = { "BufReadPre", "BufNewFile" },
+				config = function()
+					require("mason-null-ls").setup({
+						ensure_installed = nil,
+						automatic_installation = true,
+						automatic_setup = false,
+					})
+				end,
 				dependencies = {
 					"williamboman/mason.nvim",
 					{
 						"jose-elias-alvarez/null-ls.nvim",
 						config = function()
+							local null_ls = require("null-ls")
+							null_ls.setup({
+								sources = {
+									-- injecting code actions
+									null_ls.builtins.code_actions.eslint,
+									null_ls.builtins.code_actions.gitsigns,
+									null_ls.builtins.code_actions.gomodifytags,
+									null_ls.builtins.code_actions.impl,
+									null_ls.builtins.code_actions.refactoring,
+									null_ls.builtins.code_actions.shellcheck,
+									null_ls.builtins.code_actions.xo,
+
+									-- -- injecting diagnostics
+									-- null_ls.builtins.diagnostics.clang_check,
+									-- null_ls.builtins.diagnostics.codespell,
+									-- null_ls.builtins.diagnostics.commitlint,
+									-- null_ls.builtins.diagnostics.cpplint,
+									-- null_ls.builtins.diagnostics.dotenv_linter,
+									-- -- null_ls.builtins.diagnostics.eslint,
+									-- null_ls.builtins.diagnostics.flake8,
+									-- null_ls.builtins.diagnostics.jshint,
+									-- null_ls.builtins.diagnostics.jsonlint,
+									-- null_ls.builtins.diagnostics.luacheck,
+									-- null_ls.builtins.diagnostics.markdownlint,
+									-- null_ls.builtins.diagnostics.xo,
+									-- null_ls.builtins.diagnostics.yamllint,
+									-- null_ls.builtins.diagnostics.zsh,
+									-- -- null_ls.builtins.diagnostics.checkstyle, -- for java
+									--
+									-- -- formatters
+									-- null_ls.builtins.formatting.autopep8,
+								},
+							})
 						end,
 					},
 				},
@@ -64,7 +104,9 @@ return {
 
 	-- Various Other LSP Plugins
 	"onsails/lspkind-nvim",
-	"ray-x/lsp_signature.nvim",
+	{ "ray-x/lsp_signature.nvim", config = function()
+        require('lsp_signature').setup()
+	end},
 	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim", config = true },
 	--SAGA
 	-- {

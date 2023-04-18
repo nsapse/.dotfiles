@@ -42,18 +42,18 @@ map({'n', 'x', 'o'}, 'S', '<Plug>(leap-backward-to)')
 map('n', '<leader>nf', ':Neoformat<CR>')
 
 -- Code action menu
-map({'n', 'v'}, '<leader>am', ':CodeActionMenu<CR>')
+-- map({'n', 'v'}, '<leader>am', ':CodeActionMenu<CR>')
 -- Saga
 
 -- Refactor
 -- prompt for a refactor to apply when the remap is triggered
 map(
     {'v', 'n'},
-    "<leader>rr",
+    "<leader>rf",
     ":lua require('refactoring').select_refactor()<CR>",
     { noremap = true, silent = true, expr = false }
 )
 --
 
 -- PrettyHover - Pretty Hover on K
-map('n', 'H', function() require("pretty_hover").hover() end)
+map('n', 'K', function() require("pretty_hover").hover() end)

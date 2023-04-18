@@ -14,20 +14,39 @@ end
 -- This is where you actually apply your config choices
 
 -- Set colorscheme
-config.color_scheme = 'Nord (base16)'
+-- config.color_scheme = 'Everforest Dark (Gogh)'
+-- config.color_scheme = 'Gruvbox dark, soft (base16)'
+config.color_scheme = 'nordfox'
+-- config.disable_default_key_bindings = true
 
-config.leader = { key = '\\', mods = 'CTRL', timeout_milliseconds = 1000 }
+-- Set Leader to CTRL+SPACE
+config.leader = { key = ' ', mods = 'SHIFT', timeout_milliseconds = 1000 }
 config.keys = {
   {
-    key = '[',
-    mods = 'CTRL',
+    key = 'o',
+    mods = 'LEADER',
     action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
   -- Send "CTRL-A" to the terminal when pressing CTRL-A, CTRL-A
   {
-    key = ']',
-    mods = 'CTRL',
+    key = 'O',
+    mods = 'LEADER',
     action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+  },
+  {
+    key = 'c',
+    mods = 'LEADER',
+    action = wezterm.action.CloseCurrentPane{ confirm = true },
+  },
+  {
+    key = 'p',
+    mods = 'LEADER',
+    action = wezterm.action.ActivateCommandPalette,
+  },
+  {
+    key = 'r',
+    mods = 'LEADER',
+    action = wezterm.action.ReloadConfiguration,
   },
 }
 -- config.color_scheme = 'Gruvbox dark, soft (base16)'
