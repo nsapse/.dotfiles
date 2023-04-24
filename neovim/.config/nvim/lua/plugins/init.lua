@@ -13,7 +13,7 @@ return {
 
 	-- Code Formatting
 	"junegunn/vim-easy-align",
-	{ "machakann/vim-sandwich" },
+	-- { "machakann/vim-sandwich" },
 	"raimondi/delimitmate", -- look into jiangmiao/auto-pairs
 	"sbdchd/neoformat",
 	{
@@ -53,8 +53,6 @@ return {
 	---~~[[LSP]]~~--
 	----------------
 
-	-- fidget
-	{ "j-hui/fidget.nvim", config = true },
 
 	-------------------
 	--~~ Arduino   ~~--
@@ -126,66 +124,6 @@ return {
 	----------------
 	"folke/neodev.nvim",
 
-	------------
-	-- ~~UI/UX~~ --
-	------------
-
-	-- Coloration, Highlighting, Icons, Readability
-	"markonm/traces.vim",
-	-- "p00f/nvim-ts-rainbow",
-	"ryanoasis/vim-devicons",
-	"yggdroot/indentline",
-	"luukvbaal/stabilize.nvim",
-
-	--UI/UX Elements
-	{ "akinsho/toggleterm.nvim", config = true },
-	"SmiteshP/nvim-gps",
-	{
-		"Fildo7525/pretty_hover",
-		event = "LspAttach",
-		opts = {},
-	},
-	-- BarBar
-	"romgrk/barbar.nvim",
-	"nvim-lua/popup.nvim",
-	"kyazdani42/nvim-web-devicons",
-
-	-- A Startup Screen
-	-- {
-	-- 	"glepnir/dashboard-nvim",
-	-- 	event = "VimEnter",
-	-- 	opts = {
-	-- 		theme = "hyper",
-	-- 		config = {
-	-- 			week_header = {
-	-- 				enable = true,
-	-- 			},
-	-- 			shortcut = {
-	-- 				{ desc = " Update", group = "@property", action = "Lazy update", key = "u" },
-	-- 				{
-	-- 					desc = " Files",
-	-- 					group = "Label",
-	-- 					action = "Telescope find_files",
-	-- 					key = "f",
-	-- 				},
-	-- 				{
-	-- 					desc = " Apps",
-	-- 					group = "DiagnosticHint",
-	-- 					action = "Telescope app",
-	-- 					key = "a",
-	-- 				},
-	-- 				{
-	-- 					desc = " dotfiles",
-	-- 					group = "Number",
-	-- 					action = "Telescope dotfiles",
-	-- 					key = "d",
-	-- 				},
-	-- 			},
-	-- 		},
-	-- 	},
-	-- 	dependencies = { { "nvim-tree/nvim-web-devicons" } },
-	-- },
-	--additional synatax for kmonad
 	"kmonad/kmonad-vim",
 
 	----------------

@@ -19,9 +19,12 @@ o.title = true
 o.colorcolumn = "80"
 o.list = true
 o.foldenable = false
-cmd.colorscheme('nordfox')
-g.termguicolors = true
+-- g.termguicolors = true
 
+g.everforest_background = 'soft'
+g.everforest_better_performance = 1
+
+cmd.colorscheme('nordfox')
 -- g.titlestring = %{hostname()}\ \ %F\ \ %{strftime('%Y-%m-%d\ %H:%M',getftime(expand('%')))}
 
 -- General UI/UX

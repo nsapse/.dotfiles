@@ -20,16 +20,16 @@ lsp.on_attach(function(_, bufnr)
 	-- end, opts)
 end)
 
-local cmp = require("cmp")
-local cmp_action = require("lsp-zero").cmp_action()
-require("luasnip.loaders.from_vscode").lazy_load()
 
 -- configuration
 
+local cmp = require("cmp")
+local cmp_action = require("lsp-zero").cmp_action()
 cmp.setup({
 	preselect = "item",
 	sources = {
 		{ name = "luasnip" },
+        { name = "neorg"},
 		{ name = "path" },
 		{ name = "buffer", keyword_length = 3 },
 		{ name = "nvim_lsp" },
@@ -64,3 +64,4 @@ cmp.setup({
 		--       ["<S-Tab>"] = cmp_action.luasnip_jump_backward(),
 	},
 })
+require("luasnip.loaders.from_vscode").lazy_load()

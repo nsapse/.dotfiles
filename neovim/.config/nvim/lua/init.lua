@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- map the leader
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = ','
 
 -- Sources Broken Out Configs --
 require("lazy").setup("plugins")

@@ -7,7 +7,8 @@ map.set('n', '<leader>ff', function() builtin.current_buffer_fuzzy_find(require(
 map.set('n', '<leader>sts', function() builtin.treesitter() end)
 map.set('n', '<leader>sds', function() builtin.lsp_document_symbols() end)
 map.set('n', '<leader>sws', function() builtin.lsp_workspace_symbols() end)
-map.set('n', '<leader>sd', function() builtin.diagnostics(require('telescope.themes').get_ivy({})) end)
+map.set('n', '<leader>q', ":Telescope macros<CR>")
+map.set('n', '<leader>dd', function() builtin.diagnostics(require('telescope.themes').get_ivy({})) end)
 map.set('n', '<c-p>', function() builtin.live_grep(require('telescope.themes').get_ivy({})) end)
 map.set('n', '<leader>gs', function() builtin.grep_string(require('telescope.themes').get_ivy({})) end)
 

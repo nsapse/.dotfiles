@@ -32,7 +32,11 @@ return {
 				sections = {
 					lualine_a = { "mode" },
 					lualine_b = { "branch", "diff", { "diagnostics", sources = { "nvim_diagnostic" } } },
-					lualine_c = { "filename", { gps.get_location, cond = gps.is_available } },
+					lualine_c = {
+						"filename",
+						{ gps.get_location, cond = gps.is_available },
+						{ require("NeoComposer.ui").status_recording },
+					},
 					lualine_x = { "fileformat", "filetype" },
 					lualine_y = { "progress", { arduino_status } },
 					lualine_z = { "location" },
