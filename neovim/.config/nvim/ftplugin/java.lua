@@ -92,10 +92,10 @@ local config = {
 						name = "JavaSE-17",
 						path = "/usr/lib/jvm/java-17-openjdk/",
 					},
-					{
-						name = "JavaSE-19",
-						path = "/usr/lib/jvm/java-19-openjdk/",
-					},
+					-- {
+					-- 	name = "JavaSE-19",
+					-- 	path = "/usr/lib/jvm/java-19-openjdk/",
+					-- },
 				},
 			},
 		},
@@ -174,8 +174,23 @@ map("n", "<leader>tc", '<Esc><Cmd>lua require("jdtls").test_class()<CR>')
 map("n", "<leader>tm", '<Esc><Cmd>lua require("jdtls").test_nearest_method()<CR>')
 map("n", "<leader>cd", '<Esc><Cmd>lua require("jdtls.dap").setup_dap_main_class_configs()<CR>')
 
-map({ "n", "v" }, "<C-a>", "<Cmd> lua vim.lsp.buf.code_action()<CR>")
 map({ "n", "v" }, "<leader>ca", "<Cmd> lua vim.lsp.buf.code_action()<CR>")
+
+map("n", "rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
+map({ "v", "n" }, "<C-k>", "<Cmd> lua vim.lsp.buf.signature_help()<CR>")
+
+map({ "v", "n" }, "<C-k>", "<Cmd> lua vim.lsp.buf.<CR>")
+map("n", "gd", "<cmd> lua vim.lsp.buf.declaration()<cr>")
+map("n", "gd", "<cmd> lua vim.lsp.buf.definition()<cr>")
+map("n", "K", "<cmd> lua vim.lsp.buf.hover()<cr>")
+map("n", "gi", "<cmd> lua vim.lsp.buf.implementation()<cr>")
+map("n", "<C-k>", "<cmd> lua vim.lsp.buf.signature_help()<cr>")
+map("n", "<space>wa", "<cmd> lua vim.lsp.buf.add_workspace_folder()<cr>")
+map("n", "<space>wr", "<cmd> lua vim.lsp.buf.remove_workspace_folder()<cr>")
+map("n", "<space>D", "<cmd> lua vim.lsp.buf.type_definition()<cr>")
+map("n", "<space>rn", "<cmd> lua vim.lsp.buf.rename()<cr>")
+map({ "n", "v" }, "<space>ca", "<cmd> lua vim.lsp.buf.code_action()<cr>")
+map("n", "gr", "<cmd> lua vim.lsp.buf.references()<cr>")
 -- finally launch
 require("lsp_signature").setup()
 jdt.start_or_attach(config)

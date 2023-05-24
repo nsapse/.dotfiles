@@ -19,12 +19,10 @@ o.title = true
 o.colorcolumn = "80"
 o.list = true
 o.foldenable = false
--- g.termguicolors = true
+g.termguicolors = true
 
-g.everforest_background = 'soft'
-g.everforest_better_performance = 1
 
-cmd.colorscheme('nordfox')
+cmd.colorscheme('base16-everforest')
 -- g.titlestring = %{hostname()}\ \ %F\ \ %{strftime('%Y-%m-%d\ %H:%M',getftime(expand('%')))}
 
 -- General UI/UX
@@ -42,6 +40,7 @@ o.smartindent = true
 o.smartcase = true
 g.Syntax = true
 g.nohlsearch = true
+o.ignorecase = true
 
 
 -- Search
@@ -55,7 +54,8 @@ o.undofile = true
 o.undodir = '/home/noah/.config/nvim/undodir/'
 
 -- Conceal
-o.cocu = "vnic"
+o.cocu = "vnc"
+o.conceallevel = 0
 
 -- Plugins
 -- Arduino

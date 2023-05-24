@@ -35,7 +35,7 @@ return {
 					lualine_c = {
 						"filename",
 						{ gps.get_location, cond = gps.is_available },
-						{ require("NeoComposer.ui").status_recording },
+						-- { require("NeoComposer.ui").status_recording },
 					},
 					lualine_x = { "fileformat", "filetype" },
 					lualine_y = { "progress", { arduino_status } },

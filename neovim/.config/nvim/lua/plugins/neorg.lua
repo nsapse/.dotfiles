@@ -13,7 +13,12 @@ return {
 					},
 				}, -- Loads default behaviour
 
-				["core.concealer"] = {}, -- Adds pretty icons to your documents
+                ["core.concealer"] = {
+                    config = {
+
+                    icon_preset = "diamond", -- Adds pretty icons to your documents
+                    },
+                },
 				-- ["core.completion"] = { engine = "nvim-cmp", name = "[Neorg]" }, -- Completion
 				["core.dirman"] = { -- Manages Neorg workspaces
 					config = {

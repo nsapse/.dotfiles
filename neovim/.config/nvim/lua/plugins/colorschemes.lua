@@ -20,14 +20,26 @@ return {
 	"rose-pine/neovim",
 	"sainnhe/edge",
 	"sainnhe/everforest",
+	-- {
+	-- 	"neanias/everforest-nvim",
+	-- 	version = false,
+	-- 	lazy = false,
+	-- 	priority = 1000, -- make sure to load this before all the other start plugins
+	-- 	-- Optional; default configuration will be used if setup isn't called.
+	-- 	config = function()
+	-- 		require("everforest").setup({
+	-- 			-- Your config here
+	-- 		})
+	-- 	end,
+	-- },
 	"sainnhe/forest-night",
 	"sainnhe/gruvbox-material",
 	"sainnhe/sonokai",
 	"shaunsingh/nord.nvim",
-    "savq/melange-nvim",
-    "luisiacc/gruvbox-baby",
-    { "AlexvZyl/nordic.nvim"},
-    "JoosepAlviste/palenightfall.nvim",
-    "ramojus/mellifluous.nvim",
-    "morhetz/gruvbox",
+	"savq/melange-nvim",
+	"luisiacc/gruvbox-baby",
+	{ "AlexvZyl/nordic.nvim" },
+	"JoosepAlviste/palenightfall.nvim",
+	"ramojus/mellifluous.nvim",
+	"morhetz/gruvbox",
 }

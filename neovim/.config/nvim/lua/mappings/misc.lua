@@ -57,12 +57,25 @@ map(
 	":lua require('refactoring').select_refactor()<CR>",
 	{ noremap = true, silent = true, expr = false }
 )
---
+
+-- Neotree
+map("n", "<C-n>", ":Neotree<cr>")
 
 -- PrettyHover - Pretty Hover on K
 map("n", "K", function()
 	require("pretty_hover").hover()
 end)
 
+-- Window Selector
+map("n", "<C-w>", function()
+    local picked_window_id = require("window-picker").pick_window() or vim.api.nvim_get_current_win()
+    vim.api.nvim_set_current_win(picked_window_id)
+end, { desc = "Pick a window" })
+
 -- Neorg
 map({'n', 'v'}, '<leader>nn', ":Neorg<cr>")
+
+-- Open Oil for File Browsing
+map("n", "-", require("oil").open, { desc = "Open parent directory" })
+
+-- Session Persistence

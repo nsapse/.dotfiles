@@ -10,11 +10,11 @@ return {
 	"luukvbaal/stabilize.nvim",
 
 	-- Composer for Macros
-	{
-		"ecthelionvi/NeoComposer.nvim",
-		dependencies = { "kkharji/sqlite.lua" },
-		opts = {},
-	},
+	-- {
+	-- 	"ecthelionvi/NeoComposer.nvim",
+	-- 	dependencies = { "kkharji/sqlite.lua" },
+	-- 	opts = {},
+	-- },
 
 	--UX Elements
 	{ "akinsho/toggleterm.nvim", config = true },

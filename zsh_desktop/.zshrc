@@ -198,7 +198,7 @@ alias _react="cd ~/Developer/learn_react"
 alias dactyl="cd ~/.dotfiles/qmk/qmk_firmware/keyboards/handwired/dactyl_manuform/5x7/keymaps/loafers_map"
 
 # navigation and history
-alias lsa="exa -a -l --icons --color=auto"
+alias lsa="exa -a -l -G --icons --color=auto"
 alias ls="exa -F -G --icons --color=auto"
 alias lsl="exa -F -G -l --icons --color=auto"
 alias lst='tree -C'
