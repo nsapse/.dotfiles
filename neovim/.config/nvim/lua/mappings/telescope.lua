@@ -5,7 +5,7 @@ local builtin = require('telescope.builtin')
 map.set('n', '<c-f>', ':Telescope file_browser<cr>')
 map.set('n', '<leader>ff', function() builtin.current_buffer_fuzzy_find(require('telescope.themes').get_ivy({})) end)
 map.set('n', '<leader>sts', function() builtin.treesitter() end)
-map.set('n', '<leader>sds', function() builtin.lsp_document_symbols() end)
+map.set('n', '<leader>ss', function() builtin.lsp_document_symbols() end)
 map.set('n', '<leader>sws', function() builtin.lsp_workspace_symbols() end)
 map.set('n', '<leader>q', ":Telescope macros<CR>")
 map.set('n', '<leader>dd', function() builtin.diagnostics(require('telescope.themes').get_ivy({})) end)
@@ -22,7 +22,7 @@ map.set('n', '<leader>sk', function() builtin.keymaps(require('telescope.themes'
 map.set('n', '<leader>"', function() builtin.registers(require('telescope.themes').get_ivy({})) end)
 
 map.set('n', '<leader>cc', function() builtin.colorscheme() end)
-map.set('n', '<leader>st', ':TodoTelescope')
+map.set('n', '<leader>st', ':TodoTelescope<CR>')
 
 
 -- this is apparently deprecated - moved to zero configs

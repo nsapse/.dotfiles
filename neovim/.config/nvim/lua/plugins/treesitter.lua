@@ -30,11 +30,6 @@ return {
 				end,
 			},
 		},
-		keys = {
-			{ "<c-space>", desc = "Increment selection" },
-			{ "<bs>", desc = "Decrement selection", mode = "x" },
-		},
-		---@type TSConfig
 		opts = {
 			highlight = { enable = true },
 			indent = { enable = true, disable = { "python" } },
@@ -61,8 +56,8 @@ return {
 			incremental_selection = {
 				enable = true,
 				keymaps = {
-					init_selection = "<C-space>",
-					node_incremental = "<C-space>",
+					init_selection = "<CR>",
+					node_incremental = "<CR>",
 					scope_incremental = "<nop>",
 					node_decremental = "<bs>",
 				},

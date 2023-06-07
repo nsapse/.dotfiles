@@ -38,6 +38,10 @@ map({'n'}, 'TN', function() cmd.tabnext() end, {silent=true})
 map({'n'}, 'TP', function() cmd.tabprevious() end, {silent=true})
 map({'n'}, 'TC', function() cmd.tabclose() end, {silent=true})
 
+-- Use <Tab> to cycle through buffers in tab
+map('n', '<Tab>', '<C-W>w');
+map('n', '<S-Tab>', '<C-W>W');
+
 -- quickly move lines up or down
 map('n', '<C-KK>', ':m .+1<cr>', {silent=true})
 map('n', '<C-JJ>', ':m .-2<cr>', {silent=true})
@@ -59,6 +63,9 @@ map({'n','v'}, '<leader>p', "\"+p")
 -- quickfix navigation
 map('n', 'qn', ':cn<cr>')
 map('n', 'qp', ':cp<cr>')
+
+-- Normal Mode Editing Bindings
+-- map('n', '<cr>', 'ciw') // replace with treesitter incremental selection
 
 -- telescope
 require("mappings.telescope")
