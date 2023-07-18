@@ -1,0 +1,79 @@
+""" Map leader to space ---------------------
+let mapleader=" "
+
+""" Plugins  --------------------------------
+set surround
+set multiple-cursors
+set commentary
+set sneak
+set argtextobj
+set easymotion
+""" -- add nerdtree?
+Plug 'preservim/nerdtree'
+
+Plug 'easymotion/vim-easymotion'
+set textobj-entire
+set ReplaceWithRegister
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Common settings -------------------------
+set showmode
+set so=5
+set incsearch
+set nu
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Mappings --------------------------------
+map f <Plug>(easymotion-s)
+map <leader>e <Plug>(easymotion-f)
+
+map <leader>db <Action>(Debug)
+map <leader>c <Action>(Stop)
+map <leader>z <Action>(ToggleDistractionFreeMode)
+
+map <S-Space> <Action>(GotoNextError)
+
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>eb <Action>(EditBreakpoint)
+map <leader>vb <Action>(ViewBreakpoints)
+map <leader>o <Action>(FileStructurePopup)
+nmap <leader>ff <action>(SearchEverywhere)
+
+""" Refactoring Mappings
+nmap <leader>rf <action>(RefactoringMenu)
+nmap <leader>rr <Action>(Refactorings.QuickListPopupAction)
+map <leader>rn <Action>(RenameElement)
+
+""" LSP Type Actions
+nmap <leader>h <Action>(HighlightUsagesInFile)
+nmap <leader>su <Action>(ShowUsages)
+nmap <leader>fu <Action>(FindUsages)
+nmap <leader>th <Action>(TypeHierarchy)
+nmap <leader>ch <Action>(CallHierarchy)
+nmap gd <Action>(GotoTypeDeclaration)
+nmap K <Action>(QuickJavaDoc)
+nmap gi <Action>(QuickImplementations)
+
+" nmap gb <Action>(Back)
+" nmap gf <Action>(Forward)
+nmap gy <Action>(ShowErrorDescription)
+
+" nmap <leader>b <Action>(ToggleLineBreakpoint)
+" Highlight usages, use CMD+G/Shift+CMD+G to iterate
+nmap <leader>n <Action>(ReSharperNavigateTo)
+nmap <leader>q <Action>(ToggleRenderedDocPresentation)
+nmap <leader>g <Action>(Vcs.QuickListPopupAction)
+nmap <leader>x <Action>(HideAllWindows)
+nmap <leader>ca <Action>(ChangesViewPopupMenu)
+
+""" File Browsing and Annotations
+nmap <leader>n :NERDTreeToggle<CR>
+map <leader>s <Action>(SelectInProjectView)
+map <leader>a <Action>(Annotate)
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)

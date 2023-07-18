@@ -18,9 +18,11 @@ end
 -- config.color_scheme = 'Gruvbox dark, soft (base16)'
 config.color_scheme = 'nordfox'
 -- config.disable_default_key_bindings = true
+config.check_for_updates = false
 
 -- Set Leader to CTRL+SPACE
 config.leader = { key = ' ', mods = 'SHIFT', timeout_milliseconds = 1000 }
+local act = wezterm.action
 config.keys = {
   {
     key = 'o',
@@ -47,6 +49,26 @@ config.keys = {
     key = 'r',
     mods = 'LEADER',
     action = wezterm.action.ReloadConfiguration,
+  },
+  {
+    key = 'h',
+    mods = 'CTRL',
+    action = act.ActivatePaneDirection 'Left',
+  },
+  {
+    key = 'l',
+    mods = 'CTRL',
+    action = act.ActivatePaneDirection 'Right',
+  },
+  {
+    key = 'k',
+    mods = 'CTRL',
+    action = act.ActivatePaneDirection 'Up',
+  },
+  {
+    key = 'j',
+    mods = 'CTRL',
+    action = act.ActivatePaneDirection 'Down',
   },
 }
 -- config.color_scheme = 'Gruvbox dark, soft (base16)'
