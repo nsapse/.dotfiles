@@ -16,3 +16,4 @@ neovim/.config/nvim/lua/undodir
 undodir
 workspace/jdt.ls-java-project
 test.java
+zsh_mac/.zshrc

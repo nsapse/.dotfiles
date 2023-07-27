@@ -59,12 +59,12 @@ map(
 )
 
 -- Neotree
-map("n", "<C-n>", ":Neotree<cr>")
+map("n", "<C-n>", ":NeoTreeShowToggle<cr>")
 
 -- PrettyHover - Pretty Hover on K
-map("n", "K", function()
-	require("pretty_hover").hover()
-end)
+-- map("n", "K", function()
+-- 	require("pretty_hover").hover()
+-- end)
 
 -- Window Selector
 map("n", "<leader>ww", function()
@@ -79,3 +79,11 @@ map({'n', 'v'}, '<leader>nn', ":Neorg<cr>")
 map("n", "-", require("oil").open, { desc = "Open parent directory" })
 
 -- Session Persistence
+
+
+-- Saga
+map('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
+map('n', '<leade>pd', '<cmd>Lspsaga peek_definition<CR>')
+map('n', '<leade>pt', '<cmd>Lspsaga peek_type_definition<CR>')
+map('n', 'gd', '<cmd>Lspsaga goto_definition<CR>')
+map('n', 'gt', '<cmd>Lspsaga goto_type_definition<CR>')

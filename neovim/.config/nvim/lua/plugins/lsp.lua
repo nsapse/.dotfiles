@@ -104,9 +104,15 @@ return {
 
 	-- Various Other LSP Plugins
 	"onsails/lspkind-nvim",
-	{ "ray-x/lsp_signature.nvim", config = function()
-        require('lsp_signature').setup()
-	end},
+ --    local cfg = {
+ --        floating_window = false,
+ --    },
+	-- {
+	-- 	"ray-x/lsp_signature.nvim",
+	-- 	config = function()
+	-- 		require("lsp_signature").setup(cfg)
+	-- 	end,
+	-- },
 	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim", config = true },
 	--SAGA
 	-- {

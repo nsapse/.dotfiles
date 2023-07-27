@@ -20,11 +20,11 @@ return {
 	{ "akinsho/toggleterm.nvim", config = true },
 	"SmiteshP/nvim-gps",
 
-	{
-		"Fildo7525/pretty_hover",
-		event = "LspAttach",
-		opts = {},
-	},
+	-- {
+	-- 	"Fildo7525/pretty_hover",
+	-- 	event = "LspAttach",
+	-- 	opts = {},
+	-- },
 	-- BarBar
 	-- "romgrk/barbar.nvim",
 
@@ -41,7 +41,7 @@ return {
 	"nvim-lua/popup.nvim",
 
 	-- fidget
-	{ "j-hui/fidget.nvim", config = true },
+	-- { "j-hui/fidget.nvim", config = true },
 	{ "MunifTanjim/nui.nvim", lazy = true },
 	-- {
 	-- 	"folke/noice.nvim",
@@ -123,4 +123,29 @@ return {
 	-- 		},
 	-- 	},
 	-- }, -- Noice
+	-- Which Key
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
+	{
+		"nvimdev/lspsaga.nvim",
+		config = function()
+			require("lspsaga").setup({
+                ui = {
+                    enable = false,
+                    code_action="",
+                },
+            })
+		end,
+	},
 }

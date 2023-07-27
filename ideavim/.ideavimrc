@@ -4,10 +4,12 @@ let mapleader=" "
 """ Plugins  --------------------------------
 set surround
 set multiple-cursors
+set relativenumber
 set commentary
 set sneak
 set argtextobj
 set easymotion
+set which-key
 """ -- add nerdtree?
 Plug 'preservim/nerdtree'
 
@@ -85,7 +87,7 @@ map <leader>ea <Action>(EditorActions)
 
 """ UI Stuff
 map <leader>z <Action>(ToggleDistractionFreeMode)
-map <leader><leader>c <Action>(HideActiveWindow)
+map <C-c> <Action>(HideActiveWindow)
 
 """ Maven
 map <leader><leader>gt <Action>(Gradle.ExecuteTask)
@@ -94,3 +96,5 @@ map <leader><leader>gt <Action>(Gradle.ExecuteTask)
 """ Testing
 nmap <leader>gm <action>(Git.Menu)
 nmap <leader>qc <action>(QuickChangeScheme)
+
+""" navigation

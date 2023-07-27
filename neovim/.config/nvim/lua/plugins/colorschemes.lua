@@ -1,5 +1,5 @@
 return {
-	{ "mcchrish/zenbones.nvim", dependencies = "rktjmp/lush.nvim" },
+	-- { "mcchrish/zenbones.nvim", dependencies = "rktjmp/lush.nvim" },
 	"EdenEast/nightfox.nvim",
 	"Murtaza-Udaipurwala/gruvqueen",
 	"NTBBloodbath/doom-one.nvim",

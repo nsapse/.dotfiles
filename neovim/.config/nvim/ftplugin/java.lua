@@ -7,7 +7,9 @@ end
 -- make the bundle and get the java debug junk into there
 local bundles = {
 	vim.fn.glob(
-		"/home/noah/Library/Java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar",
+		-- "/home/noah/Library/Java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar",
+		-- "/Users/noah.sapse/.m2/repository/com/microsoft/java/com.microsoft.java.debug.plugin/0.47.0/com.microsoft.java.debug.plugin-0.47.0.jar",
+		"/Users/noah.sapse/Java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-0.47.0.jar",
 		1
 	),
 }
@@ -27,10 +29,13 @@ end
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = WORKSPACE_PATH .. project_name
 -- get vscode-java-test into the bundle
-vim.list_extend(bundles, vim.split(vim.fn.glob("/home/noah/Library/Java/vscode-java-test/server/*.jar", 1), "\n"))
+-- vim.list_extend(bundles, vim.split(vim.fn.glob("/home/noah/Library/Java/vscode-java-test/server/*.jar", 1), "\n"))
+-- TODO - have switch for location based on OS
+vim.list_extend(bundles, vim.split(vim.fn.glob("/Users/noah.sapse/Java/vscode-java-test/server/*.jar", 1), "\n"))
 
 local config = {
-	cmd = { "/usr/bin/jdtls" },
+	-- cmd = { "/opt/homebrew/bin/jdtls" },
+	cmd = { "/Users/noah.sapse/jdt-language-server-1.9.0-202203031534/bin/jdtls" },
 	-- cmd = {
 	--
 	-- 	-- 💀
@@ -82,15 +87,18 @@ local config = {
 				runtimes = {
 					{
 						name = "JavaSE-1.8",
-						path = "/usr/lib/jvm/java-8-openjdk/",
+						-- path = "/usr/lib/jvm/java-8-openjdk/",
+                        path = "/Users/noah.sapse/.sdkman/candidates/java/8.0.312-zulu/"
 					},
 					{
 						name = "JavaSE-11",
-						path = "/usr/lib/jvm/java-11-openjdk/",
+						-- path = "/usr/lib/jvm/java-11-openjdk/",
+                        path = "/Users/noah.sapse/.sdkman/candidates/java/11.0.13-zulu/"
 					},
 					{
 						name = "JavaSE-17",
-						path = "/usr/lib/jvm/java-17-openjdk/",
+						-- path = "/usr/lib/jvm/java-17-openjdk/",
+                        path = "/Users/noah.sapse/.sdkman/candidates/java/17.0.7-zulu/"
 					},
 					-- {
 					-- 	name = "JavaSE-19",

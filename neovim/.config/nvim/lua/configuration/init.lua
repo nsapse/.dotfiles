@@ -8,7 +8,6 @@ local cmd = vim.cmd
 ------------------------
 -- ~~Global Options~~ --
 ------------------------
-
 -- Window Appearance
 o.nu = true
 o.rnu = true
@@ -22,7 +21,7 @@ o.foldenable = false
 g.termguicolors = true
 
 
-cmd.colorscheme('base16-everforest')
+cmd.colorscheme('gruvqueen')
 -- g.titlestring = %{hostname()}\ \ %F\ \ %{strftime('%Y-%m-%d\ %H:%M',getftime(expand('%')))}
 
 -- General UI/UX
@@ -52,6 +51,10 @@ o.swapfile = false
 o.backup = false
 o.undofile = true
 o.undodir = '/home/noah/.config/nvim/undodir/'
+if vim.fn.has('macunix') then
+    o.undodir = '/Users/noah.sapse/undodir'
+end
+
 
 -- Conceal
 o.cocu = "vnc"
@@ -60,5 +63,5 @@ o.conceallevel = 0
 -- Plugins
 -- Arduino
 require("configuration.misc")
-require("configuration.treesitter")
+-- require("configuration.treesitter")
 require("configuration.dap")

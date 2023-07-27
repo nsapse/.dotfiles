@@ -11,6 +11,11 @@ map('n', 'Y', 'y$')
 map('n', 'V', 'v$')
 map('n', 'J', 'mzJ`z')
 
+-- alternate escape in insertion mode
+map('i', 'jk', '<esc>')
+map('i', '<C-[', '<esc>')
+map('t', 'jk', '<C-\\><C-n>')
+
 -- quickly open config files
 local telescope = require("telescope.builtin")
 map('n', '<leader>ec', function() cmd.vsplit("$MYVIMRC") end)
