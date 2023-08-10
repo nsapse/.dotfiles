@@ -141,11 +141,19 @@ return {
 		"nvimdev/lspsaga.nvim",
 		config = function()
 			require("lspsaga").setup({
-                ui = {
-                    enable = false,
-                    code_action="",
-                },
-            })
+				ui = {
+					enable = false,
+					code_action = "",
+				},
+			})
+		end,
+	},
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "VeryLazy",
+		opts = {},
+		config = function(_, opts)
+			require("lsp_signature").setup(opts)
 		end,
 	},
 }

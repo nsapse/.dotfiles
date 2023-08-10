@@ -1,6 +1,12 @@
 -- Enable Folding
-vim.o.foldmethod = "expr"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.o.foldmethod = "expr"
+-- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- local vim = vim
+-- local opt = vim.opt
+--
+-- opt.foldmethod = "expr"
+-- opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- local opts = {
 -- 	-- ensure_installed = {
@@ -51,6 +57,6 @@ vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 -- 	},
 -- 	context_commentstring = {
 -- 		enable = true,
--- 	},
+-- 	},:
 -- }
 -- require("nvim-treesitter.configs").setup(opts)

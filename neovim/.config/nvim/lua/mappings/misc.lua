@@ -53,7 +53,13 @@ map("n", "<leader>nf", ":Neoformat<CR>")
 -- prompt for a refactor to apply when the remap is triggered
 map(
 	{ "v", "n" },
-	"<leader>rf",
+	"<leader>rr",
+	":lua require('refactoring').select_refactor()<CR>",
+	{ noremap = true, silent = true, expr = false }
+)
+map(
+	{ "v", "n" },
+	"<leader><leader>R",
 	":lua require('refactoring').select_refactor()<CR>",
 	{ noremap = true, silent = true, expr = false }
 )
@@ -83,7 +89,19 @@ map("n", "-", require("oil").open, { desc = "Open parent directory" })
 
 -- Saga
 map('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
-map('n', '<leade>pd', '<cmd>Lspsaga peek_definition<CR>')
-map('n', '<leade>pt', '<cmd>Lspsaga peek_type_definition<CR>')
-map('n', 'gd', '<cmd>Lspsaga goto_definition<CR>')
+map('n', '<leader>pd', '<cmd>Lspsaga peek_definition<CR>')
+map('n', '<leader>pt', '<cmd>Lspsaga peek_type_definition<CR>')
+map('n', '<leader>gd', '<cmd>Lspsaga goto_definition<CR>')
 map('n', 'gt', '<cmd>Lspsaga goto_type_definition<CR>')
+
+-- Compiler.Nvim
+    -- Open compiler
+    map('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+    map('n', '<leader>cc', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+    -- Toggle compiler results
+    map('n', '<S-F6>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+    map('n', '<leader>ct', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+
+
+-- Devdocs
+map('n', '<leader>doc', '<cmd>DevdocsOpenFloat<CR>')

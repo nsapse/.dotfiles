@@ -198,4 +198,30 @@ return {
 	----------------
 	"vim-utils/vim-man",
 	"milisims/nvim-luaref",
+	{
+		"luckasRanarison/nvim-devdocs",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		opts = {
+			float_win = { -- passed to nvim_open_win(), see :h api-floatwin
+				relative = "editor",
+				height = 25,
+				width = 100,
+				border = "rounded",
+			},
+			wrap = false, -- text wrap
+			ensure_installed = {
+                "bash",
+				"css",
+				"javascript",
+				"openjdk-8",
+				"python-3.11",
+				"react",
+				"spring_boot",
+			}, -- get automatically installed
+		},
+	},
 }

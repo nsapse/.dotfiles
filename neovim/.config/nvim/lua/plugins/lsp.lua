@@ -8,84 +8,9 @@ return {
 			{
 				"williamboman/mason.nvim",
 				config = function()
-					require("mason-lspconfig").setup({
-						-- ensure_installed = {
-						-- 	"bashls",
-						-- 	"clangd",
-						-- 	"eslint",
-						-- 	"jedi_language_server",
-						-- 	"lua_ls",
-						-- 	"rust_analyzer",
-						-- 	"arduino_language_server",
-						-- 	"cssls",
-						-- 	"dockerls",
-						-- 	"gopls",
-						-- 	"html",
-						-- 	-- "jdtls",
-						-- 	"jsonls",
-						-- 	"ltex",
-						-- 	"lua_ls",
-						-- 	"marksman",
-						-- 	"solargraph",
-						-- 	"sqlls",
-						-- 	"texlab",
-						-- 	"vimls",
-						-- },
-					})
+					require("mason-lspconfig").setup({})
 				end,
 			}, -- Optional
-			{
-				"jay-babu/mason-null-ls.nvim",
-				event = { "BufReadPre", "BufNewFile" },
-				config = function()
-					require("mason-null-ls").setup({
-						ensure_installed = nil,
-						automatic_installation = true,
-						automatic_setup = false,
-					})
-				end,
-				dependencies = {
-					"williamboman/mason.nvim",
-					{
-						"jose-elias-alvarez/null-ls.nvim",
-						config = function()
-							local null_ls = require("null-ls")
-							null_ls.setup({
-								sources = {
-									-- injecting code actions
-									null_ls.builtins.code_actions.eslint,
-									null_ls.builtins.code_actions.gitsigns,
-									null_ls.builtins.code_actions.gomodifytags,
-									null_ls.builtins.code_actions.impl,
-									null_ls.builtins.code_actions.refactoring,
-									null_ls.builtins.code_actions.shellcheck,
-									null_ls.builtins.code_actions.xo,
-
-									-- -- injecting diagnostics
-									-- null_ls.builtins.diagnostics.clang_check,
-									-- null_ls.builtins.diagnostics.codespell,
-									-- null_ls.builtins.diagnostics.commitlint,
-									-- null_ls.builtins.diagnostics.cpplint,
-									-- null_ls.builtins.diagnostics.dotenv_linter,
-									-- -- null_ls.builtins.diagnostics.eslint,
-									-- null_ls.builtins.diagnostics.flake8,
-									-- null_ls.builtins.diagnostics.jshint,
-									-- null_ls.builtins.diagnostics.jsonlint,
-									-- null_ls.builtins.diagnostics.luacheck,
-									-- null_ls.builtins.diagnostics.markdownlint,
-									-- null_ls.builtins.diagnostics.xo,
-									-- null_ls.builtins.diagnostics.yamllint,
-									-- null_ls.builtins.diagnostics.zsh,
-									-- -- null_ls.builtins.diagnostics.checkstyle, -- for java
-									--
-									-- -- formatters
-									-- null_ls.builtins.formatting.autopep8,
-								},
-							})
-						end,
-					},
-				},
-			},
 			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 
 			-- Autocompletion
@@ -96,6 +21,29 @@ return {
 			{ "saadparwaiz1/cmp_luasnip" }, -- Optional
 			{ "hrsh7th/cmp-nvim-lua" }, -- Optional
 
+			{
+				"jay-babu/mason-null-ls.nvim",
+				event = { "BufReadPre", "BufNewFile" },
+				dependencies = {
+					"williamboman/mason.nvim",
+					"jose-elias-alvarez/null-ls.nvim",
+				},
+				config = function()
+					require("mason").setup()
+					require("mason-null-ls").setup({
+						ensure_installed = {
+							-- Opt to list sources here, when available in mason.
+						},
+						automatic_installation = false,
+						handlers = {},
+					})
+					require("null-ls").setup({
+						sources = {
+							-- Anything not supported by mason.
+						},
+					})
+				end,
+			},
 			-- Snippets
 			{ "L3MON4D3/LuaSnip" }, -- Required
 			{ "rafamadriz/friendly-snippets" }, -- Optional
@@ -104,9 +52,9 @@ return {
 
 	-- Various Other LSP Plugins
 	"onsails/lspkind-nvim",
- --    local cfg = {
- --        floating_window = false,
- --    },
+	--    local cfg = {
+	--        floating_window = false,
+	--    },
 	-- {
 	-- 	"ray-x/lsp_signature.nvim",
 	-- 	config = function()
@@ -131,4 +79,7 @@ return {
 	-- 	"weilbith/nvim-code-action-menu",
 	-- 	cmd = "CodeActionMenu",
 	-- },
+
+	-- for typescript
+	{ "jose-elias-alvarez/typescript.nvim" },
 }

@@ -1,14 +1,18 @@
 -- Learn the keybindings, see :help lsp-zero-keybindings
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
 local lsp = require("lsp-zero").preset({})
+local map = vim.keymap.set
 lsp.preset("recommended")
 lsp.set_preferences({
 	set_lsp_keymaps = { omit = { "<F2>", "<F4>", "<leader>ca", "ca" } },
 })
 
+-- allow JDTLS to be setup with zero and mason
+lsp.skip_server_setup({'jdtls'})
+lsp.skip_server_setup({'tsserver'})
+
 lsp.setup()
 lsp.on_attach(function(_, bufnr)
-	local map = vim.keymap.set
 	-- map("n", "rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
 	map("n", "rn", "<cmd>Lspsaga rename<cr>")
 	-- map({ "n", "v" }, "<leader>ca", "lua vim.lsp.buf.code_action()<cr>")
@@ -66,3 +70,18 @@ cmp.setup({
 	},
 })
 require("luasnip.loaders.from_vscode").lazy_load()
+
+
+-- for typescript
+require('typescript').setup({
+  server = {
+    on_attach = function(client, bufnr)
+
+      map('n', '<leader>mi', '<cmd>TypescriptAddMissingImports<cr>', {buffer = bufnr})
+      map('n', '<leader>oi', '<cmd>TypescriptOrganizeImports<cr>', {buffer = bufnr})
+      map('n', '<leader>tfa', '<cmd>TypescriptFixAll<cr>', {buffer = bufnr})
+      -- map('n', '<leader>gd', '<cmd>TypescriptGoToSourceDefinition<cr>', {buffer = bufnr})
+      map('n', 'tgs', '<cmd>TypescriptGoToSourceDefinition<cr>', {buffer = bufnr})
+    end
+  }
+})

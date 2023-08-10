@@ -17,11 +17,13 @@ o.laststatus = 3
 o.title = true
 o.colorcolumn = "80"
 o.list = true
-o.foldenable = false
+o.foldenable = true
 g.termguicolors = true
 
+g.foldmethod = 'expr'
+g.foldexpr = 'nvim_treesitter#foldexpr()'
 
-cmd.colorscheme('gruvqueen')
+cmd.colorscheme('base16-everforest')
 -- g.titlestring = %{hostname()}\ \ %F\ \ %{strftime('%Y-%m-%d\ %H:%M',getftime(expand('%')))}
 
 -- General UI/UX

@@ -64,19 +64,20 @@ return {
 			},
 		},
 		-- rainbow = {
-		-- 	query = {
-		-- 		"rainbow-parens",
-		-- 	},
-		-- 	strategy = rainbow.strategy.global,
-		-- 	hlgroups = {
-		-- 		"TSRainbowRed",
-		-- 		"TSRainbowYellow",
-		-- 		"TSRainbowBlue",
-		-- 		"TSRainbowOrange",
-		-- 		"TSRainbowGreen",
-		-- 		"TSRainbowViolet",
-		-- 		"TSRainbowCyan",
-		-- 	},
+		-- 	enable = true,
+		-- 	query = "rainbow-parens",
+		-- 	-- Highlight the entire buffer all at once
+		-- 	strategy = require("ts-rainbow").strategy.global,
+		-- 	-- strategy = rainbow.strategy.global,
+		-- 	-- hlgroups = {
+		-- 	-- 	"TSRainbowRed",
+		-- 	-- 	"TSRainbowYellow",
+		-- 	-- 	"TSRainbowBlue",
+		-- 	-- 	"TSRainbowOrange",
+		-- 	-- 	"TSRainbowGreen",
+		-- 	-- 	"TSRainbowViolet",
+		-- 	-- 	"TSRainbowCyan",
+		-- 	-- },
 		-- },
 		---@param opts TSConfig
 		config = function(_, opts)
@@ -85,5 +86,8 @@ return {
 	},
 	{ "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
 	-- "mrjones2014/nvim-ts-rainbow",  // deprecated
-	{ "HiPhish/nvim-ts-rainbow2" },
+	-- { "HiPhish/nvim-ts-rainbow2" }, // deprecated
+    { "HiPhish/rainbow-delimiters.nvim"},
 }
+
+
