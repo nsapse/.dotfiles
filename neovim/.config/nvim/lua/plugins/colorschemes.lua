@@ -38,7 +38,14 @@ return {
 	"shaunsingh/nord.nvim",
 	"savq/melange-nvim",
 	"luisiacc/gruvbox-baby",
-	{ "AlexvZyl/nordic.nvim" },
+	{
+		"AlexvZyl/nordic.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("nordic").load()
+		end,
+	},
 	"JoosepAlviste/palenightfall.nvim",
 	"ramojus/mellifluous.nvim",
 	"morhetz/gruvbox",

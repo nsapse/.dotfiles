@@ -34,10 +34,11 @@ cmp.setup({
 	preselect = "item",
 	sources = {
 		{ name = "luasnip" },
-        { name = "neorg"},
-		{ name = "path" },
-		{ name = "buffer", keyword_length = 3 },
 		{ name = "nvim_lsp" },
+		{ name = "buffer", keyword_length = 3 },
+		{ name = "path" },
+		{ name = "vim-dadbod-completion" },
+        { name = "neorg"},
 	},
 	-- formatting = {
 	-- 	-- fields = { "abbr", "kind", "menu" },

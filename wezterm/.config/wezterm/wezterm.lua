@@ -15,9 +15,18 @@ end
 
 -- Set colorscheme
 -- config.color_scheme = 'Everforest Dark (Gogh)'
--- config.color_scheme = 'Gruvbox dark, soft (base16)'
 config.color_scheme = 'nordfox'
+-- config.color_scheme = 'Gruvbox dark, soft (base16)'
+-- config.color_scheme = 'Gruvbox dark, pale (base16)'
+-- config.color_scheme = 'Gruvbox Material (Gogh)'
+-- config.color_scheme = 'N0tch2k'
+
+-- config.color_scheme = 'Material (base16)'
+
+config.font_size= 14
+-- config.color_scheme = 'nordfox'
 -- config.disable_default_key_bindings = true
+config.audible_bell = "Disabled"
 config.check_for_updates = false
 
 -- Set Leader to CTRL+SPACE
@@ -71,7 +80,6 @@ config.keys = {
     action = act.ActivatePaneDirection 'Down',
   },
 }
--- config.color_scheme = 'Gruvbox dark, soft (base16)'
 
 -- and finally, return the configuration to wezterm
 return config

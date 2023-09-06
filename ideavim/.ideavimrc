@@ -49,6 +49,7 @@ nmap <leader>rf <action>(RefactoringMenu)
 nmap <leader>rr <Action>(Refactorings.QuickListPopupAction)
 map <leader>rn <Action>(RenameElement)
 nmap <leader>ca <action>(Generate)
+nmap <C-g> <action>(Generate)
 
 """ LSP Type Actions
 nmap <leader>h <Action>(HighlightUsagesInFile)
@@ -77,11 +78,11 @@ map <leader>x <Action>(HideAllWindows)
 """ File Browsing and Annotations
 map <leader><leader>n :NERDTreeToggle<CR>
 map <leader>s <Action>(SelectInProjectView)
-map <leader>a <Action>(Annotate)
+map <leader>gb <Action>(Annotate)
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 map <leader>o <Action>(FileStructurePopup)
 map <leader>fc <Action>(FileChooser.NewFile)
-map <leader>na <Action>(NewAction)
+map <leader><leader>a <Action>(NewAction)
 map <leader>of <Action>(Open)
 map <leader>ea <Action>(EditorActions)
 
@@ -89,12 +90,35 @@ map <leader>ea <Action>(EditorActions)
 map <leader>z <Action>(ToggleDistractionFreeMode)
 map <C-c> <Action>(HideActiveWindow)
 
-""" Maven
-map <leader><leader>gt <Action>(Gradle.ExecuteTask)
-
+""" Gradle
+map <leader><leader>G <Action>(Gradle.ExecuteTask)
 
 """ Testing
 nmap <leader>gm <action>(Git.Menu)
 nmap <leader>qc <action>(QuickChangeScheme)
 
 """ navigation
+map <leader>j <Action>(PreviousTab)
+map [t <Action>(PreviousTab)
+map <S-TAB> <Action>(PreviousTab)
+map <leader>k <Action>(NextTab)
+map ]t <Action>(NextTab)
+map <TAB> <Action>(NextTab)
+
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+
+nnoremap <leader>wc <c-w>c
+nnoremap <leader>wh <c-w>h
+nnoremap <leader>wj <c-w>j
+nnoremap <leader>wk <c-w>k
+nnoremap <leader>wl <c-w>l
+nnoremap <C-h> :action SplitHorizontally<cr>
+nnoremap <C-v> :action SplitVertically<cr>
+
+""" Debugging
+" map <leader><leader>d <Action>(ActivateDebugToolWindow)
+map <leader><leader>d <Action>(EditorPopupMenuDebug)
+map <leader>dj <Action>(StepInto)
+map <leader>dk <Action>(StepOut)
+map <leader>dl <Action>(StepOver)

@@ -1,5 +1,3 @@
--- setting some local namespace variables to simplify writing
-
 local o = vim.o
 local g = vim.g
 local wo = vim.wo
@@ -17,13 +15,21 @@ o.laststatus = 3
 o.title = true
 o.colorcolumn = "80"
 o.list = true
-o.foldenable = true
-g.termguicolors = true
+-- g.termguicolors = true
 
 g.foldmethod = 'expr'
+o.foldcolumn = '1' -- '0' is not bad
+o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+o.foldlevelstart = 99
+o.foldenable = true
+
+
+
 g.foldexpr = 'nvim_treesitter#foldexpr()'
 
-cmd.colorscheme('base16-everforest')
+-- cmd.colorscheme('gruvbox-material')
+-- cmd.colorscheme('base16-everforest')
+cmd.colorscheme('everforest')
 -- g.titlestring = %{hostname()}\ \ %F\ \ %{strftime('%Y-%m-%d\ %H:%M',getftime(expand('%')))}
 
 -- General UI/UX

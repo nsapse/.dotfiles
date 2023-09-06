@@ -69,8 +69,25 @@ map({'n','v'}, '<leader>p', "\"+p")
 map('n', 'qn', ':cn<cr>')
 map('n', 'qp', ':cp<cr>')
 
+
+-- Folding with Ufo
+map('n', 'zR', require('ufo').openAllFolds)
+map('n', 'zM', require('ufo').closeAllFolds)
+map('n', 'zr', require('ufo').openFoldsExceptKinds)
+map('n', 'zm', require('ufo').closeFoldsWith) -- closeAllFolds == closeFoldsWith(0)
+map('n', 'K', function()
+    local winid = require('ufo').peekFoldedLinesUnderCursor()
+    if not winid then
+        -- choose one of coc.nvim and nvim lsp
+        vim.lsp.buf.hover()
+    end
+end)
 -- Normal Mode Editing Bindings
 -- map('n', '<cr>', 'ciw') // replace with treesitter incremental selection
+
+-- Go to Marks with a capital M after setting them with lowercase m
+
+map('n', 'M', '`') -- closeAllFolds == closeFoldsWith(0)
 
 -- telescope
 require("mappings.telescope")

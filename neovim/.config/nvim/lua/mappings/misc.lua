@@ -88,16 +88,11 @@ map("n", "-", require("oil").open, { desc = "Open parent directory" })
 
 
 -- Saga
-map('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
-map('n', '<leader>pd', '<cmd>Lspsaga peek_definition<CR>')
-map('n', '<leader>pt', '<cmd>Lspsaga peek_type_definition<CR>')
-map('n', '<leader>gd', '<cmd>Lspsaga goto_definition<CR>')
-map('n', 'gt', '<cmd>Lspsaga goto_type_definition<CR>')
 
 -- Compiler.Nvim
     -- Open compiler
     map('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
-    map('n', '<leader>cc', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+    map('n', '<leader><leader>c', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
     -- Toggle compiler results
     map('n', '<S-F6>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
     map('n', '<leader>ct', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
