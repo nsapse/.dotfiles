@@ -100,3 +100,6 @@ map("n", "-", require("oil").open, { desc = "Open parent directory" })
 
 -- Devdocs
 map('n', '<leader>doc', '<cmd>DevdocsOpenFloat<CR>')
+
+-- Open DBUI
+map('n', '<leader>DB', '<cmd>DBUI<CR>')

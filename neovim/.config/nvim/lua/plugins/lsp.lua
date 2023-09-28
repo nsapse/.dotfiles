@@ -82,4 +82,10 @@ return {
 
 	-- for typescript
 	{ "jose-elias-alvarez/typescript.nvim" },
+
+    { "jay-babu/mason-nvim-dap.nvim",
+        config = function()
+            require("mason-nvim-dap").setup({})
+        end
+    }
 }

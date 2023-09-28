@@ -115,6 +115,7 @@ nnoremap <leader>wk <c-w>k
 nnoremap <leader>wl <c-w>l
 nnoremap <C-h> :action SplitHorizontally<cr>
 nnoremap <C-v> :action SplitVertically<cr>
+nnoremap M `
 
 """ Debugging
 " map <leader><leader>d <Action>(ActivateDebugToolWindow)

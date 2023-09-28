@@ -47,7 +47,7 @@ o.smartindent = true
 o.smartcase = true
 g.Syntax = true
 g.nohlsearch = true
-o.ignorecase = true
+g.ignorecase = true
 
 
 -- Search

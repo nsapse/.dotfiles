@@ -1,0 +1,7 @@
+[user]
+	email = noah.sapse@alteryx.com
+	name = Noah Sapse
+[pull]
+	rebase = true
+[core]
+	excludesfile = /Users/noah.sapse/.gitignore
