@@ -103,3 +103,15 @@ map('n', '<leader>doc', '<cmd>DevdocsOpenFloat<CR>')
 
 -- Open DBUI
 map('n', '<leader>DB', '<cmd>DBUI<CR>')
+
+-- Window Manipulation
+
+map('n', '<leader>wm', '<cmd>WindowsMaximize<CR>')
+map('n', '<leader>wmv', '<cmd>WindowsMaximizeVertically<CR>')
+map('n', '<leader>wmh', '<cmd>WindowsMaximizeHorizontally<CR>')
+map('n', '<leader>we', '<cmd>WindowsEqualize<CR>')
+map('n', '<leader>waw', '<cmd>WindowsToggleAutowidth<CR>')
+
+
+-- Neotest
+map("n", "<leader>tw", "<cmd>lua require('neotest').run.run({ jestCommand = 'jest --watch ' })<cr>", {})

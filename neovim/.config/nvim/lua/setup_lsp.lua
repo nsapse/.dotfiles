@@ -9,7 +9,7 @@ lsp.set_preferences({
 
 -- allow JDTLS to be setup with zero and mason
 lsp.skip_server_setup({'jdtls'})
-lsp.skip_server_setup({'tsserver'})
+-- lsp.skip_server_setup({'tsserver'})
 
 lsp.setup()
 lsp.on_attach(function(_, bufnr)
@@ -70,8 +70,7 @@ cmp.setup({
 		--       ["<S-Tab>"] = cmp_action.luasnip_jump_backward(),
 	},
 })
-require("luasnip.loaders.from_vscode").lazy_load()
-
+-- require("luasnip.loaders.from_vscode").lazy_load()
 
 -- for typescript
 require('typescript').setup({
@@ -81,7 +80,7 @@ require('typescript').setup({
       map('n', '<leader>mi', '<cmd>TypescriptAddMissingImports<cr>', {buffer = bufnr})
       map('n', '<leader>oi', '<cmd>TypescriptOrganizeImports<cr>', {buffer = bufnr})
       map('n', '<leader>tfa', '<cmd>TypescriptFixAll<cr>', {buffer = bufnr})
-      -- map('n', '<leader>gd', '<cmd>TypescriptGoToSourceDefinition<cr>', {buffer = bufnr})
+      map('n', '<leader>gd', '<cmd>TypescriptGoToSourceDefinition<cr>', {buffer = bufnr})
       map('n', 'tgs', '<cmd>TypescriptGoToSourceDefinition<cr>', {buffer = bufnr})
     end
   }

@@ -20,6 +20,20 @@ return {
 	{ "akinsho/toggleterm.nvim", config = true },
 	"SmiteshP/nvim-gps",
 
+	--Maximize Windows
+	{
+		"anuvyklack/windows.nvim",
+		dependencies = {
+			"anuvyklack/middleclass",
+			"anuvyklack/animation.nvim",
+		},
+		config = function()
+			vim.o.winwidth = 10
+			vim.o.winminwidth = 10
+			vim.o.equalalways = false
+			require("windows").setup()
+		end,
+	},
 	-- {
 	-- 	"Fildo7525/pretty_hover",
 	-- 	event = "LspAttach",
@@ -42,6 +56,14 @@ return {
 
 	-- fidget
 	-- { "j-hui/fidget.nvim", config = true },
+	{
+		"j-hui/fidget.nvim",
+		tag = "legacy",
+		event = "LspAttach",
+		opts = {
+			-- options
+		},
+	},
 	{ "MunifTanjim/nui.nvim", lazy = true },
 	-- {
 	-- 	"folke/noice.nvim",

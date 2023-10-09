@@ -21,6 +21,7 @@ return {
 			{ "saadparwaiz1/cmp_luasnip" }, -- Optional
 			{ "hrsh7th/cmp-nvim-lua" }, -- Optional
 
+            {'WhoIsSethDaniel/mason-tool-installer.nvim'},-- Optional
 			{
 				"jay-babu/mason-null-ls.nvim",
 				event = { "BufReadPre", "BufNewFile" },
@@ -45,7 +46,38 @@ return {
 				end,
 			},
 			-- Snippets
-			{ "L3MON4D3/LuaSnip" }, -- Required
+			{
+				"L3MON4D3/LuaSnip",
+				build = vim.fn.has("win32") ~= 0 and "make install_jsregexp" or nil,
+				dependencies = {
+					"rafamadriz/friendly-snippets",
+					"benfowler/telescope-luasnip.nvim",
+				},
+				config = function(_, opts)
+					if opts then
+						require("luasnip").config.setup(opts)
+					end
+					vim.tbl_map(function(type)
+						require("luasnip.loaders.from_" .. type).lazy_load()
+					end, { "vscode", "snipmate", "lua" })
+					-- friendly-snippets - enable standardized comments snippets
+					require("luasnip").filetype_extend("typescript", { "tsdoc" })
+					require("luasnip").filetype_extend("javascript", { "jsdoc" })
+					require("luasnip").filetype_extend("lua", { "luadoc" })
+					require("luasnip").filetype_extend("python", { "pydoc" })
+					require("luasnip").filetype_extend("rust", { "rustdoc" })
+					require("luasnip").filetype_extend("cs", { "csharpdoc" })
+					require("luasnip").filetype_extend("java", { "javadoc" })
+					require("luasnip").filetype_extend("c", { "cdoc" })
+					require("luasnip").filetype_extend("cpp", { "cppdoc" })
+					require("luasnip").filetype_extend("php", { "phpdoc" })
+					require("luasnip").filetype_extend("kotlin", { "kdoc" })
+					require("luasnip").filetype_extend("ruby", { "rdoc" })
+					require("luasnip").filetype_extend("javascript", { "javascriptreact" })
+					require("luasnip").filetype_extend("javascript", { "html" })
+					require("luasnip").filetype_extend("sh", { "shelldoc" })
+				end,
+			}, -- Required
 			{ "rafamadriz/friendly-snippets" }, -- Optional
 		},
 	},
@@ -83,9 +115,10 @@ return {
 	-- for typescript
 	{ "jose-elias-alvarez/typescript.nvim" },
 
-    { "jay-babu/mason-nvim-dap.nvim",
-        config = function()
-            require("mason-nvim-dap").setup({})
-        end
-    }
+	{
+		"jay-babu/mason-nvim-dap.nvim",
+		config = function()
+			require("mason-nvim-dap").setup({})
+		end,
+	},
 }
