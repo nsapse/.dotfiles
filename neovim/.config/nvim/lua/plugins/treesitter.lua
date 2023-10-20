@@ -62,55 +62,41 @@ return {
 					node_decremental = "<bs>",
 				},
 			},
-			textobjects = {
-				select = {
-					enable = true,
+        textobjects = {
+            select = {
+              enable = true,
 
-					-- Automatically jump forward to textobj, similar to targets.vim
-					lookahead = true,
+              -- Automatically jump forward to textobj, similar to targets.vim
+              lookahead = true,
 
-					keymaps = {
-						-- You can use the capture groups defined in textobjects.scm
-						["af"] = "@function.outer",
-						["if"] = "@function.inner",
-						["ac"] = "@class.outer",
-						-- You can optionally set descriptions to the mappings (used in the desc parameter of
-						-- nvim_buf_set_keymap) which plugins like which-key display
-						["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
-						-- @assignment.inner
-						-- @assignment.lhs
-						-- @assignment.outer
-						-- @assignment.rhs
-						-- @attribute.inner
-						-- @attribute.outer
-						-- @block.inner
-						-- @block.outer
-						-- @call.inner
-						-- @call.outer
-						-- @class.inner
-						-- @class.outer
-						-- @comment.inner
-						-- @comment.outer
-						-- @conditional.inner
-						-- @conditional.outer
-						-- @frame.inner
-						-- @frame.outer
-						-- @function.inner
-						-- @function.outer
-						-- @loop.inner
-						-- @loop.outer
-						-- @number.inner
-						-- @parameter.inner
-						-- @parameter.outer
-						-- @regex.inner
-						-- @regex.outer
-						-- @return.inner
-						-- @return.outer
-						-- @scopename.inner
-						-- @statement.outer
-					},
-				},
-			},
+              keymaps = {
+                -- You can use the capture groups defined in textobjects.scm
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ia"] = "@assignment.inner",
+                ["la"] = "@assignment.lhs",
+                ["ra"] = "@assignment.rhs",
+                ["ib"] = "@block.inner",
+                ["ab"] = "@block.outer",
+                ["ic"] = "@class.inner",
+                ["ac"] = "@class.outer",
+                ["iC"] = "@comment.inner",
+                ["aC"] = "@comment.outer",
+                ["ico"] = "@conditional.inner",
+                ["aco"] = "@conditional.outer",
+                ["il"] = "@loop.inner",
+                ["al"] = "@loop.outer",
+                ["in"] = "@number.inner",
+                ["ipar"] = "@parameter.inner",
+                ["apar"] = "@parameter.outer",
+                ["ireg"] = "@regex.inner",
+                ["areg"] = "@regex.outer",
+                ["ir"] = "@return.inner",
+                ["ar"] = "@return.outer",
+              },
+        },
+    },
+
 		},
 		-- rainbow = {
 		-- 	enable = true,
@@ -136,5 +122,7 @@ return {
 	{ "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
 	-- "mrjones2014/nvim-ts-rainbow",  // deprecated
 	-- { "HiPhish/nvim-ts-rainbow2" }, // deprecated
-	{ "HiPhish/rainbow-delimiters.nvim" },
+    { "HiPhish/rainbow-delimiters.nvim"},
 }
+
+
