@@ -21,19 +21,19 @@ return {
 	"SmiteshP/nvim-gps",
 
 	--Maximize Windows
-	{
-		"anuvyklack/windows.nvim",
-		dependencies = {
-			"anuvyklack/middleclass",
-			"anuvyklack/animation.nvim",
-		},
-		config = function()
-			vim.o.winwidth = 10
-			vim.o.winminwidth = 10
-			vim.o.equalalways = false
-			require("windows").setup()
-		end,
-	},
+	-- {
+	-- 	"anuvyklack/windows.nvim",
+	-- 	dependencies = {
+	-- 		"anuvyklack/middleclass",
+	-- 		"anuvyklack/animation.nvim",
+	-- 	},
+	-- 	config = function()
+	-- 		vim.o.winwidth = 10
+	-- 		vim.o.winminwidth = 10
+	-- 		vim.o.equalalways = false
+	-- 		require("windows").setup()
+	-- 	end,
+	-- },
 	-- {
 	-- 	"Fildo7525/pretty_hover",
 	-- 	event = "LspAttach",
@@ -65,86 +65,8 @@ return {
 		},
 	},
 	{ "MunifTanjim/nui.nvim", lazy = true },
-	-- {
-	-- 	"folke/noice.nvim",
-	-- 	event = "VeryLazy",
-	-- 	opts = {
-	-- 		lsp = {
-	-- 			override = {
-	-- 				["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-	-- 				["vim.lsp.util.stylize_markdown"] = true,
-	-- 			},
-	-- 		},
-	-- 		presets = {
-	-- 			bottom_search = true,
-	-- 			command_palette = true,
-	-- 			long_message_to_split = true,
-	-- 		},
-	-- 	},
-	-- 	-- stylua: ignore
-	-- 	keys = {
-	-- 		{
-	-- 			"<C-Enter>",
-	-- 			function()
-	-- 				require("noice").redirect(vim.fn.getcmdline())
-	-- 			end,
-	-- 			mode = "c",
-	-- 			desc = "Redirect Cmdline",
-	-- 		},
-	-- 		{
-	-- 			"<leader>snl",
-	-- 			function()
-	-- 				require("noice").cmd("last")
-	-- 			end,
-	-- 			desc = "Noice Last Message",
-	-- 		},
-	-- 		{
-	-- 			"<leader>snh",
-	-- 			function()
-	-- 				require("noice").cmd("history")
-	-- 			end,
-	-- 			desc = "Noice History",
-	-- 		},
-	-- 		{
-	-- 			"<leader>sna",
-	-- 			function()
-	-- 				require("noice").cmd("all")
-	-- 			end,
-	-- 			desc = "Noice All",
-	-- 		},
-	-- 		{
-	-- 			"<leader>snd",
-	-- 			function()
-	-- 				require("noice").cmd("dismiss")
-	-- 			end,
-	-- 			desc = "Dismiss All",
-	-- 		},
-	-- 		{
-	-- 			"<c-f>",
-	-- 			function()
-	-- 				if not require("noice.lsp").scroll(4) then
-	-- 					return "<c-f>"
-	-- 				end
-	-- 			end,
-	-- 			silent = true,
-	-- 			expr = true,
-	-- 			desc = "Scroll forward",
-	-- 			mode = { "i", "n", "s" },
-	-- 		},
-	-- 		{
-	-- 			"<c-b>",
-	-- 			function()
-	-- 				if not require("noice.lsp").scroll(-4) then
-	-- 					return "<c-b>"
-	-- 				end
-	-- 			end,
-	-- 			silent = true,
-	-- 			expr = true,
-	-- 			desc = "Scroll backward",
-	-- 			mode = { "i", "n", "s" },
-	-- 		},
-	-- 	},
-	-- }, -- Noice
+    { "nvim-neotest/nvim-nio" },
+
 	-- Which Key
 	{
 		"folke/which-key.nvim",
@@ -187,6 +109,12 @@ return {
 					return { "treesitter", "indent" }
 				end,
 			})
+		end,
+	},
+	{
+		"FabijanZulj/blame.nvim",
+		config = function()
+			require("blame").setup()
 		end,
 	},
 }

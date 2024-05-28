@@ -39,3 +39,8 @@ local rainbow_delimiters = require 'rainbow-delimiters'
         },
         blacklist = {'c', 'cpp'},
     }
+
+-- vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter", "BufCreate"}, {
+--     pattern = { "*.*tf"}
+--
+-- })

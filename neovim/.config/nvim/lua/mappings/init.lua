@@ -36,6 +36,9 @@ map('n', '<leader>wj', function() cmd.wincmd('j') end, {silent=true})
 map('n', '<leader>wk', function() cmd.wincmd('k') end, {silent=true})
 map('n', '<leader>wl', function() cmd.wincmd('l') end, {silent=true})
 
+map('n', '<leader><leader>s', function() cmd.vsplit() end, {silent=true})
+map('n', '<leader><leader>S', function() cmd.split() end, {silent=true})
+
 -- window and tab navigation
 map({'n', 'v'}, '<leader>tt', function() cmd.tabnew() end, {silent=true})
 map({'n', 'v'}, '<leader>tc', function() cmd.tabclose() end, {silent=true})

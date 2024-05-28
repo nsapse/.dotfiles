@@ -29,7 +29,7 @@ g.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- cmd.colorscheme('gruvbox-material')
 -- cmd.colorscheme('base16-everforest')
-cmd.colorscheme('everforest')
+cmd.colorscheme('gruvbox-material')
 -- g.titlestring = %{hostname()}\ \ %F\ \ %{strftime('%Y-%m-%d\ %H:%M',getftime(expand('%')))}
 
 -- General UI/UX

@@ -23,7 +23,9 @@ config.color_scheme = 'nordfox'
 
 -- config.color_scheme = 'Material (base16)'
 
-config.font_size= 14
+config.font_size= 18
+config.font = wezterm.font 'JetBrains Mono'
+-- config.font = wezterm.font 'Fira Code'
 -- config.color_scheme = 'nordfox'
 -- config.disable_default_key_bindings = true
 config.audible_bell = "Disabled"

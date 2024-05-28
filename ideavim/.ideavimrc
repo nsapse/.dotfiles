@@ -32,6 +32,7 @@ set ideastatusicon=gray
 set idearefactormode=keep
 
 """ Mappings --------------------------------
+imap jk <esc>
 map <leader>f <Plug>(easymotion-s)
 map <leader>e <Plug>(easymotion-f)
 
@@ -113,8 +114,8 @@ nnoremap <leader>wh <c-w>h
 nnoremap <leader>wj <c-w>j
 nnoremap <leader>wk <c-w>k
 nnoremap <leader>wl <c-w>l
-nnoremap <C-h> :action SplitHorizontally<cr>
-nnoremap <C-v> :action SplitVertically<cr>
+nnoremap <leader><leader>h :action SplitHorizontally<cr>
+nnoremap <leader><leader>v :action SplitVertically<cr>
 nnoremap M `
 
 """ Debugging

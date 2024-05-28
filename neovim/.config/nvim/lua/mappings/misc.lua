@@ -91,11 +91,11 @@ map("n", "-", require("oil").open, { desc = "Open parent directory" })
 
 -- Compiler.Nvim
     -- Open compiler
-    map('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
-    map('n', '<leader><leader>c', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
-    -- Toggle compiler results
-    map('n', '<S-F6>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
-    map('n', '<leader>ct', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+    -- map('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+    -- map('n', '<leader><leader>c', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+    -- -- Toggle compiler results
+    -- map('n', '<S-F6>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+    -- map('n', '<leader>ct', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
 
 
 -- Devdocs
@@ -104,6 +104,8 @@ map('n', '<leader>doc', '<cmd>DevdocsOpenFloat<CR>')
 -- Open DBUI
 map('n', '<leader>DB', '<cmd>DBUI<CR>')
 
+-- Open Blame
+map('n', '<leader>bt', '<cmd>BlameToggle<CR>')
 -- Window Manipulation
 
 map('n', '<leader>wm', '<cmd>WindowsMaximize<CR>')
@@ -115,3 +117,6 @@ map('n', '<leader>waw', '<cmd>WindowsToggleAutowidth<CR>')
 
 -- Neotest
 map("n", "<leader>tw", "<cmd>lua require('neotest').run.run({ jestCommand = 'jest --watch ' })<cr>", {})
+map("n", "<leader>tr", ":Neotest run<cr>", {})
+map("n", "<leader>ta", ":Neotest attach<cr>", {})
+map("n", "<leader>to", ":Neotest output-panel<cr>", {})
