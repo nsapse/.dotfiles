@@ -70,7 +70,7 @@ cmp.setup({
 		--       ["<S-Tab>"] = cmp_action.luasnip_jump_backward(),
 	},
 })
--- require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load()
 
 -- for typescript
 require('typescript').setup({

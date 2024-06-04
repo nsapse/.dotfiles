@@ -46,16 +46,14 @@ map.set('n', '<leader>gi', function() builtin.lsp_implementations(require('teles
 map.set('n', '<leader>sd', function() builtin.diagnostics(require('telescope.themes').get_ivy({})) end)
 map.set('n', '<leader>ds', function() builtin.lsp_document_symbols() end)
 map.set('n', '<leader>ws', function() builtin.lsp_workspace_symbols() end)
-map.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
-map.set('n', 'PD', '<cmd>Lspsaga peek_definition<CR>')
-map.set('n', 'PT', '<cmd>Lspsaga peek_type_definition<CR>')
-map.set('n', 'GD', '<cmd>Lspsaga goto_definition<CR>')
-map.set('n', 'GT', '<cmd>Lspsaga goto_type_definition<CR>')
+-- map.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
+-- map.set('n', 'PD', '<cmd>Lspsaga peek_definition<CR>')
+-- map.set('n', 'PT', '<cmd>Lspsaga peek_type_definition<CR>')
+-- map.set('n', 'GD', '<cmd>Lspsaga goto_definition<CR>')
+-- map.set('n', 'GT', '<cmd>Lspsaga goto_type_definition<CR>')
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
 
 -- this is apparently deprecated - moved to zero configs
 -- map.set('n', '<leader>ca', function() builtin.lsp_code_actions(require('telescope.themes').get_ivy({})) end)
