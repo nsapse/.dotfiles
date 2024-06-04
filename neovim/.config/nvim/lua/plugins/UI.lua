@@ -11,6 +11,9 @@ return {
 	{ "akinsho/toggleterm.nvim", config = true },
 	"SmiteshP/nvim-gps",
 
+	-- folds
+	{'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'},
+
 	-- bufferline
 	{
 		"akinsho/bufferline.nvim",
