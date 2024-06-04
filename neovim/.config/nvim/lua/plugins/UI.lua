@@ -4,43 +4,12 @@ return {
 	------------
 
 	-- Coloration, Highlighting, Icons, Readability
-	"markonm/traces.vim",
 	"ryanoasis/vim-devicons",
 	"yggdroot/indentline",
-	"luukvbaal/stabilize.nvim",
-
-	-- Composer for Macros
-	-- {
-	-- 	"ecthelionvi/NeoComposer.nvim",
-	-- 	dependencies = { "kkharji/sqlite.lua" },
-	-- 	opts = {},
-	-- },
 
 	--UX Elements
 	{ "akinsho/toggleterm.nvim", config = true },
 	"SmiteshP/nvim-gps",
-
-	--Maximize Windows
-	-- {
-	-- 	"anuvyklack/windows.nvim",
-	-- 	dependencies = {
-	-- 		"anuvyklack/middleclass",
-	-- 		"anuvyklack/animation.nvim",
-	-- 	},
-	-- 	config = function()
-	-- 		vim.o.winwidth = 10
-	-- 		vim.o.winminwidth = 10
-	-- 		vim.o.equalalways = false
-	-- 		require("windows").setup()
-	-- 	end,
-	-- },
-	-- {
-	-- 	"Fildo7525/pretty_hover",
-	-- 	event = "LspAttach",
-	-- 	opts = {},
-	-- },
-	-- BarBar
-	-- "romgrk/barbar.nvim",
 
 	-- bufferline
 	{
@@ -51,11 +20,6 @@ return {
 			require("bufferline").setup({})
 		end,
 	},
-
-	"nvim-lua/popup.nvim",
-
-	-- fidget
-	-- { "j-hui/fidget.nvim", config = true },
 	{
 		"j-hui/fidget.nvim",
 		tag = "legacy",
@@ -65,7 +29,7 @@ return {
 		},
 	},
 	{ "MunifTanjim/nui.nvim", lazy = true },
-    { "nvim-neotest/nvim-nio" },
+	{ "nvim-neotest/nvim-nio" },
 
 	-- Which Key
 	{
@@ -82,17 +46,6 @@ return {
 		},
 	},
 	{
-		"nvimdev/lspsaga.nvim",
-		config = function()
-			require("lspsaga").setup({
-				ui = {
-					enable = false,
-					code_action = "",
-				},
-			})
-		end,
-	},
-	{
 		"ray-x/lsp_signature.nvim",
 		event = "VeryLazy",
 		opts = {},
@@ -101,20 +54,45 @@ return {
 		end,
 	},
 	{
-		"kevinhwang91/nvim-ufo",
-		dependencies = "kevinhwang91/promise-async",
-		config = function()
-			require("ufo").setup({
-				provider_selector = function(bufnr, filetype, buftype)
-					return { "treesitter", "indent" }
-				end,
-			})
-		end,
-	},
-	{
 		"FabijanZulj/blame.nvim",
 		config = function()
 			require("blame").setup()
 		end,
 	},
+	{
+		"folke/trouble.nvim",
+		keys = {
+			{
+				"<leader>xx",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			{
+				"<leader>xX",
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+				desc = "Buffer Diagnostics (Trouble)",
+			},
+			{
+				"<leader>cs",
+				"<cmd>Trouble symbols toggle focus=false<cr>",
+				desc = "Symbols (Trouble)",
+			},
+			{
+				"<leader>cl",
+				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+				desc = "LSP Definitions / references / ... (Trouble)",
+			},
+			{
+			"<leader>xL",
+				"<cmd>Trouble loclist toggle<cr>",
+				desc = "Location List (Trouble)",
+			},
+			{
+				"<leader>xQ",
+				"<cmd>Trouble qflist toggle<cr>",
+				desc = "Quickfix List (Trouble)",
+			},
+		},
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+	}
 }

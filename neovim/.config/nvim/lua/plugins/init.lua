@@ -12,9 +12,6 @@ return {
 	},
 
 	-- Code Formatting
-	"junegunn/vim-easy-align",
-	-- { "machakann/vim-sandwich" },
-	"raimondi/delimitmate", -- look into jiangmiao/auto-pairs
 	"sbdchd/neoformat",
 	{
 		"numToStr/Comment.nvim",
@@ -27,9 +24,6 @@ return {
 	---~~Navigation~~---
 	----------------------
 
-	--Registers
-	"tversteeg/registers.nvim",
-
 	--Misc
 	"tpope/vim-unimpaired",
 
@@ -37,8 +31,6 @@ return {
 	"tpope/vim-repeat",
 	"unblevable/quick-scope",
 
-	-- symbols otline
-	{ "simrat39/symbols-outline.nvim", config = true },
 
 	-- chadtree
 	-- "ms-jpq/chadtree",
@@ -46,25 +38,6 @@ return {
 		"MunifTanjim/nui.nvim",
 	} },
 
-	-- Window Picker
-	-- {
-	-- 	"s1n7ax/nvim-window-picker",
-	-- 	tag = "v1.*",
-	-- 	config = function()
-	-- 		require("window-picker").setup({
-	-- 			fg_color = "#ededed",
-	-- 			-- if you have include_current_win == true, then current_win_hl_color will
-	-- 			-- be highlighted using this background color
-	-- 			current_win_hl_color = "#e35e4f",
-	--
-	-- 			-- all the windows except the curren window will be highlighted using this
-	-- 			-- color
-	-- 			other_win_hl_color = "#44cc41",
-	-- 		})
-	-- 	end,
-	-- },
-
-	--  "simnalamburt/vim-mundo" },
 	"mbbill/undotree",
 	"simeji/winresizer",
 
@@ -105,15 +78,6 @@ return {
 	"stevearc/vim-arduino",
 	"sudar/vim-arduino-syntax",
 
-	-------------------
-	--~~ Debugging ~~--
-	-------------------
-	-- setup nvim DAP
-	--  "sakhnik/nvim-gdb", opt = true, ft = { "c", "cpp" } },
-
-	----------
-	--~~Go~~--
-	----------
 	------------
 	--~~[HTML]~~--
 	------------
@@ -169,24 +133,13 @@ return {
 	----------------
 	--~~LaTeX~~--
 	----------------
-	-- "lervag/vimtex",
-	-- {
-	-- 	"evesdropper/luasnip-latex-snippets.nvim",
-	-- 	-- using treesitter.
-	-- 	dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
-	-- 	config = function()
-	-- 		require("luasnip-latex-snippets").setup()
-	-- 	end,
-	-- 	-- treesitter is required for markdown
-	-- },
+-- },
 	"KeitaNakamura/tex-conceal.vim",
-	-- "evesdropper/luasnip-latex-snippets.nvim",
 
 	----------------
 	-----Lua--------
 	----------------
 	"folke/neodev.nvim",
-
 	"kmonad/kmonad-vim",
 
 	----------------
@@ -205,30 +158,4 @@ return {
 	----------------
 	"vim-utils/vim-man",
 	"milisims/nvim-luaref",
-	-- {
-	-- 	"luckasRanarison/nvim-devdocs",
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"nvim-telescope/telescope.nvim",
-	-- 		"nvim-treesitter/nvim-treesitter",
-	-- 	},
-	-- 	opts = {
-	-- 		float_win = { -- passed to nvim_open_win(), see :h api-floatwin
-	-- 			relative = "editor",
-	-- 			height = 25,
-	-- 			width = 100,
-	-- 			border = "rounded",
-	-- 		},
-	-- 		wrap = false, -- text wrap
-	-- 		ensure_installed = {
- --                "bash",
-	-- 			"css",
-	-- 			"javascript",
-	-- 			"openjdk-8",
-	-- 			"python-3.11",
-	-- 			"react",
-	-- 			-- "spring_boot",
-	-- 		}, -- get automatically installed
-	-- 	},
-	-- },
 }
