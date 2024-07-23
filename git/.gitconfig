@@ -5,3 +5,4 @@
 	rebase = false
 [core]
 	excludesfile = /Users/noah.sapse/.gitignore
+	autocrlf = input
