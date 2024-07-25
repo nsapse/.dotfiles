@@ -31,8 +31,8 @@
 (defvar elpaca-repos-directory (expand-file-name "repos/" elpaca-directory))
 (defvar elpaca-order '(elpaca :repo "https://github.com/progfolio/elpaca.git"
                               :ref nil :depth 1
-                              :files (:defaults "elpaca-test.el" (:exclude "extensions"))
-                              :build (:not elpaca--activate-package)))
+                              :files (:defaults "elpaca-test.el" (:exclude "build"))
+                              :extensions (:not elpaca--activate-package)))
 (let* ((repo  (expand-file-name "elpaca/" elpaca-repos-directory))
        (build (expand-file-name "elpaca/" elpaca-builds-directory))
        (order (cdr elpaca-order))
@@ -282,6 +282,7 @@ Org-tempo is not a separate package but a module within org that can be enabled.
     :config
     (setq shell-file-name "/bin/zsh"
             vterm-max-scrollback 5000))
+
   ;; vterm-toggle
   (use-package vterm-toggle
     :after vterm

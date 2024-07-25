@@ -142,8 +142,10 @@
       )
 
     ;; lisp evaluation
-    ;;(ns/leader-keys
-    ;; "e" ("ignore t :wk "evaluate"))
+    (ns/leader-keys
+     "e" '(:ignore t :wk "evaluate")
+     "e b" '(eval-buffer :wk "Evaluate elisp in buffer")
+    )
   )
 #+end_src 
 
