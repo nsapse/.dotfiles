@@ -11,17 +11,23 @@
   - [[#keybindings-generalel][Keybindings (General.el)]]
   - [[#startup-settings][Startup Settings]]
 - [[#buffer-move][Buffer Move]]
-- [[#company][Company]]
+- [[#git][Git]]
 - [[#ivy][Ivy]]
+- [[#language-support-lsp-et-al][Language Support (LSP et. al)]]
+  - [[#company][Company]]
 - [[#org-mode][Org Mode]]
   - [[#org-bullets][Org Bullets]]
   - [[#org-table-of-contents][Org Table of Contents]]
   - [[#org-tempo][Org Tempo]]
+- [[#projectile][Projectile]]
 - [[#shells-and-terminals][Shells and Terminals]]
   - [[#eshell][Eshell]]
   - [[#vterm][Vterm]]
 - [[#sudo-edit][Sudo Edit]]
 - [[#ui-tweaks][UI Tweaks]]
+  - [[#fonts][Fonts]]
+  - [[#icons][Icons]]
+  - [[#line-numbers][Line Numbers]]
 - [[#which-key][Which Key]]
 
 * LOAD FIRST
@@ -288,27 +294,8 @@ one, an error is signaled."
       (set-window-buffer other-win buf-this-buf)
       (select-window other-win))))
 #+end_src
-* Company
-A generic completion framework
 
-#+begin_src emacs-lisp
-(use-package company
-  :defer 2
-  :diminish
-  :custom
-  (company-begin-commands '(self-insert-command))
-  (company-idle-delay .1)
-  (company-minimum-prefix-length 2)
-  (company-show-numbers t)
-  (company-tooltip-align-annotations 't)
-  (global-company-mode t))
-
-(use-package company-box
-  :after company
-  :diminish
-  :hook (company-mode . company-box-mode))
-#+end_src
-
+* Git
 
 * Ivy
 
@@ -347,6 +334,28 @@ A generic completion framework
                                  'ivy-rich-switch-buffer-transformer))
 #+end_src
 
+* Language Support (LSP et. al)
+
+** Company
+A generic completion framework
+
+#+begin_src emacs-lisp
+(use-package company
+  :defer 2
+  :diminish
+  :custom
+  (company-begin-commands '(self-insert-command))
+  (company-idle-delay .1)
+  (company-minimum-prefix-length 2)
+  (company-show-numbers t)
+  (company-tooltip-align-annotations 't)
+  (global-company-mode t))
+
+(use-package company-box
+  :after company
+  :diminish
+  :hook (company-mode . company-box-mode))
+#+end_src
 
 * Org Mode
 ** Org Bullets
@@ -381,9 +390,20 @@ Org-tempo is not a separate package but a module within org that can be enabled.
 | <q                     | '#+BEGIN_QUOTE' … '#+END_QUOTE'         |
 | <s                     | '#+BEGIN_SRC' … '#+END_SRC'             |
 | <v                     | '#+BEGIN_VERSE' … '#+END_VERSE'         |
+
 #+begin_src emacs-lisp
     (require 'org-tempo)
 #+end_src
+
+* Projectile
+#+begin_src emacs-lisp
+
+  (use-package projectile
+    :config
+    (projectile-mode 1))
+
+#+end_src
+
 * Shells and Terminals
 ** Eshell
 #+begin_src emacs-lisp
@@ -447,37 +467,19 @@ Org-tempo is not a separate package but a module within org that can be enabled.
 #+end_src
 
 * UI Tweaks
-*** Enable Line Numbers
-#+begin_src emacs-lisp
-
-  (global-display-line-numbers-mode 1)
-  (global-visual-line-mode t)
-  
-#+end_src
-*** Dissable Line Numbers in Certain Modes
-#+begin_src emacs-lisp
-
-  (dolist (mode '(org-mode-hook
-                      term-mode-hook
-                      vterm-mode-hook
-                      shell-mode-hook
-                      eshell-mode-hook))
-        (add-hook mode (lambda() (display-line-numbers-mode 0))))
-
-#+end_src
-*** Fonts
+** Fonts
 #+begin_src emacs-lisp
 (set-face-attribute 'default nil
   :font "JetBrains Mono"
-  :height 240
+  :height 340
   :weight 'medium)
 (set-face-attribute 'variable-pitch nil
   :font "Ubuntu"
-  :height 250
+  :height 350
   :weight 'medium)
 (set-face-attribute 'fixed-pitch nil
   :font "JetBrains Mono"
-  :height 240
+  :height 340
   :weight 'medium)
 ;; Makes commented text and keywords italics.
 ;; This is working in emacsclient but not emacs.
@@ -493,28 +495,7 @@ Org-tempo is not a separate package but a module within org that can be enabled.
 (add-to-list 'default-frame-alist '(font . "JetBrains Mono-11"))
 #+end_src
 
-*** Fonts
-#+begin_src emacs-lisp
-
-(set-face-attribute 'default nil
-    :font "JetBrains Mono"    :font "JetBrains Mono"
-  :height 130
-  :weight 'medium)
-;; Makes commented text and keywords italics.
-;; This is working in emacsclient but not emacs.
-;; Your font must have an italic face available.
-(set-face-attribute 'font-lock-comment-face nil
-  :slant 'italic)
-(set-face-attribute 'font-lock-keyword-face nil
-  :slant 'italic)
-
-;; This sets the default font on all graphical frames created after restarting Emacs.
-;; Does the same thing as 'set-face-attribute default' above, but emacsclient fonts
-;; are not right unless I also add this method of setting the default font.
-(add-to-list 'default-frame-alist '(font . "JetBrains Mono-11"))
-#+end_src
-
-*** All the Icons
+** Icons
 #+begin_src emacs-lisp
 
   (use-package all-the-icons
@@ -523,6 +504,22 @@ Org-tempo is not a separate package but a module within org that can be enabled.
 
   (use-package all-the-icons-dired
     :hook (dired-mode . (lambda () (all-the-icons-dired-mode t))))
+
+#+end_src
+
+** Line Numbers
+enable line numbers globally but disable them in certain modes
+#+begin_src emacs-lisp
+
+  (global-display-line-numbers-mode 1)
+  (global-visual-line-mode t)
+
+  (dolist (mode '(org-mode-hook
+                      term-mode-hook
+                      vterm-mode-hook
+                      shell-mode-hook
+                      eshell-mode-hook))
+        (add-hook mode (lambda() (display-line-numbers-mode 0))))
 
 #+end_src
 
