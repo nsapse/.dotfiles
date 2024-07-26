@@ -5,11 +5,14 @@
 #+OPTIONS: toc:3
 
 * TABLE OF CONTENTS :toc:
-- [[#elpaca][Elpaca]]
-- [[#evil-mode][Evil Mode]]
+- [[#load-first][LOAD FIRST]]
+  - [[#elpaca-package-manager][Elpaca Package Manager]]
+  - [[#evil-mode][Evil Mode]]
+  - [[#keybindings-generalel][Keybindings (General.el)]]
+  - [[#startup-settings][Startup Settings]]
+- [[#buffer-move][Buffer Move]]
+- [[#company][Company]]
 - [[#ivy][Ivy]]
-- [[#keybindings-generalel][Keybindings (General.el)]]
-- [[#misc-settings][Misc Settings]]
 - [[#org-mode][Org Mode]]
   - [[#org-bullets][Org Bullets]]
   - [[#org-table-of-contents][Org Table of Contents]]
@@ -21,56 +24,50 @@
 - [[#ui-tweaks][UI Tweaks]]
 - [[#which-key][Which Key]]
 
-* Elpaca
+* LOAD FIRST
 
+** Elpaca Package Manager
 
 #+BEGIN_SRC emacs-lisp
-(defvar elpaca-installer-version 0.7)
+   
+ (defvar elpaca-installer-version 0.7)
 (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
 (defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
 (defvar elpaca-repos-directory (expand-file-name "repos/" elpaca-directory))
 (defvar elpaca-order '(elpaca :repo "https://github.com/progfolio/elpaca.git"
-                              :ref nil :depth 1
-                              :files (:defaults "elpaca-test.el" (:exclude "extensions"))
-                              :build (:not elpaca--activate-package)))
+			:ref nil
+			:files (:defaults (:exclude "extensions"))
+			:build (:not elpaca--activate-package)))
 (let* ((repo  (expand-file-name "elpaca/" elpaca-repos-directory))
-       (build (expand-file-name "elpaca/" elpaca-builds-directory))
-       (order (cdr elpaca-order))
-       (default-directory repo))
+ (build (expand-file-name "elpaca/" elpaca-builds-directory))
+ (order (cdr elpaca-order))
+ (default-directory repo))
   (add-to-list 'load-path (if (file-exists-p build) build repo))
   (unless (file-exists-p repo)
     (make-directory repo t)
     (when (< emacs-major-version 28) (require 'subr-x))
     (condition-case-unless-debug err
-        (if-let ((buffer (pop-to-buffer-same-window "*elpaca-bootstrap*"))
-                 ((zerop (apply #'call-process `("git" nil ,buffer t "clone"
-                                                 ,@(when-let ((depth (plist-get order :depth)))
-                                                     (list (format "--depth=%d" depth) "--no-single-branch"))
-                                                 ,(plist-get order :repo) ,repo))))
-                 ((zerop (call-process "git" nil buffer t "checkout"
-                                       (or (plist-get order :ref) "--"))))
-                 (emacs (concat invocation-directory invocation-name))
-                 ((zerop (call-process emacs nil buffer nil "-Q" "-L" "." "--batch"
-                                       "--eval" "(byte-recompile-directory \".\" 0 'force)")))
-                 ((require 'elpaca))
-                 ((elpaca-generate-autoloads "elpaca" repo)))
-            (progn (message "%s" (buffer-string)) (kill-buffer buffer))
-          (error "%s" (with-current-buffer buffer (buffer-string))))
-      ((error) (warn "%s" err) (delete-directory repo 'recursive))))
+  (if-let ((buffer (pop-to-buffer-same-window "*elpaca-bootstrap*"))
+	   ((zerop (call-process "git" nil buffer t "clone"
+				 (plist-get order :repo) repo)))
+	   ((zerop (call-process "git" nil buffer t "checkout"
+				 (or (plist-get order :ref) "--"))))
+	   (emacs (concat invocation-directory invocation-name))
+	   ((zerop (call-process emacs nil buffer nil "-Q" "-L" "." "--batch"
+				 "--eval" "(byte-recompile-directory \".\" 0 'force)")))
+	   ((require 'elpaca))
+	   ((elpaca-generate-autoloads "elpaca" repo)))
+      (kill-buffer buffer)
+    (error "%s" (with-current-buffer buffer (buffer-string))))
+((error) (warn "%s" err) (delete-directory repo 'recursive))))
   (unless (require 'elpaca-autoloads nil t)
     (require 'elpaca)
     (elpaca-generate-autoloads "elpaca" repo)
     (load "./elpaca-autoloads")))
 (add-hook 'after-init-hook #'elpaca-process-queues)
 (elpaca `(,@elpaca-order))
-  
-#+end_src
 
-* Evil Mode
-
-#+begin_src emacs-lisp
-
- ;; Install use-package support
+;; Install use-package support
 (elpaca elpaca-use-package
   ;; Enable :elpaca use-package keyword.
   (elpaca-use-package-mode)
@@ -80,16 +77,27 @@
 ;; Block until current queue processed.
 (elpaca-wait)
 
+;;When installing a package which modifies a form used at the top-level
+;;(e.g. a package which adds a use-package key word),
+;;use `elpaca-wait' to block until that package has been installed/configured.
+;;For example:
+;;(use-package general :demand t)
+;;(elpaca-wait)
+
+;;Turns off elpaca-use-package-mode current declartion
+;;Note this will cause the declaration to be interpreted immediately (not deferred).
+;;Useful for configuring built-in emacs features.
+;;(use-package emacs :elpaca nil :config (setq ring-bell-function #'ignore))
+
+;; Don't install anything. Defer execution of BODY
+;;(elpaca nil (message "deferred"))
+
 #+end_src
+
+** Evil Mode
 
 #+begin_src emacs-lisp
 
-  ;;When installing a package which modifies a form used at the top-level
-  ;;(e.g. a package which adds a use-package key word),
-  ;;use `elpaca-wait' to block until that package has been installed/configured.
-  ;;For example:
-  ;;(use-package general :demand t)
-  ;;(elpaca-wait)
 
   ;; Expands to: (elpaca evil (use-package evil :demand t))
   (use-package evil
@@ -116,6 +124,191 @@
   ;;(elpaca nil (message "deferred"))
 
 #+end_src
+
+** Keybindings (General.el)
+
+#+begin_src emacs-lisp
+    (use-package general
+      :config
+      (general-evil-setup)
+
+      ;; set up 'SPC' as the global leader key
+      (general-create-definer ns/leader-keys
+        :states '(normal insert visual emacs)
+        :keymaps 'override
+        :prefix "SPC" ;; set leader
+        :global-prefix "M-SPC") ;; access leader in insert mode
+
+
+      (ns/leader-keys
+        "b" '(:ignore t :wk "buffer")
+        "bb" '(switch-to-buffer :wk "Switch buffer")
+        "bi" '(ibuffer :wk "iBuffer")
+        "bk" '(kill-this-buffer :wk "Kill this buffer")
+        "bn" '(next-buffer :wk "Next buffer")
+        "bp" '(previous-buffer :wk "Previous buffer")
+        "br" '(revert-buffer :wk "Reload buffer"))
+
+  ;; Emacs Bindings
+    (ns/leader-keys
+      "h" '(:ignore t :wk "Help")
+      "h f" '(describe-function :wk "Describe function")
+      "h v" '(describe-variable :wk "Describe variable")
+      "h r r" '(reload-init-file :wk "Reload emacs config"))
+
+
+
+    (defun reload-init-file ()
+    (interactive)
+    (load-file user-init-file)
+    (load-file user-init-file))
+
+    ;; Eval/Eshell Bindings
+    ;; lisp evaluation
+      (ns/leader-keys
+       "e" '(:ignore t :wk "eshell/evaluate")
+       "e b" '(eval-buffer :wk "Evaluate elisp in buffer")
+       "e d" '(eval-defun :wk "Evaluate defun containing or after point")
+       "e e" '(eval-expression :wk "Evaluate and elisp expression")
+       "e h" '(counsel-esh-history :which-key "Eshell history")
+       "e l" '(eval-last-sexp :wk "Evaluate elisp expression before point")
+       "e r" '(eval-region :wk "Evaluate elisp in region")
+       "e s" '(eshell :which-key "Eshell"))
+
+
+  ;; File Bindings
+      (ns/leader-keys
+        "f" '(:ignore t :wk "file")
+        "f." '(find-file :wk "find file")
+        "fc" '(lambda() (interactive) (find-file "~/.config/emacs/config.org") :wk "Open Emacs Config"))
+
+  ;; Toggles
+  (ns/leader-keys
+  "t"  '(:ignore t :wk "toggle")
+  "tl" '(display-line-numbers-mode :wk "toggle line numbers")
+  "tv" '(vterm-toggle :wk "toggle vterm"))
+
+  ;; Window Bindings
+(ns/leader-keys
+    "w" '(:ignore t :wk "Windows")
+    ;; Window splits
+    "w c" '(evil-window-delete :wk "Close window")
+    "w n" '(evil-window-new :wk "New window")
+    "w s" '(evil-window-split :wk "Horizontal split window")
+    "w v" '(evil-window-vsplit :wk "Vertical split window")
+    ;; Window motions
+    "w h" '(evil-window-left :wk "Window left")
+    "w j" '(evil-window-down :wk "Window down")
+    "w k" '(evil-window-up :wk "Window up")
+    "w l" '(evil-window-right :wk "Window right")
+    "w w" '(evil-window-next :wk "Goto next window")
+    ;; Move Windows
+    "w H" '(buf-move-left :wk "Buffer move left")
+    "w J" '(buf-move-down :wk "Buffer move down")
+    "w K" '(buf-move-up :wk "Buffer move up")
+    "w L" '(buf-move-right :wk "Buffer move right"))
+  )
+
+#+end_src
+
+** Startup Settings
+Follow symlinks by default
+#+begin_src emacs-lisp
+  (setq vc-follow-symlinks t)
+#+end_src
+
+* Buffer Move
+#+begin_src emacs-lisp
+(require 'windmove)
+
+;;;###autoload
+(defun buf-move-up ()
+  "Swap the current buffer and the buffer above the split.
+If there is no split, ie now window above the current one, an
+error is signaled."
+;;  "Switches between the current buffer, and the buffer above the
+;;  split, if possible."
+  (interactive)
+  (let* ((other-win (windmove-find-other-window 'up))
+	 (buf-this-buf (window-buffer (selected-window))))
+    (if (null other-win)
+        (error "No window above this one")
+      ;; swap top with this one
+      (set-window-buffer (selected-window) (window-buffer other-win))
+      ;; move this one to top
+      (set-window-buffer other-win buf-this-buf)
+      (select-window other-win))))
+
+;;;###autoload
+(defun buf-move-down ()
+"Swap the current buffer and the buffer under the split.
+If there is no split, ie now window under the current one, an
+error is signaled."
+  (interactive)
+  (let* ((other-win (windmove-find-other-window 'down))
+	 (buf-this-buf (window-buffer (selected-window))))
+    (if (or (null other-win) 
+            (string-match "^ \\*Minibuf" (buffer-name (window-buffer other-win))))
+        (error "No window under this one")
+      ;; swap top with this one
+      (set-window-buffer (selected-window) (window-buffer other-win))
+      ;; move this one to top
+      (set-window-buffer other-win buf-this-buf)
+      (select-window other-win))))
+
+;;;###autoload
+(defun buf-move-left ()
+"Swap the current buffer and the buffer on the left of the split.
+If there is no split, ie now window on the left of the current
+one, an error is signaled."
+  (interactive)
+  (let* ((other-win (windmove-find-other-window 'left))
+	 (buf-this-buf (window-buffer (selected-window))))
+    (if (null other-win)
+        (error "No left split")
+      ;; swap top with this one
+      (set-window-buffer (selected-window) (window-buffer other-win))
+      ;; move this one to top
+      (set-window-buffer other-win buf-this-buf)
+      (select-window other-win))))
+
+;;;###autoload
+(defun buf-move-right ()
+"Swap the current buffer and the buffer on the right of the split.
+If there is no split, ie now window on the right of the current
+one, an error is signaled."
+  (interactive)
+  (let* ((other-win (windmove-find-other-window 'right))
+	 (buf-this-buf (window-buffer (selected-window))))
+    (if (null other-win)
+        (error "No right split")
+      ;; swap top with this one
+      (set-window-buffer (selected-window) (window-buffer other-win))
+      ;; move this one to top
+      (set-window-buffer other-win buf-this-buf)
+      (select-window other-win))))
+#+end_src
+* Company
+A generic completion framework
+
+#+begin_src emacs-lisp
+(use-package company
+  :defer 2
+  :diminish
+  :custom
+  (company-begin-commands '(self-insert-command))
+  (company-idle-delay .1)
+  (company-minimum-prefix-length 2)
+  (company-show-numbers t)
+  (company-tooltip-align-annotations 't)
+  (global-company-mode t))
+
+(use-package company-box
+  :after company
+  :diminish
+  :hook (company-mode . company-box-mode))
+#+end_src
+
 
 * Ivy
 
@@ -154,66 +347,6 @@
                                  'ivy-rich-switch-buffer-transformer))
 #+end_src
 
-* Keybindings (General.el)
-
-#+begin_src emacs-lisp
-    (use-package general
-      :config
-      (general-evil-setup)
-
-      ;; set up 'SPC' as the global leader key
-      (general-create-definer ns/leader-keys
-	:states '(normal insert visual emacs)
-	:keymaps 'override
-	:prefix "SPC" ;; set leader
-	:global-prefix "M-SPC") ;; access leader in insert mode
-
-
-      (ns/leader-keys
-	"b" '(:ignore t :wk "buffer")
-	"bb" '(switch-to-buffer :wk "Switch buffer")
-	"bi" '(ibuffer :wk "iBuffer")
-	"bk" '(kill-this-buffer :wk "Kill this buffer")
-	"bn" '(next-buffer :wk "Next buffer")
-	"bp" '(previous-buffer :wk "Previous buffer")
-	"br" '(revert-buffer :wk "Reload buffer"))
-
-  ;; Emacs Bindings
-    (ns/leader-keys
-      "h" '(:ignore t :wk "Help")
-      "h f" '(describe-function :wk "Describe function")
-      "h v" '(describe-variable :wk "Describe variable")
-      "h r r" '(reload-init-file :wk "Reload emacs config"))
-
-
-
-    (defun reload-init-file ()
-    (interactive)
-    (load-file user-init-file)
-    (load-file user-init-file))
-
-  ;; Eval Bindings
-      ;; lisp evaluation
-      (ns/leader-keys
-       "e" '(:ignore t :wk "evaluate")
-       "e b" '(eval-buffer :wk "Evaluate elisp in buffer"))
-
-
-  ;; File Bindings
-      (ns/leader-keys
-	"f" '(:ignore t :wk "file")
-	"f." '(find-file :wk "find file")
-	"fc" '(lambda() (interactive) (find-file "~/.config/emacs/config.org") :wk "Open Emacs Config"))
-  )
-
-#+end_src
-
-
-* Misc Settings
-Follow symlinks by default
-#+begin_src emacs-lisp
-  (setq vc-follow-symlinks t)
-#+end_src
 
 * Org Mode
 ** Org Bullets
@@ -282,6 +415,7 @@ Org-tempo is not a separate package but a module within org that can be enabled.
     :config
     (setq shell-file-name "/bin/zsh"
             vterm-max-scrollback 5000))
+
   ;; vterm-toggle
   (use-package vterm-toggle
     :after vterm
@@ -315,8 +449,21 @@ Org-tempo is not a separate package but a module within org that can be enabled.
 * UI Tweaks
 *** Enable Line Numbers
 #+begin_src emacs-lisp
-(global-display-line-numbers-mode 1)
-(global-visual-line-mode t)
+
+  (global-display-line-numbers-mode 1)
+  (global-visual-line-mode t)
+  
+#+end_src
+*** Dissable Line Numbers in Certain Modes
+#+begin_src emacs-lisp
+
+  (dolist (mode '(org-mode-hook
+                      term-mode-hook
+                      vterm-mode-hook
+                      shell-mode-hook
+                      eshell-mode-hook))
+        (add-hook mode (lambda() (display-line-numbers-mode 0))))
+
 #+end_src
 *** Fonts
 #+begin_src emacs-lisp
