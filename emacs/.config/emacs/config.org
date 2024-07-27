@@ -17,6 +17,7 @@
   - [[#company][Company]]
 - [[#org-mode][Org Mode]]
   - [[#org-bullets][Org Bullets]]
+  - [[#org-capture-templates][Org Capture Templates]]
   - [[#org-table-of-contents][Org Table of Contents]]
   - [[#org-tempo][Org Tempo]]
 - [[#projectile][Projectile]]
@@ -105,116 +106,119 @@
 #+begin_src emacs-lisp
 
 
-  ;; Expands to: (elpaca evil (use-package evil :demand t))
-  (use-package evil
-      :init      ;; tweak evil's configuration before loading it
-      (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
-      (setq evil-want-keybinding nil)
-      (setq evil-want-C-u-scroll t)
-      (setq evil-vsplit-window-right t)
-      (setq evil-split-window-below t)
-      (evil-mode))
-    (use-package evil-collection
-      :after evil
-      :config
-      (setq evil-collection-mode-list '(dashboard dired ibuffer))
-      (evil-collection-init))
-    (use-package evil-tutor)
+       ;; Expands to: (elpaca evil (use-package evil :demand t))
+       (use-package evil
+           :init      ;; tweak evil's configuration before loading it
+           (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+           (setq evil-want-keybinding nil)
+           (setq evil-want-C-u-scroll t)
+           (setq evil-vsplit-window-right t)
+           (setq evil-split-window-below t)
+           (evil-mode))
+         (use-package evil-collection
+           :after evil
+           :config
+           (setq evil-collection-mode-list '(dashboard dired ibuffer))
+           (evil-collection-init))
+         (use-package evil-tutor)
 
-  ;;Turns off elpaca-use-package-mode current declartion
-  ;;Note this will cause the declaration to be interpreted immediately (not deferred).
-  ;;Useful for configuring built-in emacs features.
-  ;;(use-package emacs :elpaca nil :config (setq ring-bell-function #'ignore))
+       ;;Turns off elpaca-use-package-mode current declartion
+       ;;Note this will cause the declaration to be interpreted immediately (not deferred).
+       ;;Useful for configuring built-in emacs features.
+       ;;(use-package emacs :elpaca nil :config (setq ring-bell-function #'ignore))
 
-  ;; Don't install anything. Defer execution of BODY
-  ;;(elpaca nil (message "deferred"))
+       ;; Don't install anything. Defer execution of BODf
+       ;;(elpaca nil (message "deferred"))
 
 #+end_src
 
 ** Keybindings (General.el)
 
 #+begin_src emacs-lisp
-    (use-package general
-      :config
-      (general-evil-setup)
+      (use-package general
+        :config
+        (general-evil-setup)
 
-      ;; set up 'SPC' as the global leader key
-      (general-create-definer ns/leader-keys
-        :states '(normal insert visual emacs)
-        :keymaps 'override
-        :prefix "SPC" ;; set leader
-        :global-prefix "M-SPC") ;; access leader in insert mode
+        ;; set up 'SPC' as the global leader key
+        (general-create-definer ns/leader-keys
+          :states '(normal insert visual emacs)
+          :keymaps 'override
+          :prefix "SPC" ;; set leader
+          :global-prefix "M-SPC") ;; access leader in insert mode
 
 
+        (ns/leader-keys
+          "b" '(:ignore t :wk "buffer")
+          "bb" '(switch-to-buffer :wk "Switch buffer")
+          "bi" '(ibuffer :wk "iBuffer")
+          "bk" '(kill-this-buffer :wk "Kill this buffer")
+          "bn" '(next-buffer :wk "Next buffer")
+          "bp" '(previous-buffer :wk "Previous buffer")
+          "br" '(revert-buffer :wk "Reload buffer"))
+
+    ;; Emacs Bindings
       (ns/leader-keys
-        "b" '(:ignore t :wk "buffer")
-        "bb" '(switch-to-buffer :wk "Switch buffer")
-        "bi" '(ibuffer :wk "iBuffer")
-        "bk" '(kill-this-buffer :wk "Kill this buffer")
-        "bn" '(next-buffer :wk "Next buffer")
-        "bp" '(previous-buffer :wk "Previous buffer")
-        "br" '(revert-buffer :wk "Reload buffer"))
+        "h" '(:ignore t :wk "Help")
+        "h f" '(describe-function :wk "Describe function")
+        "h v" '(describe-variable :wk "Describe variable")
+        "h r r" '(reload-init-file :wk "Reload emacs config"))
 
-  ;; Emacs Bindings
+
+
+      (defun reload-init-file ()
+      (interactive)
+      (load-file user-init-file)
+      (load-file user-init-file))
+
+      ;; Eval/Eshell Bindings
+      ;; lisp evaluation
+        (ns/leader-keys
+         "e" '(:ignore t :wk "eshell/evaluate")
+         "e b" '(eval-buffer :wk "Evaluate elisp in buffer")
+         "e d" '(eval-defun :wk "Evaluate defun containing or after point")
+         "e e" '(eval-expression :wk "Evaluate and elisp expression")
+         "e h" '(counsel-esh-history :which-key "Eshell history")
+         "e l" '(eval-last-sexp :wk "Evaluate elisp expression before point")
+         "e r" '(eval-region :wk "Evaluate elisp in region")
+         "e s" '(eshell :which-key "Eshell"))
+
+
+    ;; File Bindings
+        (ns/leader-keys
+          "f" '(:ignore t :wk "file")
+          "f." '(find-file :wk "find file")
+          "fc" '(lambda() (interactive) (find-file "~/.config/emacs/config.org") :wk "Open Emacs Config")
+          "fo" '(lambda() (interactive) (find-file "~/org/index.org") :wk "Open Org Index"))
+
+    ;; Toggles
     (ns/leader-keys
-      "h" '(:ignore t :wk "Help")
-      "h f" '(describe-function :wk "Describe function")
-      "h v" '(describe-variable :wk "Describe variable")
-      "h r r" '(reload-init-file :wk "Reload emacs config"))
+    "t"  '(:ignore t :wk "toggle")
+    "tl" '(display-line-numbers-mode :wk "toggle line numbers")
+    "tv" '(vterm-toggle :wk "toggle vterm"))
 
-
-
-    (defun reload-init-file ()
-    (interactive)
-    (load-file user-init-file)
-    (load-file user-init-file))
-
-    ;; Eval/Eshell Bindings
-    ;; lisp evaluation
-      (ns/leader-keys
-       "e" '(:ignore t :wk "eshell/evaluate")
-       "e b" '(eval-buffer :wk "Evaluate elisp in buffer")
-       "e d" '(eval-defun :wk "Evaluate defun containing or after point")
-       "e e" '(eval-expression :wk "Evaluate and elisp expression")
-       "e h" '(counsel-esh-history :which-key "Eshell history")
-       "e l" '(eval-last-sexp :wk "Evaluate elisp expression before point")
-       "e r" '(eval-region :wk "Evaluate elisp in region")
-       "e s" '(eshell :which-key "Eshell"))
-
-
-  ;; File Bindings
-      (ns/leader-keys
-        "f" '(:ignore t :wk "file")
-        "f." '(find-file :wk "find file")
-        "fc" '(lambda() (interactive) (find-file "~/.config/emacs/config.org") :wk "Open Emacs Config"))
-
-  ;; Toggles
+    ;; Window Bindings
   (ns/leader-keys
-  "t"  '(:ignore t :wk "toggle")
-  "tl" '(display-line-numbers-mode :wk "toggle line numbers")
-  "tv" '(vterm-toggle :wk "toggle vterm"))
-
-  ;; Window Bindings
-(ns/leader-keys
-    "w" '(:ignore t :wk "Windows")
-    ;; Window splits
-    "w c" '(evil-window-delete :wk "Close window")
-    "w n" '(evil-window-new :wk "New window")
-    "w s" '(evil-window-split :wk "Horizontal split window")
-    "w v" '(evil-window-vsplit :wk "Vertical split window")
-    ;; Window motions
-    "w h" '(evil-window-left :wk "Window left")
-    "w j" '(evil-window-down :wk "Window down")
-    "w k" '(evil-window-up :wk "Window up")
-    "w l" '(evil-window-right :wk "Window right")
-    "w w" '(evil-window-next :wk "Goto next window")
-    ;; Move Windows
-    "w H" '(buf-move-left :wk "Buffer move left")
-    "w J" '(buf-move-down :wk "Buffer move down")
-    "w K" '(buf-move-up :wk "Buffer move up")
-    "w L" '(buf-move-right :wk "Buffer move right"))
-  )
-
+      "w" '(:ignore t :wk "Windows")
+      ;; Window splits
+      "w c" '(evil-window-delete :wk "Close window")
+      "w n" '(evil-window-new :wk "New window")
+      "w s" '(evil-window-split :wk "Horizontal split window")
+      "w v" '(evil-window-vsplit :wk "Vertical split window")
+      ;; Window motions
+      "w h" '(evil-window-left :wk "Window left")
+      "w j" '(evil-window-down :wk "Window down")
+      "w k" '(evil-window-up :wk "Window up")
+      "w l" '(evil-window-right :wk "Window right")
+      "w w" '(evil-window-next :wk "Goto next window")
+      ;; Move Windows
+      "w H" '(buf-move-left :wk "Buffer move left")
+      "w J" '(buf-move-down :wk "Buffer move down")
+      "w K" '(buf-move-up :wk "Buffer move up")
+      "w L" '(buf-move-right :wk "Buffer move right"))
+    )
+  ;; Avy for vim-sneak like actions
+  (ns/leader-keys
+      "s" '(avy-goto-char-2 :wk "Search"))
 #+end_src
 
 ** Startup Settings
@@ -366,6 +370,11 @@ A generic completion framework
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 #+end_src
+** Org Capture Templates
+#+begin_src emacs-lisp
+
+
+#+end_src
 ** Org Table of Contents
 #+begin_src emacs-lisp
 
@@ -394,6 +403,7 @@ Org-tempo is not a separate package but a module within org that can be enabled.
 #+begin_src emacs-lisp
     (require 'org-tempo)
 #+end_src
+
 
 * Projectile
 #+begin_src emacs-lisp
@@ -459,7 +469,7 @@ Org-tempo is not a separate package but a module within org that can be enabled.
 #+end_src
 * Sudo Edit
 #+begin_src emacs-lisp
-    (use-package sudo-edit
+   (use-package sudo-edit
     :config
         (ns/leader-keys
         "fu" '(sudo-edit-find-file :wk "Sudo find file")
@@ -471,15 +481,15 @@ Org-tempo is not a separate package but a module within org that can be enabled.
 #+begin_src emacs-lisp
 (set-face-attribute 'default nil
   :font "JetBrains Mono"
-  :height 340
+  :height 240
   :weight 'medium)
 (set-face-attribute 'variable-pitch nil
   :font "Ubuntu"
-  :height 350
+  :height 250
   :weight 'medium)
 (set-face-attribute 'fixed-pitch nil
   :font "JetBrains Mono"
-  :height 340
+  :height 240
   :weight 'medium)
 ;; Makes commented text and keywords italics.
 ;; This is working in emacsclient but not emacs.
