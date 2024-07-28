@@ -12,12 +12,14 @@
   - [[#startup-settings][Startup Settings]]
 - [[#buffer-move][Buffer Move]]
 - [[#git][Git]]
+  - [[#magit][Magit]]
 - [[#ivy][Ivy]]
 - [[#language-support-lsp-et-al][Language Support (LSP et. al)]]
   - [[#company][Company]]
 - [[#org-mode][Org Mode]]
   - [[#org-bullets][Org Bullets]]
   - [[#org-capture-templates][Org Capture Templates]]
+  - [[#org-roam][Org Roam]]
   - [[#org-table-of-contents][Org Table of Contents]]
   - [[#org-tempo][Org Tempo]]
 - [[#projectile][Projectile]]
@@ -29,6 +31,8 @@
   - [[#fonts][Fonts]]
   - [[#icons][Icons]]
   - [[#line-numbers][Line Numbers]]
+  - [[#modeline-doom-modeline][Modeline (Doom Modeline)]]
+  - [[#themes-doom-themes][Themes (Doom Themes)]]
 - [[#which-key][Which Key]]
 
 * LOAD FIRST
@@ -98,7 +102,8 @@
 
 ;; Don't install anything. Defer execution of BODY
 ;;(elpaca nil (message "deferred"))
-
+ 
+(setq package-install-upgrade-built-in t)
 #+end_src
 
 ** Evil Mode
@@ -135,60 +140,72 @@
 ** Keybindings (General.el)
 
 #+begin_src emacs-lisp
-      (use-package general
+    (use-package general
         :config
         (general-evil-setup)
 
-        ;; set up 'SPC' as the global leader key
-        (general-create-definer ns/leader-keys
-          :states '(normal insert visual emacs)
-          :keymaps 'override
-          :prefix "SPC" ;; set leader
-          :global-prefix "M-SPC") ;; access leader in insert mode
+    ;; set up 'SPC' as the global leader key
+    (general-create-definer ns/leader-keys
+    :states '(normal insert visual emacs)
+    :keymaps 'override
+    :prefix "SPC" ;; set leader
+    :global-prefix "C-SPC") ;; access leader in insert mode
 
 
-        (ns/leader-keys
-          "b" '(:ignore t :wk "buffer")
-          "bb" '(switch-to-buffer :wk "Switch buffer")
-          "bi" '(ibuffer :wk "iBuffer")
-          "bk" '(kill-this-buffer :wk "Kill this buffer")
-          "bn" '(next-buffer :wk "Next buffer")
-          "bp" '(previous-buffer :wk "Previous buffer")
-          "br" '(revert-buffer :wk "Reload buffer"))
+    ;; built in emacs functions
+    (ns/leader-keys
+     "SPC" '(counsel-M-x :wk "Counsel Mx"))
 
-    ;; Emacs Bindings
-      (ns/leader-keys
-        "h" '(:ignore t :wk "Help")
-        "h f" '(describe-function :wk "Describe function")
-        "h v" '(describe-variable :wk "Describe variable")
-        "h r r" '(reload-init-file :wk "Reload emacs config"))
+    ;; buffer bindings
+    (ns/leader-keys
+    "b" '(:ignore t :wk "buffer")
+    "bb" '(switch-to-buffer :wk "Switch buffer")
+    "bi" '(ibuffer :wk "iBuffer")
+    "bk" '(kill-this-buffer :wk "Kill this buffer")
+    "bn" '(next-buffer :wk "Next buffer")
+    "bp" '(previous-buffer :wk "Previous buffer")
+    "br" '(revert-buffer :wk "Reload buffer"))
+
+    ;; Help Bindings
+    (ns/leader-keys
+    "h" '(:ignore t :wk "Help")
+    "h f" '(describe-function :wk "Describe function")
+    "h v" '(describe-variable :wk "Describe variable")
+    "h r r" '(reload-init-file :wk "Reload emacs config"))
 
 
 
-      (defun reload-init-file ()
-      (interactive)
-      (load-file user-init-file)
-      (load-file user-init-file))
+    (defun reload-init-file ()
+    (interactive)
+    (load-file user-init-file)
+    (load-file user-init-file))
 
-      ;; Eval/Eshell Bindings
-      ;; lisp evaluation
-        (ns/leader-keys
-         "e" '(:ignore t :wk "eshell/evaluate")
-         "e b" '(eval-buffer :wk "Evaluate elisp in buffer")
-         "e d" '(eval-defun :wk "Evaluate defun containing or after point")
-         "e e" '(eval-expression :wk "Evaluate and elisp expression")
-         "e h" '(counsel-esh-history :which-key "Eshell history")
-         "e l" '(eval-last-sexp :wk "Evaluate elisp expression before point")
-         "e r" '(eval-region :wk "Evaluate elisp in region")
-         "e s" '(eshell :which-key "Eshell"))
+    ;; Eval/Eshell Bindings
+    ;; lisp evaluation
+    (ns/leader-keys
+    "e" '(:ignore t :wk "eshell/evaluate")
+    "e b" '(eval-buffer :wk "Evaluate elisp in buffer")
+    "e d" '(eval-defun :wk "Evaluate defun containing or after point")
+    "e e" '(eval-expression :wk "Evaluate and elisp expression")
+    "e h" '(counsel-esh-history :which-key "Eshell history")
+    "e l" '(eval-last-sexp :wk "Evaluate elisp expression before point")
+    "e r" '(eval-region :wk "Evaluate elisp in region")
+    "e s" '(eshell :which-key "Eshell"))
 
 
     ;; File Bindings
-        (ns/leader-keys
-          "f" '(:ignore t :wk "file")
-          "f." '(find-file :wk "find file")
-          "fc" '(lambda() (interactive) (find-file "~/.config/emacs/config.org") :wk "Open Emacs Config")
-          "fo" '(lambda() (interactive) (find-file "~/org/index.org") :wk "Open Org Index"))
+    (ns/leader-keys
+    "f" '(:ignore t :wk "file")
+    "f." '(find-file :wk "find file")
+    "fc" '(lambda() (interactive) (find-file "~/.config/emacs/config.org") :wk "Open Emacs Config")
+    "fo" '(lambda() (interactive) (find-file "~/org/index.org") :wk "Open Org Index"))
+
+    ;; Org Mode Bindings
+
+    (ns/leader-keys
+    "o"  '(:ignore t :wk "org")
+    "oc" '(org-capture :wk "org capture")
+    "oa" '(org-capture :wk "org agenda"))
 
     ;; Toggles
     (ns/leader-keys
@@ -197,34 +214,44 @@
     "tv" '(vterm-toggle :wk "toggle vterm"))
 
     ;; Window Bindings
-  (ns/leader-keys
-      "w" '(:ignore t :wk "Windows")
-      ;; Window splits
-      "w c" '(evil-window-delete :wk "Close window")
-      "w n" '(evil-window-new :wk "New window")
-      "w s" '(evil-window-split :wk "Horizontal split window")
-      "w v" '(evil-window-vsplit :wk "Vertical split window")
-      ;; Window motions
-      "w h" '(evil-window-left :wk "Window left")
-      "w j" '(evil-window-down :wk "Window down")
-      "w k" '(evil-window-up :wk "Window up")
-      "w l" '(evil-window-right :wk "Window right")
-      "w w" '(evil-window-next :wk "Goto next window")
-      ;; Move Windows
-      "w H" '(buf-move-left :wk "Buffer move left")
-      "w J" '(buf-move-down :wk "Buffer move down")
-      "w K" '(buf-move-up :wk "Buffer move up")
-      "w L" '(buf-move-right :wk "Buffer move right"))
-    )
-  ;; Avy for vim-sneak like actions
-  (ns/leader-keys
-      "s" '(avy-goto-char-2 :wk "Search"))
+    (ns/leader-keys
+    "w" '(:ignore t :wk "Windows")
+
+    ;; Window splits
+    "w c" '(evil-window-delete :wk "Close window")
+    "w n" '(evil-window-new :wk "New window")
+    "w s" '(evil-window-split :wk "Horizontal split window")
+    "w v" '(evil-window-vsplit :wk "Vertical split window")
+
+    ;; Window motions
+    "w h" '(evil-window-left :wk "Window left")
+    "w j" '(evil-window-down :wk "Window down")
+    "w k" '(evil-window-up :wk "Window up")
+    "w l" '(evil-window-right :wk "Window right")
+    "w w" '(evil-window-next :wk "Goto next window")
+
+    ;; Move Windows
+    "w H" '(buf-move-left :wk "Buffer move left")
+    "w J" '(buf-move-down :wk "Buffer move down")
+    "w K" '(buf-move-up :wk "Buffer move up")
+    "w L" '(buf-move-right :wk "Buffer move right"))
+
+      ;; Avy for vim-sneak like actions
+      (ns/leader-keys
+        "s" '(avy-goto-char-2 :wk "Search"))
+  )
+
+
 #+end_src
 
 ** Startup Settings
 Follow symlinks by default
 #+begin_src emacs-lisp
   (setq vc-follow-symlinks t)
+#+end_src
+Diminish most minor modes
+#+begin_src emacs-lisp
+  (use-package diminish)
 #+end_src
 
 * Buffer Move
@@ -300,16 +327,18 @@ one, an error is signaled."
 #+end_src
 
 * Git
-
+** Magit
 * Ivy
 
 #+begin_src emacs-lisp
 
   (use-package counsel
     :after ivy
+    :diminish
     :config (counsel-mode))
 
   (use-package ivy
+    :diminish
     :bind
     ;; ivy-resume resumes the last Ivy-based completion.
     (("C-c C-r" . ivy-resume)
@@ -335,7 +364,7 @@ one, an error is signaled."
      ivy-rich-path-style 'abbrev)
     :config
     (ivy-set-display-transformer 'ivy-switch-buffer
-                                 'ivy-rich-switch-buffer-transformer))
+				 'ivy-rich-switch-buffer-transformer))
 #+end_src
 
 * Language Support (LSP et. al)
@@ -371,9 +400,10 @@ A generic completion framework
 
 #+end_src
 ** Org Capture Templates
+** Org Roam
 #+begin_src emacs-lisp
-
-
+    (use-package org-roam
+    :ensure t)
 #+end_src
 ** Org Table of Contents
 #+begin_src emacs-lisp
@@ -408,9 +438,10 @@ Org-tempo is not a separate package but a module within org that can be enabled.
 * Projectile
 #+begin_src emacs-lisp
 
-  (use-package projectile
-    :config
-    (projectile-mode 1))
+    (use-package projectile
+      :config
+      (projectile-mode 1)
+      :diminish)
 
 #+end_src
 
@@ -532,24 +563,52 @@ enable line numbers globally but disable them in certain modes
         (add-hook mode (lambda() (display-line-numbers-mode 0))))
 
 #+end_src
+** Modeline (Doom Modeline)
+#+begin_src emacs-lisp
+
+  (use-package doom-modeline
+    :ensure t
+    :config
+    (setq doom-modeline-height 40)
+    :init (doom-modeline-mode 1))
+
+#+end_src
+
+** Themes (Doom Themes)
+#+begin_src emacs-lisp
+
+  (use-package doom-themes
+    :ensure t
+    :config
+    ;; Global settings (defaults)
+    (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+          doom-themes-enable-italic t) ; if nil, italics is universally disabled
+    (load-theme 'doom-one t)
+
+    ;; Corrects (and improves) org-mode's native fontification.
+    (doom-themes-org-config))
+
+#+end_src
 
 * Which Key
 #+begin_src emacs-lisp
-  (use-package which-key
-    :init
-      (which-key-mode 1)
-    :config
-    (setq which-key-side-window-location 'bottom
-            which-key-sort-order #'which-key-key-order-alpha
-            which-key-sort-uppercase-first nil
-            which-key-add-column-padding 1
-            which-key-max-display-columns nil
-            which-key-min-display-lines 6
-            which-key-side-window-slot -10
-            which-key-side-window-max-height 0.25
-            which-key-idle-delay 0.8
-            which-key-max-description-length 25
-            which-key-allow-imprecise-window-fit t
-            which-key-separator " → " ))
+      (use-package which-key
+	:init
+	  (which-key-mode 1)
+	:config
+	(setq which-key-side-window-location 'bottom
+		which-key-sort-order #'which-key-key-order-alpha
+		which-key-sort-uppercase-first nil
+		which-key-add-column-padding 1
+		which-key-max-display-columns nil
+		which-key-min-display-lines 6
+		which-key-side-window-slot -10
+		which-key-side-window-max-height 0.25
+		which-key-idle-delay 0.8
+		which-key-max-description-length 25
+		which-key-allow-imprecise-window-fit t
+		which-key-separator " → " )
+	 :diminish
+       )
 
 #+end_src
