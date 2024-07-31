@@ -6,6 +6,7 @@
 
 * TABLE OF CONTENTS :toc:
 - [[#load-first][LOAD FIRST]]
+  - [[#follow-symlinks-automatically][Follow Symlinks Automatically]]
   - [[#elpaca-package-manager][Elpaca Package Manager]]
   - [[#evil-mode][Evil Mode]]
   - [[#keybindings-generalel][Keybindings (General.el)]]
@@ -16,9 +17,11 @@
 - [[#ivy][Ivy]]
 - [[#language-support-lsp-et-al][Language Support (LSP et. al)]]
   - [[#company][Company]]
+  - [[#lsp][LSP]]
 - [[#org-mode][Org Mode]]
   - [[#org-bullets][Org Bullets]]
   - [[#org-capture-templates][Org Capture Templates]]
+  - [[#org-modern][Org-Modern]]
   - [[#org-roam][Org Roam]]
   - [[#org-table-of-contents][Org Table of Contents]]
   - [[#org-tempo][Org Tempo]]
@@ -32,10 +35,15 @@
   - [[#icons][Icons]]
   - [[#line-numbers][Line Numbers]]
   - [[#modeline-doom-modeline][Modeline (Doom Modeline)]]
-  - [[#themes-doom-themes][Themes (Doom Themes)]]
+  - [[#themes][Themes]]
 - [[#which-key][Which Key]]
 
 * LOAD FIRST
+
+** Follow Symlinks Automatically
+#+begin_src emacs-lisp
+  (setq vc-follow-symlinks t)
+#+end_src
 
 ** Elpaca Package Manager
 
@@ -170,25 +178,7 @@
     "bp" '(previous-buffer :wk "Previous buffer")
     "br" '(revert-buffer :wk "Reload buffer"))
 
-    ;; Help Bindings
-    (ns/leader-keys
-    "e" '(:ignore t :wk "Eval/Eshell")
-    "e e" '(eval-expression :wk "Evaluate and elisp expression")
-    "e h" '(counsel-esh-history :which-key "Eshell history")
-    "e l" '(eval-last-sexp :wk "Evaluate elisp expression before point")
-    "e r" '(eval-region :wk "Evaluate elisp in region")
-    "e s" '(eshell :which-key "Eshell"))
-
-    (ns/leader-keys
-    "h" '(:ignore t :wk "Help")
-    "h f" '(describe-function :wk "Describe function")
-    "h v" '(describe-variable :wf "Describe Variable")
-     "h r r" '((lambda () (interactive)
-              (load-file "~/.config/emacs/init.el")
-              (ignore (elpaca-process-queues)))
-              :wk "Reload emacs config"))
-
-    ;; File Bindings
+   ;; File Bindings
     (ns/leader-keys
     "f" '(:ignore t :wk "file")
     "f." '(find-file :wk "find file")
@@ -208,7 +198,7 @@
     "oi" '(:ignore t :wk "org insert")
     "oil" '(org-insert-link :wk "org insert link")
     "oit" '(org-time-stamp-inactive :wk "org insert timestamp (inactive)"))
- 
+
 
     ;; Toggles
     (ns/leader-keys
@@ -334,6 +324,7 @@ one, an error is signaled."
 ** Magit
 #+begin_src emacs-lisp
 #+end_src
+
 * Ivy
 
 #+begin_src emacs-lisp
@@ -396,6 +387,8 @@ A generic completion framework
   :hook (company-mode . company-box-mode))
 #+end_src
 
+** LSP
+TODO 
 * Org Mode
 ** Org Bullets
 #+begin_src emacs-lisp
@@ -406,6 +399,8 @@ A generic completion framework
 
 #+end_src
 ** Org Capture Templates
+TODO
+** Org-Modern
 ** Org Roam
 #+begin_src emacs-lisp
     (use-package org-roam
@@ -608,20 +603,23 @@ enable line numbers globally but disable them in certain modes
 
 #+end_src
 
-** Themes (Doom Themes)
+** Themes 
 #+begin_src emacs-lisp
 
-  (use-package doom-themes
-    :ensure t
-    :config
-    ;; Global settings (defaults)
-    (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-          doom-themes-enable-italic t) ; if nil, italics is universally disabled
-    (load-theme 'doom-one t)
+      (use-package doom-themes
+        :ensure t
+        :config
+        ;; Global settings (defaults)
+        (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+              doom-themes-enable-italic t) ; if nil, italics is universally disabled
+        (load-theme 'doom-one t)
 
-    ;; Corrects (and improves) org-mode's native fontification.
-    (doom-themes-org-config))
+        ;; Corrects (and improves) org-mode's native fontification.
+        (doom-themes-org-config))
 
+       (use-package nano-theme
+        :ensure nil
+        :defer t)
 #+end_src
 
 * Which Key
