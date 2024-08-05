@@ -1,7 +1,7 @@
-#+TITLE: Noah Sapse Literate Org Config
+#+TITLE: Noah Sapse Literate Org
 #+AUTHOR: Noah Sapse
 #+DESCRIPTION: A literate emacs config
-#+STARTUP: showeverything
+#+STARTUP: show2levels
 #+OPTIONS: toc:3
 
 * TABLE OF CONTENTS :toc:
@@ -11,7 +11,6 @@
   - [[#evil-mode][Evil Mode]]
   - [[#keybindings-generalel][Keybindings (General.el)]]
   - [[#startup-settings][Startup Settings]]
-- [[#buffer-move][Buffer Move]]
 - [[#git][Git]]
   - [[#magit][Magit]]
 - [[#ivy][Ivy]]
@@ -96,26 +95,6 @@
   ;; Block until current queue processed.
   (elpaca-wait)
 
-  ;;When installing a package which modifies a form used at the top-level
-  ;;(e.g. a package which adds a use-package key word),
-  ;;use `elpaca-wait' to block until that package has been installed/configured.
-  ;;For example:
-  ;;(use-package general :demand t)
-  ;;(elpaca-wait)
-
-  ;;Turns off elpaca-use-package-mode current declartion
-  ;;Note this will cause the declaration to be interpreted immediately (not deferred).
-  ;;Useful for configuring built-in emacs features.
-  ;;(use-package emacs :elpaca nil :config (setq ring-bell-function #'ignore))
-
-  ;; Don't install anything. Defer execution of BODY
-  ;;(elpaca nil (message "deferred"))
-
-  (setq package-install-upgrade-built-in t)
-
-  ;; get seq working per the github issue section - https://github.com/progfolio/elpaca/issues/216
-
-#+end_src
 #+end_src
 
 ** Evil Mode
@@ -150,8 +129,9 @@
 #+end_src
 
 ** Keybindings (General.el)
-
+see "~/.config/emacs/keymaps.org"
 #+begin_src emacs-lisp
+
     (use-package general
         :config
         (general-evil-setup)
@@ -166,7 +146,7 @@
 
     ;; built in emacs functions
     (ns/leader-keys
-     "SPC" '(counsel-M-x :wk "Counsel Mx"))
+     "SPC" '(counsel-M-x :wk "Mx"))
 
     ;; buffer bindings
     (ns/leader-keys
@@ -182,30 +162,45 @@
     (ns/leader-keys
     "f" '(:ignore t :wk "file")
     "f." '(find-file :wk "find file")
-    "fc" '(lambda() (interactive) (find-file "~/.config/emacs/config.org") :wk "Open Emacs Config"))
+    "fc" '(lambda() (interactive) (find-file "~/.config/emacs/config.org") :wk "Open Emacs Config")
+    "frr" '((lambda () (interactive)
+                  (load-file "~/.config/emacs/init.el")
+                  (ignore (elpaca-process-queues)))
+              :wk "Reload emacs config"))
 
+
+    ;; Help Bindings
+
+    (ns/leader-keys
+    "h" '(:ignore t :wk "help")
+    "hf" '(describe-function :wk "function")
+    "hv" '(describe-variable :wk "variable"))
 
     ;; Org Mode Bindings
 
     (ns/leader-keys
     "o"  '(:ignore t :wk "org")
     "oc" '(org-capture :wk "org capture")
-    "oa" '(org-capture :wk "org agenda")
-    "oo" '(consult-org-roam-file-find :wk "find org file")
+    "oa" '(org-agenda :wk "org agenda")
+    "oo" '(lambda() (interactive) (org-roam-node-find) :wk "find org file")
     "oh" '(lambda() (interactive) (find-file "~/org/Obs_Org/Home.org") :wk "Open Org Index")
     "ow" '(lambda() (interactive) (find-file "~/org/Obs_Org/Work.org") :wk "Open Work Index")
 
     "oi" '(:ignore t :wk "org insert")
     "oil" '(org-insert-link :wk "org insert link")
-    "oit" '(org-time-stamp-inactive :wk "org insert timestamp (inactive)"))
+    "oir" '(org-roam-node-insert :wk "org insert roam node")
+    "oit" '(org-time-stamp-inactive :wk "org insert timestamp (inactive)")
+
+    "ot" '(:ignore t :wk "org toggle")
+    "ott" '(org-todo :wk "org toggle todo") ;; replace this with C-t
+    "otl" '(org-toggle-link-display :wk "toggle link display(org)"))
 
 
     ;; Toggles
     (ns/leader-keys
     "t"  '(:ignore t :wk "toggle")
     "tl" '(display-line-numbers-mode :wk "toggle line numbers")
-    "tv" '(vterm-toggle :wk "toggle vterm")
-    "td" '(org-toggle-link-display :wk "toggle link display(org)"))
+    "tv" '(vterm-toggle :wk "toggle vterm"))
 
     ;; Window Bindings
     (ns/leader-keys
@@ -222,22 +217,24 @@
     "w j" '(evil-window-down :wk "Window down")
     "w k" '(evil-window-up :wk "Window up")
     "w l" '(evil-window-right :wk "Window right")
-    "w w" '(evil-window-next :wk "Goto next window")
+    "w w" '(evil-window-next :wk "Goto next window"))
 
-    ;; Move Windows
-    "w H" '(buf-move-left :wk "Buffer move left")
-    "w J" '(buf-move-down :wk "Buffer move down")
-    "w K" '(buf-move-up :wk "Buffer move up")
-    "w L" '(buf-move-right :wk "Buffer move right"))
+    ;; eval actionss
+    (ns/leader-keys
+    "e" '(:ignore t :wk "Eshell/Evaluate")    
+    "e b" '(eval-buffer :wk "Evaluate buffer")
+    "e d" '(eval-defun :wk "Evaluate after point")
+    "e e" '(eval-expression :wk "Evalu te expression")
+    "e l" '(eval-last-sexp :wk "Evaluate before point")
+    "e r" '(eval-region :wk "Evaluate region"))
 
       ;; Avy for vim-sneak like actions
       (ns/leader-keys
-        "s" '(avy-goto-char-2 :wk "Search"))
+        "s" '(evil-avy-goto-char-2 :wk "Search"))
   )
 
 
 #+end_src
-
 ** Startup Settings
 Follow symlinks by default
 #+begin_src emacs-lisp
@@ -248,83 +245,16 @@ Diminish most minor modes
   (use-package diminish)
 #+end_src
 
-* Buffer Move
-#+begin_src emacs-lisp
-(require 'windmove)
-
-;;;###autoload
-(defun buf-move-up ()
-  "Swap the current buffer and the buffer above the split.
-If there is no split, ie now window above the current one, an
-error is signaled."
-;;  "Switches between the current buffer, and the buffer above the
-;;  split, if possible."
-  (interactive)
-  (let* ((other-win (windmove-find-other-window 'up))
-	 (buf-this-buf (window-buffer (selected-window))))
-    (if (null other-win)
-        (error "No window above this one")
-      ;; swap top with this one
-      (set-window-buffer (selected-window) (window-buffer other-win))
-      ;; move this one to top
-      (set-window-buffer other-win buf-this-buf)
-      (select-window other-win))))
-
-;;;###autoload
-(defun buf-move-down ()
-"Swap the current buffer and the buffer under the split.
-If there is no split, ie now window under the current one, an
-error is signaled."
-  (interactive)
-  (let* ((other-win (windmove-find-other-window 'down))
-	 (buf-this-buf (window-buffer (selected-window))))
-    (if (or (null other-win) 
-            (string-match "^ \\*Minibuf" (buffer-name (window-buffer other-win))))
-        (error "No window under this one")
-      ;; swap top with this one
-      (set-window-buffer (selected-window) (window-buffer other-win))
-      ;; move this one to top
-      (set-window-buffer other-win buf-this-buf)
-      (select-window other-win))))
-
-;;;###autoload
-(defun buf-move-left ()
-"Swap the current buffer and the buffer on the left of the split.
-If there is no split, ie now window on the left of the current
-one, an error is signaled."
-  (interactive)
-  (let* ((other-win (windmove-find-other-window 'left))
-	 (buf-this-buf (window-buffer (selected-window))))
-    (if (null other-win)
-        (error "No left split")
-      ;; swap top with this one
-      (set-window-buffer (selected-window) (window-buffer other-win))
-      ;; move this one to top
-      (set-window-buffer other-win buf-this-buf)
-      (select-window other-win))))
-
-;;;###autoload
-(defun buf-move-right ()
-"Swap the current buffer and the buffer on the right of the split.
-If there is no split, ie now window on the right of the current
-one, an error is signaled."
-  (interactive)
-  (let* ((other-win (windmove-find-other-window 'right))
-	 (buf-this-buf (window-buffer (selected-window))))
-    (if (null other-win)
-        (error "No right split")
-      ;; swap top with this one
-      (set-window-buffer (selected-window) (window-buffer other-win))
-      ;; move this one to top
-      (set-window-buffer other-win buf-this-buf)
-      (select-window other-win))))
-#+end_src
-
 * Git
 ** Magit
-#+begin_src emacs-lisp
-#+end_src
 
+#+begin_src emacs-lisp
+  (use-package seq)
+  (use-package transient
+    :after seq)
+  (use-package magit
+  :after transient)
+#+end_src
 * Ivy
 
 #+begin_src emacs-lisp
@@ -370,21 +300,22 @@ one, an error is signaled."
 A generic completion framework
 
 #+begin_src emacs-lisp
-(use-package company
-  :defer 2
-  :diminish
-  :custom
-  (company-begin-commands '(self-insert-command))
-  (company-idle-delay .1)
-  (company-minimum-prefix-length 2)
-  (company-show-numbers t)
-  (company-tooltip-align-annotations 't)
-  (global-company-mode t))
+  (use-package company
+    :defer 2
+    :diminish
+    :custom
+    (company-begin-commands '(self-insert-command))
+    (company-idle-delay .1)
+    (company-minimum-prefix-length 2)
+    (company-show-numbers t)
+    (company-tooltip-align-annotations 't)
+    (global-company-mode t)
+  )
 
-(use-package company-box
-  :after company
-  :diminish
-  :hook (company-mode . company-box-mode))
+  (use-package company-box
+    :after company
+    :diminish
+    :hook (company-mode . company-box-mode))
 #+end_src
 
 ** LSP
@@ -405,7 +336,7 @@ TODO
 #+begin_src emacs-lisp
     (use-package org-roam
     :ensure t)
-
+    (setq org-roam-completion-everywhere t)
     (setq org-roam-directory "/Users/noah.sapse/org/Obs_Org/")
 
 
@@ -504,6 +435,7 @@ Org-tempo is not a separate package but a module within org that can be enabled.
     (setq shell-file-name "/bin/zsh"
             vterm-max-scrollback 5000))
 
+  (setq vterm-timer-delay 0.01)
   ;; vterm-toggle
   (use-package vterm-toggle
     :after vterm
